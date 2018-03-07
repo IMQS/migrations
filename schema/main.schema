@@ -1,6 +1,14 @@
 
 VERSION 0
 
+CREATE TABLE "TestMigration" TestMigration
+{
+	"Internal"
+	required	int64		rowid				""
+	optional	text		Name				""
+}
+PRIMARY KEY(rowid);
+
 CREATE TABLE "User" User
 {
 	"Internal"
