@@ -24,6 +24,9 @@ The helper script won't work on Windows, but you can achieve the same thing usin
 
     c:\imqsbin\bin\aries\dbatool generate-migration add-hydrojet schema/main.schema migrations/main
 
+### Manual Migrations
+You can create a migration without using any tool. Just create a new .sql file and write your code. Obviously, stick to the naming convention (`YYYY-MM-DD-title.sql`). The name of your migration file determines the order in which it is run. If the only files are legacy migrations of the form `0000-000x.sql`, then look at https://github.com/IMQS/migrator for details on the naming convention of new migrations. The `0000-000x.sql` files are NOT NORMAL migrations. They are legacy migrations, and you must not create migrations with names like that, because they will never run.
+
 ### Testing
 The migration generator will ask you if you are happy with the generated .sql file. Most migrations are simple additions of fields, etc, and don't need to be tested on your local machine. However, if you do want to test, you can run the migrator on the newly generated migrations. Source code for `migrator` lives inside `github.com/IMQS/migrator`. It is a small Go program, and should build out of the box without issues, on any platform. On Windows, it is deployed to `c:\imqsbin\tools\migrator`.
 
