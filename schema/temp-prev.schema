@@ -1,0 +1,241 @@
+VERSION 0
+
+###################################################################################################################
+# Metadata
+###################################################################################################################
+
+CREATE TABLE "Metadata" Metadata
+{
+	"Internal"
+	required	int32		rowid				""
+	optional 	text		value				""
+	
+	flags		orm_readonly
+}
+PRIMARY KEY(rowid);
+
+###################################################################################################################
+# Basic Condition Assessment Mirror
+###################################################################################################################
+
+CREATE TABLE "" Condition_Base
+{
+	"Internal"
+	required	int64			rowid						""
+	optional	uuid			ID							""
+	optional	text			Locality 					""
+	"General"
+	optional 	int32 			MetaID						""					tags:dispMeta,hideInGrid
+}
+PRIMARY KEY (rowid);
+
+CREATE TABLE "Condition_Assessment" Condition_Assessment : Condition_Base
+{
+	"Internal"
+	optional	polyline        Geometry					""
+	"01.Laying Schedule Information"	
+	optional	text			Old_PipeNr						"Old Pipe Number"																	uiorder:0
+	optional	text			Pipe_Nr							"Pipe Number"												tags:longLivedID.1		uiorder:1
+	optional	text			Contract						"Contract Details"											tags:longLivedID.2		uiorder:2
+	optional	text			Pipe_Class						"Pipe Class"																		uiorder:3
+	optional	double			Pipe_Diameter					"Pipe Diameter"									unit:in								uiorder:4	
+	optional	date			Install_Date					"Installation Date"  							unit:MSE							uiorder:5
+	optional	text			Pipe_Material					"Pipe Material"																		uiorder:6
+	"02.Master Inspection Geometry"
+	optional	text			Geography_Source				"Geography Source"																	uiorder:7
+	optional	text			Start_Station					"Inspection Adjusted Start Station"													uiorder:8
+	optional	text			End_Station						"Inspection Adjusted End Station"													uiorder:9
+	optional	double			MIG_Pipe_Length					"Inspection Adjusted Horizontal Pipe Length"	unit:ft								uiorder:10
+	optional	double			Inspected_Distance				"Cumulative Inspected Distance"					unit:ft								uiorder:11
+	optional	double			Adj_Nom_Pipe_Length				"Inspection Adjusted Nominal Pipe Length"		unit:ft								uiorder:12
+	optional	text			MIG_Source						"Inspection Geometry Source"														uiorder:13
+	"03.V/S Inspection"
+	optional	double			Measure_Pipe_Length				"Measured Pipe Length"							unit:ft								uiorder:14
+	optional	double			Low_Wheel_Distance				"Low Wheel Distance"							unit:ft								uiorder:15
+	optional	double			High_Wheel_Distance				"High Wheel Distance"							unit:ft								uiorder:16
+	optional	double			Low_Feet						"Low Feet"										unit:ft								uiorder:17
+	optional	double			Low_Inches						"Low Inches"									unit:in								uiorder:18
+	optional	double			High_Feet						"High Feet"										unit:ft								uiorder:19
+	optional	double			High_Inches						"High Inches"									unit:in								uiorder:20
+	optional	double			CL_Feature_Distance				"C/L of Feature Distance"						unit:ft								uiorder:21
+	optional	text			VO_First_Joint					"Visual Observation First Joint"													uiorder:22
+	optional	text			VO_Barrel_Pipe					"Visual Observations Barrel of Pipe"												uiorder:23
+	optional	text			VO_Second_Joint					"Visual Observation Second Joint"													uiorder:24
+	optional	date			VS_Inspection_Date				"V/S Inspection Date"							unit:MSE							uiorder:25
+	"04.IMU Inspection"
+	optional	double			IMU_Inspection_Length			"IMU Inspection Length"							unit:ft								uiorder:26
+	optional	text			First_Joint_IMU_Station			"First Joint IMU Station"															uiorder:27
+	optional	text			Second_Joint_IMU_Station		"Second Joint IMU Station"															uiorder:28
+	optional	double			First_Joint_Elevation			"First Joint Elevation"							unit:ft.asl							uiorder:29
+	optional	double			Second_Joint_Elevation			"Second Joint Elevation"						unit:ft.asl							uiorder:30
+	optional	text			Pipe_Pure_GIS_ID				"Pipe Pure GIS ID"																	uiorder:31
+	optional	text			USJ_Pure_GIS_ID					"USJ Pure GIS ID"																	uiorder:32
+	optional	text			DSJ_Pure_GIS_ID					"DSJ Pure GIS ID"																	uiorder:33
+	optional	date			IMU_Inspection_Date				"IMU Inspection Date"							unit:MSE							uiorder:34
+	"05.Leak & Gas Pocket Inspection"
+	optional	text			Leak_Present					"Leak Present"																		uiorder:35
+	optional	text			Gas_Pocket_Present 				"Gas Pocket Present"																uiorder:36
+	optional	text			Pipe_Material_Change 			"Pipe Material Change"																uiorder:37
+	optional	text			Distance_From_TrackPoint		"Event Distance from Tracking Point (LF)"											uiorder:38
+	optional	text			Inspection_Point				"Inspection Point"																	uiorder:39
+	optional	text			Pocket_Inspection_Source		"Leak & Gas Pocket Inspection Source"												uiorder:40
+	optional	date			Pocket_Inspection_Date			"Leak & Gas Pocket Inspection Date"				unit:MSE							uiorder:41
+	"06.PWA Inspection"
+	optional	text			PWA_Source						"PWA Inspection Source"																uiorder:42
+	optional	text			PWA_Result						"PWA Inspection Result"																uiorder:43
+	"07.EM Inspection"
+	optional	text			Pure_Reference_Number			"Pure Reference Number"																uiorder:44
+	optional	int32			Total_EM_WB						"Total EM WB"																		uiorder:45
+	optional	int32			Q1								"Q1"																				uiorder:46
+	optional	int32			Q2								"Q2"																				uiorder:47
+	optional	int32			Q3								"Q3"																				uiorder:48
+	optional	int32			Q4								"Q4"																				uiorder:49
+	optional	int32			Weighted_EM_WBs					"Weighted EM WBs"																	uiorder:50
+	optional	text			Break_Region_Location			"Break Region Location (ft from Low STA)"		unit:ft								uiorder:51
+	optional	text			NumberOfWBs_By_Region			"Number of WBs by Region"															uiorder:52
+	optional	double			Anomaly_Location				"Anomaly Location  (from Low STA)"				unit:ft								uiorder:53
+	optional	text			EM_Notes						"EM Notes"																			uiorder:54
+	optional	double			EM_Odometer						"EM Odometer"									unit:ft								uiorder:55
+	optional	double			EM_Inspection_Length			"EM Inspection Length"							unit:ft								uiorder:56
+	optional	text			EM_Inspection_Source			"EM Inspection Source"																uiorder:57
+	optional	date			EM_Inspection_Date				"EM Inspection Date"							unit:MSE							uiorder:58
+	"08.Enhanced EM Inspection"
+	optional	text			Anomaly_Present					"Anomaly Present"
+	optional	double			Anomaly_Location_Enhanced		"Anomaly Location (from Low STA)"				unit:ft								uiorder:59
+	optional	text 			Clock_Position					"Clock Position"																	uiorder:60
+	optional	text			Detector_Numbers				"Sensing Detector Numbers"															uiorder:61
+	optional	text			Enhanced_EM_ToolType 			"Enhanced EM Tool Type"																uiorder:62
+	optional	date			Enhanced_EM_InspectionDate 		"Enhanced EM Inspection Date"					unit:MSE							uiorder:63
+	"09.AFO"
+	optional	date			Start_Monitor_Date				"AFO Start Monitoring Date"						unit:MSE							uiorder:64
+	optional	date			Stop_Monitor_Date				"AFO Stop Monitoring Date"						unit:MSE							uiorder:65
+	optional	text			Critical_Pipe					"AFO Critical Pipe"																	uiorder:66
+	"10.Repair/Replacement"
+	optional	date			Repair_Date						"Repair Date"									unit:MSE							uiorder:67
+	optional	text			Repair_Status					"Repair Status (Repaired/Replaced)"													uiorder:68
+	optional	text			Repair_Type						"Repair Type"																		uiorder:69
+	"11.Inspection Ratings"	
+	optional	int32			EM_Rating						"EM Rating"																			uiorder:70
+	optional	int32			VS_Rating						"V/S Rating"																		uiorder:71
+	optional	int32			SU_Rating						"Sonic / Ultrasonic Rating"															uiorder:72
+	optional	double			Condition_Rating				"Condition Rating"																	uiorder:73														
+	"12.FEA Curve"
+	optional	text			FEA_Curve						"FEA Curve"																			uiorder:74
+	optional	text			Ref_Curve_Contract				"Reference Curve - Contract"														uiorder:75
+	optional	text			Ref_Curve_Class					"Reference Curve - Class"															uiorder:76
+	optional	double			Ref_Curve_EarthCover 			"Reference Curve - Earth Cover"					unit:ft								uiorder:77
+	optional	int32			FEA_Model 						"FEA Model 'Turning Point'"															uiorder:78
+	optional	int32			Microcracking_Limit 			"Wire Breaks to - Microcracking Limit"												uiorder:79
+	optional	int32			Visible_Cracking_Limit			"Wire Breaks to - Visible Cracking Limit"											uiorder:80
+	optional	int32			Yield_Limit 					"Wire Breaks to - Yield Limit"														uiorder:81
+	optional	int32			Strength_Limit 					"Wire Breaks to - Strength Limit"													uiorder:82
+	"13.Risk/Impact Ratings"
+	optional	text			Segment_ID						"Client GIS Segment ID"																uiorder:83
+	optional	double			LoF								""																					uiorder:84
+	optional	double			DIR								""																					uiorder:85
+	optional	double			CoF								""																					uiorder:86
+	optional	double			Mitigation_Factor				"Mitigation Factor"																	uiorder:87
+	optional	double			Risk 							""																					uiorder:88
+	"14.Pressure And Elevation"
+	optional	text			System_Mapsheet_ID				"System Map Sheet ID"																uiorder:89
+	optional	text			Hydraulic_Zone 					"Hydraulic Zone"																	uiorder:90
+	optional	text			High_Hydraulic_Zone 			"High Hydraulic Grade (HHG)"														uiorder:91
+	optional	double			Invert			 				""												unit:ft.asl							uiorder:92
+	optional	double			Ground_Elevation				"Ground Elevation"								unit:ft.asl							uiorder:93
+	optional	double			Ground_Cover					"Ground Cover to Crown"							unit:ft								uiorder:94
+	optional	text			Invert_Ground_Source			"Invert and Ground Elevation Source"												uiorder:95
+	optional	double			Max_MO_Pressure		 			"Max. Monitored Operating Pressure"				unit:psi							uiorder:96
+	optional	double			Max_M_Pressure 					"Max. Monitored Pressure"						unit:psi							uiorder:97
+	optional	double			Min_MO_Pressure					"Min. Monitored Operating Pressure"				unit:psi							uiorder:98
+	optional	double			Min_M_Pressure					"Min. Monitored Pressure"						unit:psi							uiorder:99
+	optional	double			Pressure						"Maximum Operating Pressure (Pressure at HHG)"	unit:psi							uiorder:100
+	"15.Soil Properties"	
+	optional	double			Design_Soil_Density				"Design Soil Density"																uiorder:101
+	optional	double			Tested_Soil_Density				"Tested Soil Density"																uiorder:102
+	optional	double			Tested_Soil_Resist				"Tested Soil Resistivity"															uiorder:103
+	optional	date			Date_Soil_Test					"Date of Soil Testing"							unit:MSE							uiorder:104
+	"16.Specifications"
+	optional	text			Manufacturer					""																					uiorder:105
+	optional	text			Plant_No						"Plant No."																			uiorder:106
+	optional	double			Nominal_Pipe_Diameter 			"Nominal Pipe Diameter"							unit:in								uiorder:107
+	optional	text			Cylinder_Gage					"Cylinder Gage"																		uiorder:108
+	optional	double			Cylinder_Area 					"Cylinder Area"									unit:in^2/ft						uiorder:109
+	optional	double			Cylinder_Test_Pressure			"Cylinder Test Pressure"						unit:psi							uiorder:110
+	optional	double			Min_Yield_Strength				"Min. Yield Strength of Cylinder"				unit:psi							uiorder:111
+	optional	double			Nom_Cylinder_Diameter			"Nominal Cylinder Diameter"						unit:in								uiorder:112
+	optional	double			Wire_Diameter					"Prestressing Wire Diameter"					unit:in								uiorder:113
+	optional	text			Wire_Class						"Wire Class"																		uiorder:114
+	optional	double			Wire_Area						"Wire Area"										unit:in^2/ft						uiorder:115
+	optional	double			Wraps_per_Unit					"No. of Wire Wraps per Unit Length"				unit:/ft							uiorder:116
+	optional	text			Wire_Pitch						"Wire Pitch"																		uiorder:117
+	optional	int64			Total_Wire_Wraps 				"Total Wire Wraps"																	uiorder:118
+	optional	double			Wire_Strength					"Min. Ultimate Wire Strength"					unit:psi							uiorder:119
+	optional	double			Wrapping_Stress					"Wire Wrapping Stress"							unit:psi							uiorder:120
+	optional	double			Dynamometer						"Dynamometer, 1-wire"							unit:lb								uiorder:121
+	optional	double			Pressure_At_Zero				"Pressure at Zero Concrete Compression"			unit:psi							uiorder:122
+	optional	double			Resultant_Compression			"Resultant Compression in Concrete"				unit:psi							uiorder:123
+	optional	double			Initial_Cylinder				"Initial Cylinder Compressive Stress"			unit:psi							uiorder:124
+	optional	double			Resultant_Cylinder				"Resultant Cylinder Compressive Stress"			unit:psi							uiorder:125
+	optional	double			Cylinder_Stress					"Stress in Cylinder at Working Pressure"		unit:psi							uiorder:126
+	optional	double			Min_Comp_Strength				"Min. Compressive Strength of Concrete at Time of Wrapping"			unit:psi		uiorder:127
+	optional	double			Core_Thickness					"Core Thickness"								unit:in								uiorder:128
+	optional	double			Coating_Thickness				"Min. Coating Thickness"						unit:in								uiorder:129
+	optional	text			Coating_Type					"Coating Type"																		uiorder:130
+	optional	double			Spigot_Ring						"Spigot Ring Width"								unit:in								uiorder:131
+	optional	text			Bell_Ring						"Bell Ring Width"								unit:in								uiorder:132
+	optional	double			Joint_Depth						"Joint Depth"									unit:in								uiorder:133
+	optional	double			Creep							""												unit:ft								uiorder:134
+	optional	text			Design_Standard					"Design Standard"																	uiorder:135
+	optional	double			Design_Opr_Pressure				"Design Operating Pressure"						unit:psi							uiorder:136
+	optional	double			Design_Surge_Pressure			"Design Surge Pressure"							unit:psi							uiorder:137
+	optional	double			Design_Test_Pressure			"Design Test Pressure"							unit:psi							uiorder:138
+	optional	double			Design_Ground_Cover				"Design Ground Cover"							unit:ft								uiorder:139
+	optional	text			Loading_Conditions				"Loading Conditions"																uiorder:140
+	optional	text			Manufacturer_ID 				"Manufacturer ID"																	uiorder:141
+	optional	text			Notes							""																					uiorder:142
+	optional	double			Approximate_Lay 				"Approximate Lay Length"						unit:ft								uiorder:143
+	"Internal"
+	optional	uuid			PipelineID						""	
+}
+INDEX(Geometry);
+
+CREATE TABLE "" Pure_Pipe_Base
+{
+	"Internal"
+	required	int64			rowid						""
+	optional	text			Locality 					""
+	"General"
+	optional 	int32 			MetaID						""					tags:dispMeta,hideInGrid
+
+}
+PRIMARY KEY (rowid);
+
+CREATE TABLE "Pure_Pipe" Pure_Pipe : Pure_Pipe_Base
+{
+	"Internal"
+	optional	polyline		Geometry					""
+	"General"
+	optional	double			Pipe_Diameter				"Pipe Diameter"							unit:in
+	optional	text			Pipe_Material				"Pipe Material"
+	optional	date			Install_Date				"Installation Date"  					unit:MSE
+	optional	text			GeogSource					"Alignment Geography Source"
+	optional	text			LeakDetIns					"Leak Detection Inspection"
+	optional	double			WallThick					"Wall Thickness"						unit:in
+	optional	bool			LeakPres					"Leak Present"
+	optional	bool			GPPres						"Gas Pocket Present"
+	optional	date			LkDetDate					"Leak & Gas Pocket Inspection Date"		unit:MSE
+	optional	uuid			ID							""
+}
+INDEX(Geometry)
+UNIQUE INDEX(ID);
+
+CREATE TABLE "AuthLog" AuthLog
+{
+	"Internal"
+	required	int64		rowid		""
+	required	text		user		"User"
+	required	datetime	login_time	"Login Time"
+	
+	flags		orm_noclient
+}
+PRIMARY KEY (rowid);

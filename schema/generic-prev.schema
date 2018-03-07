@@ -1,0 +1,25 @@
+
+VERSION 0
+
+CREATE TABLE "ImqsMetaTable" ImqsMetaTable
+{
+	required	int64		rowid				""
+	optional	text		PackageName			""
+	optional	text		TableNameInternal	""
+	optional	text		TableNameExternal	""
+
+	flags		public_rowid
+}
+PRIMARY KEY(rowid);
+
+CREATE TABLE "ImqsPackage" ImqsPackage
+{
+	required	int64		rowid				""
+	optional	text		PackageName			""
+	optional	text		Source				""
+	optional	datetime	ImportedTime		""
+
+	flags		public_rowid
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(PackageName);

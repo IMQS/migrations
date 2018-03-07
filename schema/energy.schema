@@ -1,0 +1,2197 @@
+
+VERSION 0
+
+CREATE TABLE "Actions" Actions
+{
+	"Internal"
+	required  int32               logID                                           ""
+	optional  text(16)            Level0Name                                      ""
+	optional  text(16)            Level1Name                                      ""
+	optional  text(50)            UnitName                                        ""
+	optional  double              Tag                                             ""
+	optional  text(16)            EmployeeName                                    ""
+	optional  text(32)            Surname                                         ""
+	optional  text(200)           Action                                          ""
+	optional  date                ActionTime                                      ""
+	optional  text(16)            IPAddress                                       ""
+	required  int32               UnitID                                          ""
+	optional  int32               ActionType                                      ""
+	
+} PRIMARY KEY(logID);
+
+CREATE TABLE "AlarmComments" AlarmComments
+{
+	"Internal"
+	required  int32               ID                                              "ID"
+	required  int32               EventID                                         "Event ID"
+	optional  int32               UserID                                          "User ID"
+	optional  date                CommentDate                                     "Comment Date"
+	optional  text(500)           Comment                                         "Comment"
+	
+} PRIMARY KEY(ID);
+
+CREATE TABLE "AlternateConfirm" AlternateConfirm
+{
+	"Internal"
+	required  int32               AlarmNo                                         ""
+	required  int32               LogicNo                                         ""
+	
+} PRIMARY KEY(AlarmNo);
+
+CREATE TABLE "AlternateLogic" AlternateLogic
+{
+	"Internal"
+	required  int32               OrderNo                                         ""
+	required  int32               AlarmNo                                         ""
+	required  int32               AlternateAlarmNo                                ""
+	required  int32               AlarmState                                      ""
+	required  int32               AlternateDouble                                 ""
+	
+}PRIMARY KEY(OrderNo);
+
+CREATE TABLE "AssocEntities" AssocEntities
+{
+	"Internal"
+	required  int32               AssocEntityID                                   ""
+	required  int32               AssocTypeID                                     ""
+	required  text(30)            EntityName                                      ""
+	optional  text(50)            EntityDescription                               ""
+	optional  int32               Option1                                         ""
+	optional  int32               Option2                                         ""
+	optional  int32               Option3                                         ""
+	required  int32               UserID                                          ""
+	
+} PRIMARY KEY(AssocEntityID);
+
+CREATE TABLE "AssocTypes" AssocTypes
+{
+	"Internal"
+	required  int32               AssocTypeID                                     ""
+	required  text(20)            AssocName                                       ""
+	optional  text(50)            AssocDescription                                ""
+	optional  int32               Option1                                         ""
+	optional  int32               Option2                                         ""
+	optional  int32               Option3                                         ""
+	required  int32               UserID                                          ""
+	
+} PRIMARY KEY(AssocTypeID);
+
+CREATE TABLE "AssocView" AssocView
+{
+	"Internal"
+	required  int32               SiteID                                          ""
+	optional  text(30)            SolarCapacity									  ""
+	optional  text(30)            SitePriority									  ""
+	optional  text(30)            Tenant1                                         ""
+	optional  text(30)            Tenant2                                         ""
+	optional  text(30)            Tenant3                                         ""
+	optional  text(30)            Tenant4                                         ""
+	optional  text(30)            PowerSupplyVendor                               ""
+	
+} PRIMARY KEY(SiteID);
+
+CREATE TABLE "AssocsPerSite" AssocsPerSite
+{
+	"Internal"
+	required  int32               AssocPerSiteID                                  ""
+	required  int32               AssocEntityID                                   ""
+	required  int32               SiteID                                          ""
+	required  int32               UserID                                          ""
+	
+} PRIMARY KEY(AssocPerSiteID);
+
+CREATE TABLE "Attachments" Attachments
+{
+	"Internal"
+	required  int32               FileID                                          ""
+	optional  text(100)           FIlename                                        ""
+	optional  double              Size                                            ""
+	optional  bin                 ATT                                             ""
+	
+} PRIMARY KEY(FileID);
+
+CREATE TABLE "BCMRawValues" BCMRawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	optional  int32               BCMID                                           ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "BCMUnits" BCMUnits
+{
+	"Internal"
+	required  int32               BCMID                                           ""
+	required  int32               SAMID                                           ""
+	optional  text(20)            BCMUnitName                                     ""
+	optional  text(20)            RawValues                                       ""
+	optional  int32               UserID                                          ""
+	
+} PRIMARY KEY(BCMID);
+
+CREATE TABLE "BCMValues" BCMValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	optional  int32               BCMID                                           ""
+	optional  int32               SAMID                                           ""
+	optional  date                Date                                            ""
+	optional  double              BCM_Cell_V1                                     ""
+	optional  double              BCM_Cell_V2                                     ""
+	optional  double              BCM_Cell_V3                                     ""
+	optional  double              BCM_Cell_V4                                     ""
+	optional  double              BCM_Cell_V5                                     ""
+	optional  double              BCM_Cell_V6                                     ""
+	optional  double              BCM_Cell_V7                                     ""
+	optional  double              BCM_Cell_V8                                     ""
+	optional  double              BCM_Cell_V9                                     ""
+	optional  double              BCM_Cell_V10                                    ""
+	optional  double              BCM_Cell_V11                                    ""
+	optional  double              BCM_Cell_V12                                    ""
+	optional  double              BCM_Cell_V13                                    ""
+	optional  double              BCM_Cell_V14                                    ""
+	optional  double              BCM_Cell_V15                                    ""
+	optional  double              BCM_Cell_V16                                    ""
+	optional  double              BCM_Stack_Fault                                 ""
+	optional  double              BCM_Stack_V1                                    ""
+	optional  double              BCM_Stack_V2                                    ""
+	optional  double              BCM_Stack_V3                                    ""
+	optional  double              BCM_Stack_V4                                    ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "CamFiles" CamFiles
+{
+	"Internal"
+	required  int32               SamCamID                                        ""
+	required  int32               FileID                                          ""
+	optional  text(200)           CamFN                                           ""
+	optional  text(20)            Filesize                                        ""
+	optional  text(30)            FileDate                                        ""
+	required  bool                OnUnit                                          ""
+	required  bool                OnServer                                        ""
+	required  bool                Mark4Retrieve                                   ""
+	required  bool                Mark4Del                                        ""
+	optional  text(500)           FullPath                                        ""
+	required  int32               Relevant                                        ""
+	
+} PRIMARY KEY(FileID);
+
+CREATE TABLE "Configuration" Configuration
+{
+	"Internal"
+	required  int32               RackTimeOut                                     ""
+	required  int32               HeartBeat                                       ""
+	required  int32               Reconciling                                     ""
+	optional  int32               NoClients                                       ""
+	
+} PRIMARY KEY(RackTimeOut);
+
+CREATE TABLE "CountrySettings" CountrySettings
+{
+	"Internal"
+	required  int32               CID                                             ""
+	required  text(50)            Setting                                         ""
+	required  text(200)           Value                                           ""
+	
+} PRIMARY KEY(CID);
+
+CREATE TABLE "DPAMPermissions" DPAMPermissions
+{
+	"Internal"
+	required  int32               PermissionID                                    ""
+	required  text(50)            PermissionDescription                           ""
+	required  text(50)            PermissionCaption                               ""
+	optional  bool                CanView                                         ""
+	optional  bool                CanAdd                                          ""
+	optional  bool                CanEdit                                         ""
+	optional  bool                CanDelete                                       ""
+	optional  bool                CanExecute                                      ""
+	
+} PRIMARY KEY(PermissionID);
+
+CREATE TABLE "DPPDayValues" DPPDayValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               DPPID                                           ""
+	required  int32               SAMID                                           ""
+	required  int32               DPPNo                                           ""
+	required  date                ReadingDate                                     ""
+	optional  double              KWHForwardDay                                   ""
+	optional  double              KWHReverseDay                                   ""
+	optional  double              CurrentAvg                                      ""
+	optional  double              CurrentMin                                      ""
+	optional  double              CurrentMax                                      ""
+	optional  double              PowerAvg                                        ""
+	optional  double              PowerMin                                        ""
+	optional  double              PowerMax                                        ""
+	optional  double              VoltageAvg                                      ""
+	optional  double              VoltageMin                                      ""
+	optional  double              VoltageMax                                      ""
+	
+} PRIMARY KEY(SequenceNo)
+  INDEX(SAMID)
+  INDEX(DPPID, ReadingDate);
+
+CREATE TABLE "DPPRawValues" DPPRawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	optional  int32               DPPID                                           ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "DPPUnits" DPPUnits
+{
+	"Internal"
+	required  int32               DPPID                                           ""
+	required  int32               SAMID                                           ""
+	required  int32               DPPUnitNo                                       ""
+	required  text(20)            DPPUnitName                                     ""
+	required  int32               DPPStatus                                       ""
+	required  int32               Active                                          ""
+	optional  text(200)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	optional  text(50)            Location1                                       ""
+	optional  int32               Loc1Ref                                         ""
+	optional  int32               Probe1ID                                        ""
+	required  int32               Virtuals                                        ""
+	optional  text(500)           Comments                                        ""
+	optional  int32               UserID                                          ""
+	
+} PRIMARY KEY(DPPID);
+
+CREATE TABLE "DPPValues" DPPValues
+{
+	"Internal"
+	required  int32               DPPID                                           ""
+	optional  int32               SAMID                                           ""
+	optional  int32               DPPUnitNo                                       ""
+	required  date                ReadingDate                                     ""
+	optional  double              PowerReading                                    ""
+	optional  int32               Temp                                            ""
+	optional  double              ForwardPower                                    ""
+	optional  double              ReversePower                                    ""
+	optional  double              Voltage                                         ""
+	optional  double              Current                                         ""
+	optional  double              InstPower                                       ""
+	optional  int32               Flags                                           ""
+	
+}PRIMARY KEY(DPPID) ;
+
+CREATE TABLE "DPPVirtuals" DPPVirtuals
+{
+	"Internal"
+	required  int32               DPPID                                           ""
+	required  int32               VirtualID                                       ""
+	required  int32               AlarmNo                                         ""
+	required  double              Setting                                         ""
+	required  int32               VSTatus                                         ""
+	
+} PRIMARY KEY(DPPID);
+
+CREATE TABLE "DatabaseVersionLoaded" DatabaseVersionLoaded
+{
+	"Internal"
+	required  int32               VersionID                                       ""
+	required  text(50)            VersionName                                     ""
+	required  date                VersionDate                                     ""
+	
+} PRIMARY KEY(VersionID);
+
+CREATE TABLE "E1Level0" E1Level0
+{
+	"Internal"
+	required  int32               Level0ID                                        ""
+	required  int32               Level0No                                        ""
+	optional  text(32)            Level0Name                                      ""
+	required  int32               ServiceStateID                                  ""
+	optional  int32               LocationID                                      ""
+	optional  text(255)           Description                                     ""
+	required  int32               UserID                                          ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+	required  int32               Level00ID                                       ""
+	
+} PRIMARY KEY(Level0ID);
+
+CREATE TABLE "E1Level00" E1Level00
+{
+	"Internal"
+	required  int32               Level00ID                                       ""
+	required  int32               Level00No                                       ""
+	optional  text(32)            Level00Name                                     ""
+	required  int32               ServiceStateID                                  ""
+	optional  int32               LocationID                                      ""
+	optional  text(255)           Description                                     ""
+	required  int32               UserID                                          ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+	
+} PRIMARY KEY(Level00ID);
+
+CREATE TABLE "E1Level1" E1Level1
+{
+	"Internal"
+	required  int32               Level1ID                                        ""
+	required  int32               Level0ID                                        ""
+	required  int32               Level1No                                        ""
+	optional  text(32)            Level1Name                                      ""
+	optional  int32               LocationID                                      ""
+	required  int32               ServiceStateID                                  ""
+	optional  text(255)           Description                                     ""
+	required  int32               UserID                                          ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+	
+} PRIMARY KEY(Level1ID);
+
+CREATE TABLE "ECSApp" ECSApp
+{
+	"Internal"
+	required  int32               AppID                                           ""
+	optional  text(255)           AppName                                         ""
+	optional  text(50)            IPPort                                          ""
+	optional  text(1000)          AppPath                                         ""
+	optional  bool                IsDDE                                           ""
+	optional  text(500)           DDEFileParam                                    ""
+	optional  text(50)            DDEFile                                         ""
+	optional  bool                ModReg                                          ""
+	optional  text(500)           RegKey                                          ""
+	optional  text(500)           RegSubKey                                       ""
+	optional  text(20)            RegValue                                        ""
+	optional  int32               PermID                                          ""
+	optional  bool                DefaultCreate                                   ""
+	optional  bool                Msg                                             ""
+	optional  text(500)           Message                                         ""
+	
+} PRIMARY KEY(AppID);
+
+CREATE TABLE "ECSApps" ECSApps
+{
+	"Internal"
+	required  int32               AppsID                                          ""
+	optional  int32               ECSID                                           ""
+	optional  int32               AppID                                           ""
+	optional  text(50)            IPPort                                          ""
+	optional  text(50)            FriendlyName                                    ""
+	
+} PRIMARY KEY(AppsID);
+
+CREATE TABLE "ECSParamList" ECSParamList
+{
+	"Internal"
+	required  int32               ECSTypeParamID                                  ""
+	required  int32               ParameterID                                     ""
+	required  int32               ParameterNo                                     ""
+	required  int32               DisplayOrderNo                                  ""
+	required  bool                Active                                          ""
+	optional  date                Timestamp                                       ""
+	
+} PRIMARY KEY(ParameterID);
+
+CREATE TABLE "ECSParams" ECSParams
+{
+	"Internal"
+	required  int32               ECSParamID                                      ""
+	required  int32               ECSID                                           ""
+	required  int32               ECSTypeParamID                                  ""
+	required  bool                BooleanValue                                    ""
+	optional  int32               ByteValue                                       ""
+	optional  int32               IntegerValue                                    ""
+	optional  int32               LongValue                                       ""
+	optional  text(255)           StringValue                                     ""
+	optional  date                DateValue                                       ""
+	optional  int32               TypeValue                                       ""
+	optional  int32               VersionValue                                    ""
+	optional  int32               LastReturnedStatus                              ""
+	
+} PRIMARY KEY(ECSParamID);
+
+CREATE TABLE "EMUDayValues" EMUDayValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               EMUID                                           ""
+	required  int32               SAMID                                           ""
+	optional  int32               EMUNo                                           ""
+	required  date                ReadingDate                                     ""
+	optional  double              KWH1Day                                         ""
+	optional  double              KWH2Day                                         ""
+	optional  double              KWH3Day                                         ""
+	optional  double              KWH4Day                                         ""
+	optional  double              KWH5Day                                         ""
+	optional  double              KWH6Day                                         ""
+	optional  double              Current1Avg                                     ""
+	optional  double              Current2Avg                                     ""
+	optional  double              Current3Avg                                     ""
+	optional  double              Current4Avg                                     ""
+	optional  double              Current5Avg                                     ""
+	optional  double              Current6Avg                                     ""
+	optional  double              VoltRAvg                                        ""
+	optional  double              VoltWAvg                                        ""
+	optional  double              VoltBAvg                                        ""
+	optional  int32               MeterRun                                        ""
+	optional  int32               MeterAvg                                        ""
+	optional  int32               CT1Conf                                         ""
+	optional  int32               CT2Conf                                         ""
+	optional  int32               CT3Conf                                         ""
+	optional  int32               CT4Conf                                         ""
+	optional  int32               CT5Conf                                         ""
+	optional  int32               CT6Conf                                         ""
+	
+} PRIMARY KEY(SequenceNo)
+  INDEX(SAMID)
+  INDEX(EMUID, ReadingDate);
+
+CREATE TABLE "EMURawValues" EMURawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               EMUID                                           ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(SequenceNo)
+  INDEX(EMUID, RawDate);
+
+CREATE TABLE "EMUUnits" EMUUnits
+{
+	"Internal"
+	required  int32               EMUID                                           ""
+	required  int32               SAMID                                           ""
+	required  int32               EMUUnitNo                                       ""
+	required  text(20)            EMUUnitName                                     ""
+	required  int32               EMUStatus                                       ""
+	required  int32               Active                                          ""
+	optional  text(250)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	optional  text(500)           Comments                                        ""
+	optional  text(50)            Location1                                       ""
+	optional  text(50)            Location2                                       ""
+	optional  text(50)            Location3                                       ""
+	optional  text(50)            Location4                                       ""
+	optional  text(50)            Location5                                       ""
+	optional  text(50)            Location6                                       ""
+	optional  int32               UserID                                          ""
+	required  int32               Probe1ID                                        ""
+	required  int32               Probe2ID                                        ""
+	required  int32               Probe3ID                                        ""
+	required  int32               Probe4ID                                        ""
+	required  int32               Probe5ID                                        ""
+	required  int32               Probe6ID                                        ""
+	
+} PRIMARY KEY(EMUID);
+
+CREATE TABLE "EMUValues" EMUValues
+{
+	"Internal"
+	required  int32               EMUID                                           ""
+	required  int32               SAMID                                           ""
+	optional  int32               EMUNo                                           ""
+	required  date                ReadingDate                                     ""
+	optional  double              Current1                                        ""
+	optional  double              Current2                                        ""
+	optional  double              Current3                                        ""
+	optional  double              Current4                                        ""
+	optional  double              Current5                                        ""
+	optional  double              Current6                                        ""
+	optional  double              VoltR                                           ""
+	optional  double              VoltW                                           ""
+	optional  double              VoltB                                           ""
+	optional  double              VoltAlarm                                       ""
+	optional  double              KWH1                                            ""
+	optional  double              KWH2                                            ""
+	optional  double              KWH3                                            ""
+	optional  double              KWH4                                            ""
+	optional  double              KWH5                                            ""
+	optional  double              KWH6                                            ""
+	optional  double              Current1Avg                                     ""
+	optional  double              Current2Avg                                     ""
+	optional  double              Current3Avg                                     ""
+	optional  double              Current4Avg                                     ""
+	optional  double              Current5Avg                                     ""
+	optional  double              Current6Avg                                     ""
+	optional  double              VoltRAvg                                        ""
+	optional  double              VoltWAvg                                        ""
+	optional  double              VoltBAvg                                        ""
+	optional  int32               MeterRun                                        ""
+	optional  int32               MeterAvg                                        ""
+	optional  int32               CT1Conf                                         ""
+	optional  int32               CT2Conf                                         ""
+	optional  int32               CT3Conf                                         ""
+	optional  int32               CT4Conf                                         ""
+	optional  int32               CT5Conf                                         ""
+	optional  int32               CT6Conf                                         ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(EMUID)
+  INDEX(EMUID)
+  INDEX(SAMID);
+
+CREATE TABLE "EXTEMPLables" EXTEMPLables
+{
+	"Internal"
+	required  int32               SAMID                                           ""
+	optional  text(30)            Label1                                          ""
+	optional  text(30)            Label2                                          ""
+	optional  text(30)            Label3                                          ""
+	optional  text(30)            Label4                                          ""
+	optional  text(30)            Label5                                          ""
+	optional  text(30)            Label6                                          ""
+	optional  text(30)            Label7                                          ""
+	optional  text(30)            Label8                                          ""
+	optional  text(30)            Label9                                          ""
+	optional  text(30)            Label10                                         ""
+	optional  text(30)            Label11                                         ""
+	optional  text(30)            Label12                                         ""
+	optional  text(30)            Label13                                         ""
+	optional  text(30)            Label14                                         ""
+	optional  text(30)            Label15                                         ""
+	optional  text(30)            Label16                                         ""
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "EXTEMPValues" EXTEMPValues
+{
+	"Internal"
+	required  int32               SAMID                                           ""
+	required  date                ReadingDate                                     ""
+	optional  int32               T1                                              ""
+	optional  int32               T2                                              ""
+	optional  int32               T3                                              ""
+	optional  int32               T4                                              ""
+	optional  int32               T5                                              ""
+	optional  int32               T6                                              ""
+	optional  int32               T7                                              ""
+	optional  int32               T8                                              ""
+	optional  int32               T9                                              ""
+	optional  int32               T10                                             ""
+	optional  int32               T11                                             ""
+	optional  int32               T12                                             ""
+	optional  int32               T13                                             ""
+	optional  int32               T14                                             ""
+	optional  int32               T15                                             ""
+	optional  int32               T16                                             ""
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "Employees" Employees
+{
+	"Internal"
+	required  int32               EmployeeID                                      ""
+	required  double              Tag                                             ""
+	required  text(30)            EmployeeName                                    ""
+	required  text(32)            Surname                                         ""
+	optional  text(20)            Division                                        ""
+	optional  text(50)            Note                                            ""
+	optional  int32               GroupID                                         ""
+	
+} PRIMARY KEY(EmployeeID);
+
+CREATE TABLE "EmployeesperGroup" EmployeesperGroup
+{
+	"Internal"
+	required  int32               GroupID                                         ""
+	required  int32               EmployeeID                                      ""
+	
+} PRIMARY KEY(EmployeeID);
+
+CREATE TABLE "EquipmentCategories" EquipmentCategories
+{
+	"Internal"
+	required  int32               EquipmentCategoryID                             ""
+	required  text(100)           EquipmentCategory                               ""
+	
+} PRIMARY KEY(EquipmentCategoryID);
+
+CREATE TABLE "EquipmentType" EquipmentType
+{
+	"Internal"
+	required  int32               EquipmentTypeID                                 ""
+	required  text(100)           EquipmentType                                   ""
+	
+} PRIMARY KEY(EquipmentTypeID);
+
+CREATE TABLE "EventGroups" EventGroups
+{
+	"Internal"
+	required  int32               EventGroupID                                    ""
+	required  text(32)            EventGroupName                                  ""
+	optional  text(255)           Description                                     ""
+	required  int32               UserID                                          ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+	
+} PRIMARY KEY(EventGroupID)
+  INDEX(EventGroupName);
+
+CREATE TABLE "EventLabels" EventLabels
+{
+	"Internal"
+	required  int32               Schema                                          ""
+	required  int32               CardNo                                          ""
+	required  int32               MonunitNo                                       ""
+	required  int32               PortType                                        ""
+	required  int32               PortNo                                          ""
+	required  int32               CritNo                                          ""
+	required  text(32)            EventLabel                                      ""
+	required  int32               Severity                                        ""
+	required  int32               CauseID                                         ""
+	required  int32               EventTypeID                                     ""
+	
+} PRIMARY KEY(Schema);
+
+CREATE TABLE "EventTypes" EventTypes
+{
+	"Internal"
+	required  int32               EventTypeID                                     ""
+	required  text(30)            SNMPEventType                                   ""
+	required  text(30)            EventType                                       ""
+	
+} PRIMARY KEY(EventTypeID)
+  INDEX(SNMPEventType);
+
+CREATE TABLE "Events" Events
+{
+	"Internal"
+	required  int32               AlarmID                                         ""
+	required  int32               Level0No                                        ""
+	required  int32               Level1No                                        ""
+	required  int32               ECSNo                                           ""
+	required  int32               CardNo                                          ""
+	required  int32               MonunitNo                                       ""
+	required  int32               PortType                                        ""
+	required  int32               PortNo                                          ""
+	required  int32               CritNo                                          ""
+	optional  text(23)            DPName                                          ""
+	required  text(70)            EventLabel                                      ""
+	required  text(32)            Location                                        ""
+	optional  date                LastSetTime                                     ""
+	optional  date                LastClearTime                                   ""
+	required  int32               CurrentStatus                                   ""
+	required  int32               EventTypeID                                     ""
+	required  int32               ProbableCauseID                                 ""
+	required  int32               SeverityID                                      ""
+	
+} PRIMARY KEY(AlarmID)
+  INDEX(DPName)
+  INDEX(LastClearTime);
+
+CREATE TABLE "EventsHistory" EventsHistory
+{
+	"Internal"
+	required  int32               EventID                                         ""
+	required  int32               RegionID                                        ""
+	required  text(23)            DPName                                          ""
+	required  text(70)            EventLabel                                      ""
+	required  text(16)            SeverityText                                    ""
+	required  text(5)             Location                                        ""
+	optional  text(50)            AcceptedBy                                      ""
+	required  date                LastSetTime                                     ""
+	required  date                LastClearTime                                   ""
+	required  bool                CurrentStatus                                   ""
+	required  bool                ForcedClear                                     ""
+	required  int32               ServiceStateID                                  ""
+	required  bool                IsEvent                                         ""
+	optional  int32               LabelColour                                     ""
+	required  int32               SeverityID                                      ""
+	required  int32               EventTypeID                                     ""
+	required  int32               ProbableCauseID                                 ""
+	required  text(6)             NEClass                                         ""
+	
+} PRIMARY KEY(EventID)
+  INDEX(RegionID)
+  INDEX(DPName)
+  INDEX(LastClearTime);
+
+CREATE TABLE "FANRawValues" FANRawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               FANID                                           ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "FANUnits" FANUnits
+{
+	"Internal"
+	required  int32               FANID                                           ""
+	required  int32               SAMID                                           ""
+	required  int32               FANUnitNo                                       ""
+	required  text(20)            FANUnitName                                     ""
+	required  int32               FANStatus                                       ""
+	required  int32               Active                                          ""
+	optional  text(250)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	optional  text(500)           Comments                                        ""
+	optional  int32               UserID                                          ""
+	
+} PRIMARY KEY(FANID);
+
+CREATE TABLE "FANValues" FANValues
+{
+	"Internal"
+	required  int32               FANID                                           ""
+	required  int32               SAMID                                           ""
+	optional  int32               FANNo                                           ""
+	required  date                ReadingDate                                     ""
+	optional  int32               RegulateTemp                                    ""
+	optional  int32               OnBoardTemp                                     ""
+	optional  int32               S1Temp                                          ""
+	optional  int32               S2Temp                                          ""
+	optional  int32               PWM1                                            ""
+	optional  int32               PWM2                                            ""
+	optional  int32               RPM1                                            ""
+	optional  int32               RPM2                                            ""
+	optional  int32               FLAGS                                           ""
+	optional  int32               MODE                                            ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(FANID);
+
+CREATE TABLE "FLOWRawValues" FLOWRawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               FLOWID                                          ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "FLOWUnits" FLOWUnits
+{
+	"Internal"
+	required  int32               FLOWID                                          ""
+	required  int32               SAMID                                           ""
+	required  int32               FLOWUnitNo                                      ""
+	required  text(20)            FLOWUnitName                                    ""
+	required  int32               FLOWStatus                                      ""
+	required  int32               Active                                          ""
+	optional  text(250)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	optional  text(500)           Comments                                        ""
+	optional  int32               UserID                                          ""
+	required  double              Calibration                                     ""
+	
+} PRIMARY KEY(FLOWID);
+
+CREATE TABLE "FLOWValues" FLOWValues
+{
+	"Internal"
+	required  int32               FLOWID                                          ""
+	required  int32               SAMID                                           ""
+	optional  int32               FLOWNo                                          ""
+	required  date                ReadingDate                                     ""
+	optional  double              FLOWTotal                                       ""
+	optional  int32               RequestNo                                       ""
+	optional  double              Flow1                                           ""
+	optional  double              Flow2                                           ""
+	
+} PRIMARY KEY(FLOWID)
+  INDEX(SAMID, ReadingDate);
+
+CREATE TABLE "FailureReasons" FailureReasons
+{
+	"Internal"
+	required  int32               FailureReasonID                                 ""
+	required  text(150)           FailureReason                                   ""
+
+} PRIMARY KEY(FailureReasonID);
+
+CREATE TABLE "Groups" Groups
+{
+	"Internal"
+	required  int32               GroupID                                         ""
+	required  text(16)            GroupName                                       ""
+	optional  text(50)            Description                                     ""
+	required  int32               ScheduleNo                                      ""
+	required  int32               Priority                                        ""
+	required  int32               GroupDefault                                    ""
+
+	
+} PRIMARY KEY(GroupID);
+
+CREATE TABLE "HEM01DayValues" HEM01DayValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               HEM01ID                                         ""
+	required  int32               SAMID                                           ""
+	required  int32               HEM01No                                         ""
+	required  date                ReadingDate                                     ""
+	optional  double              KWH1Day                                         ""
+	optional  double              KWH2Day                                         ""
+	optional  double              KWH3Day                                         ""
+	optional  double              KWH4Day                                         ""
+	optional  double              KWH5Day                                         ""
+	optional  double              KWH6Day                                         ""
+	optional  double              Current1Avg                                     ""
+	optional  double              Current2Avg                                     ""
+	optional  double              Current3Avg                                     ""
+	optional  double              Current4Avg                                     ""
+	optional  double              Current5Avg                                     ""
+	optional  double              Current6Avg                                     ""
+	optional  double              Current1Min                                     ""
+	optional  double              Current2Min                                     ""
+	optional  double              Current3Min                                     ""
+	optional  double              Current4Min                                     ""
+	optional  double              Current5Min                                     ""
+	optional  double              Current6Min                                     ""
+	optional  double              Current1Max                                     ""
+	optional  double              Current2Max                                     ""
+	optional  double              Current3Max                                     ""
+	optional  double              Current4Max                                     ""
+	optional  double              Current5Max                                     ""
+	optional  double              Current6Max                                     ""
+	optional  double              Voltage1Avg                                     ""
+	optional  double              Voltage2Avg                                     ""
+	optional  double              Voltage3Avg                                     ""
+	optional  double              Voltage4Avg                                     ""
+	optional  double              Voltage5Avg                                     ""
+	optional  double              Voltage6Avg                                     ""
+	optional  double              Voltage1Min                                     ""
+	optional  double              Voltage2Min                                     ""
+	optional  double              Voltage3Min                                     ""
+	optional  double              Voltage4Min                                     ""
+	optional  double              Voltage5Min                                     ""
+	optional  double              Voltage6Min                                     ""
+	optional  double              Voltage1Max                                     ""
+	optional  double              Voltage2Max                                     ""
+	optional  double              Voltage3Max                                     ""
+	optional  double              Voltage4Max                                     ""
+	optional  double              Voltage5Max                                     ""
+	optional  double              Voltage6Max                                     ""
+	
+} PRIMARY KEY(SequenceNo)
+  INDEX(SAMID)
+  INDEX(HEM01ID, ReadingDate);
+
+CREATE TABLE "HEM01RawValues" HEM01RawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	optional  int32               HEM01ID                                         ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "HEM01Units" HEM01Units
+{
+	"Internal"
+	required  int32               HEM01ID                                         ""
+	required  int32               SAMID                                           ""
+	required  int32               HEM01UnitNo                                     ""
+	required  text(20)            HEM01UnitName                                   ""
+	required  int32               HEM01Status                                     ""
+	required  int32               Active                                          ""
+	optional  text(200)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	required  text(5)             AlarmMask                                       ""
+	optional  text(50)            Location1                                       ""
+	optional  text(50)            Location2                                       ""
+	optional  text(50)            Location3                                       ""
+	optional  text(50)            Location4                                       ""
+	optional  int32               PowerReading                                    ""
+	optional  text(500)           Comments                                        ""
+	optional  int32               UserID                                          ""
+	optional  int32               Loc1Ref                                         ""
+	optional  int32               Loc2Ref                                         ""
+	optional  int32               Loc3Ref                                         ""
+	optional  int32               Loc4Ref                                         ""
+	required  int32               Probe1ID                                        ""
+	required  int32               Probe2ID                                        ""
+	required  int32               Probe3ID                                        ""
+	required  int32               Probe4ID                                        ""
+	required  int32               Probe5ID                                        ""
+	required  int32               Probe6ID                                        ""
+	optional  text(50)            Location5                                       ""
+	optional  text(50)            Location6                                       ""
+	optional  int32               Loc5Ref                                         ""
+	optional  int32               Loc6Ref                                         ""
+	required  int32               optType                                         ""
+	required  int32               Virtuals                                        ""
+	
+} PRIMARY KEY(HEM01ID);
+
+CREATE TABLE "HEM01Values" HEM01Values
+{
+	"Internal"
+	optional  int32               HEM01ID                                         ""
+	optional  int32               SAMID                                           ""
+	optional  int32               HEM01UnitNo                                     ""
+	required  date                ReadingDate                                     ""
+	optional  double              PowerReading                                    ""
+	optional  int32               Temp                                            ""
+	optional  double              Current1                                        ""
+	optional  double              Current2                                        ""
+	optional  double              Current3                                        ""
+	optional  double              Current4                                        ""
+	optional  double              Voltage                                         ""
+	optional  int32               Flags                                           ""
+	optional  double              AvgVoltage                                      ""
+	optional  double              AvgCurrent                                      ""
+	optional  double              Volt1                                           ""
+	optional  double              Volt2                                           ""
+	optional  double              Volt3                                           ""
+	optional  double              Volt4                                           ""
+	optional  double              Volt5                                           ""
+	optional  double              Volt6                                           ""
+	optional  double              Current5                                        ""
+	optional  double              Current6                                        ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(HEM01ID)
+  INDEX(HEM01ID)
+  INDEX(SAMID)
+  INDEX(RequestNo);
+
+CREATE TABLE "HEM02Virtuals" HEM02Virtuals
+{
+	"Internal"
+	required  int32               HEMID                                           ""
+	required  int32               VirtualID                                       ""
+	required  int32               AlarmNo                                         ""
+	required  double              Setting                                         ""
+	required  int32               VSTatus                                         ""
+	
+} PRIMARY KEY(HEMID);
+
+CREATE TABLE "HEMAlarmLabels" HEMAlarmLabels
+{
+	"Internal"
+	required  int32               AlarmNo                                         ""
+	optional  text(20)            AlarmLabel                                      ""
+	required  int32               Severity                                        ""
+	required  bool                MapEnable                                       ""
+	optional  bool                Ena                                             ""
+	
+} PRIMARY KEY(AlarmNo);
+
+CREATE TABLE "HEMAlarms" HEMAlarms
+{
+	"Internal"
+	required  int32               HEMID                                           ""
+	required  int32               AlarmNo                                         ""
+	optional  text(20)            AlarmLabel                                      ""
+	required  int32               CurrentStatus                                   ""
+	required  int32               Severity                                        ""
+	required  date                Timestamp                                       ""
+	optional  int32               CurrentEventId                                  ""
+	optional  int32               CurrentAcceptedBy                               ""
+	optional  text(1000)          Comments                                        ""
+	optional  bool                Tested                                          ""
+	optional  bool                Enabled                                         ""
+	optional  int32               AlarmMap                                        ""
+	
+} PRIMARY KEY(HEMID);
+
+CREATE TABLE "HEMEvents" HEMEvents
+{
+	"Internal"
+	required  int32               EventID                                         ""
+	required  int32               HEMID                                           ""
+	required  int32               AlarmNo                                         ""
+	optional  date                TimeSet                                         ""
+	optional  date                TimeCleared                                     ""
+	optional  int32               CurrentStatus                                   ""
+	optional  text(20)            Info                                            ""
+	optional  text(8)             AcceptedBy                                      ""
+	
+} PRIMARY KEY(EventID);
+
+CREATE TABLE "HEMRawValues" HEMRawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	optional  int32               HEMID                                           ""
+	optional  text(250)           RawValues                                       ""
+	optional  date                RawDate                                         ""
+	optional  int32               SAMID                                           ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(SequenceNo);
+
+CREATE TABLE "HEMUnits" HEMUnits
+{
+	"Internal"
+	required  int32               HEMID                                           ""
+	required  int32               SAMID                                           ""
+	required  int32               HEMUnitNo                                       ""
+	required  text(20)            HEMUnitName                                     ""
+	required  int32               HEMStatus                                       ""
+	required  int32               Active                                          ""
+	optional  text(200)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	required  text(5)             AlarmMask                                       ""
+	optional  int32               PowerReading                                    ""
+	optional  text(500)           Comments                                        ""
+	optional  int32               UserID                                          ""
+	required  int32               Probe1ID                                        ""
+	required  int32               Virtuals                                        ""
+	
+} PRIMARY KEY(HEMID);
+
+CREATE TABLE "HEMValues" HEMValues
+{
+	"Internal"
+	optional  int32               HEMID                                           ""
+	optional  int32               SAMID                                           ""
+	optional  int32               HEMno                                           ""
+	required  date                ReadingDate                                     ""
+	optional  double              PowerReading                                    ""
+	optional  int32               Temp                                            ""
+	optional  double              DischargeCurrent                                ""
+	optional  double              ChargeCurrent                                   ""
+	optional  double              Voltage                                         ""
+	optional  double              AvgVoltage                                      ""
+	optional  double              AvgCurrent                                      ""
+	optional  int32               RequestNo                                       ""
+	
+} PRIMARY KEY(HEMID);
+
+CREATE TABLE "HEMVirtuals" HEMVirtuals
+{
+	"Internal"
+	required  int32               HEMID                                           ""
+	required  int32               VirtualID                                       ""
+	required  int32               AlarmNo                                         ""
+	required  double              Setting                                         ""
+	
+} PRIMARY KEY(HEMID);
+
+CREATE TABLE "HardwareFailures" HardwareFailures
+{
+	"Internal"
+	required  int32               FailureID                                       ""
+	required  int32               SAMID                                           ""
+	required  int32               EquipmentTypeID                                 ""
+	optional  int32               EquipmentCategoryID                             ""
+	optional  int32               FailureReasonID                                 ""
+	required  date                ReadingDate                                     ""
+	
+} PRIMARY KEY(FailureID);
+
+CREATE TABLE "IPCameras" IPCameras
+{
+	"Internal"
+	required  int32               CAMID                                           "Camera ID"
+	optional  int32               SAMID                                           "Controller ID"
+	optional  text(32)            CAMName                                         "Name"
+	optional  text(32)            CAMLocation                                     "Location"
+	required  text(16)            CAMIPAddress                                    "IP Address"
+	required  int32               CAMPortNo                                       "Port Number"
+	required  int32               CamNo                                           "Number"
+	optional  date                IPCAMDirDate                                    ""
+	required  int32               IPCamManualSync                                 ""
+	"29.IP Camera"
+	optional  text(200)           IPCamStatus                                     "IP Camera Status"				uiorder:91
+	optional  date                IPCamStatusDate                                 "IP Camera Status Date"			uiorder:92			tags:timeDate24
+	optional  bool                IPCamRefresh                                    "IP Camera Refresh"				uiorder:93			tags:yesNo
+	"Internal"
+	required  int32               UserID                                          ""
+	
+} PRIMARY KEY(CAMID);
+
+CREATE TABLE "Intra_SiteDayValues" Intra_SiteDayValues
+{
+	"Internal"
+	optional  int32               SamID                                           ""
+	optional  date                ReadingDate                                     ""
+	optional  int32               Year                                            ""
+	optional  int32               Month                                           ""
+	optional  int32               Week                                            ""
+	optional  int32               DayOfYear                                       ""
+	optional  double              Gen1Time                                        ""
+	optional  double              Gen2Time                                        ""
+	optional  double              UtilityTime                                     ""
+	optional  double              ActualUtilityTime                               ""
+	optional  double              EPCCTime                                        ""
+	optional  double              MEPCCTime                                       ""
+	optional  double              UnalocatedTime                                  ""
+	optional  double              DCFanTime                                       ""
+	optional  double              AC1Time                                         ""
+	optional  double              AC2Time                                         ""
+	optional  double              AC3Time                                         ""
+	optional  double              AC4Time                                         ""
+	optional  double              KWHUsage                                        ""
+	optional  double              FuelUsage                                       ""
+	optional  double              OrigUnalocatedTime                              ""
+	optional  int32               EPCCCycles                                      ""
+	optional  double              ManOverride                                     ""
+	optional  double              T1Add                                           ""
+	optional  double              T1Rem                                           ""
+	optional  double              T1Cons                                          ""
+	optional  double              T2Add                                           ""
+	optional  double              T2Rem                                           ""
+	optional  double              T2Cons                                          ""
+	optional  double              BatteryDischarge                                ""
+	optional  double              FlowMeter1                                      ""
+	optional  double              UnallocatedFuel                                 ""
+	optional  double              FlowMeter2                                      ""
+	optional  double              F1Cal                                           ""
+	optional  double              F2Cal                                           ""
+	required  double              ACKVAhSupplied                                  ""
+	required  double              ACKVAhConsumed                                  ""
+	required  double              DCKWhSupplied                                   ""
+	required  double              DCKWhConsumed                                   ""
+	required  double              PercCommsLoss                                   ""
+	required  double              SiteDown                                        ""
+	required  double              SiteDischarge                                   ""
+	required  double              SiteOnSolar                                     ""
+	required  double              SiteOnSolarwBB                                  ""
+	required  double              SiteOnBat                                       ""
+	
+} PRIMARY KEY(SamID)
+  INDEX(SamID, ReadingDate);
+
+CREATE TABLE "Locations" Locations
+{
+	"Internal"
+	required  int32               LocationID                                      "ID"
+	required  text(5)             Location                                        "Location"
+	optional  text(255)           Description                                     "Description"
+	required  int32               UserID                                          "User ID"
+	required  bool                Active                                          "Status"
+	required  date                Timestamp                                       "Time Stamp"
+	
+} PRIMARY KEY(LocationID)
+  INDEX(LocationID, Location);
+
+CREATE TABLE "MessageIO" MessageIO
+{
+	"Internal"
+	required  int32               samid                                           ""
+	required  date                Readingdate                                     ""
+	optional  int32               SMSIn                                           ""
+	optional  int32               SMSOut                                          ""
+	optional  int32               GPRSIn                                          ""
+	optional  int32               GPRSOut                                         ""
+	
+} PRIMARY KEY(samid);
+
+CREATE TABLE "NEClasses" NEClasses
+{
+	"Internal"
+	required  int32               NEClassID                                       ""
+	required  text(6)             NEClassName                                     ""
+	optional  text(32)            Description                                     ""
+	required  int32               UserID                                          ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+	
+} PRIMARY KEY(NEClassID)
+  INDEX(NEClassID, NEClassName);
+
+CREATE TABLE "Parameters" Parameters
+{
+	"Internal"
+	required  int32               ParameterID                                     ""
+	required  text(32)            ParameterName                                   ""
+	required  text(32)            DisplayLabel                                    ""
+	optional  text(64)            DisplayFormat                                   ""
+	optional  int32               DisplayLength                                   ""
+	optional  text(64)            DisplayValidation                               ""
+	required  bool                IsBoolean                                       ""
+	required  bool                IsByte                                          ""
+	required  bool                IsInteger                                       ""
+	required  bool                IsLong                                          ""
+	required  bool                IsString                                        ""
+	required  bool                IsDate                                          ""
+	required  bool                IsVersion                                       ""
+	required  bool                IsType                                          ""
+	optional  int32               StringLength                                    ""
+	required  bool                OnlyForSystemUse                                ""
+	required  bool                AllowGet                                        ""
+	required  bool                AllowSet                                        ""
+	required  bool                BooleanDefault                                  ""
+	optional  int32               ByteDefault                                     ""
+	optional  int32               IntegerDefault                                  ""
+	optional  int32               LongDefault                                     ""
+	optional  text(255)           StringDefault                                   ""
+	optional  date                DateDefault                                     ""
+	optional  int32               VersionDefault                                  ""
+	optional  int32               TypeDefault                                     ""
+	optional  int32               InputLowLimit                                   ""
+	optional  int32               InputHighLimit                                  ""
+	required  bool                SendStringInHex                                 ""
+	optional  text(255)           Description                                     ""
+	required  bool                Active                                          ""
+	optional  date                Timestamp                                       ""
+	
+} PRIMARY KEY(ParameterID)
+  INDEX(ParameterName);
+
+CREATE TABLE "PowerTypes" PowerTypes
+{
+	"Internal"
+	required  int32               PowerTypeID                                     ""
+	required  text(30)            UnitName                                        ""
+	required  text(50)            Description                                     ""
+	required  int32               Option1                                         ""
+	required  int32               Option2                                         ""
+	
+} PRIMARY KEY(PowerTypeID);
+
+CREATE TABLE "ProbableCauses" ProbableCauses
+{
+	"Internal"
+	required  int32               ProbableCauseID                                 ""
+	required  text(45)            SNMPProbableCause                               ""
+	required  text(45)            ProbableCause                                   ""
+	
+} PRIMARY KEY(ProbableCauseID)
+  INDEX(SNMPProbableCause);
+
+CREATE TABLE "ProbeGroup" ProbeGroup
+{
+	"Internal"
+	required  int32               ProbeGroupID                                    ""
+	required  text(20)            ProbeGroupName                                  ""
+	optional  text(50)            ProbeGroupDescription                           ""
+	optional  int32               Option1                                         ""
+	optional  int32               Option2                                         ""
+	optional  int32               Option3                                         ""
+	required  int32               UserID                                          ""
+	
+} PRIMARY KEY(ProbeGroupID);
+
+CREATE TABLE "Probes" Probes
+{
+	"Internal"
+	required  int32               ProbeID                                         ""
+	required  int32               ProbeGroupID                                    ""
+	required  text(30)            ProbeName                                       ""
+	optional  text(50)            ProbeDescription                                ""
+	optional  int32               Option1                                         ""
+	optional  int32               Option2                                         ""
+	optional  int32               Option3                                         ""
+	required  int32               UserID                                          ""
+	
+} PRIMARY KEY(ProbeID);
+
+CREATE TABLE "SAMAlarmLabels" SAMAlarmLabels
+{
+	"Internal"
+	required  int32               AlarmNo                                         "Alarm Number"
+	optional  text(20)            AlarmLabel                                      "Alarm Label"
+	required  int32               Severity                                        "Severity"
+	required  bool                MapEnable                                       ""
+	required  bool                Ena                                             ""
+	
+} PRIMARY KEY(AlarmNo);
+
+CREATE TABLE "SAMConfig" SAMConfig
+{
+	"Internal"
+	required  int32               SAMID                                           ""
+	required  int32               RecNo                                           ""
+	optional  text(32)            SamData                                         ""
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "imqs_event_mute" imqs_event_mute
+{
+    "General"
+    required  int64   id        ""
+    required  int64   eventid   ""
+    required  bool    muted    ""
+
+} PRIMARY KEY(id)
+  INDEX(eventid);
+
+CREATE TABLE "imqs_alarm_ack" imqs_alarm_ack
+{
+	"Internal"
+	required  int64              id                                             ""
+	"1.Acknowledge"
+	required  int64              samid                                          ""
+	required  int64              alarmid                                        ""
+	required  int64              eventid                                        ""
+	required  date               stamp                                          ""
+	required  text(255)          username                                       "Acknowledgement"	uiorder:10	tags:humanAck
+	required  text(255)          comment                                        ""
+
+	hasone      Events             eventid            SAMEvents.EventID
+
+} PRIMARY KEY(id);
+
+CREATE TABLE "SAMEvents" SAMEvents
+{
+	"Internal"
+	required  int32               EventID                                         ""
+	"1.Alarm Details"  
+	required  int32               SAMID                                           "SAMUnits|SAMID|SAMUnitName|Site Name"			tags:lookup		uiorder:3
+	"2.Location"
+	required  int32               Level1ID                                        "Level 1 ID"													
+	required  int32               Level0ID                                        "Level 0 ID"													
+	"1.Alarm Details"  
+	required  int32               AlarmNo                                         "SAMAlarmLabels|AlarmNo|AlarmLabel|Alarm Type" tags:lookup	uiorder:2
+	optional  text(30)            AlarmLabel                                      ""
+	"1.Alarm Details"
+	optional  date                TimeSet                                         "Time Set"		tags:timeDate24								uiorder:5
+	optional  date                TimeCleared                                     "Time Cleared"	tags:timeDate24								uiorder:6
+	optional  date                Duration                                        "Duration" 		tags:timeDuration 							uiorder:7
+	optional  int32               CurrentStatus                                   "Status"			tags:distinctFilter,lightRightWrongTick		
+	optional  text(20)            Info                                            "Information"
+	optional  text(8)             AcceptedBy                                      "Accepted By"
+	"2.Location"
+	optional  text(60)            Location										  "Location"													
+	"1.Alarm Details"
+	required  int32               Severity                                        "Severity"		tags:distinctFilter,dispAlarmSeverity		uiorder:1
+	required  int32               SAMID2                                          "SAMUnits|SAMID|SAMUnitNo|Site No"			tags:lookup		    uiorder:4
+
+	hasone    Muted   EventID      imqs_event_mute.eventid
+
+} PRIMARY KEY(EventID)
+  INDEX(EventID)
+  INDEX(TimeCleared)
+  INDEX(SAMID, AlarmNo, TimeSet, TimeCleared);
+
+CREATE TABLE "SAMRemarks" SAMRemarks
+{
+	"Internal"
+	required  int32               RemarkID                                        ""
+	required  int32               SAMID                                           ""
+	optional  text(50)            LogUser                                         ""
+	optional  date                TimeLogged                                      ""
+	optional  text(255)           Remarks                                         ""
+	optional  text(50)            ClearUser                                       ""
+	optional  date                TimeCleared                                     ""
+	optional  int32               Status                                          ""
+
+	
+} PRIMARY KEY(RemarkID);
+
+CREATE TABLE "SAMTokens" SAMTokens
+{
+	"Internal"
+	required  int32               TokenID                                         ""
+	required  int32               SAMID                                           ""
+	required  text(12)            SerialNo                                        ""
+	required  text(20)            Token                                           ""
+	required  int32               TokenValue                                      ""
+	required  int32               NoOfUnits                                       ""
+	required  text(250)           Receipt                                         ""
+	required  date                DateIssued                                      ""
+	optional  date                DateSend                                        ""
+	required  int32               TokenStatus                                     ""
+	optional  double              Credit                                          ""
+
+	
+} PRIMARY KEY(TokenID);
+
+CREATE TABLE "SAMUnits" SAMUnits
+{
+	"20.General"
+	required  int32               SAMID                                           "Site No"								uiorder:0
+	"Internal"
+	required  int32               Level1Id                                        "Level 1 ID"			
+	required  int32               SAMUnitNo                                       "Unit Number"							
+	"20.General"
+	optional  text(32)            SAMUnitName                                     "Name"								uiorder:1					tags:humanID
+	optional  text(32)            SAMLocation                                     "Location"							uiorder:2
+	"Internal"
+	optional  text(15)            DataNo                                          "Primary Data Number"					uiorder:27
+	"22.Communication.1.SIM Detail"
+	optional  text(15)            CellNo                                          "Primary Cellular Number"				uiorder:25
+	"Internal"
+	optional  int32               SeqNo                                           "Sequence Number"
+	"22.Communication"
+	required  text(16)            SAMIPAddress                                    "Primary IP Address"					uiorder:22					tags:primaryIP
+	"Internal"
+	required  int32               SAMPortNo                                       "Port Number"							
+	required  int32               SAMStatus                                       "Status"
+	optional  text(15)            SAMLatitude                                     "Latitude"							
+	optional  text(15)            SAMLongitude                                    "Longitude"							
+	optional  text(30)            PowerSerialNo                                   "Power Serial Number"
+	"20.General"
+	required  int32               Active                                          "Active"								uiorder:3					tags:yesNo
+	"Internal"
+	required  int32               UserID                                          "User ID"
+	optional  text(200)           RawValues                                       "Raw Values"
+	required  date                TimeStamp                                       "Time Stamp"
+	optional  text(15)            PowerID                                         "Power ID"
+	optional  int32               KPLCReading                                     ""
+	optional  int32               ConlogReading                                   ""
+	optional  int32               LastConlogReading                               ""
+	optional  int32               BTSType                                         ""
+	"24.Fuel Tank"
+	required  int32               LastFuel1                                       "Tank 1 Level"						uiorder:41		unit:L		tags:primaryFLValid
+	required  int32               LastFuel2                                       "Tank 2 Level"						uiorder:43		unit:L		tags:secondaryFLValid
+	"Internal"
+	required  bool                FLValid1                                        "Fuel Level 1 Valid"					
+	required  bool                FLValid2                                        "Fuel Level 2 Valid"					
+	required  double              Gen1RH                                          "Generator 1 Run Hours"
+	required  double              Gen2RH                                          "Generator 2 Run Hours"
+	"25.Generator"
+	required  double              Gen1TotRH                                       "Generator 1 Run Hours"				uiorder:61		unit:h 		tags:removeGeneratorIndex
+	required  double              Gen2TotRH                                       "Generator 2 Run Hours"				uiorder:65		unit:h 		tags:dualGenerator
+	"Internal"
+	required  date                Gen1Date                                        "Generator 1 Date"
+	required  date                Gen2Date                                        "Generator 2 Date"
+	required  text(20)            AlarmMask                                       "Alarm Mask"
+	"24.Fuel Tank"
+	required  int32               Fuel1Capacity                                   "Tank 1 Capacity"						uiorder:40		unit:L 		tags:primaryCapacityValid
+	required  int32               Fuel2Capacity                                   "Tank 2 Capacity"						uiorder:42		unit:L 		tags:secondaryCapacityValid
+	"25.Generator"
+	required  double              Gen1Capacity                                    "Generator 1 Capacity"				uiorder:60		unit:kW 	tags:removeGeneratorIndex
+	required  double              Gen2Capacity                                    "Generator 2 Capacity"				uiorder:64		unit:kW 	tags:dualGenerator
+	required  text(50)            Gen1Make                                        "Generator 1 Make"					uiorder:63					tags:removeGeneratorIndex
+	required  text(50)            Gen2Make                                        "Generator 2 Make"					uiorder:66					tags:dualGenerator
+	"23.Contact"
+	required  text(50)            SiteEngineer                                    "Site Engineer"						uiorder:10
+	"Internal"
+	required  text(50)            NMCUser                                         ""
+	"23.Contact"
+	required  text(25)            SECell                                          "Site Engineer Cellular Number"		uiorder:11
+	"Internal"
+	required  text(5000)          Comments                                        "Comments"
+	required  date                TestDate                                        "Test Date"
+	required  int32               NotifyUserID                                    ""
+	required  date                RectifiedDate                                   ""
+	required  int32               MngNotifyUserID                                 ""
+	"22.Communication.1.SIM Detail"
+	required  text(15)            Cell2No                                         "Secondary Cellular Number"			uiorder:26
+	"Internal"
+	required  text(15)            Data2No                                         "Secondary Data Number"				uiorder:28
+	"28.Battery"
+	required  double              BatteryCapacity                                 "Battery Capacity"					uiorder:70		unit:Ah
+	"22.Communication"
+	required  text(16)            SAMIPAddress2                                   "Secondary IP Address"				uiorder:23					tags:secondaryIP
+	"Internal"
+	required  int32               PowerTypeID                                     "Power Type ID"
+	required  date                SIM1InstallDate                                 "Primary SIM installation date"
+	required  date                SIM2InstallDate                                 "Secondary SIM installation date"
+	required  bool                DVRequest                                       ""
+	required  bool                StandardSite                                    ""
+	required  text(20)            VersionString                                   "Version"
+	required  bool                AMEdit                                          ""
+	"20.General"
+	required  int32               ServiceState                                    "ServiceStates|ServiceStateID|ServiceStateText|Service Status"						uiorder:5			tags:lookup
+	"Internal"
+	required  int32               IPCAM                                           "IP Camera"							
+	"22.Communication"
+	required  int32               LockState                                       "Configuration Status"				uiorder:29					tags:lockUnlock
+	"Internal"
+	required  int32               EXTMPUnits                                      ""
+	"30.Acceptance"
+	optional  text(50)            InstallContractor                               "Installation Contractor" 			uiorder:30
+	required  int32               QAConfirmed                                     "QA Confirmed"						uiorder:31					tags:yesNo
+	"Internal"
+	required  int32               InalaRectifier                                  ""
+	required  int32               RectCapacity                                    "Rectifier Capacity"
+	optional  int32               LastLogNo                                       "Last Log Number"						
+	optional  date                LogRequestTime                                  "Log Request Time"					
+	"30.Acceptance"
+	optional  date                FirstDate                                       "First Date"							uiorder:21					tags:timeDate24
+	"22.Communication"
+	optional  date                LastDate                                        "Last Communications Date"			uiorder:20					tags:timeDate24,enableDateThreshold
+	"Internal"
+	required  int32               CommsChannel                                    "Communications Channel"				
+	required  int32               IPCamManualSync                                 ""
+	optional  date                IPCAMDirDate                                    ""
+	"22.Communication"
+	required  int32               GPRSStatus                                      "GPRS Status"							uiorder:24					tags:activeInactive
+	"Internal"
+	optional  text(200)           IPCamStatus                                     "IP Camera Status"					
+	optional  date                IPCamStatusDate                                 "IP Camera Status Date"				
+	optional  bool                IPCamRefresh                                    "IP Camera Refresh"					
+	"24.Fuel Tank.1.Dimensions"
+	required  int32               Fuel1Orientation                                "Tank 1 Orientation"					uiorder:50					tags:primaryTankOrientation
+	required  int32               Fuel2Orientation                                "Tank 2 Orientation"					uiorder:54					tags:secondaryTankOrientation
+	required  int32               Fuel1Length                                     "Tank 1 Length"						uiorder:51		unit:cm 	tags:removeFuelIndex
+	required  int32               Fuel1Height                                     "Tank 1 Height"						uiorder:52		unit:cm 	tags:removeFuelIndex
+	required  int32               Fuel1Depth                                      "Tank 1 Depth"						uiorder:53		unit:cm 	tags:removeFuelIndex
+	required  int32               Fuel2Length                                     "Tank 2 Length"						uiorder:55		unit:cm 	tags:dualFuelTank
+	required  int32               Fuel2Height                                     "Tank 2 Height"						uiorder:56		unit:cm 	tags:dualFuelTank
+	required  int32               Fuel2Depth                                      "Tank 2 Depth"						uiorder:57		unit:cm 	tags:dualFuelTank
+	"28.Solar"
+	required  int32               SolarSite                                       "Solar Site"							uiorder:80					tags:yesNo
+	optional  int32               SolarCap                                        "Solar Capacity"						uiorder:81		unit:W
+	"Internal"
+	required  int32               IPTSite                                         ""
+	optional  point				  Geometry										  ""
+	"20.General"
+	optional  int32				  Indoor										  "Indoor Site"							uiorder:6					tags:yesNo
+	optional  int32				  CommercialPower								  "Commercial Power"					uiorder:7					tags:yesNo
+	"Internal"
+	optional  int32				  DualGenerators								  "Dual Generators"
+	optional  int32				  DualFuelTanks									  "Dual FuelTanks"
+	optional  int32				  QuadAirCons									  "Quad Air Conditioners"
+	optional  int32				  Online										  "Online"
+
+}
+PRIMARY KEY(SAMID);
+
+CREATE TABLE "SamAlarms" SamAlarms
+{
+	"Internal"
+	required  int64               ID     										  "ID"
+	"1.Alarm Details"                                         
+	required  int32               AlarmNo                                         "SAMAlarmLabels|AlarmNo|AlarmLabel|Alarm Type"			tags:lookup		uiorder:6
+	required  int32               SAMID                                           "SAMUnits|SAMID|SAMUnitName|Site Name"						tags:lookup		uiorder:1
+	"Internal"
+	optional  text(20)            AlarmLabel                                      "Alarm Type"												
+	"1.Alarm Details"
+	required  int32               CurrentStatus                                   "Status"		tags:distinctFilter,lightRightWrongTick		uiorder:2
+	required  int32               Severity                                        "Severity"	tags:distinctFilter,dispAlarmSeverity		uiorder:3
+	required  date                Timestamp                                       "Time"		tags:timeDate24								uiorder:4
+	"Internal"
+	optional  int32               CurrentEventId                                  "Current Event ID"
+	optional  int32               CurrentAcceptedBy                               "Current Event Accepted by"
+	optional  text(1000)          Comments                                        "Comments"
+	required  int32               BTSMap                                          ""
+	required  int32               NONC                                            ""
+	optional  text(20)            RBSInputNumber                                  ""
+	required  bool                Tested                                          "Tested"
+	required  bool                Enabled                                         "Enabled"
+	required  int32               AlarmMap                                        ""
+	
+}
+PRIMARY KEY(ID);
+
+CREATE TABLE "SamEventAudit" SamEventAudit
+{
+	"Internal"
+	required  int32               EventID                                         ""
+	required  int32               SeqNo                                           ""
+	optional  int32               UserID                                          ""
+	required  date                EventTime                                       ""
+	required  int32               EventStatus                                     ""
+	optional  text(64)            Comment                                         ""
+	required  int32               IsActive                                        ""
+
+	
+}  PRIMARY KEY(EventID);
+
+CREATE TABLE "ServiceStates" ServiceStates
+{
+	"Internal"
+	required  int32               ServiceStateID                                  ""
+	required  text(32)            ServiceStateText                                ""
+	optional  text(255)           Description                                     ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+
+	
+} PRIMARY KEY(ServiceStateID)
+  INDEX(ServiceStateText);
+
+CREATE TABLE "Severities" Severities
+{
+	"Internal"
+	required  int32               SeverityID                                      "Severity ID"
+	required  text(16)            SeverityText                                    "Severity"
+	optional  int32               LabelColour                                     ""
+	optional  int32               DiagramColour                                   ""
+	optional  text(255)           Description                                     "Description"
+	optional  int32               UserID                                          "User ID"
+	required  bool                Active                                          "Status"
+	required  date                Timestamp                                       "Time Stamp"
+
+	
+} PRIMARY KEY(SeverityID);
+
+CREATE TABLE "SiteDayValues" SiteDayValues
+{
+	"Internal"
+	required  int32               SamID                                           "Controller ID"
+	required  date                ReadingDate                                     "Time Stamp"
+	optional  int32               Year                                            "Year"								
+	optional  int32               Month                                           "Month"								
+	optional  int32               Week                                            "Week"								
+	optional  int32               DayOfYear                                       "Day of Year"
+	optional  double              Gen1Time                                        "Generator 1 Time"
+	optional  double              Gen2Time                                        "Generator 2 Time"
+	optional  double              UtilityTime                                     "Utility Time"
+	optional  double              ActualUtilityTime                               "Actual Utility Time"
+	optional  double              EPCCTime                                        ""
+	optional  double              UnalocatedTime                                  "Unallocated Time"
+	optional  double              DCFanTime                                       "DC Fan Time"
+	optional  double              AC1Time                                         "AC 1 Time"
+	optional  double              AC2Time                                         "AC 2 Time"
+	optional  double              AC3Time                                         "AC 3 Time"
+	optional  double              AC4Time                                         "AC 4 Time"
+	optional  double              KWHUsage                                        "KWH Usage"
+	optional  double              FuelUsage                                       "Fuel Usage"
+	optional  int32               EPCCCycles                                      ""
+	optional  double              ManOverride                                     "Manual Override"
+	optional  double              T1Add                                           ""
+	optional  double              T1Rem                                           ""
+	optional  double              T1Cons                                          ""
+	optional  double              T2Add                                           ""
+	optional  double              T2Rem                                           ""
+	optional  double              T2Cons                                          ""
+	optional  double              BatteryDischarge                                "Battery Discharge"
+	optional  double              FlowMeter1                                      ""
+	optional  double              UnallocatedFuel                                 "Unallocated Fuel"
+	optional  double              FlowMeter2                                      ""
+	optional  double              F1Cal                                           "Fuel 1 Calibration"
+	optional  double              F2Cal                                           "Fuel 2 Calibration"
+	required  double              ACKVAhSupplied                                  "AC KVAh Supplied"
+	required  double              ACKVAhConsumed                                  "AC KVAh Consumed"
+	required  double              DCKWhSupplied                                   "DC KWh Supplied"
+	required  double              DCKWhConsumed                                   "DC KWh Consumed"
+	required  double              PercCommsLoss                                   "Percentage Communications Loss"
+	required  double              SiteDown                                        "Site Down"
+	required  double              SiteDischarge                                   "Site Discharge"
+	required  double              SiteOnSolar                                     "Site on Solar"
+	required  double              SiteOnSolarwBB                                  "Site on Solar with Battery Backup"
+	required  double              SiteOnBat                                       "Site on Battery"
+
+	
+} PRIMARY KEY(SamID);
+
+CREATE TABLE "SiteEmployees" SiteEmployees
+{
+	"Internal"
+	required  int32               EmployeeID                                      ""
+	required  int32               UnitID                                          ""
+	optional  int32               ScheduleNo                                      ""
+	optional  int32               Status                                          ""
+	optional  int32               Priority                                        ""
+	optional  double              Tag                                             ""
+
+	
+} PRIMARY KEY(UnitID);
+
+CREATE TABLE "SiteFuelings" SiteFuelings
+{
+	"Internal"
+	required  int32               SiteID                                          "Site ID"
+	optional  date                StartDate                                       "Start"
+	optional  int32               StartAmount                                     "Start Amount"
+	optional  date                EndDate                                         "End"
+	optional  int32               EndAmount                                       "End Amount"
+	optional  int32               AmountFueled                                    "Amount Fueled"
+	optional  int32               InvoicedAmount                                  "Invoice Amount"
+	optional  int32               IgnoreNeg                                       ""
+	required  int32               FuelingID                                       "Fueling ID"
+	required  int32               TankNo                                          "Tank Number"
+	required  int32               Flags                                           ""
+
+	
+}   PRIMARY KEY(SiteID);
+
+CREATE TABLE "SiteLogs" SiteLogs
+{
+	"Internal"
+	required  int32               SequenceNo                                      ""
+	required  int32               SAMID                                           ""
+	optional  date                LogDate                                         ""
+	optional  text(50)            SAMLog                                          ""
+
+	
+} PRIMARY KEY(SequenceNo)
+  INDEX(SAMID);
+
+CREATE TABLE "SiteMTD" SiteMTD
+{
+	"Internal"
+	required  int32               SiteID                                          ""
+	required  int32               MTDMonth                                        ""
+	optional  int32               GenHours                                        ""
+	optional  int32               NepaHours                                       ""
+	optional  int32               PowerUsage                                      ""
+	optional  int32               FuelUsage                                       ""
+	optional  int32               NSBHours                                        ""
+
+	
+} PRIMARY KEY(SiteID);
+
+CREATE TABLE "SiteRangeSchedules" SiteRangeSchedules
+{
+	"Internal"
+	required  int32               UnitID                                          ""
+	required  int32               ScheduleNo                                      ""
+	required  date                TimeFrom                                        ""
+	required  date                TimeTo                                          ""
+	optional  int32               UserID                                          ""
+	optional  bool                Active                                          ""
+
+	
+} PRIMARY KEY(UnitID);
+
+CREATE TABLE "SiteRawValues" SiteRawValues
+{
+	"Internal"
+	required  int32               SequenceNo                                      "Sequence Number"
+	required  int32               SiteID                                          "Site ID"
+	optional  text(250)           RawValues                                       "Raw Values"
+	optional  date                RawDate                                         "Time Stamp"
+	optional  bool                Processed                                       "Processed"
+	optional  int32               RequestNo                                       "Request Number"
+
+	
+} PRIMARY KEY(SequenceNo)
+  INDEX(RawDate)
+  INDEX(SiteID, RawDate);
+
+CREATE TABLE "SiteTenantKPI" SiteTenantKPI
+{
+	"Internal"
+	required  int32               ID                                              ""
+	required  int32               SamID                                           ""
+	required  int32               TenantPGID                                      ""
+	optional  int32               KPIID                                           ""
+
+	
+} PRIMARY KEY(ID);
+
+CREATE TABLE "SiteValues" SiteValues
+{
+	"Internal"
+	required  int32               SiteID                                          "Site ID"
+	required  date                ReadingDate                                     "Time Stamp"
+	optional  int32               FuelLevel                                       "Fuel Level 1"
+	optional  double              PowerReading                                    "Power Reading"
+	optional  int32               RoomTemp                                        "Room Temperature"
+	optional  int32               Ac1Temp                                         "Aircon 1 Temperature"
+	optional  int32               Ac2Temp                                         "Aircon 2 Temperature"
+	optional  int32               Humidity                                        "Humidity"
+	optional  double              DischaregeCurrent                               "Discharge Current"
+	optional  double              Voltage                                         "Voltage"
+	optional  int32               Phase1VoltM1                                    "Phase 1 Voltage"
+	optional  int32               Phase2VoltM1                                    "Phase 2 Voltage"
+	optional  int32               Phase3VoltM1                                    "Phase 3 Voltage"
+	optional  int32               Phase1CurrM1                                    "Phase 1 Current"
+	optional  int32               Phase2CurrM1                                    "Phase 2 Current"
+	optional  int32               Phase3CurrM1                                    "Phase 3 Current"
+	optional  int32               PowerFreq                                       "Power Frequency"
+	optional  double              ChargeCurrent                                   "Charge Current"
+	optional  int32               Phase1PowerM1                                   "Phase 1 Power"
+	optional  int32               Phase2PowerM1                                   "Phase 2 Power"
+	optional  int32               Phase3PowerM1                                   "Phase 3 Power"
+	optional  int32               OutsideTemp                                     "Outside Temperature"
+	optional  double              Bat12V                                          "Battery 12V"
+	required  int32               FuelLevel2                                      "Fuel Level 2"
+	required  int32               Humidity2                                       "Humidity 2"
+	required  int32               RoomTemp2                                       "Room Temperature 2"
+	required  int32               Ac3Temp                                         "Aircon 3 Temperature"
+	required  int32               Ac4Temp                                         "Aircon 4 Temperature"
+	optional  int32               RequestNo                                       "Request Number"
+	optional  int32               GenRunning                                      "Generator Run Status"
+
+	
+} PRIMARY KEY(SiteID)
+  INDEX(SiteID, ReadingDate);
+
+CREATE TABLE "TenantKPI" TenantKPI
+{
+	"Internal"
+	required  int32               ID                                              ""
+	required  int32               TenantID                                        ""
+	required  text(50)            KPIName                                         ""
+	optional  text(250)           Description                                     ""
+	required  double              KPIPers                                         ""
+	optional  double              KPIVolt                                         ""
+
+	
+} PRIMARY KEY(ID);
+
+CREATE TABLE "TenantKPISiteView" TenantKPISiteView
+{
+	"Internal"
+	optional  int32               ISTennant                                       ""
+	required  int32               SAMID                                           ""
+	required  text(20)            ProbeGroupName                                  ""
+	required  int32               ProbeGroupID                                    ""
+	optional  int32               TenantPGID                                      ""
+	optional  int32               KPIID                                           ""
+	required  text(50)            KPIName                                         ""
+	optional  double              KPIPers                                         ""
+
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "TenantView" TenantView
+{
+	"Internal"
+	optional  int32               ISTennant                                       ""
+	required  int32               SAMID                                           ""
+	required  text(20)            ProbeGroupName                                  ""
+	required  int32               ProbeGroupID                                    ""
+
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "Tests" Tests
+{
+	"Internal"
+	required  int32               TestID                                          ""
+	required  text(32)            TestName                                        ""
+	required  text(32)            DisplayLabel                                    ""
+	optional  text(255)           Description                                     ""
+	required  bool                Active                                          ""
+	optional  date                Timestamp                                       ""
+
+	
+} PRIMARY KEY(TestID);
+
+CREATE TABLE "TrapEntries" TrapEntries
+{
+	"Internal"
+	required  int32               TrapEntryID                                     ""
+	required  text(16)            TrapDestAddress                                 ""
+	required  int32               TrapSequenceNumber                              ""
+	required  int32               UserID                                          ""
+	required  date                Timestamp                                       ""
+
+	
+} PRIMARY KEY(TrapEntryID);
+
+CREATE TABLE "Types" Types
+{
+	"Internal"
+	required  int32               TypeID                                          ""
+	required  text(1)             LevelType                                       ""
+	required  text(16)            TypeName                                        ""
+
+	
+} PRIMARY KEY(TypeID);
+
+CREATE TABLE "Units" Units
+{
+	"Internal"
+	required  int32               UnitID                                          ""
+	required  int32               ECSID                                           ""
+	required  int32               UnitNo                                          ""
+	required  text(16)            UnitName                                        ""
+	required  text(16)            UnitLocation                                    ""
+	optional  text(16)            IPAddress                                       ""
+	optional  int32               PortNo                                          ""
+	required  int32               UserID                                          ""
+	optional  int32               SeqNo                                           ""
+	optional  text(50)            Description                                     ""
+	optional  int32               SchedNo                                         ""
+	optional  int32               Status                                          ""
+	required  int32               UnitAddress                                     ""
+	required  int32               TagCount                                        ""
+	optional  date                LastCommsDate                                   ""
+
+	
+} PRIMARY KEY(UnitID);
+
+CREATE TABLE "UnitsperGroup" UnitsperGroup
+{
+	"Internal"
+	required  int32               UnitID                                          ""
+	required  int32               GroupID                                         ""
+
+	
+} PRIMARY KEY(UnitID);
+
+CREATE TABLE "UserActions" UserActions
+{
+	"Internal"
+	required  int32               UserActionID                                    ""
+	required  date                UserActionTime                                  ""
+	required  text(80)            ActionText                                      ""
+	required  int32               UserID                                          ""
+
+	
+} PRIMARY KEY(UserActionID);
+
+CREATE TABLE "UserGroup" UserGroup
+{
+	"Internal"
+	required  int32               UserGroupID                                     ""
+	required  text(50)            UserGroupName                                   ""
+	optional  text(2000)          GroupZoneFilter                                 ""
+	optional  text(4000)          GroupCityFilter                                 ""
+	optional  text(8000)          GroupSiteFilter                                 ""
+
+	
+} PRIMARY KEY(UserGroupID);
+
+CREATE TABLE "UserGroupPermissions" UserGroupPermissions
+{
+	"Internal"
+	required  int32               UserGroupID                                     ""
+	required  int32               PermissionID                                    ""
+	optional  bool                CanView                                         ""
+	optional  bool                CanAdd                                          ""
+	optional  bool                CanEdit                                         ""
+	optional  bool                CanDelete                                       ""
+	optional  bool                CanExecute                                      ""
+
+	
+} PRIMARY KEY(UserGroupID)
+
+CREATE TABLE "UserGroupSites" UserGroupSites
+{
+	"Internal"
+	required  int32               FilterID                                        ""
+	required  int32               UserGroupID                                     ""
+	optional  int32               SiteID                                          ""
+
+	
+} PRIMARY KEY(FilterID);
+
+CREATE TABLE "UserSites" UserSites
+{
+	"Internal"
+	required  int32               FilterID                                        ""
+	required  int32               UserID                                          ""
+	optional  int32               SiteID                                          ""
+
+	
+} PRIMARY KEY(FilterID);
+
+CREATE TABLE "Users" Users
+{
+	"Internal"
+	required  int32               UserID                                          ""
+	required  text(50)            UserName                                        ""
+	optional  int32               UserGroupID                                     ""
+	required  text(16)            Login                                           ""
+	required  bin(16)             Password                                        ""
+	required  text(4)             Initials                                        ""
+	required  bool                Active                                          ""
+	required  date                Timestamp                                       ""
+	required  int32               MaxIdleTime                                     ""
+	optional  bool                HideAck                                         ""
+	optional  bool                AutoRefresh                                     ""
+	optional  text(500)           AlarmFilter                                     ""
+	optional  text(50)            SeverityFilter                                  ""
+	optional  text(8000)          SiteFilter                                      ""
+	optional  text(4000)          CityFilter                                      ""
+	optional  text(2000)          ZoneFilter                                      ""
+	optional  bool                HideUnresolved                                  ""
+	optional  bool                HideCleared                                     ""
+
+	
+} PRIMARY KEY(UserID)
+  INDEX(UserName)
+  INDEX(Login);
+
+CREATE TABLE "UsersNotify" UsersNotify
+{
+	"Internal"
+	required  int32               UserID                                          ""
+	optional  text(50)            Name                                            ""
+	optional  text(50)            Surname                                         ""
+	optional  text(100)           EMail                                           ""
+	optional  text(50)            Mobile                                          ""
+	optional  text(50)            JobTitle                                        ""
+	required  int32               WhichEntity                                     ""
+
+	
+} PRIMARY KEY(UserID);
+
+CREATE TABLE "UsersNotifyIO" UsersNotifyIO
+{
+	"Internal"
+	required  int32               UserID                                          ""
+	required  date                Readingdate                                     ""
+	optional  int32               SMSOut                                          ""
+	optional  int32               EmailOut                                        ""
+
+	
+} PRIMARY KEY(UserID);
+
+CREATE TABLE "UsersRecvConfig" UsersRecvConfig
+{
+	"Internal"
+	required  int32               RecvID                                          ""
+	optional  int32               UserID                                          ""
+	optional  int32               NotifyType                                      ""
+	optional  double              ReportType                                      ""
+	optional  text(500)           AlarmFilter                                     ""
+	optional  text(50)            SeverityFilter                                  ""
+	optional  text(8000)          SiteFilter                                      ""
+	optional  text(4000)          CityFilter                                      ""
+	optional  text(2000)          ZoneFilter                                      ""
+	required  int32               NotifyDelay                                     ""
+
+	
+} PRIMARY KEY(RecvID);
+
+CREATE TABLE "VWSAMUnits" VWSAMUnits
+{
+	"Internal"
+	required  int32               SAMID                                           ""
+	required  int32               Level1Id                                        ""
+	required  int32               SAMUnitNo                                       ""
+	optional  text(32)            SAMUnitName                                     ""
+	optional  text(32)            SAMLocation                                     ""
+	optional  text(15)            DataNo                                          ""
+	optional  text(15)            CellNo                                          ""
+	optional  int32               SeqNo                                           ""
+	required  text(16)            SAMIPAddress                                    ""
+	required  int32               SAMPortNo                                       ""
+	required  int32               SAMStatus                                       ""
+	optional  text(15)            SAMLatitude                                     ""
+	optional  text(15)            SAMLongitude                                    ""
+	optional  text(30)            PowerSerialNo                                   ""
+	required  int32               Active                                          ""
+	required  int32               UserID                                          ""
+	optional  text(200)           RawValues                                       ""
+	required  date                TimeStamp                                       ""
+	optional  text(15)            PowerID                                         ""
+	optional  int32               KPLCReading                                     ""
+	optional  int32               ConlogReading                                   ""
+	optional  int32               LastConlogReading                               ""
+	optional  int32               BTSType                                         ""
+	required  int32               LastFuel1                                       ""
+	required  int32               LastFuel2                                       ""
+	required  bool                FLValid1                                        ""
+	required  bool                FLValid2                                        ""
+	required  double              Gen1RH                                          ""
+	required  double              Gen2RH                                          ""
+	required  double              Gen1TotRH                                       ""
+	required  double              Gen2TotRH                                       ""
+	required  date                Gen1Date                                        ""
+	required  date                Gen2Date                                        ""
+	required  text(20)            AlarmMask                                       ""
+	required  int32               Fuel1Capacity                                   ""
+	required  int32               Fuel2Capacity                                   ""
+	required  double              Gen1Capacity                                    ""
+	required  double              Gen2Capacity                                    ""
+	required  text(50)            Gen1Make                                        ""
+	required  text(50)            Gen2Make                                        ""
+	required  text(50)            SiteEngineer                                    ""
+	required  text(50)            NMCUser                                         ""
+	required  text(25)            SECell                                          ""
+	required  text(5000)          Comments                                        ""
+	required  date                TestDate                                        ""
+	required  int32               NotifyUserID                                    ""
+	required  date                RectifiedDate                                   ""
+	required  int32               MngNotifyUserID                                 ""
+	required  text(15)            Cell2No                                         ""
+	required  text(15)            Data2No                                         ""
+	required  double              BatteryCapacity                                 ""
+	required  text(16)            SAMIPAddress2                                   ""
+	required  int32               PowerTypeID                                     ""
+	required  date                SIM1InstallDate                                 ""
+	required  date                SIM2InstallDate                                 ""
+	required  bool                DVRequest                                       ""
+	required  bool                StandardSite                                    ""
+	required  text(20)            VersionString                                   ""
+	required  bool                AMEdit                                          ""
+	required  int32               ServiceState                                    ""
+	required  int32               IPCAM                                           ""
+	required  int32               LockState                                       ""
+	required  int32               EXTMPUnits                                      ""
+	optional  text(50)            InstallContractor                               ""
+	required  int32               QAConfirmed                                     ""
+	required  int32               InalaRectifier                                  ""
+	required  int32               RectCapacity                                    ""
+	optional  int32               LastLogNo                                       ""
+	optional  date                LogRequestTime                                  ""
+	optional  date                FirstDate                                       ""
+	optional  date                LastDate                                        ""
+	required  int32               CommsChannel                                    ""
+	required  int32               IPCamManualSync                                 ""
+	optional  date                IPCAMDirDate                                    ""
+	required  int32               GPRSStatus                                      ""
+	optional  text(200)           IPCamStatus                                     ""
+	optional  date                IPCamStatusDate                                 ""
+
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "Virtuals" Virtuals
+{
+	"Internal"
+	required  int32               VirtualID                                       ""
+	required  int32               UnitType                                        ""
+	required  int32               VirtualNo                                       ""
+	optional  text(30)            VirtualLabel                                    ""
+	required  int32               Severity                                        ""
+	required  double              DefaultSetting                                  ""
+	required  text(10)            UnitsLabel                                      ""
+	required  int32               AlarmNo                                         ""
+	required  int32               Options                                         ""
+
+	
+} PRIMARY KEY(VirtualID);
+
+CREATE TABLE "WebCommands" WebCommands
+{
+	"Internal"
+	required  int32               CommandID                                       ""
+	required  text(16)            UserName                                        ""
+	required  text(16)            UnitIP                                          ""
+	required  int32               CommandNo                                       ""
+	required  int32               Status                                          ""
+	optional  text(50)            Parameters                                      ""
+	optional  text(50)            ReplyString                                     ""
+	required  date                Timestamp                                       ""
+
+	
+} PRIMARY KEY(CommandID);
+
+CREATE TABLE "WeekSchedules" WeekSchedules
+{
+	"Internal"
+	required  int32               ScheduleNo                                      ""
+	required  int32               Monday                                          ""
+	required  int32               Tuesday                                         ""
+	required  int32               Wednesday                                       ""
+	required  int32               Thursday                                        ""
+	required  int32               Friday                                          ""
+	required  int32               Saturday                                        ""
+	required  int32               Sunday                                          ""
+	required  int32               HourFrom                                        ""
+	required  int32               MinuteFrom                                      ""
+	required  int32               HourTo                                          ""
+	required  int32               MinuteTo                                        ""
+	required  bool                Active                                          ""
+
+	
+} PRIMARY KEY(ScheduleNo);
+
+CREATE TABLE "dtproperties" dtproperties
+{
+	"Internal"
+	required  int32               id                                              ""
+	optional  int32               objectid                                        ""
+	required  text(64)            property                                        ""
+	optional  text(255)           value                                           ""
+	optional  text(510)           uvalue                                          ""
+	optional  bin(16)             lvalue                                          ""
+	required  int32               version                                         ""
+
+	
+} PRIMARY KEY(id);
+
+CREATE TABLE "vwTenantPerSamID30" vwTenantPerSamID30
+{
+	"Internal"
+	required  int32               SAMID                                           ""
+	optional  double              PowerUsed                                       ""
+	required  text(20)            Who                                             ""
+	required  int32               ServiceStateID                                  ""
+
+	
+} PRIMARY KEY(SAMID);
+
+CREATE TABLE "imqs_alarm_mute" imqs_alarm_mute
+{
+	"Internal"
+	required  int64        id                                                   ""
+	required  int64        samid                                                ""
+	required  int64        alarmid                                              ""
+
+} PRIMARY KEY(id);

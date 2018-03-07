@@ -1,0 +1,485 @@
+VERSION 0
+
+CREATE TABLE "employees_view" employees_view
+{
+	"Internal"
+	required	int64	rowid					""		
+	required	int64	resource				"resource"									
+	"1 - General"
+	optional	text 	employee_number			"Employee Number"										uiorder:0
+	optional	text	initials				"Initials"												uiorder:1
+	optional	text	surname					"Surname"												uiorder:2
+	optional	text	fullnames				"Fullnames"												uiorder:3
+	optional	text	gender					"Gender"												uiorder:4
+	optional	text	occupation				"Occupation"											uiorder:5
+	optional	text	job_title				"Job Title"				tags:hideInGrid	    			uiorder:6
+	optional	text	paypoint				"Paypoint"												uiorder:6
+	optional	text	clock_number			"Clock number"											uiorder:7
+	optional	text	status					"Status"												uiorder:8
+	optional	text	duration				"Duration"												uiorder:9
+	optional	text	disabled				"Disabled"												uiorder:10
+	optional	text	race					"Race"					tags:hideInGrid					uiorder:11
+	optional 	text	service_branch			"Service branch"										uiorder:12
+	optional	text	depot					"Depot"													uiorder:13
+	optional	text	region					"Region"												uiorder:14
+	optional	text	functional_zone			"Functional Zone"		tags:hideInGrid					uiorder:15
+	optional	text	tariff 					"Tarrif Code"			tags:hideInGrid					uiorder:16
+	optional	text	standard_time_code		"Standard Time Code"	tags:hideInGrid					uiorder:17
+	optional	text	overtime_limit			"Overtime Limit"		tags:hideInGrid					uiorder:18
+	optional	text	groups					"Group"					tags:hideInGrid					uiorder:19
+	optional	text	supervisory_level		"Supervisory Level"		tags:hideInGrid					uiorder:20
+	optional	text	id_number				"ID number"				tags:hideInGrid					uiorder:21
+	optional	date	date_employed			"Date Employed"			tags:hideInGrid					uiorder:22
+	optional	date	employment_terminated	"Date Terminated"		tags:hideInGrid					uiorder:23
+	optional	text	area_code				"Area Code"				tags:hideInGrid					uiorder:24
+	optional	text	highest_qualification	"Highest Qualification"	tags:hideInGrid					uiorder:25
+	"2 - Contact Details"
+	optional	text	cell_number				"Cell Number"			tags:hideInGrid	    			uiorder:26
+    optional	text	office_telephone		"Office Telephone"		tags:hideInGrid	    			uiorder:27
+    optional	text	office_fax				"Office Fax"			tags:hideInGrid	    			uiorder:28
+    optional	text	room_number				"Room Number"			tags:hideInGrid	    			uiorder:29
+    optional	text	municipal_account		"Municipal Account"		tags:hideInGrid	    			uiorder:30	
+	optional	text	home_address			"Home Address"			tags:hideInGrid					uiorder:31
+	optional	text	home_telephone			"Home Telephone"		tags:hideInGrid	    			uiorder:31
+    optional	text	next_of_kin_telephone	"Next Of Kin"			tags:hideInGrid	    			uiorder:33
+	"3 - Banking Details"
+    optional	text	bank_name				"Bank Name"				tags:hideInGrid	    			uiorder:34
+    optional	text	bank_account_number		"Account Number"		tags:hideInGrid	    			uiorder:35
+    optional	text	bank_branch_name		"Branch Name"			tags:hideInGrid	    			uiorder:36
+	"4 - Allowance"
+    optional	text	car_allowance_kilometers	"Kilometers"		tags:hideInGrid	    			uiorder:37
+    optional	text	car_allowance_since		"Since"					tags:hideInGrid	    			uiorder:38
+	"5 - License"
+    optional	text	license_date			"License Date"			tags:hideInGrid		    		uiorder:39
+    optional	text	license_expiry_date		"License Expiry Date"	tags:hideInGrid		    		uiorder:40
+    optional	text	remarks_drivers_license	"Remarks Drivers License"	tags:hideInGrid	    		uiorder:41
+    optional	text	vehicle_code			"Vehicle Code"			tags:hideInGrid		    		uiorder:42
+    optional	text	last_pdp				"Last PDP"				tags:hideInGrid		    		uiorder:43
+    optional	text	pdp_expiry_date			"PDP Expiry Date"		tags:hideInGrid		    		uiorder:44
+	"6 - Employee"
+    optional	text	employee				"Employee"				tags:hideInGrid		    		uiorder:45
+    optional	text	official_title_code		"Official Title Code"	tags:hideInGrid		    		uiorder:46
+    optional	text	union					"Union"					tags:hideInGrid		    		uiorder:47
+    optional	text	clock_name				"Clock Name"			tags:hideInGrid	    			uiorder:48
+    optional	text	group					"Group"					tags:hideInGrid		    		uiorder:49
+	"7 - Other"
+    optional	text	from_date_button		"From Date Button"		tags:hideInGrid		    		uiorder:50
+    optional	text	to_date_button_history	"To Date Button History"	tags:hideInGrid	    		uiorder:51
+    optional	text	button_history			"Button History"		tags:hideInGrid	    			uiorder:52
+    optional	text	from_date_time_programme	"From Date Time Programmes"	tags:hideInGrid   		uiorder:53
+    optional	text	to_date_time_programmes	"To Date Time Programmes"	tags:hideInGrid	    		uiorder:54
+    optional	text	group_time_programmes	"Group Time Programmes"	tags:hideInGrid		    		uiorder:55
+    optional	text	remarks					"Remarks"				tags:hideInGrid		    		uiorder:56
+    optional	text	attachment_employee     "Attachment Employee"	tags:hideInGrid		    		uiorder:57
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(resource);
+
+CREATE TABLE "fleet_view" fleet_view
+{
+	"Internal"
+	required	int64	rowid					""		
+	required	int64	resource				"resource"									
+	"General"
+	optional	text	description				"Description"								uiorder:0
+	optional	text	code					"Fleet number"								uiorder:1
+	optional	text	datereg					"Date of first registration"				uiorder:2
+	optional 	text	kilowatt				"Engine kilowatt"							uiorder:3
+	optional	text	fltregion				"Region"									uiorder:4
+	optional	text	replacementvalue		"Replacement amount"						uiorder:6
+	optional	text	last_user				"Last User"									uiorder:8
+	optional	text	tare					"Tare Mass"									uiorder:9
+	optional	text	last_update				"Last modified date"						uiorder:10
+	optional	text	budget					"Budget"									uiorder:11
+	optional	text	last_km					"Last km"									uiorder:12
+	optional	text	tariff					"Tariff code"								uiorder:13
+	optional	text	heavyequip				"Heavy equipment"							uiorder:14
+	optional	text	fltdepot				"Depot"										uiorder:15
+	optional	text	allocation				"Allocated to"								uiorder:17
+	optional	text	gross					"Gross Mass"								uiorder:18
+	optional	text	captured_by				"Last modified by"							uiorder:19
+	optional	text	licenseamount			"Annual license amount"						uiorder:20
+	optional	text	dept					"Department"								uiorder:21
+	optional	text	ownership				"Ownership"									uiorder:23
+	optional	text	eng_size				"Engine Size"								uiorder:24
+	optional	text	date_receive			"Date received"								uiorder:25
+	optional	text	serialcode				"Serial"									uiorder:26
+	optional	text	fltclass				"Class"										uiorder:27
+	optional	text	registration			"Registration number"						uiorder:28
+	optional	text	asset					"Asset number"								uiorder:29
+	optional	text	clocknumber				"Clocknumber"								uiorder:31
+	optional	text	location				"Location"									uiorder:32
+	optional	text	make					"Make"										uiorder:33
+	optional	text	serial					"Serial/Chassis number"						uiorder:34
+	optional	text	addserial				"Engine number"								uiorder:35
+	optional	text	engine					"Engine type"								uiorder:36
+	optional	text	date_scrap				"Date scrapped"								uiorder:37
+	optional	text	comment					"Comment"									uiorder:38
+	optional	text	lastrtqs				"RTQS expiry"								uiorder:41
+	optional	text	lastlicense				"License expiry"							uiorder:42
+	optional	text	remarks					"Remarks"									uiorder:43
+	optional	text	tarcode					"TarCode"			tags:hideInGrid			uiorder:44
+	optional	text	notes					"Notes"				tags:hideInGrid			uiorder:45
+    optional	text	attachments				"Attachments"		tags:hideInGrid			uiorder:46
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(resource);
+
+CREATE TABLE "materials_view" materials_view
+{
+	"Internal"
+	required	int64	rowid					""		
+	required	int64	resource				"resource"									
+	"General"
+	optional	text	sysid					"System ID"									uiorder:0
+	optional	text	itemcode				"Item Code"									uiorder:1
+	optional	text	othercode				"Other Code"								uiorder:2
+	optional	text	description				"Description"								uiorder:3
+	optional	text	unit					"Unit"										uiorder:4
+	optional	text	type					"Type"										uiorder:5
+	optional	text	category				"Category"									uiorder:6
+	optional	text	safcategory				"SAF Category"								uiorder:7
+	optional	text	group					"Group"										uiorder:8
+	optional	text	tariff					"Tariff"									uiorder:9
+	optional	text	vat						"VAT"										uiorder:10
+	optional	text	re_stock				"Re Stock"									uiorder:11
+	optional	text	on_order				"On Order"									uiorder:12
+	optional	text	shelf					"Shelf"										uiorder:13
+	optional	text	contractnumber			"Contract Number"							uiorder:14
+	optional	text	contractitem			"Contract Item"								uiorder:15
+	optional	text	contractexpiry			"Contract Expiry"							uiorder:16
+	optional	text	supplier				"Supplier"									uiorder:17
+	optional	text	storenumber				"Store Number"								uiorder:18
+	optional	text	remarks					"Remarks"									uiorder:19
+	optional	text	captured_by				"Captured By"								uiorder:20
+	optional	text	last_update				"Last Update"								uiorder:21
+	optional	text	current_stock			"Current Stock"								uiorder:22
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(resource);
+
+CREATE TABLE "contractors_view" contractors_view
+{
+	"Internal"
+	required	int64	rowid					""		
+	required	int64	resource				"resource"									
+	"General"
+	optional	text	serial					"Serial"									uiorder:0
+	optional	text	code					"Code"										uiorder:1
+	optional	text	sapvendor				"SAP Vendor"								uiorder:2
+	optional	text	name					"Name"										uiorder:3
+	optional	text	consultant				"Consultant"								uiorder:4
+	optional	text	contractor				"Contractor"								uiorder:5
+	optional	text	developer				"Developer"									uiorder:6
+	optional	text	consumer				"Consumer"									uiorder:7
+	optional	text	supplier				"Supplier"									uiorder:8
+	optional	text	contact					"Contact Person"							uiorder:9
+	optional	text	tel						"Tel"										uiorder:10
+	optional	text	fax						"Fax"										uiorder:11
+	optional	text	expirydate				"Expiry Date"								uiorder:12
+	optional	text	certificate				"Certificate"								uiorder:13
+	optional	text	registration			"Registration"								uiorder:14
+	optional	text	vatreg					"VAT Reg"									uiorder:15
+	optional	text	vatnumber				"VAT Number"								uiorder:16
+	optional	text	metroaccount			"Metro Account"								uiorder:17
+	optional	text	id_number				"ID Number"									uiorder:18
+	optional	text	contact					"Contact"									uiorder:19
+	optional	text	adr1					"Address 1"									uiorder:20
+	optional	text	adr2					"Address 2"									uiorder:21
+	optional	text	adr3					"Address 3"									uiorder:22
+	optional	text	p_adr1					"Postal Address 1"							uiorder:23
+	optional	text	p_adr2					"Postal Address 2"							uiorder:24
+	optional	text	p_adr3					"Postal Address 3"							uiorder:25
+	optional	text	p_code					"Postal Code"								uiorder:26
+	optional	text	created_by				"Created By"								uiorder:27
+	optional	text	date_modified			"Date Modified"								uiorder:28
+	optional	text	remarks					"Remarks"									uiorder:29
+	optional	text	captured_by				"Captured By"		tags:hideInGrid			uiorder:30
+	optional	text	last_update				"Last Update"		tags:hideInGrid			uiorder:31
+}
+PRIMARY KEY(rowid);
+
+CREATE TABLE "contractor_document" contractor_document
+{
+	"Internal"
+	required	int64	rowid					""								
+	"General"
+	optional	text	doc_sysid				"Sys ID"									uiorder:0
+	optional	text	doc_documentid			"Document ID"								uiorder:1
+	optional	text	description				"Description"								uiorder:2
+	optional	text	start_dt				"Start Date"								uiorder:3 unit:MSE
+	optional	text	end_dt					"End Date"									uiorder:4 unit:MSE
+	optional	text	created_by				"Created By"								uiorder:5
+	optional	text	last_modified_dt			"Last Modified"								uiorder:6 unit:MSE
+	optional	text	full_description		"Full Description"		tags:hideInGrid		uiorder:7
+	optional	text	administer				"Administrator"			tags:hideInGrid		uiorder:9
+	optional	text	guid					"Guid"					tags:hideInGrid		uiorder:10
+	optional	text	type					"Contract Type"			tags:hideInGrid		uiorder:11
+	hasmany		Items	doc_documentid			contractor_document_item.document_id
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(rowid);
+
+CREATE TABLE "contractor_document_item" contractor_document_item
+{
+	"Internal"
+	required	int64	rowid					""								
+	"General"
+	optional	text	document_id				"Document ID"								uiorder:1
+	optional	text	description				"Description"								uiorder:2
+	optional	text	item_code_contract		"Item Code Contract"						uiorder:3
+	optional	text	created_by				"Created By"								uiorder:4
+	optional	text	date_modified			"Last Modified"								uiorder:5
+	optional	text	short_description		"Short Description"							uiorder:6
+	optional	text	unit					"Unit"										uiorder:7
+	optional	text	estimated_tariff		"Estimated Tariff"							uiorder:8
+	optional	text	costing_method			"Costing Method"							uiorder:9
+	optional	text	tar_code				"Tariff Code"								uiorder:10
+	optional	text	practical_maximum		"Practical Maximum"							uiorder:11
+	optional	text	full_description_item	"Full Description"		tags:hideInGrid		uiorder:12
+	
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(rowid);
+
+
+CREATE TABLE "timesheet_view" timesheet_view
+{
+	"Internal"
+	required	int64		rowid						""	
+	"General"
+	optional	text		reference_num				"Reference Number"							uiorder:0
+	optional	date		sheet_date					"Sheet Date"								uiorder:1 unit:MSE
+	optional	text		employee_number				"Employee No."								uiorder:2 
+	optional	text		firstname					"First Name(s)"								uiorder:3
+	optional	text		surname						"Surname"									uiorder:4
+ 	optional	text		timesheet_start				"Start Time"		 						uiorder:5
+	optional	text		timesheet_end				"End Time"									uiorder:6
+	optional	double		total_cost					"Timesheet Cost"							uiorder:7
+	optional	text		date_captured				"Date Captured"			tags:hideInGrid		uiorder:8
+	optional	text		date_modified				"Date Modified"			tags:hideInGrid		uiorder:9
+	optional	text		captured_by					"Captured By"			tags:hideInGrid		uiorder:10
+	optional	text		start_time					"Activity Start Time"	tags:hideInGrid		uiorder:11 
+	optional	text		end_time					"Activity End Time"		tags:hideInGrid		uiorder:12	
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(reference_num);
+
+CREATE TABLE "tariff_view" tariff_view
+{
+	"Internal"
+	required	int64		rowid						""	
+	"General"
+	optional	text		code						"Code"									uiorder:0
+	optional	text		description					"Description"							uiorder:1
+	optional	int64		capturedBy					"Captured By"							uiorder:2
+	optional	datetime	lastUpdated					"Last Updated"							uiorder:3		unit:MSE
+	optional	double		rate						"Rate"									uiorder:4		unit:ZAR
+	optional	text		unitOfMeasure				"Unit of Measure"						uiorder:5	
+	optional	text		effectiveDate				"Effective Date"						uiorder:6	tags:hideInGrid
+	optional	text		endDate						"End Date"								uiorder:7	tags:hideInGrid
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(code);
+
+CREATE TABLE "standard_time_view" standard_time_view
+{
+	"Internal"
+	required	int64	rowid						""	
+	"0.General"
+	optional	text		code						"Code"									uiorder:0
+	optional 	text		description 				"Description"							uiorder:1
+	optional	text		capturedBy 					"Captured By"							uiorder:2
+	required 	bool		discontinued				"Discontinued"							uiorder:3
+	optional	datetime 	lastUpdated					"Last Updated"							uiorder:4	unit:MSE
+	
+	"1.Monday"
+	required 	text 	monday_start			"Monday Start"							uiorder:5 	tags:hideInGrid
+	required 	text 	monday_lunch			"Monday Lunch"							uiorder:6 	tags:hideInGrid
+	required 	text 	monday_lunch_end		"Monday Lunch End"						uiorder:7 	tags:hideInGrid
+	required 	text 	monday_finish			"Monday Finish"							uiorder:8 	tags:hideInGrid
+	"2.Tuesday"
+	required 	text 	tuesday_start			"Tuesday Start"							uiorder:9 	tags:hideInGrid
+	required 	text 	tuesday_lunch			"Tuesday Lunch"							uiorder:10 	tags:hideInGrid
+	required 	text 	tuesday_lunch_end		"Tuesday Lunch End"						uiorder:11 	tags:hideInGrid
+	required 	text 	tuesday_finish			"Tuesday"								uiorder:12 	tags:hideInGrid
+	"3.Wednesday"
+	required 	text 	wednesday_start			"Wednesday Start"						uiorder:13	tags:hideInGrid
+	required 	text 	wednesday_lunch			"Wednesday Lunch"						uiorder:14	tags:hideInGrid
+	required 	text 	wednesday_lunch_end		"Wednesday Lunch End"					uiorder:15	tags:hideInGrid
+	required 	text 	wednesday_finish		"Wednesday Finish"						uiorder:16	tags:hideInGrid
+	"4.Thursday"
+	required 	text 	thursday_start			"Thursday Start"						uiorder:17	tags:hideInGrid
+	required 	text 	thursday_lunch			"Thursday Lunch"						uiorder:18	tags:hideInGrid
+	required 	text 	thursday_lunch_end		"Thursday Lunch End"					uiorder:19	tags:hideInGrid
+	required 	text 	thursday_finish			"Thursday Finish"						uiorder:20	tags:hideInGrid
+	"5.Friday"
+	required 	text 	friday_start			"Friday Start"							uiorder:21	tags:hideInGrid
+	required 	text 	friday_lunch			"Friday Lunch"							uiorder:22	tags:hideInGrid
+	required 	text 	friday_lunch_end		"Friday Lunch End"						uiorder:23	tags:hideInGrid	
+	required 	text 	friday_finish			"Friday Finish"							uiorder:24	tags:hideInGrid
+	"6.Saturday"
+	required 	text 	saturday_start			"Saturday Start"						uiorder:25	tags:hideInGrid
+	required 	text 	saturday_lunch			"Saturday Lunch"						uiorder:26	tags:hideInGrid
+	required 	text 	saturday_lunch_end		"Saturday Lunch End"					uiorder:27	tags:hideInGrid
+	required 	text 	saturday_finish			"Saturday Finish"						uiorder:28	tags:hideInGrid
+	"7.Sunday"
+	required 	text 	sunday_start			"Sunday Start"							uiorder:29 	tags:hideInGrid
+	required 	text 	sunday_lunch			"Sunday Lunch"							uiorder:30 	tags:hideInGrid
+	required 	text 	sunday_lunch_end		"Sunday Lunch End"						uiorder:31 	tags:hideInGrid
+	required 	text 	sunday_finish			"Sunday Finish"							uiorder:32 	tags:hideInGrid
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(code);
+
+CREATE TABLE "public_holiday_view" public_holiday_view
+{
+	"Internal"
+	required	int64		rowid						""
+	optional	text		guid						"Guid"
+	"0.General"
+	optional	text		date						"Date"									uiorder:0
+	optional	text		description					"Description"							uiorder:1
+	optional	int64		capturedBy					"Captured By"							uiorder:2
+	optional	datetime	lastUpdated					"Last Updated"							uiorder:3		unit:MSE
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(guid);
+
+CREATE TABLE "pay_day_view" pay_day_view
+{
+	"Internal"
+	required	int64		rowid						""	
+	optional	text		guid						"Guid"
+	"0.General"
+	optional	text		date						"Date"									uiorder:0
+	optional	text		programmeOld				"From Programme"						uiorder:1
+	optional	text		programmeNew				"To Programme"							uiorder:2
+	optional	text		remark						"Remarks"								uiorder:3
+	optional	int64		capturedBy					"Captured By"							uiorder:4
+	optional	datetime	lastUpdated					"Last Updated"							uiorder:5		unit:MSE
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(guid);
+
+CREATE TABLE "contractor_agreement_view" contractor_agreement_view
+{
+	"Internal"
+	required	int64		rowid						""	
+	optional	text		guid						"Guid"
+	"0.General"
+	optional	text		firm_serial					"Firm Serial"							uiorder:0
+	optional	text		doc_documentid				"Document Id"							uiorder:1
+	optional	text		start_date					"Start Date"							uiorder:2
+	optional	text		end_date					"End Date"								uiorder:3
+	optional	text		cda_item_code				"Item Code"								uiorder:4
+	optional	text		cda_estimated_tariff		"Tariff"								uiorder:5
+	optional	text		cda_unit					"Unit"									uiorder:6
+	optional	text		captured_by					"Caprtured By"							uiorder:7
+	optional	text		administer					"Administrator Code"					uiorder:8
+	optional	text		administer_by				"Administrator Name"					uiorder:9
+	optional	int64		captured_by					"Captured By"							uiorder:10
+	optional	datetime	date_modified				"Last Updated"							uiorder:11		unit:MSE
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(guid);
+
+CREATE TABLE "leave_history_view" leave_history_view
+{
+	"Internal"
+	required	int64		rowid						""	
+	optional	text		guid						"Guid"
+	"0.General"
+	optional	text		employee_ref				"Employee ID"							uiorder:0
+	optional	text		employee_name				"Employee Name"							uiorder:1
+	optional	datetime	start_time					"Start Date"							uiorder:2 unit:MSE
+	optional	datetime	end_time					"End Date"								uiorder:3 unit:MSE
+	optional	text		actual_days					"Actual Days"							uiorder:4
+	optional	text		leave_type					"Leave Type"							uiorder:5
+	optional	datetime	date_approved				"Date Approved"							uiorder:6 unit:MSE
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(guid);
+
+CREATE TABLE "project_code" project_code
+{
+	"Internal"
+	required	int64		id							""	
+	optional	text		guid						"Guid"	
+	optional	text		date_created				""	
+	optional	text		sap_skilled_labour			""	
+	optional	text		skill_gl					""	
+	optional	text		unskill_gl					""	
+	optional	text		gl_or_project_wbs			""	
+	optional	text		sap_unskilled_labour		""	
+	optional	text		material_gl					""	
+	optional	text		full_description			""	
+	optional	text		sap_materials				""	
+	optional	text		sap_transport				""	
+	optional	text		transport_gl				""	
+	optional	text		street_name					""	
+	optional	text		street_number				""	
+	optional	text		suburb_name					""	
+	optional	text		equipment_gl				""	
+	optional	text		sap_equipment				""	
+	optional	text		sap_other					""	
+	optional	text		other_gl					""	
+	optional	text		skill_cost_centre			""
+	optional	text		wbs_sap_skilled_labour		""
+	optional	text		wbs_sap_unskilled_labour	""
+	optional	text		material_cost_centre		""
+	optional	text		unskill_cost_centre			""
+	optional	text		wbs_sap_materials			""
+	optional	text		transport_cost_centre		""
+	optional	text		print_invoice				""
+	optional	text		equipment_cost_centre		""
+	optional	text		wbs_sap_transport			""
+	optional	text		other_cost_centre			""
+	optional	text		wbs_sap_equipment			""
+	optional	text		client						""
+	optional	text		wbs_sap_other				""
+	optional	text		client_reference			""
+	optional	text		client_contact				""
+	optional	text		telephone					""
+	optional	text		treasury_reference			""
+	optional	text		deposit_date				""
+	optional	text		deposit_amount				""
+	optional	text		authorisation_date			""
+	optional	text		invoice_date				""
+	optional	text		invoice_amount				""
+	optional	text		enforce_task_number_as_reference	""
+	optional	text		captured_by					""
+	"0.General"
+	optional	text		project_job_code_finance	"Code"									uiorder:0
+	optional	text		description					"Description"							uiorder:1
+	optional	text		branch						"Branch"								uiorder:2 
+	optional	text		status						"Status"								uiorder:3 
+	optional	datetime	date_opened_general			"Date Opened"							uiorder:4 unit:MSE 
+	optional	datetime	date_closed_general			"Date Closed"							uiorder:5 unit:MSE
+	optional	text		informal_budget				"Budget"								uiorder:6
+	optional	text		expenditure_to_date			"Expenditure"							uiorder:7
+	optional	datetime	last_updated				"Date Modified"							uiorder:8 unit:MSE
+}
+PRIMARY KEY(id)
+UNIQUE INDEX(guid);
+
+CREATE TABLE "sap_projects" sap_projects
+{
+	"Internal"
+	required	int64		id							""	
+	optional	text		guid						"Guid"	
+	optional	text		budget						""	
+	optional	text		remarks						""
+	optional	text		captured_by					""
+	"0.General"
+	optional	text		idp_project					"IDP Project"							uiorder:0
+	optional	text		sap_project					"SAP Project"							uiorder:1
+	optional	text		idp_jobnumber				"IDP Job Number"						uiorder:2 
+	optional	text		description					"Description"							uiorder:3 
+	optional	datetime	date_created				"Date Created"							uiorder:4 unit:MSE 
+	optional	datetime	last_updated				"Date Modified"							uiorder:5 unit:MSE
+}
+PRIMARY KEY(id)
+UNIQUE INDEX(guid);
+
+

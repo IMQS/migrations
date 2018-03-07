@@ -1,0 +1,613 @@
+VERSION 1
+
+CREATE TABLE "activityallocationtarget_progressitem_aud" activityallocationtarget_progressitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "documents_aud" documents_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "idpallocation_aud" idpallocation_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "idplookup_aud" idplookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "legalentity_aud" legalentity_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "kpilookup_aud" kpilookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "kpiitem_aud" kpiitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "lookupcollection_aud" lookupcollection_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "milestonecpi_aud" milestonecpi_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "monthitem_aud" monthitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "mtref_aud" mtref_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "objectstates_aud" objectstates_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "paymentcertificate_aud" paymentcertificate_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "person_aud" person_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "programme_aud" programme_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_wardallocation_aud" project_wardallocation_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_projectbudget_aud" project_projectbudget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_timeline_aud" project_timeline_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "statuscheckprogressitem_aud" statuscheckprogressitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "projectdescription_aud" projectdescription_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "projectbudget_aud" projectbudget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "timeline_aud" timeline_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "address_aud" address_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "contractor_aud" contractor_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "budgetitem_projectbudget_aud" budgetitem_projectbudget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activitycpi_activityallocationtarget_aud" activitycpi_activityallocationtarget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activityallocationtarget_monthitem_aud" activityallocationtarget_monthitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activitycpi_activityriskmanagement_aud" activitycpi_activityriskmanagement_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activitycpi_aud" activitycpi_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activitylookup_aud" activitylookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activityriskmanagement_aud" activityriskmanagement_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "cpi_cpi_aud" cpi_cpi_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "budgetitem_aud" budgetitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "employee_aud" employee_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "financialtarget_aud" financialtarget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "programme_project_aud" programme_project_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "roletype_aud" roletype_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "budget_aud" budget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "lookups_aud" lookups_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "invoice_aud" invoice_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "budgetitemhistory_aud" budgetitemhistory_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "kpiallocation_aud" kpiallocation_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "kpicollection_aud" kpicollection_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "kpicollection_kpiitem_aud" kpicollection_kpiitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "kpitarget_aud" kpitarget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "budgetitem_budgetitemhistory_aud" budgetitem_budgetitemhistory_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "legalentitycollection_aud" legalentitycollection_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "legalentitycollection_legalentity_aud" legalentitycollection_legalentity_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "projectrole_aud" projectrole_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "measurableprogressitem_aud" measurableprogressitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "activityallocationtarget_aud" activityallocationtarget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "measurabletarget_aud" measurabletarget_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "measureablelookup_aud" measureablelookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_aud" project_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "budget_budgetitem_aud" budget_budgetitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "outcomecollection_aud" outcomecollection_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "outcomecollection_outcomelookup_aud" outcomecollection_outcomelookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "outcomelookup_aud" outcomelookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "riskmanagement_aud" riskmanagement_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "pcscomment_aud" pcscomment_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "lookupcollection_lookups_aud" lookupcollection_lookups_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "cpi_aud" cpi_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "phasecpi_aud" phasecpi_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "phaselookup_aud" phaselookup_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "programme_programme_aud" programme_programme_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_idpallocation_aud" project_idpallocation_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_kpiallocation_aud" project_kpiallocation_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_mtref_aud" project_mtref_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "progressitem_aud" progressitem_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "timeline_cpi_aud" timeline_cpi_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "wardallocation_aud" wardallocation_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "cpi_cpi" cpi_cpi {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "legalentitycollection_legalentity" legalentitycollection_legalentity {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "lookupcollection_lookups" lookupcollection_lookups {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "outcomecollection_outcomelookup" outcomecollection_outcomelookup {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "financialprogresscomment_aud" financialprogresscomment_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "financialyear_aud" financialyear_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "project_financialprogresscomment_aud" project_financialprogresscomment_aud {
+					"Internal"
+
+					flags						orm_noclient
+};
+
+CREATE TABLE "lookups" lookups
+{
+	"Internal"
+	required  bin                 id                         					          			""
+	required  int64               rowid                                   					        ""	
+	required  date				  datemodified														""
+	required  text(255)			  clientid														    ""
+	required  text(255)			  lookuptype													 	""
+	required  text(255)			  metadata															""
+	required  bin				  parent_id															""
+	required  bool			      isdeleted															""
+	"2.Lookup"
+	required  text				  value																"Document Type"
+}
+PRIMARY KEY(id)
+INDEX(rowid);
+
+CREATE TABLE "documents" documents
+{
+	"Internal"
+	required  bin                 id                         					          			""
+	required  int64               rowid                                   					        ""	
+	required  date				  datemodified														""
+	required  text(255)			  documentid														""
+	required  text(255)			  entityid															""
+	required  bool			      isdeleted															""
+	optional  bin				  documenttype_id													""	
+	optional  text(255)           metadata                                  					    ""
+	"0.General"
+	required  text(255)           filename                                  					    "File Name"
+	optional  text(255)           description                                  					    "Description"
+	required  text(255)           filesize                                  					    "File Size"
+	optional  text(255)           keywords                                  					    "Keywords"
+	required  date		          uploaddate                                  					    "Upload Date"			unit:MSE
+	
+	hasone		DocumentType		documenttype_id				lookups.id
+	
+}	
+PRIMARY KEY(id)
+INDEX(rowid);
+
+CREATE TABLE "project_total_budget" project_total_budget
+{
+	"Internal"
+	required  bin                 id                         					          			""
+	required  int64               rowid                                   					        ""	
+	optional  polygon             Geometry                                					        ""
+	"0.General"
+	required  text(255)           number                                  					        "Project Number"				tags:dispPCSProjectLink	uiorder:1
+	required  text(255)           name                                    	 				        "Description"											uiorder:2
+	required  date                startdate                               					        "Start Date"					unit:MSE				uiorder:3
+	required  date                enddate                                 	 				        "Completion Date"				unit:MSE				uiorder:4
+	required  double           	  projecttotalbudget                                 	 		    "Project Total Budget"			unit:ZAR				uiorder:5
+	
+}
+PRIMARY KEY(id)
+INDEX(number)
+INDEX(Geometry)
+INDEX(rowid);
+
+CREATE TABLE "project_iscurrent_financial_year" project_iscurrent_financial_year
+{
+	"Internal"
+	required  bin                 id                         					          			""
+	required  int64               rowid                                   					        ""	
+	optional  polygon             Geometry                                					        ""
+	"0.General"
+	required  text(255)           number                                  					        "Project Number"				tags:dispPCSProjectLink	uiorder:1
+	required  date                startdate                               					        "Start Date"					unit:MSE				uiorder:2
+	required  date                enddate                                 	 				        "Completion Date"				unit:MSE				uiorder:3
+	required  bool             	  iscurrent                                 	 				    "Is Current Financial Year"						uiorder:4
+	
+}
+PRIMARY KEY(id)
+INDEX(number)
+INDEX(Geometry)
+INDEX(rowid);
+
+CREATE TABLE "project" project
+{
+	"Internal"
+	required  bin                 id                         					          			""
+	
+	"0.General"
+	required  text(31)            type										                        "Type" 													uiorder:2
+	optional  date                datemodified								                        "Modified Date"					unit:MSE				uiorder:6
+	required  date                enddate                                 	 				        "Completion Date"				unit:MSE				uiorder:4
+	required  text(255)           name                                    	 				        "Description"											uiorder:0
+	required  text(255)           number                                  					        "Project Number"				tags:dispPCSProjectLink	uiorder:1
+	required  date                startdate                               					        "Start Date"					unit:MSE				uiorder:3
+	optional  double              financialprogressactualsvalue										"Project Cost"					unit:ZAR				uiorder:5
+	
+	"Internal"	
+	optional  bin                 deplookup_id                            					        "Department"											uiorder:7
+	optional  bin                 division_id                             						    ""														uiorder:8
+	optional  text(255)           gisid                                   					        ""	
+	optional  bin                 duration_id                             					        ""
+	optional  bin                 implementingorganisation_id             					        ""
+	optional  bin                 programmemanager_id                     					        ""
+	optional  bin                 projectdescription_id                   					        ""
+	optional  bin                 projectmanager_id                       					        ""
+	optional  bin                 projecttype_id                          					        ""
+	optional  bin                 riskmanagement_id                       					        ""
+	optional  bin                 seclookup_id                            					        ""
+	optional  bin                 servicetypes_id                         					        ""
+	optional  bin                 programme_id                            					        ""
+	optional  text(255)           latitude                                					        ""
+	optional  text(255)           longitude                               					        ""
+	optional  text                resourcecomment                         					        ""
+	optional  bin                 contractors_id                          					        ""
+	optional  bin                 strategicobjectives_id                  					        ""
+	optional  bin                 outcomes_id                             					        ""
+	optional  bin                 regions_id                              					        ""
+	optional  bool                isdeleted                               					        ""
+	optional  bin                 primarywards_id                         					        ""
+	optional  bin                 glaccounts_id                           					        ""
+	optional  bin                 costcentres_id                          					        ""
+	optional  bin                 financialclerk_id                       					        ""
+	optional  bin                 projectsupervisor_id                    					        ""
+	optional  bin                 safetyagents_id                         					        ""
+	optional  bin                 consultants_id                          					        ""
+	optional  double              financialprogresscommittedpercentage            					"FinancialProgressCommitted"
+	optional  double              financialprogressplannedpercentage      					        ""
+	optional  double              physicalprogressactualpercentage        					        ""
+	optional  double              physicalprogressplannedpercentage       					        ""
+	optional  double              financialprogressactualspercentage      					        ""
+	optional  double              financialprogressactualsvalue           					        ""
+	optional  double              financialprogresscommittedvalue         					        ""
+	optional  double              financialprogressplannedvalue           					        ""
+	optional  double              totalplannedbudget                      					        ""
+	optional  double              budgetamount                               					    ""
+	optional  double              totalcost                                					        ""
+	optional  double              physicalmeasurableprogressplannedpercentage                       ""
+	optional  double              physicalmeasurableprogressactualpercentage                        ""
+	optional  bin                 specialprojectslookup_id                 					        ""
+	optional  polygon             Geometry                                					        ""
+	required  int64               rowid                                   					        ""
+
+} PRIMARY KEY(id)
+  INDEX(number)
+  INDEX(Geometry)
+  INDEX(rowid);
+ 

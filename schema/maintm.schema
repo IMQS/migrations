@@ -1,0 +1,136 @@
+VERSION 0
+
+CREATE TABLE "incident_view" incident_view
+{
+	"Internal"
+	required	int64	rowid					""											
+	required	text	hyperlink						""		
+	optional	point	geometry				""					
+	optional	uuid	parent_id						""
+	optional	int64	form_state				""
+	"Details"
+	optional	text	reference				"Reference Number"		tags:humanID				uiorder:0
+	optional	text	taskcode		 		"Task Code"											uiorder:1
+	"Address"
+	optional	text	stand					"Stand Number"										uiorder:2
+	optional	text	premise					"Premise"											uiorder:3
+	optional	text	street					"Street Address"									uiorder:4
+	optional	text	suburb					"Suburb"											uiorder:5
+	optional	text	crossroad				"Cross Road"			tags:hideInGrid				uiorder:6
+	
+	
+	"Details"
+	optional	text	region					"Region"											uiorder:7
+	optional	text	urgency_code			"Urgency Code"			tags:hideInGrid				uiorder:8
+	optional	text	urgency					"Urgency"											uiorder:9
+	optional	text	priority_code			"Priority Code"			tags:hideInGrid				uiorder:10
+	optional	text	priority_description	"Priority"											uiorder:11
+	optional	text	status_code				"Status Code"			tags:hideInGrid				uiorder:12
+	optional	text	status					"Status"				tags:distinctFilter,incidentStatus		uiorder:13
+	optional	text	closed_by				"Closed By"											uiorder:14
+	optional	text	group_type				"Group"												uiorder:15
+	optional	text	branch					"Branch"											uiorder:16
+	
+	
+	optional	text	date_logged				"Date Logged"										uiorder:17
+	optional	text	logged_by				"Logged By"											uiorder:18
+	optional 	text	date_modified			"Date Modified"			tags:hideInGrid				uiorder:19
+	optional	text	modified_by				"Modified By"			tags:hideInGrid				uiorder:20
+	
+	
+	optional	text	type_code				"Type Code"				tags:hideInGrid				uiorder:21
+	optional	text	type_description		"Type"					tags:hideInGrid				uiorder:22
+	optional	text	module_name				"Module"				tags:hideInGrid				uiorder:23
+	optional	text	department				"Department"			tags:hideInGrid				uiorder:24
+	optional	text	team					"Team"					tags:hideInGrid				uiorder:25
+	optional 	text	description				"Description"			tags:hideInGrid				uiorder:26
+	optional	text	id						"View Incident"			tags:hyperlink,hideInGrid	uiorder:25
+	"PM Schedule"
+	optional	text	activity_type			"Activity Type"			tags:hideInGrid				uiorder:27
+	optional	text	repeat_interval			"Repeat Interval"		tags:hideInGrid				uiorder:28
+	optional	text	repeat_interval_unit	"Interval Unit"			tags:hideInGrid				uiorder:29
+	optional	datetime	target_date			"Target Date"										uiorder:30
+	
+}
+PRIMARY KEY(id)
+INDEX(geometry);
+
+CREATE TABLE "rustenburg_incident_view" rustenburg_incident_view
+{
+	"Internal"
+	required	int64	rowid					""
+	optional	uuid	parent_id				""
+	optional	text	type_code				""
+	"Details"
+	optional	text	reference				"Reference Number"		tags:humanID				uiorder:0
+	optional	text	group					"Group"												uiorder:1
+	optional	text	subject					"Subject"											uiorder:2
+	optional	text	street_number			"Street Number"										uiorder:3
+	optional	text	street_address			"Street Address"									uiorder:4
+	optional	text	suburb					"Suburb"											uiorder:5
+	optional	text	ward					"Ward"												uiorder:6
+	optional	text	urgency					"Urgency"											uiorder:7
+	optional	text	status					"Status"				tags:distinctFilter,incidentStatus		uiorder:8
+	optional	text	date_logged				"Date Logged"										uiorder:9
+	optional 	text	date_modified			"Date Modified"										uiorder:10
+	optional	text	logged_by				"Logged By"											uiorder:11
+	optional	text	id						"View Incident"			tags:hyperlink,hideInGrid	uiorder:12
+}
+PRIMARY KEY(id)
+INDEX(id);
+
+
+CREATE TABLE "incident_assets" incident_assets
+{
+	"Internal"
+	required	int64	incident_asset_id	""											
+	required	uuid	id					""											
+	required	uuid	incident			""		
+	optional	text	table_name			""
+	optional	text	removed_by			""
+	optional	text	date_removed			""
+	optional	int64	incident_id			""
+	optional	text	table_db			""
+	"Main"
+	optional	text	asset_id			"Asset ID"									uiorder:2
+	optional	text	created_by			"Linked By"								uiorder:3
+	optional	datetime	date_created		"Date Linked"							uiorder:4
+	hasone		request		incident		incident_view.id
+}
+PRIMARY KEY(id)
+INDEX(incident_asset_id);
+
+CREATE TABLE "importjob" importjob
+{
+	"Internal"
+	required	int64				rowid					""
+	required	text				documentid				""
+	required	text				documenthash			""
+	required	date				requestdate				""
+	required	date				startdate				""
+	required	date				finishdate				""
+	required	text				showlogs				""
+	required 	text				faultyrowssharedocid	""
+	required 	text				fullreportsharedocid	""
+	required 	text				copyfinishdate			""
+	"General"
+	required	text				filename				"File Name"
+	required 	text				status					"Status"	
+	required 	text				fullreportdocid			"Full Report"			tags:downloadLinkFullReport
+	required 	text				faultyrowsdocid			"Faulty Rows"			tags:downloadLinkFaultyRows
+	
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(documentid);
+
+CREATE TABLE "taskcode_sla" taskcode_sla
+{
+	"Internal"
+	required	int64	rowid	""
+	"Main"
+	optional	text	task_code			"Task Code"								uiorder:1
+	optional	double	target_days			"Target Days"							uiorder:2
+	optional	datetime	date_created	"Date Created"							uiorder:3
+	optional	datetime	date_modified	"Date Modified"							uiorder:4
+}
+PRIMARY KEY(rowid);

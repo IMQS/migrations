@@ -1,0 +1,379 @@
+
+VERSION 25
+
+CREATE TABLE "clients" clients
+{
+	"Internal"
+	required  int64               rowid                                           ""
+	optional  text(35)            clientname                                      ""
+	
+	flags orm_noclient
+
+}
+PRIMARY KEY(rowid);
+
+CREATE TABLE "vendorunits" vendorunits
+{
+	"Internal"
+	optional  int64               vendorid                                        ""
+	optional  date                timestamp                                       ""
+	optional  int32               active                                          ""
+	optional  int32               amedit                                          ""
+	optional  double              batterycapacity                                 ""
+	optional  int32               btstype                                         ""
+	optional  text(255)           cell2no                                         ""
+	optional  text(255)           cellno                                          ""
+	optional  text(255)           data2no                                         ""
+	optional  text(255)           datano                                          ""
+	optional  int32               fuel1capacity                                   ""
+	optional  int32               fuel2capacity                                   ""
+	optional  int32               gen1capacity                                    ""
+	optional  date                gen1date                                        ""
+	optional  text(255)           gen1make                                        ""
+	optional  double              gen1rh                                          ""
+	optional  double              gen1totrh                                       ""
+	optional  int32               gen2capacity                                    ""
+	optional  date                gen2date                                        ""
+	optional  text(255)           gen2make                                        ""
+	optional  double              gen2rh                                          ""
+	optional  double              gen2totrh                                       ""
+	optional  point               geom                                            ""
+	optional  int32               inalarectifier                                  ""
+	optional  text(255)           installcontractor                               ""
+	optional  int32               kplcreading                                     ""
+	optional  int32               lastconlogreading                               ""
+	optional  int32               lastfuel1                                       ""
+	optional  int32               lastfuel2                                       ""
+	optional  int32               level1id                                        ""
+	optional  int32               lockstate                                       ""
+	optional  int32               mngnotifyuserid                                 ""
+	optional  int32               nmcuser                                         ""
+	optional  int32               notifyuserid                                    ""
+	optional  int32               qaconfirmed                                     ""
+	optional  text(255)           rawvalues                                       ""
+	optional  int32               rectcapacity                                    ""
+	optional  date                rectifieddate                                   ""
+	optional  text(20)            samipaddress2                                   ""
+	"1.General"
+	optional  text(255)           samlatitude                                     "SiteLatitude"
+	optional  text(255)           samlocation                                     "SiteLocation"
+	optional  text(255)           samlongitude                                    "SiteLongitude"
+	"Internal"
+	optional  int32               samportno                                       ""
+	optional  int32               samstatus                                       ""
+	"1.General"
+	optional  text(255)           samunitname                                     "SiteName"
+	optional  int32               samunitno                                       "SiteNumber"
+	"Internal"
+	optional  text(255)           samipaddress                                    ""
+	optional  text(255)           secell                                          ""
+	optional  int32               seqno                                           ""
+	optional  int32               servicestate                                    ""
+	optional  text(255)           siteengineer                                    ""
+	optional  int32               standardsite                                    ""
+	optional  date                testdate                                        ""
+	optional  int32               userid                                          ""
+	optional  text(255)           versionstring                                   ""
+	required  int64               rmsid                                           ""
+	optional  int64               clientid                                        ""
+	optional  bool				  outdoor										  ""
+	optional  bool				  grid											  ""
+	optional  bool				  hybrid										  ""
+	
+	flags public_rowid
+
+}
+PRIMARY KEY(rmsid)
+INDEX(geom)
+INDEX(clientid, vendorid);
+
+CREATE TABLE "mapsite" mapsite
+{
+	"Internal"
+	required  int64               id                                              ""
+	optional  int64               districtid                                      ""
+	optional  int64               provinceid                                      ""
+	optional  int64               countryid                                       ""
+	"1.General"
+	optional  int64               rmsid                                           "UnitID"
+	optional  date                datetime                                        "DateUpdated"                   unit:MSE   tags:century-short-date-time
+	"2.FuelAnalysis"
+	optional  double              added                                           "Added"                         unit:L
+	optional  double              removed                                         "Removed"						  unit:L
+	optional  double              consumed                                        "Consumed"					  unit:L
+	optional  double              consumptionrate                                 "ConsumptionRate"				  unit:L/h
+	optional  double              level                                           "Level" 						  unit:L
+	"3.UtilityAnalysis"
+	optional  double              utilityruntime                                  "UtilityRuntime"                unit:h
+	optional  double              utilityruntimepercent                           "UtilityRuntimePercent"		  unit:%
+	optional  int64               utilityreading                                  "UtilityReading"                unit:kW
+	"4.GeneratorAnalysis"
+	optional  double              generatorruntime                                "GeneratorRuntime"              unit:h
+	optional  double              generatorruntimepercent                         "GeneratorRuntimePercent"		  unit:%
+	"5.BatteryAnalysis"
+	optional  double              voltage		                                  "Voltage"			              unit:V
+	optional  double              batteryruntime                                  "BatteryRuntime"                unit:h
+	optional  double              batteryruntimepercent                           "BatteryRuntimePercent"		  unit:%
+	optional  int64               dischargeevents                                 "DischargeEvents"
+	"6.AutomationAnalysis"
+	optional  double              automationfailure                               "AutomationFailure"             unit:h
+	"Internal"
+	optional  point               geometry                                        ""
+
+	hasone Unit rmsid vendorunits.rmsid
+	flags public_rowid
+
+}
+PRIMARY KEY(id)
+INDEX(rmsid)
+INDEX(districtid)
+INDEX(provinceid)
+INDEX(countryid);
+
+CREATE TABLE "mapsite_alarms" mapsite_alarms
+{
+	"Internal"
+	required  int64               id                                              ""
+	optional  int64               rmsid                                           ""
+	optional  int64               alarmid                                         ""
+	optional  int64               alarmseverityid                                 ""
+	"Alarms"
+	optional  text(64)            name                                            "Name"		tags:dispAlarms,humanID
+	"Internal"
+	optional  text(64)            severity                                        "Severity"
+	optional  bool                active                                          "Active"
+
+	hasone site rmsid mapsite.rmsid
+	flags public_rowid
+
+} PRIMARY KEY(id)
+  INDEX(rmsid);
+
+CREATE TABLE "mapdistrict" mapdistrict
+{
+	"Internal"
+	required  int64               id                                              ""
+	optional  int64               provinceid                                      ""
+	"1.General"
+	optional  text(75)            name                                            "DistrictName"
+	optional  date                datetime                                        "DateUpdated"               unit:MSE tags:century-short-date-time 
+	"10.FuelAnalysis"
+	optional  double              addedtotal                                      "AddedTotal"                unit:L
+	optional  double              addedaverage                                    "AddedAverage"              unit:L
+	optional  double              removedtotal                                    "RemovedTotal"			  unit:L
+	optional  double              removedaverage                                  "RemovedAverage"			  unit:L
+	optional  double              consumedtotal                                   "ConsumedTotal"			  unit:L
+	optional  double              consumedaverage                                 "ConsumedAverage"			  unit:L
+	optional  double              consumptionrate                                 ""
+	optional  double              leveltotal                                      "LevelTotal"                unit:L
+	optional  double              levelaverage                                    "LevelAverage"			  unit:L
+	"11.UtilityAnalysis"
+	optional  double              utilityruntimetotal                             "UtilityRuntimeTotal"       unit:h
+	optional  double              utilityruntimeaverage                           "UtilityRuntimeAverage"	  unit:h
+	"12.GeneratorAnalysis"
+	optional  double              generatorruntimetotal                           "GeneratorRuntimeTotal"     unit:h
+	optional  double              generatorruntimeaverage                         "GeneratorRuntimeAverage"	  unit:h
+	"13.BatteryAnalysis"
+	optional  double              batteryruntimetotal                             "BatteryRuntimeTotal"       unit:h
+	optional  double              batteryruntimeaverage                           "BatteryRuntimeAverage"	  unit:h
+	optional  int64               dischargeevents                                 "DischargeEvents"
+	"Internal"
+	optional  polygon             geom                                            ""
+
+	flags public_rowid
+
+} PRIMARY KEY(id)
+  INDEX(provinceid)
+  INDEX(name);
+
+CREATE TABLE "mapprovince" mapprovince
+{
+	"Internal"
+	required  int64               id                                              ""
+	optional  int64               countryid                                       ""
+	"1.General"
+	optional  text(75)            name                                            "ProvinceName"
+	optional  date                datetime                                        "DateUpdated"               unit:MSE tags:century-short-date-time
+	"2.FuelAnalysis"
+	optional  double              addedtotal                                      "AddedTotal"                unit:L
+	optional  double              addedaverage                                    "AddedAverage"              unit:L
+	optional  double              removedtotal                                    "RemovedTotal"			  unit:L
+	optional  double              removedaverage                                  "RemovedAverage"			  unit:L
+	optional  double              consumedtotal                                   "ConsumedTotal"			  unit:L
+	optional  double              consumedaverage                                 "ConsumedAverage"			  unit:L
+	optional  double              consumptionrate                                 ""
+	optional  double              leveltotal                                      "LevelTotal"                unit:L
+	optional  double              levelaverage                                    "LevelAverage"			  unit:L
+	"3.UtilityAnalysis"
+	optional  double              utilityruntimetotal                             "UtilityRuntimeTotal"       unit:h
+	optional  double              utilityruntimeaverage                           "UtilityRuntimeAverage"	  unit:h
+	"4.GeneratorAnalysis"
+	optional  double              generatorruntimetotal                           "GeneratorRuntimeTotal"     unit:h
+	optional  double              generatorruntimeaverage                         "GeneratorRuntimeAverage"	  unit:h
+	"5.BatteryAnalysis"
+	optional  double              batteryruntimetotal                             "BatteryRuntimeTotal"       unit:h
+	optional  double              batteryruntimeaverage                           "BatteryRuntimeAverage"	  unit:h
+	optional  int64               dischargeevents                                 "DischargeEvents"
+	"Internal"
+	optional  polygon             geom                                            ""
+
+	flags public_rowid
+
+} PRIMARY KEY(id)
+  INDEX(countryid)
+  INDEX(name);
+
+CREATE TABLE "mapcountry" mapcountry
+{
+	"Internal"
+	required  int64               id                                              ""
+	optional  int32               groupid                                         ""
+	"1.General"
+	optional  text(75)            name                                            "CountryName"
+	"Internal"
+	optional  polygon             geom                                            ""
+
+	flags public_rowid
+
+} PRIMARY KEY(id);
+
+CREATE TABLE "analysisalarms" analysisalarms
+{
+	required  int64               id                                              ""
+	optional  int64               rmsid                                           ""
+	optional  int64               alarmid                                         ""
+	optional  date                datetime                                        ""
+	optional  double              duration                                        ""
+	optional  double              totalduration                                   ""
+	
+	flags orm_noclient
+
+} PRIMARY KEY(id)
+  INDEX(rmsid)
+  INDEX(alarmid)
+  INDEX(datetime)
+  INDEX(totalduration)
+  INDEX(rmsid, totalduration)
+  INDEX(rmsid, alarmid, datetime);
+
+CREATE TABLE "analysisbattery" analysisbattery
+{
+	required  int64               id                                              ""
+	optional  int64               rmsid                                           ""
+	optional  date                datetime                                        ""
+	optional  bool                mainsonload                                     ""
+	optional  bool                genonload                                       ""
+	optional  bool                commsfailure                                    ""
+	optional  double              voltage                                         ""
+	optional  double              chargecurrent                                   ""
+	optional  double              dischargecurrent                                ""
+	optional  double              duration                                        ""
+	optional  double              totalduration                                   ""
+	optional  double              voltagedrop                                     ""
+	optional  double              totalvoltagedrop                                ""
+	optional  double              autonomy50                                      ""
+	optional  double              autonomy80                                      ""
+	optional  bool                periodstart                                     ""
+	optional  bool                periodend                                       ""
+	
+	flags orm_noclient
+
+} PRIMARY KEY(id)
+  INDEX(rmsid)
+  INDEX(datetime)
+  INDEX(datetime, rmsid);
+
+CREATE TABLE "analysisfuel" analysisfuel
+{
+	required  int64               id                                              ""
+	optional  int64               rmsid                                           ""
+	optional  date                datetime                                        ""
+	optional  int64               level                                           ""
+	optional  double              consumptionrate                                 ""
+	optional  double              added                                           ""
+	optional  double              consumed                                        ""
+	optional  double              removed                                         ""
+	optional  bool                commsfailure                                    ""
+	optional  bool                generatoron                                     ""
+	optional  bool                mainsonload                                     ""
+	optional  double              duration                                        ""
+	optional  double              totalduration                                   ""
+	optional  bool                periodstart                                     ""
+	optional  bool                periodend                                       ""
+	optional  double              changerate                                      ""
+	
+	flags orm_noclient
+
+} PRIMARY KEY(id)
+  INDEX(rmsid)
+  INDEX(datetime)
+  INDEX(rmsid, datetime);
+
+CREATE TABLE "analysismains" analysismains
+{
+	required  int64               id                                              ""
+	optional  int64               rmsid                                           ""
+	optional  date                datetime                                        ""
+	optional  bool                mainsonload                                     ""
+	optional  bool                commsfailure                                    ""
+	optional  double              duration                                        ""
+	optional  double              totalduration                                   ""
+	optional  bool                periodstart                                     ""
+	optional  bool                periodend                                       ""
+	optional  int64               meterreading                                    ""
+	
+	flags orm_noclient
+
+} PRIMARY KEY(id)
+  INDEX(rmsid)
+  INDEX(datetime)
+  INDEX(datetime, rmsid);
+
+CREATE TABLE "analysisraw" analysisraw
+{
+	required  int32               id                                              ""
+	optional  int64               clientid                                        ""
+	optional  int64               unitid                                          ""
+	optional  int64               rmsid                                           ""
+	optional  date                datetime                                        ""
+	optional  text(200)           hex                                             ""
+	optional  bool                commsfailure                                    ""
+	
+	flags orm_noclient
+
+} PRIMARY KEY(id)
+  INDEX(rmsid)
+  INDEX(datetime)
+  INDEX(rmsid, datetime);
+
+CREATE TABLE "reportsite" reportsite
+{
+	required  int32               id                                              ""
+	optional  int64               rmsid                                           ""
+	optional  date                datetime                                        ""
+	optional  double              added                                           ""
+	optional  double              removed                                         ""
+	optional  double              consumed                                        ""
+	optional  double              consumptionrate                                 ""
+	optional  double              level                                           ""
+	optional  double              utilityruntime                                  ""
+	optional  double              utilityruntimepercent                           ""
+	optional  int64               utilityreading                                  ""
+	optional  double              generatorruntime                                ""
+	optional  double              generatorruntimepercent                         ""
+	optional  double              batteryruntime                                  ""
+	optional  double              batteryruntimepercent                           ""
+	optional  int64               dischargeevents                                 ""
+	optional  double              automationfailure                               ""
+	optional  double              system                                          ""
+	optional  double              autonomy50                                      ""
+	optional  double              autonomy80                                      ""
+	optional  double              voltage                                         ""
+	optional  double              voltagedrop                                     ""
+	
+	flags orm_noclient
+
+} PRIMARY KEY(id)
+  INDEX(rmsid)
+  INDEX(datetime)
+  INDEX(rmsid, datetime);

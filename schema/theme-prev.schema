@@ -1,0 +1,52 @@
+
+VERSION 4
+
+CREATE TABLE "Version" Version
+{
+	"Internal"
+	required	int64		rowid			""
+	required	text		identity		""
+	required	int64		modified		""
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(identity);
+
+CREATE TABLE "Theme" Theme
+{
+	"Internal"
+	required	int64		rowid			""
+	required	text		identity		""
+	required	text		data			""
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(identity);
+
+CREATE TABLE "LayerGroup" LayerGroup
+{
+	"Internal"
+	required	int64		rowid			""
+	required	text		identity		""
+	required	text		data			""
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(identity);
+
+CREATE TABLE "Data" Data
+{
+	"Internal"
+	required	int64		rowid			""
+	required	text		identity		""
+	required	text		data			""
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(identity);
+
+CREATE TABLE "Style" Style
+{
+	"Internal"
+	required	int64		rowid			""
+	required	text		identity		""
+	required	text		data			""
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(identity);

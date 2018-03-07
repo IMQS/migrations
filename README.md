@@ -22,7 +22,7 @@ The above example will generate a new migration for the database called `main`, 
 ### Windows
 The helper script won't work on Windows, but you can achieve the same thing using `dbatool`:
 
-    c:\imqsbin\bin\aries\dbatool generate-migration add-hydrojet schemas/main.schema migrations/main
+    c:\imqsbin\bin\aries\dbatool generate-migration add-hydrojet schema/main.schema migrations/main
 
 ### Testing
 The migration generator will ask you if you are happy with the generated .sql file. Most migrations are simple additions of fields, etc, and don't need to be tested on your local machine. However, if you do want to test, you can run the migrator on the newly generated migrations. Source code for `migrator` lives inside `github.com/IMQS/migrator`. It is a small Go program, and should build out of the box without issues, on any platform. On Windows, it is deployed to `c:\imqsbin\tools\migrator`.

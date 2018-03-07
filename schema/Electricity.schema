@@ -1,0 +1,1031 @@
+
+VERSION 1
+
+#####################################################################################################################################
+# Electricity very base classes
+#####################################################################################################################################
+
+CREATE TABLE "" elec_dummy_base
+{
+  "Internal"
+  required    int64     rowid                             ""
+  required    uuid      id                                ""
+
+  "Main"
+  optional    text      zone                              "Zone"
+  optional    text      suburb                            "Suburb"
+
+  "Legacy"
+  # We ARE now the GIS. We can use our GUID to link to other databases.
+  # optional    text      gis_id                            "GIS ID"                                              # For ekurhuleni, link to the Oracle/SDE or something like that
+  optional    text      org_type                          "Original Type"                                       # Waiting to hear how we should map Eku classifications onto things such as line voltages
+}
+PRIMARY KEY(rowid)
+UNIQUE INDEX(id);
+
+CREATE TABLE "" elec_base : elec_dummy_base
+{
+  "Main"
+  optional    date      commission_date                   "Commission Date"
+  optional    date      decommission_date                 "Decommission Date"
+  optional    text      standard_equipment_code           "Standard Equipment Code"
+  optional    text      description                       "Description"
+};
+
+CREATE TABLE "Dummy Node" elec_dummy_node : elec_dummy_base
+{
+  netnode   "Electricity"   id
+
+  "Internal"
+  required    point     geometry                          ""
+
+  "Main"
+  optional    text      description                       "Description"
+}
+INDEX(geometry);
+
+CREATE TABLE "" elec_node : elec_base
+{
+  netnode   "Electricity"   id
+
+  "Internal"
+  required    point     geometry                          ""
+}
+INDEX(geometry);
+
+# Any node that transforms voltage must inherit from this. This allows the system to do analysis, and verify integrity
+
+CREATE TABLE "" elec_transformer_base : elec_node
+{
+  "Main"
+  optional    double    voltage_in                        "Primary Voltage (in)"                          unit:kV digits:1
+  optional    double    voltage_out_1                     "Secondary Voltage (out)"                       unit:kV digits:1
+  optional    double    voltage_out_2                     "Tertiary Voltage (out)"                        unit:kV digits:1
+};
+
+CREATE TABLE "" elec_polyline : elec_base
+{
+  "Internal"
+  required    polyline  geometry                          ""
+}
+INDEX(geometry);
+
+CREATE TABLE "" elec_link : elec_polyline
+{
+  netlink   "Electricity"   node_start_id   node_end_id
+
+  "Main"
+  optional    bool      voltage_accurate                  "Voltage Accurate"
+
+  "Internal"
+  optional    uuid      node_start_id                     "Start Node"
+  optional    uuid      node_end_id                       "End Node"
+}
+INDEX(node_start_id)
+INDEX(node_end_id);
+
+CREATE TABLE "Dummy Link" elec_dummy_link : elec_dummy_base
+{
+  netlink   "Electricity"   node_start_id   node_end_id
+
+  "Internal"
+  required    polyline  geometry                          ""
+  optional    uuid      node_start_id                     "Start Node"
+  optional    uuid      node_end_id                       "End Node"
+}
+INDEX(geometry)
+INDEX(node_start_id)
+INDEX(node_end_id);
+
+
+#####################################################################################################################################
+# Lines/Cables
+#####################################################################################################################################
+
+CREATE TABLE "" cable_line_base : elec_link
+{
+  "Main"
+  optional    text      depot_owner                       "Depot Owner"
+  optional    double    slack                             "Slack"
+  optional    text      status                            "Status"
+  optional    uuid      sst_id                            "sst id"                                                # Still don't know what this is (from ekurhuleni)
+  optional    uuid      sub_id                            "sub id"                                                # Still don't know what this is (from ekurhuleni)
+
+  "Technical"
+  optional    double    diameter                          "Diameter"                          unit:mm
+  optional    text      conductor_name                    "Conductor Name"
+  optional    text      conductor_material                "Conductor Material"
+};
+
+CREATE TABLE "" hv_link_base : cable_line_base
+{
+  "Main"
+  optional    double    design_voltage                    "Design Voltage"                    unit:kV digits:1
+  optional    double    operating_voltage                 "Operating Voltage"                 unit:kV digits:1
+  optional    text      circuit_number                    "Circuit Number"
+  optional    text      line_code                         "Line Code"
+  optional    text      name                              "Name"
+
+  "Impedance"
+  optional    double    positive_seq_reactance            "Positive Seq. Reactance"
+  optional    double    positive_seq_resistance           "Positive Seq. Resistance"
+  optional    double    positive_seq_susceptance          "Positive Seq. Susceptance"
+  optional    double    zero_seq_reactance                "Zero Seq. Reactance"
+  optional    double    zero_seq_resistance               "Zero Seq. Resistance"
+  optional    double    zero_seq_susceptance              "Zero Seq. Susceptance"
+
+  "Technical"
+  optional    text      basic_insulation_level            "Basic Insulation Level"
+  optional    double    current_rating_emergency          "Current Rating (Emergency)"        unit:Amp
+  optional    double    current_rating_normal             "Current Rating (Normal)"           unit:Amp
+  optional    double    mva_rating                        "MVA Rating"
+};
+
+CREATE TABLE "HV Lines" elec_hv_line : hv_link_base
+{
+  "Main"
+  optional    text      number_and_size_of_wires          "Number and Size of Wires"
+
+  "Impedance"
+  optional    double    mutual_reactance                  "Mutual Reactance"
+
+  "Technical"
+  optional    text      earthwire_code                    "Earthwire Code"
+  optional    text      earthwire_name                    "Earthwire Name"
+  optional    int32     num_conductors_per_phase          "Number of Conductors per phase"
+  optional    int32     num_earthwires                    "Number of Earthwires"
+  optional    double    template_temperature              "Template Temperature"              unit:Amp
+};
+
+CREATE TABLE "HV Cables" elec_hv_cable : hv_link_base
+{
+  "Technical"
+  optional    text      cable_configuration               "Cable Configuration"
+  optional    text      insulation_type                   "Insulation Type"
+  optional    int32     number_of_cores                   "Number of Cores"
+};
+
+CREATE TABLE "" lv_link_base : cable_line_base
+{
+  "Main"
+  optional    double    design_voltage                    "Design Voltage"                    unit:V digits:0
+  optional    double    operating_voltage                 "Operating Voltage"                 unit:V digits:0
+
+  "Impedance"
+  optional    double    positive_seq_reactance            "Positive Seq. Reactance"
+  optional    double    positive_seq_resistance           "Positive Seq. Resistance"
+
+  "Technical"
+  optional    double    current_rating                    "Current Rating"                    unit:Amp
+};
+
+CREATE TABLE "MV/LV Lines" elec_lv_line : lv_link_base
+{
+  "Main"
+  optional    text      line_code                         "Line Code"
+  optional    text      num_and_size_of_wires             "Number and Size of Wires"
+};
+
+CREATE TABLE "MV/LV Cables" elec_lv_cable : lv_link_base
+{
+  "Main"
+  optional    text      phase                             "Phase (R,W,B)"
+
+  "Technical"
+  optional    text      insulation_type                   "Insulation Type"
+  optional    double    mva_rating                        "MVA Rating"
+  optional    int32     number_of_cores                   "Number of Cores"
+};
+
+#####################################################################################################################################
+# HV/MV nodes
+#####################################################################################################################################
+
+CREATE TABLE "HV Line Tower" elec_hv_line_tower : elec_node
+{ 
+  "Main"
+  optional    text      tower_number                      "Tower Number"
+  optional    double    height_conductor                  "Height Conductor"
+  optional    double    design_voltage                    "Design Voltage"                unit:kV digits:1
+  optional    text      type                              "Type"
+
+  "Tower"
+  optional    text      tower_type_code                   "Tower Type Code"
+  optional    text      insulator_type                    "Insulator Type"
+  optional    text      design_nr_of_circuits             "Design Nr of circuits"
+  optional    double    footing_resistance                "Footing resistance"
+  optional    text      design_conductor_type             "Design Conductor Type"
+  optional    int32     design_num_conductors             "Design number of conductors"
+};
+
+#####################################################################################################################################
+# HV/MV substation equipment
+#####################################################################################################################################
+
+CREATE TABLE "HV Breaker" elec_hv_breaker : elec_node
+{
+  "Main"
+  optional    text      breaker_name                      "Breaker Name"
+  optional    text      breaker_number                    "Breaker Number"
+  optional    text      bay_name                          "Bay Name"
+  optional    text      breaker_type                      "Breaker Type"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    text      operational_state                 "Operational State (Open/Closed)"
+  optional    text      normal_state                      "Normal State (Open/Closed)"
+  optional    text      status                            "Status"
+  optional    text      depot_owner                       "Depot Owner"
+
+  "Equipment"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_type                  "Manufacture Type"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      mechanism_type                    "Mechanism Type"
+  optional    text      integral_earth                    "Integral Earth"
+  optional    text      cable_box_type                    "Cable Box Type"
+  optional    text      cable_size                        "Cable Size"
+  optional    double    weight                            "Weight"                              unit:kg
+  optional    int32     number_of_poles                   "Number of poles"
+  optional    text      red_pole_serial                   "Red Pole Serial Number"
+  optional    text      white_pole_serial                 "White Pole Serial Number"
+  optional    text      blue_pole_serial                  "Blue Pole Serial Number"
+  optional    text      mechanism_serial                  "Mechanism Serial Number"
+
+  "Technical"
+  optional    double    rating                            "Rating"                              unit:MVA
+  optional    text      basic_insulation_level            "Basic Insulation Level"
+  optional    double    trip_coil_voltage                 "Trip Coil Voltage"                   unit:V digits:0
+  optional    text      breaker_medium                    "Breaker Medium"
+  optional    double    break_capacity_3_phase            "Break Capacity (3 phase)"            unit:kA
+  optional    double    break_capacity_1_phase            "Break Capacity (1 phase)"            unit:kA
+  optional    int32     time_to_open                      "Time to Open"                        unit:ms
+  optional    int32     time_to_break                     "Time to Break"                       unit:ms
+  optional    int32     time_to_close                     "Time to Close"                       unit:ms
+  optional    int32     number_of_trip_coils              "Number of Trip Coils"
+  optional    double    trip_coil_rewind_voltage          "Trip Coil Rewind Voltage"
+  optional    double    trip_coil_resistance              "Trip Coil Resistance"
+  optional    double    closing_coil_resistance           "Closing Coil Resistance"             unit:Ohm
+  optional    double    closing_coil_voltage              "Closing Coil Voltage"                unit:V digits:0
+};
+
+CREATE TABLE "HV Busbar" elec_hv_busbar : elec_link
+{
+  "Main"
+  optional    text      bus_name                          "Bus Name"
+  optional    int32     bus_number                        "Bus Number"
+  optional    text      bus_type                          "Bus Type"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    text      status                            "Status"
+  optional    text      depot_owner                       "Depot Owner"
+  
+  "Technical"
+  optional    double    rating                            "Rating"
+  optional    text      conductor_type                    "Conductor Type"
+  optional    int32     number_of_conductors              "Number of conductors"
+  optional    double    conductor_size                    "Conductor Size"
+};
+
+CREATE TABLE "HV Isolator" elec_hv_isolator : elec_node
+{
+  "Main"
+  optional    double    operating_voltage                 "Operating Voltage"                       unit:kV digits:1
+  optional    double    design_voltage                    "Design Voltage"                          unit:kV digits:1
+  optional    text      service_status                    "Status (In Service/Out of service)"
+  optional    text      interlocking                      "Interlocking"
+  optional    text      operational_state                 "Operational State (Open/Closed)"
+  optional    text      normal_state                      "Normal State (Open/Closed)"
+  optional    text      depot_owner                       "Depot Owner"
+  
+  "Isolator"
+  optional    text      design_type                       "Design Type"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      bay_name                          "Bay Name"
+  optional    double    current_rating                    "Current Rating"                          unit:A
+  optional    double    fault_rating                      "Fault Rating"                            unit:kA
+  optional    double    basic_insulation_level            "Basic Insulation Level"                  unit:kV digits:1
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_type                  "Manufacture Type"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    int32     number_of_earths                  "Number of Earths"
+  optional    text      operating_method                  "Operating Method"
+  optional    text      red_pole_serial                   "Red Pole Serial Number"
+  optional    text      white_pole_serial                 "White Pole Serial Number"
+  optional    text      blue_pole_serial                  "Blue Pole Serial Number"
+  optional    text      mechanism_box_type                "Mechanism Box Type"
+  
+  "Motor Drive"
+  optional    text      drive_make                        "Drive Make"
+  optional    double    drive_voltage                     "Drive Voltage"                           unit:V digits:0
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      drive_type                        "Drive Type"
+  optional    text      serial_number                     "Serial Number"
+};
+
+CREATE TABLE "HV Surge Arrestor" elec_surge_arrestor : elec_node
+{
+  "Main"
+  optional    text      bay_name                          "Bay Name"
+  optional    text      status                            "Status"
+  optional    text      depot_owner                       "Depot Owner"
+
+  "Blue Phase"
+  optional    text      blue_basic_insulation_lev         "Blue: Basic Insulation Level"
+  optional    double    blue_current_rating               "Blue: Current Rating"
+  optional    double    blue_operating_voltage            "Blue: Operating Voltage"
+  optional    double    blue_design_voltage               "Blue: Design Voltage"
+  optional    date      blue_manufacture_date             "Blue: Manufacture Date"
+  optional    text      blue_manufacturer                 "Blue: Manufacturer"
+  optional    text      blue_manufacture_type             "Blue: Manufacture Type"
+  optional    text      blue_serial_number_bottom         "Blue: Serial Number Bottom"
+  optional    text      blue_serial_number_top            "Blue: Serial Number Top"
+
+  "Blue Phase"
+  optional    text      red_basic_insulation_lev          "Red: Basic Insulation Level"
+  optional    double    red_current_rating                "Red: Current Rating"
+  optional    double    red_operating_voltage             "Red: Operating Voltage"
+  optional    double    red_design_voltage                "Red: Design Voltage"
+  optional    date      red_manufacture_date              "Red: Manufacture Date"
+  optional    text      red_manufacturer                  "Red: Manufacturer"
+  optional    text      red_manufacture_type              "Red: Manufacture Type"
+  optional    text      red_serial_number_bottom          "Red: Serial Number Bottom"
+  optional    text      red_serial_number_top             "Red: Serial Number Top"
+
+  "Blue Phase"
+  optional    text      white_basic_insulation_lev        "White: Basic Insulation Level"
+  optional    double    white_current_rating              "White: Current Rating"
+  optional    double    white_operating_voltage           "White: Operating Voltage"
+  optional    double    white_design_voltage              "White: Design Voltage"
+  optional    date      white_manufacture_date            "White: Manufacture Date"
+  optional    text      white_manufacturer                "White: Manufacturer"
+  optional    text      white_manufacture_type            "White: Manufacture Type"
+  optional    text      white_serial_number_bottom        "White: Serial Number Bottom"
+  optional    text      white_serial_number_top           "White: Serial Number Top"
+};
+
+CREATE TABLE "Battery Bank" elec_battery_bank : elec_node
+{
+  "Main"
+  optional    int32     rating                            "Rating"                    unit:AmpHour
+  optional    int32     nominal_dc_volts                  "Nominal DC Volts"          unit:V digits:0
+  optional    int32     number_of_batteries               "Number of batteries"
+  optional    text      bank_configuration                "Bank Configuration"
+  optional    text      battery_type                      "Battery Type"
+  optional    text      depot_owner                       "Depot Owner"
+};
+
+CREATE TABLE "Battery Charger" elec_battery_charger : elec_node
+{
+  "Main"
+  optional    double    voltage_rating                    "Voltage Rating"      unit:V digits:0
+  optional    double    current_rating                    "Current Rating"      unit:A
+  optional    text      manufacturer                      "Manufacturer"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      depot_owner                       "Depot Owner"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      charger_configuration             "Charger Configuration"
+};
+
+CREATE TABLE "Current Transformer" elec_current_transformer : elec_node
+{
+  "Main"
+  optional    text      bay_name                          "Bay Name"
+  optional    text      type                              "Type"
+  optional    text      depot_owner                       "Depot Owner"
+};
+
+CREATE TABLE "CT Phase" elec_ct_phase : elec_node
+{
+  "Main"
+  optional    text      ct_name                           "CT Name"
+  optional    text      phase_colour                      "Phase Colour"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    text      insulation_material               "Insulation Material"
+  optional    int32     number_of_cores                   "Number of Cores"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      contract_number                   "Contract Number"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_type                  "Manufacture Type"
+  
+  "Technical"
+  optional    double    primary_current                   "Primary Current"             unit:A
+  optional    double    extended_current                  "Extended Current"            unit:kA
+  optional    double    withstand_current                 "Withstand Current"           unit:kA
+  optional    double    fault_rating                      "Fault Rating"                unit:kA
+  optional    double    current_rating                    "Current Rating"              unit:A
+  optional    text      basic_insulation_level            "Basic Insulation Level"
+  optional    int32     weight                            "Weight"                      unit:kg
+  optional    int32     oil_capacity                      "Oil capacity"                unit:L
+
+  "Core 1"
+  optional    text      core1_serial_number               "Core 1: Serial Number"
+  optional    text      core1_ratio                       "Core 1: Ratio"
+  optional    text      core1_accuracy_class              "Core 1: Accuracy Class"
+  optional    text      core1_core_application            "Core 1: Core Application"
+  optional    text      core1_core_point                  "Core 1: Core Point"
+  optional    text      core1_burden                      "Core 1: Burden"
+  optional    text      core1_magnetizing_current         "Core 1: Magnetizing Current"
+  optional    text      core1_core_resistance             "Core 1: Core Resistance"
+
+  "Core 2"
+  optional    text      core2_serial_number               "Core 2: Serial Number"
+  optional    text      core2_ratio                       "Core 2: Ratio"
+  optional    text      core2_accuracy_class              "Core 2: Accuracy Class"
+  optional    text      core2_core_application            "Core 2: Core Application"
+  optional    text      core2_core_point                  "Core 2: Core Point"
+  optional    text      core2_burden                      "Core 2: Burden"
+  optional    text      core2_magnetizing_current         "Core 2: Magnetizing Current"
+  optional    text      core2_core_resistance             "Core 2: Core Resistance"
+
+  "Core 3"
+  optional    text      core3_serial_number               "Core 3: Serial Number"
+  optional    text      core3_ratio                       "Core 3: Ratio"
+  optional    text      core3_accuracy_class              "Core 3: Accuracy Class"
+  optional    text      core3_core_application            "Core 3: Core Application"
+  optional    text      core3_core_point                  "Core 3: Core Point"
+  optional    text      core3_burden                      "Core 3: Burden"
+  optional    text      core3_magnetizing_current         "Core 3: Magnetizing Current"
+  optional    text      core3_core_resistance             "Core 3: Core Resistance"
+
+  "Core 4"
+  optional    text      core4_serial_number               "Core 4: Serial Number"
+  optional    text      core4_ratio                       "Core 4: Ratio"
+  optional    text      core4_accuracy_class              "Core 4: Accuracy Class"
+  optional    text      core4_core_application            "Core 4: Core Application"
+  optional    text      core4_core_point                  "Core 4: Core Point"
+  optional    text      core4_burden                      "Core 4: Burden"
+  optional    text      core4_magnetizing_current         "Core 4: Magnetizing Current"
+  optional    text      core4_core_resistance             "Core 4: Core Resistance"
+
+  "Core 5"
+  optional    text      core5_serial_number               "Core 5: Serial Number"
+  optional    text      core5_ratio                       "Core 5: Ratio"
+  optional    text      core5_accuracy_class              "Core 5: Accuracy Class"
+  optional    text      core5_core_application            "Core 5: Core Application"
+  optional    text      core5_core_point                  "Core 5: Core Point"
+  optional    text      core5_burden                      "Core 5: Burden"
+  optional    text      core5_magnetizing_current         "Core 5: Magnetizing Current"
+  optional    text      core5_core_resistance             "Core 5: Core Resistance"
+
+  "Core 6"
+  optional    text      core6_serial_number               "Core 6: Serial Number"
+  optional    text      core6_ratio                       "Core 6: Ratio"
+  optional    text      core6_accuracy_class              "Core 6: Accuracy Class"
+  optional    text      core6_core_application            "Core 6: Core Application"
+  optional    text      core6_core_point                  "Core 6: Core Point"
+  optional    text      core6_burden                      "Core 6: Burden"
+  optional    text      core6_magnetizing_current         "Core 6: Magnetizing Current"
+  optional    text      core6_core_resistance             "Core 6: Core Resistance"
+};
+
+CREATE TABLE "Generator" elec_generator : elec_node
+{
+  "Main"
+  optional    text      generator_name                    "Generator Name"
+  optional    text      generator_number                  "Generator Number"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    text      status                            "Status"
+  optional    text      depot_owner                       "Depot Owner"
+  
+  "Technical"
+  optional    double    scheduled_generation              "Scheduled Generation"                    unit:MW
+  optional    double    maximum_reactive_power            "Maximum Reactive Power"                  unit:MVar
+  optional    double    minimum_reactive_power            "Minimum Reactive Power"                  unit:MVar
+  optional    double    rated_power                       "Rated Power"                             unit:MVA
+  optional    double    pos_seq_react                     "Positive Seq. Reactance"
+  optional    double    pos_seq_transient_react           "Positive Seq. Transient Reactance"
+  optional    double    pos_seq_sub_transient_react       "Positive Seq. Sub-Transient Reactance"
+  optional    double    maximum_real_power                "Maximum Real Power"                      unit:MW
+  optional    double    minimum_real_power                "Minimum Real Power"                      unit:MW
+  optional    double    negative_seq_reactance            "Negative Seq. Reactance"                 #unit:pu
+  optional    double    zero_seq_reactance                "Zero Seq. Reactance"                     #unit:pu
+  optional    double    grouding_resistance               "Grouding Resistance"                     unit:Ohm
+};
+
+CREATE TABLE "Power Transformer" elec_power_transformer : elec_node
+{
+  "Main"
+  optional    text      transformer_name                  "Transformer Name"
+  optional    text      transformer_number                "Transformer Number"
+  optional    text      status                            "Status"
+  optional    double    voltage_in                        "Primary Voltage (in)"                          unit:kV digits:1
+  optional    double    voltage_out_1                     "Secondary Voltage (out)"                       unit:kV digits:1
+  optional    double    voltage_out_2                     "Tertiary Voltage (out)"                        unit:kV digits:1
+  optional    text      bay_name                          "Bay Name"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      depot_owner                       "Depot Owner"
+  optional    bool      necrt_present                     "NECRT Present"
+  
+  "Nameplate"
+  optional    int32     main_winding_rating               "Main Winding Rating"                       unit:MVA
+  optional    double    tertiary_winding_rating           "Tertiary Winding Rating"
+  optional    double    percentage_impedance              "Percentage Impedance"
+  optional    int32     pri_to_sec_winding_p_shift        "Prim. to Sec. winding Phase Shift"         unit:Degrees
+  optional    int32     pri_to_ter_winding_p_shift        "Prim. to Tertiary winding phase shift"     unit:Degrees
+  optional    text      cooling_code                      "Cooling Code"
+  optional    text      vector_group                      "Vector Group"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      manufacture_type                  "Manufacture Type"
+  
+  "Configuration"
+  optional    text      hv_configuration_grounding        "HV Configuration (Grounding)"
+  optional    text      mv_configuration_grounding        "MV Configuration (Grounding)"
+  optional    text      lv_configuration_grounding        "LV Configuration (Grounding)"
+  
+  "Other"
+  optional    text      bucholz                           "Bucholz"
+  optional    text      bucholz_type                      "Bucholz Type"
+  optional    int32     transformer_weight_with_oil       "Transformer Weight (with oil)"               unit:kg
+  optional    int32     transformer_weight_sans_oil       "Transformer Weight (without oil)"            unit:kg
+  
+  "Tap"
+  optional    text      tap_changer_name                  "Tap Changer Name"
+  optional    text      tap_changer_number                "Tap Changer Number"
+  optional    text      tap_changer_serial_number         "Tap Changer Serial Number"
+  optional    text      tap_drive_manufacturer            "Tap Drive Manufacturer"
+  optional    date      tap_drive_manufacture_date        "Tap Drive Manufacture Date"
+  optional    text      tap_drive_manufacturer_type       "Tap Drive Manufacturer Type"
+  optional    text      tap_drive_serial_number           "Tap Drive Serial Number"
+  optional    double    voltage_at_max_tap_position       "Voltage at maximum tap position"             unit:kV digits:1
+  optional    double    voltage_at_min_tap_position       "Voltage at minimum tap position"             unit:kV digits:1
+  optional    double    voltage_at_nom_tap_position       "Voltage at nominal tap position"             unit:kV digits:1
+  optional    int32     max_voltage_tap_position          "Maximum Voltage Tap Position"                
+  optional    int32     min_voltage_tap_position          "Minimum Voltage Tap Position"
+  optional    int32     nominal_tap_position              "Nominal Tap Position"
+  optional    int32     current_actual_tap_position       "Current/Actual Tap Position"
+  
+  "Loss"
+  optional    double    no_load_magnetizing_losses        "No load (magnetizing) losses"                unit:kW
+  optional    double    no_load_loss_test_voltage         "No load loss test voltage"                   unit:kV digits:1
+  optional    double    no_load_loss_test_meas_curr       "No load loss test measured current"          unit:A
+  optional    double    hv_to_mv_full_load_loss           "HV to MV full load loss"                     unit:kW
+  optional    double    mv_to_lv_full_load_loss           "MV to LV full load loss"                     unit:kW
+  optional    double    hv_to_lv_full_load_loss           "HV to LV full load loss"                     unit:kW
+  
+  "Impedance"
+  optional    double    pri_wind_pos_seq_resist           "Primary winding positive seq. resistance"
+  optional    double    pri_wind_pos_seq_react            "Primary winding positive seq. reactance"
+  optional    double    sec_wind_pos_seq_resist           "Secondary winding positive seq. resistance"
+  optional    double    sec_wind_pos_seq_react            "Secondary winding positive seq. reactance"
+  optional    double    ter_wind_pos_seq_resist           "Tertiary winding positive seq. resistance"
+  optional    double    ter_wind_pos_seq_react            "Tertiary winding positive seq. reactannce"
+  optional    double    pri_wind_zero_seq_resist          "Primary winding zero seq. resistance"
+  optional    double    pri_wind_zero_seq_react           "Primary winding zero seq. reactance"
+  optional    double    sec_wind_zero_seq_resist          "Secondary winding zero seq. resistance"
+  optional    double    sec_wind_zero_seq_react           "Secondary winding zero seq. reactance"
+  optional    double    ter_wind_zero_seq_resist          "Tertiary winding zero seq. resistance"
+  optional    double    ter_wind_zero_seq_react           "Tertiary winding zero seq. reactance"
+  optional    double    pos_seq_test_imp_hv_mv            "Positive seq. test impedance (HV-MV)"        #unit:percent
+  optional    double    pos_seq_test_imp_mv_lv            "Positive seq. test impedance (MV-LV)"        #unit:percent
+  optional    double    pos_seq_test_imp_hv_lv            "Positive seq. test impedance (HV-LV)"        #unit:percent
+  optional    double    zero_seq_test_imp_hv_mv           "Zero seq. test impedance (HV-MV)"            #unit:percent
+  optional    double    zero_seq_test_imp_mv_lv           "Zero seq. test impedance (MV-LV)"            #unit:percent
+  optional    double    zero_seq_test_imp_hv_lv           "Zero seq. test impedance (HV-LV)"            #unit:percent
+};
+
+CREATE TABLE "Voltage Transformer" elec_voltage_transformer : elec_transformer_base
+{
+  "Main"
+  optional    text      bay_name                          "Bay Name"
+  optional    text      status                            "Status"
+  optional    text      depot_owner                       "Depot Owner"
+};
+
+CREATE TABLE "VT Phase" elec_vt_phase : elec_node
+{
+  "Main"
+  optional    text      vt_name                           "VT Name"
+  optional    text      vt_number                         "VT Number"
+  optional    text      phase_colour                      "Phase Colour"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    double    secondary_voltage                 "Secondary Voltage"
+  optional    int32     number_of_cores                   "Number of Cores"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      contract_number                   "Contract Number"
+  
+  "Technical"
+  optional    text      basic_insulation_level            "Basic Insulation Level"
+  optional    text      insulation_material               "Insulation Material"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_type                  "Manufacture Type"
+
+  "Core 1"
+  optional    text      core1_serial_number               "Core1: Serial Number"
+  optional    text      core1_ratio                       "Core1: Ratio"
+  optional    text      core1_accuracy_class              "Core1: Accuracy Class"
+  optional    text      core1_core_type                   "Core1: Core Type"
+  optional    text      core1_rating                      "Core1: Rating"
+
+  "Core 2"
+  optional    text      core2_serial_number               "Core2: Serial Number"
+  optional    text      core2_ratio                       "Core2: Ratio"
+  optional    text      core2_accuracy_class              "Core2: Accuracy Class"
+  optional    text      core2_core_type                   "Core2: Core Type"
+  optional    text      core2_rating                      "Core2: Rating"
+
+  "Core 3"
+  optional    text      core3_serial_number               "Core3: Serial Number"
+  optional    text      core3_ratio                       "Core3: Ratio"
+  optional    text      core3_accuracy_class              "Core3: Accuracy Class"
+  optional    text      core3_core_type                   "Core3: Core Type"
+  optional    text      core3_rating                      "Core3: Rating"
+};
+
+CREATE TABLE "Neutral Earthing Resistor" elec_ner : elec_node
+{
+  "Main"
+  optional    text      ner_name                          "NER Name"
+  optional    text      ner_number                        "NER Number"
+  optional    text      bay_name                          "Bay Name"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    text      status                            "Status"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      depot_owner                       "Depot Owner"
+  
+  "Technical"
+  optional    double    zero_seq_current_rating           "Zero Sequence Current rating"    unit:Amp
+  optional    double    neutral_resistance                "Neutral Resistance"              unit:Ohm
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_type                  "Manufacture Type"
+};
+
+CREATE TABLE "Neutral Earthing Compensator" elec_nec : elec_node
+{
+  "Main"
+  optional    text      necrt_name                        "NECRT Name"
+  optional    text      necrt_number                      "NECRT Number"
+  optional    text      bay_name                          "Bay Name"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    double    design_voltage                    "Design Voltage"
+  optional    text      status                            "Status"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      depot_owner                       "Depot Owner"
+  
+  "Technical"
+  optional    double    zero_seq_resistance               "Zero Sequence Resistance"          unit:Ohm
+  optional    double    zero_seq_reactance                "Zero Sequence Reactance"
+  optional    text      zero_seq_current_rating           "Zero Sequence Current rating"      unit:Amp
+  optional    int32     rating                            "Rating"                            unit:kVA
+  optional    double    percentage_impedance              "Percentage Impedance"
+  optional    text      earthing_type                     "Earthing Type"
+  optional    text      cooling                           "Cooling"
+  optional    double    lv_voltage                        "LV Voltage"
+  optional    text      vector_group                      "Vector Group"
+  optional    text      basic_insulation_level            "Basic Insulation Level"
+  optional    double    neutral_resistance                "Neutral Resistance"                unit:Ohm
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_type                  "Manufacture Type"
+};
+
+#####################################################################################################################################
+# LV substation equipment
+#####################################################################################################################################
+
+CREATE TABLE "Busbar" elec_lv_busbar : elec_link
+{
+  "Main"
+  optional    double    operating_voltage                 "Operating Voltage"                 unit:kV digits:1
+  optional    text      status                            "Status"
+  optional    double    rating                            "Rating"
+};
+
+CREATE TABLE "Breaker" elec_lv_breaker : elec_node
+{
+  "Main"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    text      operational_state                 "Operational State (Open/Closed)"
+  optional    text      normal_state                      "Normal State (Open/Closed)"
+  optional    text      current_rating                    "Current Rating"                    unit:A
+  optional    text      make_capacity                     "Make capacity"                     unit:kA
+  optional    text      break_capacity                    "Break Capacity"                    unit:kA
+  optional    text      short_circuit_rating              "Short Circuit Rating"              unit:kA
+  optional    text      manufacturer                      "Manufacturer"
+};
+
+CREATE TABLE "Fuse" elec_lv_fuse : elec_node
+{
+  "Main"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    text      operational_state                 "Operational State (Open/Close)"
+  optional    int32     fuze_size                         "Fuze Size"                         unit:A
+  optional    text      fuse_type                         "Fuse Type"
+  optional    double    short_circuit_rating              "Short Circuit Rating"              unit:kA
+  optional    text      manufacturer                      "Manufacturer"
+};
+
+CREATE TABLE "Transformer" elec_lv_transformer : elec_transformer_base
+{
+  "Main"
+  optional    double    rating                            "Rating"                          unit:kVA
+  optional    text      departmental_number               "Departmental Number"
+
+  "Technical"
+  optional    text      vector_group                      "Vector Group"
+  optional    int32     number_of_taps                    "Number of Taps"
+  optional    int32     tap_position                      "Tap Position"
+  optional    bool      oil_reservoir                     "Oil Reservoir"
+  optional    int32     oil_capacity                      "Oil Capacity"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      manuafacturer                     "Manuafacturer"
+  optional    double    positive_seq_resistance           "Positive Seq. Resistance"
+  optional    double    positive_seq_reactance            "Positive Seq. Reactance"
+  optional    double    positive_seq_impedance            "Positive Seq. Impedance"
+};
+
+#####################################################################################################################################
+# MV Nodes
+#####################################################################################################################################
+
+CREATE TABLE "Pole Mounted Switch" elec_pole_mounted_switch : elec_node
+{
+  "Main"
+  optional    double    operating_voltage                 "Operating Voltage"
+  optional    text      operational_state                 "Operational State (Open/Closed)"
+  optional    text      normal_state                      "Normal State (Open/Closed)"
+  optional    text      depot_owner                       "Depot Owner"
+  optional    text      departmental_number               "Departmental Number"
+
+  "Switch"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      manufacture_model                 "Manufacture Model"
+  optional    date      manufacture_date                  "Manufacture Date"
+  optional    text      switch_type                       "Switch Type"
+  optional    int32     num_recloser_operations           "Number Of Recloser Operations"
+  
+  "Technical"
+  optional    double    continuous_current_rating         "Continuous Current rating"
+  optional    double    make_capacity                     "Make Capacity"
+  optional    double    break_capacity                    "Break Capacity"
+  optional    double    short_circuit_rating              "Short Circuit Rating"
+  optional    double    current_rating                    "Current Rating"
+};
+
+#####################################################################################################################################
+# Reticulation
+#####################################################################################################################################
+
+CREATE TABLE "Distribution Device" elec_distribution_device : elec_transformer_base
+{
+  "Main"
+  optional    text      name                              "Name"
+  optional    text      type                              "Type"
+  optional    text      depot_owner                       "Depot Owner"
+  optional    text      substation_parent                 "Substation Parent"
+  optional    text      departmental_number               "Departmental Number"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      serial_number                     "Serial Number"
+  optional    text      comments                          "Comments"
+                                                          
+  "Equipment"                                             
+  optional    text      streetlight_controller_box        "Streetlight Controller Box"
+  optional    int32     number_of_transformers            "Number of Transformers"
+  optional    double    installed_transforming_cap        "Installed Transforming Capacity"     unit:kVA
+  optional    text      number_of_ways                    "Number of Ways"
+  optional    double    ct_ratio                          "CT Ratio"
+  optional    double    ct_scale                          "CT Scale"
+  optional    double    ct_scale_factor                   "CT Scale Factor"                     unit:kA
+  optional    double    circuit_breaker_rating            "Circuit Breaker Rating"
+};
+
+CREATE TABLE "Service Connection Feeder" elec_service_feeder : cable_line_base
+{
+  "Main"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    double    design_voltage                    "Design Voltage"                      unit:V digits:0
+  optional    double    operating_voltage                 "Operating Voltage"                   unit:V digits:0
+  optional    double    current_rating                    "Current Rating"                      unit:Amp
+  optional    int32     phase                             "Phase Number"
+  optional    text      phase_rwb                         "Phase (R,W,B)"
+  optional    text      stand                             "Stand"
+  optional    text      prepaid                           "Prepaid"
+
+  "Technical"
+  optional    int32     number_of_cores                   "Number of Cores"
+  optional    text      insulation_type                   "Insulation Type"
+  optional    text      feeder_type                       "Feeder Type"
+};
+
+CREATE TABLE "Overhead Link" elec_overhead_link : cable_line_base
+{
+  "Main"
+  optional    double    operating_voltage                 "Operating Voltage"                   unit:V digits:0
+  optional    text      operational_state                 "Operational State (Open/Closed)"
+  optional    text      normal_state                      "Normal State (Open/Closed)"
+};
+
+CREATE TABLE "Duct" elec_duct : elec_polyline
+{
+  "Main"
+  optional    text      type                              "Type (Duct/Crossing)"
+  optional    text      comments                          "Comments"
+  optional    int32     no_pipes                          "Number of Pipes"
+  optional    int32     pipe_size                         "Pipe Size"
+};
+
+#####################################################################################################################################
+# Generic items
+#####################################################################################################################################
+
+# In the Netgroup spec, this was "HV Cable Junction", but Ekurhuleni has lots of different types of junctions, so it doesn't
+# make sense to put them all into different tables
+
+CREATE TABLE "Junction" elec_junction : elec_node
+{
+  "Main"
+  optional    text      voltage                           "Voltage"                             unit:kV digits:1
+  optional    text      status                            "Status"
+  optional    text      type                              "Type"
+};
+
+#####################################################################################################################################
+# Telecomms
+#####################################################################################################################################
+
+CREATE TABLE "Copper Cable" elec_copper_cable : elec_polyline
+{
+  "Main"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      name                              "Name"
+  optional    int32     copper_cores                      "Copper Cores"
+  optional    text      type                              "Type"
+};
+
+CREATE TABLE "Fiber Cable" elec_fiber_cable : elec_polyline
+{
+  "Main"
+  optional    text      manufacturer                      "Manufacturer"
+  optional    text      name                              "Name"
+  optional    int32     fiber_cores                       "Fiber Cores"
+  optional    text      type                              "Type"
+};
+
+CREATE TABLE "Telecommunication Station" elec_flc_station : elec_node
+{
+  "Main"
+  optional    text      name                              "Name"
+};
+
+CREATE TABLE "Radio Tower" elec_radio_tower : elec_node
+{
+  "Main"
+  optional    text      name                              "Name"
+  optional    text      make                              "Make"
+  optional    text      model                             "Model"
+};
+
+#####################################################################################################################################
+# Sensors
+#####################################################################################################################################
+
+CREATE TABLE "Sensor" elec_sensor
+{
+  "Internal"
+  required    int64     rowid                             ""
+  required    uuid      id                                ""
+  required    point     geometry                          ""
+
+  "Main"
+  optional    text      site_id                           "Site ID"
+  optional    text      site_name                         "Site Name"
+  optional    text      substation                        "Substation"
+  optional    text      serial                            "Serial Number"
+}
+PRIMARY KEY(rowid)
+INDEX(geometry)
+UNIQUE INDEX(id);
+
+#####################################################################################################################################
+# Criminal activities
+#####################################################################################################################################
+
+CREATE TABLE "Crime" elec_crime
+{
+  "Internal"
+  required    int64     rowid                             ""
+  required    uuid      id                                ""
+  required    point     geometry                          ""
+  
+  "Main"
+  optional    text      type                              "Criminal Activity"
+  optional    date      incident_date                     "Date"
+  optional    text      outcome                           "Outcome"
+  optional    text      convictions                       "Convictions"
+  optional    text      material_stolen                   "Material Stolen"
+  optional    text      case_number                       "Case Number"
+  optional    text      description                       "Description"
+}
+PRIMARY KEY(rowid)
+INDEX(geometry)
+UNIQUE INDEX(id);
+
+#####################################################################################################################################
+# Other
+#####################################################################################################################################
+
+CREATE TABLE "Street Light" elec_street_light : elec_node
+{
+  "Main"
+  optional    text      pole_number                       "Pole Number"
+  optional    text      supply_feed_number                "Supply Feed Number"
+  optional    text      street_name                       "Street Name"
+  optional    text      street_type                       "Street Type"
+  optional    text      township                          "Township"
+  optional    text      depot_owner                       "Depot Owner"
+
+  "Technical"
+  optional    double    streetlight_height                "Streetlight Height"
+  optional    double    arm_length                        "Arm Length"
+  optional    text      arm_type                          "Arm Type"
+  optional    text      lamp_type                         "Lamp Type"
+  optional    text      lamp_wattage                      "Lamp Wattage"
+  optional    text      service_type                      "Service Type"
+  optional    text      pole_material                     "Pole Material"
+  optional    text      control_location                  "Control location"
+  optional    text      luminaire_type                    "Luminaire Type"
+  optional    text      controlbox                        "Controlbox"
+  optional    double    design_illuminance                "Design Illuminance"
+  optional    text      lens_type                         "Lens Type"
+};
+
+CREATE TABLE "High Mast Light" elec_highmast_light : elec_node
+{
+  "Main"
+  optional    text      pole_number                       "Pole Number"
+  optional    int32     footprint_radius                  "Footprint Radius"            unit:m
+  optional    text      supply_feed_number                "Supply Feed Number"
+  optional    text      street_name                       "Street Name"
+  optional    text      street_type                       "Street Type"
+  optional    text      township                          "Township"
+  optional    text      depot_owner                       "Depot Owner"
+  
+  "Technical"
+  optional    int32     highmast_height                   "Highmast Height"
+  optional    text      lamp_type                         "Lamp Type"
+  optional    int32     lamp_wattage                      "Lamp Wattage"
+  optional    text      service_type                      "Service Type"
+  optional    text      number_of_luminaires              "Number of luminaires"
+  optional    text      luminaire_size                    "Luminaire Size"
+  optional    text      luminaire_manufacturer            "Luminaire Manufacturer"
+  optional    text      riser_mechanism                   "Riser Mechanism"
+  optional    text      bulb_type                         "Bulb Type"
+  optional    double    design_illuminance                "Design Illuminance"
+  optional    text      lens_type                         "Lens Type"
+};
+
+CREATE TABLE "Pole" elec_pole : elec_node
+{
+  "Main"
+  optional    text      pole_number                       "Pole Number"
+  optional    text      pole_material                     "Pole Material"
+  optional    int32     number_of_stays                   "Number of Stays"
+  optional    int32     number_of_push_braces             "Number of Push Braces"
+  optional    double    height                            "Height"
+};
+
+#####################################################################################################################################
+# Need clarification -- I have no idea what attributes these node should have, or whether they shouldn't go by a different name.
+#####################################################################################################################################
+
+CREATE TABLE "Billboard" elec_billboard : elec_node
+{
+  "Main"
+  optional    text      name                              "Name"
+};
+
+CREATE TABLE "" elec_substation_root : elec_transformer_base
+{
+  "Main"
+  optional    text      type                              "Type"                        # [Distribution Substation, Intake Point, Switching Station, T Point]
+  optional    text      name                              "Name"
+};
+
+CREATE TABLE "Switch Station" elec_switch_station : elec_substation_root
+{
+  "Main"
+};
+
+CREATE TABLE "Substation" elec_substation : elec_substation_root
+{
+  "Main"
+};
+
+CREATE TABLE "Kiosk" elec_kiosk : elec_substation_root
+{
+  "Main"
+};
+
+# Very dubious about this one. Looks like it is an underground thing that splits power for two houses. It always has a DB upstream.
+CREATE TABLE "DP" elec_dp : elec_node
+{
+  "Main"
+  optional    text      name                              "Name"
+};

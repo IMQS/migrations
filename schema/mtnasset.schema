@@ -1,0 +1,421 @@
+VERSION 0
+
+CREATE TABLE "tectonix_customers" tectonix_customers
+{
+	"Internal"
+	required  int32               tc_id                                           "Id"
+	"Customers"
+	optional  text(32)            tc_name                                         "Name"         tags:humanID
+	optional  int32               tc_projects                                     "Projects"
+
+} PRIMARY KEY(tc_id);
+
+CREATE TABLE "tectonix_location_security" tectonix_location_security
+{
+	"General"
+	required  int32               tls_id                                          "Id"
+	optional  text(64)            tls_name                                        "Name"
+	optional  text(8)             tls_siteid                                      "Siteid"
+	optional  int32               tls_project                                     "Project"
+	optional  int32               tls_tech_functionality                          "TechFunctionality"
+	optional  int32               tls_housing                                     "Housing"
+	optional  int32               tls_site_size_length                            "SiteSizeLength"
+	optional  int32               tls_site_size_width                             "SiteSizeWidth"
+	optional  int32               tls_shelter_size_height                         "ShelterSizeHeight"
+	optional  int32               tls_shelter_size_length                         "ShelterSizeLength"
+	optional  int32               tls_shelter_size_width                          "ShelterSizeWidth"
+	optional  int32               tls_gen_locking_system                          "GenLockingSystem"
+	optional  int32               tls_ground_covering                             "GroundCovering"
+	optional  int32               tls_compaction_required                         "CompactionRequired"
+	optional  int32               tls_chipping_required                           "ChippingRequired"
+	optional  int32               tls_site_signage_condition                      "SiteSignageCondition"
+	optional  int32               tls_missing_manhole_covers                      "MissingManholeCovers"
+	optional  int32               tls_rust_cover                                  "RustCover"
+	optional  int32               tls_water_ingress                               "WaterIngress"
+	optional  int32               tls_feeder_rust                                 "FeederRust"
+	optional  int32               tls_feeder_secure                               "FeederSecure"
+	optional  int32               tls_feeder_sealed                               "FeederSealed"
+	optional  int32               tls_vandalism                                   "Vandalism"
+	optional  int32               tls_equipment_lying                             "EquipmentLying"
+	optional  int32               tls_container_foundation                        "ContainerFoundation"
+	optional  int32               tls_container_locking                           "ContainerLocking"
+	optional  int32               tls_container_door                              "ContainerDoor"
+	optional  int32               tls_container_clean                             "ContainerClean"
+	optional  int32               tls_container_water_ingress                     "ContainerWaterIngress"
+	optional  int32               tls_container_sealed                            "ContainerSealed"
+	optional  int32               tls_container_floor                             "ContainerFloor"
+	optional  int32               tls_internal_lighs                              "InternalLighs"
+	optional  int32               tls_trunking_secure                             "TrunkingSecure"
+	optional  int32               tls_earthing_secure                             "EarthingSecure"
+	optional  int32               tls_wall_floor_damage                           "WallFloorDamage"
+	optional  int32               tls_extinguisher                                "Extinguisher"
+	optional  int32               tls_extinguisher_size                           "ExtinguisherSize"
+	optional  int32               tls_fencing_type                                "FencingType"
+	optional  int32               tls_fencing_condition                           "FencingCondition"
+	optional  int32               tls_electric_fence                              "ElectricFence"
+	optional  int32               tls_retaining_walls                             "RetainingWalls"
+	optional  int32               tls_pepper_gas                                  "PepperGas"
+	optional  int32               tls_remote_monitoring                           "RemoteMonitoring"
+	optional  text(16)            tls_alarm_interface                             "AlarmInterface"
+	optional  int32               tls_alarm_powered                               "AlarmPowered"
+	optional  int32               tls_alarm_cooling                               "AlarmCooling"
+	optional  int32               tls_customer                                    "Customer"
+
+} PRIMARY KEY(tls_id)
+  INDEX(tls_siteid, tls_project, tls_customer, tls_name);
+
+CREATE TABLE "tectonix_notifications" tectonix_notifications
+{
+	"General"
+	required  int32               tn_id                                           "Id"
+	optional  int32               tn_project                                      "Project"
+	optional  text(8)             tn_site                                         "Site"
+	optional  date                tn_date                                         "Date"
+	optional  text                tn_comment                                      "Comment"
+
+} PRIMARY KEY(tn_id);
+
+CREATE TABLE "tectonix_photos" tectonix_photos
+{
+	"Internal"
+	required  int32               tph_id                                          "Id"
+	optional  int32               tph_customer                                    "Customer"
+	optional  int32               tph_project                                     "Project"
+	optional  int32               tph_site                                        "Site"
+	optional  text(192)           tph_section                                     "Section"
+	optional  text(192)           tph_field                                       "Field"
+	"Photos"
+	optional  text(384)           tph_name                                        "Name"              tags:humanID
+	"Internal"
+	optional  text(36)            tph_file                                        "File"
+	optional  date                tph_date                                        "Date"
+	optional  text(36)            tph_size                                        "Size"
+	optional  int32               tph_user                                        "User"
+	optional  int32               tph_location_in_list                            "LocationInList"
+	"Photos"
+	optional  text                tph_url                                         "Url"				tags:dispDocument
+
+} PRIMARY KEY(tph_id);
+
+CREATE TABLE "tectonix_projects" tectonix_projects
+{
+	"Internal"
+	required  int32               tp_id                                           "Id"
+	optional  int32               tp_customer                                     "Customer"
+	"Project"
+	optional  text(64)            tp_name                                         "Name"            tags:humanID
+	"Internal"
+	optional  date                tp_created                                      "Created"
+	optional  int32               tp_sites                                        "Sites"
+	optional  int32               tp_sites_total                                  "SitesTotal"
+	optional  int32               tp_issues                                       "Issues"
+	optional  int32               tp_status                                       "Status"
+
+} PRIMARY KEY(tp_id);
+
+CREATE TABLE "tectonix_sites" tectonix_sites
+{
+	"Internal"
+	required  int32               ts_id                                           "Id"
+	optional  int32               ts_customer                                     "Customer"
+	optional  int32               ts_project                                      "Project"
+	optional  text(8)             ts_siteid                                       "Siteid"
+	"Site"
+	optional  text(64)            ts_name                                         "Name"
+	optional  int32               ts_type                                         "Type"
+	optional  text(64)            ts_country                                      "Country"
+	optional  text(32)            ts_network                                      "Network"
+	optional  double              ts_latitude                                     "Latitude"	unit:LatLongDec
+	optional  double              ts_longitude                                    "Longitude"	unit:LatLongDec
+	optional  int32               ts_altitude                                     "Altitude"
+	optional  date                ts_start_date                                   "StartDate"   unit:MSE tags:century-short-date-time
+	optional  date                ts_end_date                                     "EndDate"		unit:MSE tags:century-short-date-time
+	optional  int32               ts_status                                       "Status"
+	"Internal"
+	optional  int32               ts_issues                                       "Issues"
+	optional  int32               ts_sectors                                      "Sectors"
+	optional  int32               ts_user                                         "User"
+	optional  int32               ts_user_2                                       "User2"
+	optional  point               geometry                                        "Geometry"
+	"Site"
+	optional  bool				  photo_exist                                     "PhotosExist"
+
+	hasmany		tectonix_photos		ts_id			tectonix_photos.tph_site
+	hasone		tectonix_projects	ts_project		tectonix_projects.tp_id
+	hasone		tectonix_customers	ts_customer		tectonix_customers.tc_id
+
+
+} PRIMARY KEY(ts_id)
+  INDEX(ts_siteid, ts_project);
+
+CREATE TABLE "tectonix_sites_assets_list" tectonix_sites_assets_list
+{
+	"General"
+	required  int32               tsa_id                                          "Id"
+	optional  int32               tsa_customer                                    "Customer"
+	optional  int32               tsa_project                                     "Project"
+	optional  int32               tsa_site                                        "Site"
+	optional  text(64)            tsa_name                                        "Name"
+	optional  text(64)            tsa_type                                        "Type"
+	optional  text(64)            tsa_make                                        "Make"
+	optional  text(64)            tsa_serial_number                               "SerialNumber"
+
+} PRIMARY KEY(tsa_id)
+  INDEX(tsa_site, tsa_name);
+
+CREATE TABLE "tectonix_sites_batteries" tectonix_sites_batteries
+{
+	"General"
+	required  int32               tsb_id                                          "Id"
+	optional  int32               tsb_customer                                    "Customer"
+	optional  int32               tsb_project                                     "Project"
+	optional  int32               tsb_site                                        "Site"
+	optional  text(64)            tsb_name                                        "Name"
+	optional  text(64)            tsb_make                                        "Make"
+	optional  text(64)            tsb_voltage                                     "Voltage"
+	optional  text(64)            tsb_capacity                                    "Capacity"
+	optional  text(64)            tsb_model_number                                "ModelNumber"
+	optional  text(64)            tsb_quantity_rectifier                          "QuantityRectifier"
+	optional  text(64)            tsb_shelf_type                                  "ShelfType"
+
+} PRIMARY KEY(tsb_id)
+  INDEX(tsb_site, tsb_name);
+
+CREATE TABLE "tectonix_sites_breakers" tectonix_sites_breakers
+{
+	"General"
+	required  int32               tsk_id                                          "Id"
+	optional  int32               tsk_customer                                    "Customer"
+	optional  int32               tsk_project                                     "Project"
+	optional  int32               tsk_site                                        "Site"
+	optional  text(64)            tsk_name                                        "Name"
+	optional  text(64)            tsk_breaker_size                                "BreakerSize"
+	optional  text(64)            tsk_load_dev_one                                "LoadDevOne"
+	optional  text(64)            tsk_load_dev_two                                "LoadDevTwo"
+	optional  text(64)            tsk_load_dev_three                              "LoadDevThree"
+
+} PRIMARY KEY(tsk_id)
+  INDEX(tsk_site, tsk_name);
+
+CREATE TABLE "tectonix_sites_enviro_mngnt" tectonix_sites_enviro_mngnt
+{
+	"General"
+	required  int32               tsv_id                                          "Id"
+	optional  int32               tsv_customer                                    "Customer"
+	optional  int32               tsv_project                                     "Project"
+	optional  int32               tsv_site                                        "Site"
+	optional  text(64)            tsv_name                                        "Name"
+	optional  text(64)            tsv_air_con_condition                           "AirConCondition"
+	optional  text(64)            tsv_air_con_number                              "AirConNumber"
+	optional  text(64)            tsv_btu                                         "Btu"
+	optional  text(64)            tsv_free_cooling                                "FreeCooling"
+	optional  text(64)            tsv_management_system                           "ManagementSystem"
+
+} PRIMARY KEY(tsv_id)
+  INDEX(tsv_site, tsv_name);
+
+CREATE TABLE "tectonix_sites_equipment_room" tectonix_sites_equipment_room
+{
+	"General"
+	required  int32               tse_id                                          "Id"
+	optional  int32               tse_customer                                    "Customer"
+	optional  int32               tse_project                                     "Project"
+	optional  int32               tse_site                                        "Site"
+	optional  text(64)            tse_name                                        "Name"
+	optional  text(64)            tse_direct_access                               "DirectAccess"
+	optional  text(64)            tse_room_type                                   "RoomType"
+	optional  text(64)            tse_room_dimensions                             "RoomDimensions"
+	optional  text(64)            tse_rusting                                     "Rusting"
+	optional  text(64)            tse_paint_condition                             "PaintCondition"
+	optional  text(64)            tse_water_ingress                               "WaterIngress"
+
+} PRIMARY KEY(tse_id)
+  INDEX(tse_site, tse_name);
+
+CREATE TABLE "tectonix_sites_location" tectonix_sites_location
+{
+	"General"
+	required  int32               tsl_id                                          "Id"
+	optional  int32               tsl_customer                                    "Customer"
+	optional  int32               tsl_project                                     "Project"
+	optional  int32               tsl_site                                        "Site"
+	optional  text(64)            tsl_tech_functionality                          "TechFunctionality"
+	optional  text(64)            tsl_housing                                     "Housing"
+	optional  text(64)            tsl_site_size                                   "SiteSize"
+	optional  text(64)            tsl_shelter_size                                "ShelterSize"
+	optional  text(64)            tsl_ground_covering                             "GroundCovering"
+	optional  text(64)            tsl_compaction_required                         "CompactionRequired"
+	optional  text(64)            tsl_fill_stone_chip_areas                       "FillStoneChipAreas"
+	optional  text(64)            tsl_mandatory_signage_fence                     "MandatorySignageFence"
+	optional  text(64)            tsl_missing_manhole_covers                      "MissingManholeCovers"
+	optional  text(64)            tsl_rust_on_covers                              "RustOnCovers"
+	optional  text(64)            tsl_water_ingress                               "WaterIngress"
+	optional  text(64)            tsl_cable_trays_fdr_brackets                    "CableTraysFdrBrackets"
+	optional  text(64)            tsl_rf_feeders_straight                         "RfFeedersStraight"
+	optional  text(64)            tsl_vandalism                                   "Vandalism"
+	optional  text(64)            tsl_spares_equipment_on_site                    "SparesEquipmentOnSite"
+	optional  text(64)            tsl_cabinet_floor_damaged                       "CabinetFloorDamaged"
+	optional  text(64)            tsl_internal_lights_work                        "InternalLightsWork"
+	optional  text(64)            tsl_inside_container_clean                      "InsideContainerClean"
+	optional  text(64)            tsl_trunking_secure                             "TrunkingSecure"
+	optional  text(64)            tsl_earthing_connection_secure                  "EarthingConnectionSecure"
+	optional  text(64)            tsl_walls_and_floors_damage                     "WallsAndFloorsDamage"
+	optional  text(64)            tsl_water_ingress_container                     "WaterIngressContainer"
+	optional  text(64)            tsl_rf_entry_holes_sealed                       "RfEntryHolesSealed"
+	optional  text(64)            tsl_all_container_holes_sealed                  "AllContainerHolesSealed"
+	optional  text(64)            tsl_container_door_working                      "ContainerDoorWorking"
+	optional  text(64)            tsl_container_locking_working                   "ContainerLockingWorking"
+	optional  text(64)            tsl_cont_fdtn_condition                         "ContFdtnCondition"
+	optional  text(64)            tsl_cooling_system_condition                    "CoolingSystemCondition"
+	optional  text(64)            tsl_fire_extinguisher                           "FireExtinguisher"
+	optional  text(64)            tsl_fire_extinguisher_size                      "FireExtinguisherSize"
+
+} PRIMARY KEY(tsl_id)
+  INDEX(tsl_site);
+
+CREATE TABLE "tectonix_sites_mains_elec" tectonix_sites_mains_elec
+{
+	"General"
+	required  int32               tsm_id                                          "Id"
+	optional  int32               tsm_customer                                    "Customer"
+	optional  int32               tsm_project                                     "Project"
+	optional  int32               tsm_site                                        "Site"
+	optional  text(64)            tsm_name                                        "Name"
+	optional  text(64)            tsm_connection                                  "Connection"
+	optional  text(64)            tsm_connection_type                             "ConnectionType"
+	optional  text(64)            tsm_wiring_loose                                "WiringLoose"
+	optional  text(64)            tsm_wiring_leakage                              "WiringLeakage"
+	optional  text(64)            tsm_cert_coc                                    "CertCoc"
+	optional  text(64)            tsm_cert_earthing                               "CertEarthing"
+	optional  text(64)            tsm_gen_type                                    "GenType"
+
+} PRIMARY KEY(tsm_id)
+  INDEX(tsm_site, tsm_name);
+
+CREATE TABLE "tectonix_sites_radio_cabinet" tectonix_sites_radio_cabinet
+{
+	"General"
+	required  int32               tsc_id                                          "Id"
+	optional  int32               tsc_customer                                    "Customer"
+	optional  int32               tsc_project                                     "Project"
+	optional  int32               tsc_site                                        "Site"
+	optional  text(64)            tsc_name                                        "Name"
+	optional  text(64)            tsc_node_condition                              "NodeCondition"
+	optional  text(64)            tsc_node_capacity                               "NodeCapacity"
+
+} PRIMARY KEY(tsc_id)
+  INDEX(tsc_name, tsc_site);
+
+CREATE TABLE "tectonix_sites_rectifiers" tectonix_sites_rectifiers
+{
+	"General"
+	required  int32               tsr_id                                          "Id"
+	optional  int32               tsr_customer                                    "Customer"
+	optional  int32               tsr_project                                     "Project"
+	optional  int32               tsr_site                                        "Site"
+	optional  text(64)            tsr_name                                        "Name"
+	optional  text(64)            tsr_make                                        "Make"
+	optional  text(64)            tsr_model                                       "Model"
+	optional  text(64)            tsr_voltage                                     "Voltage"
+	optional  text(64)            tsr_modules_present                             "ModulesPresent"
+	optional  text(64)            tsr_modules_working                             "ModulesWorking"
+	optional  text(64)            tsr_site_voltage                                "SiteVoltage"
+	optional  text(64)            tsr_site_load                                   "SiteLoad"
+	optional  text(64)            tsr_space_for_modules                           "SpaceForModules"
+
+} PRIMARY KEY(tsr_id)
+  INDEX(tsr_site, tsr_name);
+
+CREATE TABLE "tectonix_sites_sectors" tectonix_sites_sectors
+{
+	"General"
+	required  int32               tss_id                                          "Id"
+	optional  int32               tss_customer                                    "Customer"
+	optional  int32               tss_project                                     "Project"
+	optional  int32               tss_site                                        "Site"
+	optional  text(64)            tss_serial_number                               "SerialNumber"
+	optional  text(64)            tss_name                                        "Name"
+	optional  text(64)            tss_make                                        "Make"
+	optional  text(64)            tss_model                                       "Model"
+	optional  text(64)            tss_feeder_size                                 "FeederSize"
+	optional  text(64)            tss_feeder_length                               "FeederLength"
+	optional  text(64)            tss_feeder_quantity                             "FeederQuantity"
+	optional  text(64)            tss_rf_feeders_straight                         "RfFeedersStraight"
+	optional  text(64)            tss_electrical_tilt_900                         "ElectricalTilt900"
+	optional  text(64)            tss_electrical_tilt_1800                        "ElectricalTilt1800"
+	optional  text(64)            tss_electrical_tilt_2100                        "ElectricalTilt2100"
+	optional  text(64)            tss_mechanical_tilt                             "MechanicalTilt"
+	optional  text(64)            tss_azimuth                                     "Azimuth"
+	optional  text(64)            tss_azimuth_aat                                 "AzimuthAat"
+	optional  text(64)            tss_antenna_roll                                "AntennaRoll"
+	optional  text(64)            tss_antenna_agl                                 "AntennaAgl"
+	optional  text(64)            tss_plexor                                      "Plexor"
+
+} PRIMARY KEY(tss_id)
+  INDEX(tss_site, tss_name);
+
+CREATE TABLE "tectonix_sites_security" tectonix_sites_security
+{
+	"General"
+	required  int32               tsx_id                                          "Id"
+	optional  int32               tsx_customer                                    "Customer"
+	optional  int32               tsx_project                                     "Project"
+	optional  int32               tsx_site                                        "Site"
+	optional  text(64)            tsx_fencing_type                                "FencingType"
+	optional  text(64)            tsx_fencing_condition                           "FencingCondition"
+	optional  text(64)            tsx_electric_fence                              "ElectricFence"
+	optional  text(64)            tsx_retain_wall_condition                       "RetainWallCondition"
+	optional  text(64)            tsx_locking_generator                           "LockingGenerator"
+	optional  text(64)            tsx_pepper_gas                                  "PepperGas"
+	optional  text(64)            tsx_remote_monitoring                           "RemoteMonitoring"
+	optional  text(64)            tsx_alarm_type                                  "AlarmType"
+	optional  text(64)            tsx_alarm_powered                               "AlarmPowered"
+
+} PRIMARY KEY(tsx_id)
+  INDEX(tsx_site);
+
+CREATE TABLE "tectonix_sites_snag_list" tectonix_sites_snag_list
+{
+	"General"
+	required  int32               tsl_id                                          "Id"
+	optional  int32               tsl_customer                                    "Customer"
+	optional  int32               tsl_project                                     "Project"
+	optional  int32               tsl_site                                        "Site"
+	optional  text(64)            tsl_name                                        "Name"
+	optional  text                tsl_comment                                     "Comment"
+	optional  text(64)            tsl_reference                                   "Reference"
+
+} PRIMARY KEY(tsl_id)
+  INDEX(tsl_site, tsl_name);
+
+CREATE TABLE "tectonix_statuses" tectonix_statuses
+{
+	"General"
+	required  int32               tst_id                                          "Id"
+	optional  int32               tst_value                                       "Value"
+	optional  int32               tst_sort                                        "Sort"
+	required  text(32)            tst_name                                        "Name"
+	optional  text(512)           tst_description                                 "Description"
+	optional  text(7)             tst_color                                       "Color"
+
+} PRIMARY KEY(tst_id);
+
+CREATE TABLE "tectonix_users_projects" tectonix_users_projects
+{
+	"General"
+	required  int32               tup_id                                          "Id"
+	optional  int32               tup_projects                                    "Projects"
+	optional  int32               tup_user_id                                     "UserId"
+
+} PRIMARY KEY(tup_id);
+
+CREATE TABLE "tectonix_value_selectors" tectonix_value_selectors
+{
+	"General"
+	required  int32               tvs_id                                          "Id"
+	optional  text(32)            tvs_table                                       "Table"
+	optional  text(32)            tvs_field                                       "Field"
+	optional  text                tvs_value                                       "Value"
+
+} PRIMARY KEY(tvs_id);
+

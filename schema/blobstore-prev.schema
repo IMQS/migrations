@@ -1,0 +1,22 @@
+
+VERSION 1
+
+CREATE TABLE "Blobs" Blobs
+{
+	"Main"
+	required	int64		rowid				""
+	required	int64		DataRowID			""
+	required	uuid		ID					""
+	required	datetime	CreatedAt			""
+	required	datetime	ModifiedAt			""
+	optional	text		MimeType			""
+}
+PRIMARY KEY(rowid);
+
+CREATE TABLE "BlobData" BlobData
+{
+	"Main"
+	required	int64		rowid				""
+	optional	bin			Data				""
+}
+PRIMARY KEY(rowid);
