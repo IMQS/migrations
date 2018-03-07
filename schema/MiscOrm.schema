@@ -1,4 +1,0 @@
-VERSION 0
-
-# We use to stick modtracker ORM data in here, but that has now moved down into adb.
-# I leave it around because there may be other things to add in here.
