@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+TITLE=$1
+DB=$2
+if [ "$TITLE" == "" ] || [ "$DB" == "" ]; then
+	echo 'generate-migration <title> <database>'
+	exit 1
+fi
+
+docker run --rm -it -v `pwd`:/migrations -w /migrations imqs/dbatool:master generate-migration $TITLE schema/$DB.schema migrations/$DB
+
+# These files will be owned by root, because of being created inside the docker container
+# I've hunted around on the internet, and couldn't find an easy solution to this.
+sudo chown $USER:$USER migrations/$DB/*

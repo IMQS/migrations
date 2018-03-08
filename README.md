@@ -13,11 +13,15 @@ Migrations are built by a program called `dbatool`, which lives in source code f
 ### Linux
 For Linux, there is a wrapper script that invokes `dbatool`'s migration generator:
 
-    # generate-migration <title> <database>
-    # For example:
+Pull the docker image to fetch it for the first time, or update it:
+
+    docker pull imqs/dbatool:master
+
+Invoke the generator, passing it `title database`, for example:
+
     ./generate-migration add-hydrojet main
 
-The above example will generate a new migration for the database called `main`, using a dockerized version of dbatool.
+The above example will generate a new migration called 'add-hydrojet' for the database called `main`, using a dockerized version of dbatool.
 
 ### Windows
 The helper script won't work on Windows, but you can achieve the same thing using `dbatool`:
