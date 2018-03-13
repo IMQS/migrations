@@ -22,13 +22,13 @@ CREATE TABLE "incident_view" incident_view
 	"Details"
 	optional	text	region					"Region"											uiorder:7
 	optional	text	urgency_code			"Urgency Code"			tags:hideInGrid				uiorder:8
-	optional	text	urgency					"Urgency"											uiorder:9
+	optional	text	urgency					"Urgency"				tags:distinctFilter,incidentStatus		uiorder:9
 	optional	text	priority_code			"Priority Code"			tags:hideInGrid				uiorder:10
-	optional	text	priority_description	"Priority"											uiorder:11
+	optional	text	priority_description	"Priority"				tags:distinctFilter,incidentStatus		uiorder:11
 	optional	text	status_code				"Status Code"			tags:hideInGrid				uiorder:12
 	optional	text	status					"Status"				tags:distinctFilter,incidentStatus		uiorder:13
 	optional	text	closed_by				"Closed By"											uiorder:14
-	optional	text	group_type				"Group"												uiorder:15
+	optional	text	group_type				"Group"					tags:distinctFilter,incidentStatus		uiorder:15
 	optional	text	branch					"Branch"											uiorder:16
 	
 	
@@ -63,8 +63,8 @@ CREATE TABLE "rustenburg_incident_view" rustenburg_incident_view
 	optional	text	type_code				""
 	"Details"
 	optional	text	reference				"Reference Number"		tags:humanID				uiorder:0
-	optional	text	group					"Group"												uiorder:1
-	optional	text	subject					"Subject"											uiorder:2
+	optional	text	group					"Group"					tags:distinctFilter,incidentStatus 		uiorder:1
+	optional	text	subject					"Subject"				tags:distinctFilter,incidentStatus		uiorder:2
 	optional	text	street_number			"Street Number"										uiorder:3
 	optional	text	street_address			"Street Address"									uiorder:4
 	optional	text	suburb					"Suburb"											uiorder:5
