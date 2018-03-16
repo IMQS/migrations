@@ -183,19 +183,18 @@ CREATE TABLE "contractors_view" contractors_view
 	optional	text	vatnumber				"VAT Number"								uiorder:16
 	optional	text	metroaccount			"Metro Account"								uiorder:17
 	optional	text	id_number				"ID Number"									uiorder:18
-	optional	text	contact					"Contact"									uiorder:19
-	optional	text	adr1					"Address 1"									uiorder:20
-	optional	text	adr2					"Address 2"									uiorder:21
-	optional	text	adr3					"Address 3"									uiorder:22
-	optional	text	p_adr1					"Postal Address 1"							uiorder:23
-	optional	text	p_adr2					"Postal Address 2"							uiorder:24
-	optional	text	p_adr3					"Postal Address 3"							uiorder:25
-	optional	text	p_code					"Postal Code"								uiorder:26
-	optional	text	created_by				"Created By"								uiorder:27
-	optional	text	date_modified			"Date Modified"								uiorder:28
-	optional	text	remarks					"Remarks"									uiorder:29
-	optional	text	captured_by				"Captured By"		tags:hideInGrid			uiorder:30
-	optional	text	last_update				"Last Update"		tags:hideInGrid			uiorder:31
+	optional	text	adr1					"Address 1"									uiorder:19
+	optional	text	adr2					"Address 2"									uiorder:20
+	optional	text	adr3					"Address 3"									uiorder:21
+	optional	text	p_adr1					"Postal Address 1"							uiorder:22
+	optional	text	p_adr2					"Postal Address 2"							uiorder:23
+	optional	text	p_adr3					"Postal Address 3"							uiorder:24
+	optional	text	p_code					"Postal Code"								uiorder:25
+	optional	text	created_by				"Created By"								uiorder:26
+	optional	text	date_modified			"Date Modified"								uiorder:27
+	optional	text	remarks					"Remarks"									uiorder:28
+	optional	text	captured_by				"Captured By"		tags:hideInGrid			uiorder:29
+	optional	text	last_update				"Last Update"		tags:hideInGrid			uiorder:30
 }
 PRIMARY KEY(rowid);
 
@@ -375,11 +374,10 @@ CREATE TABLE "contractor_agreement_view" contractor_agreement_view
 	optional	text		cda_item_code				"Item Code"								uiorder:4
 	optional	text		cda_estimated_tariff		"Tariff"								uiorder:5
 	optional	text		cda_unit					"Unit"									uiorder:6
-	optional	text		captured_by					"Caprtured By"							uiorder:7
-	optional	text		administer					"Administrator Code"					uiorder:8
-	optional	text		administer_by				"Administrator Name"					uiorder:9
-	optional	int64		captured_by					"Captured By"							uiorder:10
-	optional	datetime	date_modified				"Last Updated"							uiorder:11		unit:MSE
+	optional	text		administer					"Administrator Code"					uiorder:7
+	optional	text		administer_by				"Administrator Name"					uiorder:8
+	optional	int64		captured_by					"Captured By"							uiorder:9
+	optional	datetime	date_modified				"Last Updated"							uiorder:10		unit:MSE
 }
 PRIMARY KEY(rowid)
 UNIQUE INDEX(guid);
