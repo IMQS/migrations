@@ -2213,6 +2213,10 @@ CREATE TABLE "refProject_CostCentre" refProject_CostCentre : Wip_Lookup
 {
 };
 
+CREATE TABLE "refCapitalisationState" refCapitalisationState : Wip_Lookup
+{
+};
+
 CREATE TABLE "refComponent_MeasurementModelLinks" refComponent_MeasurementModelLinks
 {
 	"Internal"
