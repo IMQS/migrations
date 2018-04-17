@@ -46,11 +46,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_01_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_01_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_01_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_02" (
  "rowid" BIGSERIAL,
@@ -100,11 +100,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_02_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_02_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_02_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_03" (
  "rowid" BIGSERIAL,
@@ -154,11 +154,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_03_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_03_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_03_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_04" (
  "rowid" BIGSERIAL,
@@ -208,11 +208,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_04_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_04_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_04_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_05" (
  "rowid" BIGSERIAL,
@@ -262,11 +262,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_05_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_05_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_05_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_06" (
  "rowid" BIGSERIAL,
@@ -316,11 +316,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_06_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_06_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_06_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_07" (
  "rowid" BIGSERIAL,
@@ -370,11 +370,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_07_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_07_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_07_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_08" (
  "rowid" BIGSERIAL,
@@ -424,11 +424,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_08_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_08_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_08_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_09" (
  "rowid" BIGSERIAL,
@@ -478,11 +478,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_09_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_09_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_09_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_10" (
  "rowid" BIGSERIAL,
@@ -532,11 +532,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_10_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_10_Name" ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_01_10_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_01" (
  "rowid" BIGSERIAL,
@@ -586,11 +586,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_01_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_01_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_01_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_02" (
  "rowid" BIGSERIAL,
@@ -640,11 +640,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_02_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_02_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_02_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_03" (
  "rowid" BIGSERIAL,
@@ -694,11 +694,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_03_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_03_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_03_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_04" (
  "rowid" BIGSERIAL,
@@ -748,11 +748,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_04_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_04_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_04_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_05" (
  "rowid" BIGSERIAL,
@@ -802,11 +802,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_05_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_05_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_05_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_06" (
  "rowid" BIGSERIAL,
@@ -856,11 +856,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_06_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_06_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_06_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_07" (
  "rowid" BIGSERIAL,
@@ -910,11 +910,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_07_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_07_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_07_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_08" (
  "rowid" BIGSERIAL,
@@ -964,11 +964,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_08_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_08_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_08_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_09" (
  "rowid" BIGSERIAL,
@@ -1018,11 +1018,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_09_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_09_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_09_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_10" (
  "rowid" BIGSERIAL,
@@ -1072,11 +1072,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area2_Water_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_10_Geometry" ON "PipeReplaceResultsRollup2Area2_Water_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_10_Name" ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area2_Water_02_10_Total_Cost" ON "PipeReplaceResultsRollup2Area2_Water_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_01" (
  "rowid" BIGSERIAL,
@@ -1126,11 +1126,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_01_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_01_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_01_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_02" (
  "rowid" BIGSERIAL,
@@ -1180,11 +1180,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_02_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_02_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_02_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_03" (
  "rowid" BIGSERIAL,
@@ -1234,11 +1234,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_03_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_03_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_03_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_04" (
  "rowid" BIGSERIAL,
@@ -1288,11 +1288,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_04_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_04_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_04_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_05" (
  "rowid" BIGSERIAL,
@@ -1342,11 +1342,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_05_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_05_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_05_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_06" (
  "rowid" BIGSERIAL,
@@ -1396,11 +1396,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_06_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_06_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_06_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_07" (
  "rowid" BIGSERIAL,
@@ -1450,11 +1450,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_07_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_07_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_07_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_08" (
  "rowid" BIGSERIAL,
@@ -1504,11 +1504,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_08_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_08_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_08_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_09" (
  "rowid" BIGSERIAL,
@@ -1558,11 +1558,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_09_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_09_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_09_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_10" (
  "rowid" BIGSERIAL,
@@ -1612,11 +1612,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_10_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_10_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_00_10_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_01" (
  "rowid" BIGSERIAL,
@@ -1666,11 +1666,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_01_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_01_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_01_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_02" (
  "rowid" BIGSERIAL,
@@ -1720,11 +1720,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_02_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_02_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_02_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_03" (
  "rowid" BIGSERIAL,
@@ -1774,11 +1774,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_03_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_03_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_03_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_04" (
  "rowid" BIGSERIAL,
@@ -1828,11 +1828,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_04_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_04_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_04_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_05" (
  "rowid" BIGSERIAL,
@@ -1882,11 +1882,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_05_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_05_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_05_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_06" (
  "rowid" BIGSERIAL,
@@ -1936,11 +1936,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_06_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_06_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_06_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_07" (
  "rowid" BIGSERIAL,
@@ -1990,11 +1990,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_07_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_07_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_07_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_08" (
  "rowid" BIGSERIAL,
@@ -2044,11 +2044,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_08_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_08_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_08_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_09" (
  "rowid" BIGSERIAL,
@@ -2098,11 +2098,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_09_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_09_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_09_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_10" (
  "rowid" BIGSERIAL,
@@ -2152,11 +2152,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_10_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_10_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_01_10_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_01" (
  "rowid" BIGSERIAL,
@@ -2206,11 +2206,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_01_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_01_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_01_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_02" (
  "rowid" BIGSERIAL,
@@ -2260,11 +2260,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_02_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_02_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_02_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_03" (
  "rowid" BIGSERIAL,
@@ -2314,11 +2314,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_03_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_03_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_03_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_04" (
  "rowid" BIGSERIAL,
@@ -2368,11 +2368,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_04_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_04_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_04_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_05" (
  "rowid" BIGSERIAL,
@@ -2422,11 +2422,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_05_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_05_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_05_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_06" (
  "rowid" BIGSERIAL,
@@ -2476,11 +2476,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_06_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_06_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_06_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_07" (
  "rowid" BIGSERIAL,
@@ -2530,11 +2530,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_07_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_07_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_07_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_08" (
  "rowid" BIGSERIAL,
@@ -2584,11 +2584,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_08_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_08_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_08_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_09" (
  "rowid" BIGSERIAL,
@@ -2638,11 +2638,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_09_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_09_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_09_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_10" (
  "rowid" BIGSERIAL,
@@ -2692,11 +2692,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Sewer_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_10_Geometry" ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_10_Name" ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Sewer_02_10_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Sewer_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_01" (
  "rowid" BIGSERIAL,
@@ -2746,11 +2746,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_01_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_01_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_01_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_02" (
  "rowid" BIGSERIAL,
@@ -2800,11 +2800,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_02_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_02_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_02_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_03" (
  "rowid" BIGSERIAL,
@@ -2854,11 +2854,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_03_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_03_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_03_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_04" (
  "rowid" BIGSERIAL,
@@ -2908,11 +2908,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_04_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_04_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_04_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_05" (
  "rowid" BIGSERIAL,
@@ -2962,11 +2962,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_05_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_05_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_05_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_06" (
  "rowid" BIGSERIAL,
@@ -3016,11 +3016,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_06_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_06_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_06_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_07" (
  "rowid" BIGSERIAL,
@@ -3070,11 +3070,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_07_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_07_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_07_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_08" (
  "rowid" BIGSERIAL,
@@ -3124,11 +3124,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_08_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_08_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_08_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_09" (
  "rowid" BIGSERIAL,
@@ -3178,11 +3178,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_09_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_09_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_09_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_10" (
  "rowid" BIGSERIAL,
@@ -3232,11 +3232,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_10_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_10_Name" ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_00_10_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_01" (
  "rowid" BIGSERIAL,
@@ -3286,11 +3286,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_01_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_01_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_01_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_02" (
  "rowid" BIGSERIAL,
@@ -3340,11 +3340,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_02_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_02_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_02_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_03" (
  "rowid" BIGSERIAL,
@@ -3394,11 +3394,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_03_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_03_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_03_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_04" (
  "rowid" BIGSERIAL,
@@ -3448,11 +3448,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_04_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_04_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_04_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_05" (
  "rowid" BIGSERIAL,
@@ -3502,11 +3502,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_05_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_05_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_05_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_06" (
  "rowid" BIGSERIAL,
@@ -3556,11 +3556,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_06_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_06_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_06_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_07" (
  "rowid" BIGSERIAL,
@@ -3610,11 +3610,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_07_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_07_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_07_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_08" (
  "rowid" BIGSERIAL,
@@ -3664,11 +3664,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_08_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_08_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_08_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_09" (
  "rowid" BIGSERIAL,
@@ -3718,11 +3718,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_09_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_09_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_09_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_10" (
  "rowid" BIGSERIAL,
@@ -3772,11 +3772,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_10_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_10_Name" ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_01_10_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_01" (
  "rowid" BIGSERIAL,
@@ -3826,11 +3826,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_01_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_01_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_01_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_02" (
  "rowid" BIGSERIAL,
@@ -3880,11 +3880,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_02_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_02_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_02_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_03" (
  "rowid" BIGSERIAL,
@@ -3934,11 +3934,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_03_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_03_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_03_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_04" (
  "rowid" BIGSERIAL,
@@ -3988,11 +3988,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_04_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_04_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_04_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_05" (
  "rowid" BIGSERIAL,
@@ -4042,11 +4042,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_05_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_05_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_05_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_06" (
  "rowid" BIGSERIAL,
@@ -4096,11 +4096,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_06_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_06_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_06_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_07" (
  "rowid" BIGSERIAL,
@@ -4150,11 +4150,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_07_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_07_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_07_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_08" (
  "rowid" BIGSERIAL,
@@ -4204,11 +4204,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_08_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_08_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_08_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_09" (
  "rowid" BIGSERIAL,
@@ -4258,11 +4258,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_09_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_09_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_09_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_10" (
  "rowid" BIGSERIAL,
@@ -4312,11 +4312,11 @@ CREATE TABLE "PipeReplaceResultsRollup2Area3_Water_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_10_Geometry" ON "PipeReplaceResultsRollup2Area3_Water_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_10_Name" ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup2Area3_Water_02_10_Total_Cost" ON "PipeReplaceResultsRollup2Area3_Water_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_01" (
  "rowid" BIGSERIAL,
@@ -4366,11 +4366,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_01_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_01_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_01_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_02" (
  "rowid" BIGSERIAL,
@@ -4420,11 +4420,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_02_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_02_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_02_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_03" (
  "rowid" BIGSERIAL,
@@ -4474,11 +4474,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_03_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_03_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_03_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_04" (
  "rowid" BIGSERIAL,
@@ -4528,11 +4528,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_04_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_04_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_04_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_05" (
  "rowid" BIGSERIAL,
@@ -4582,11 +4582,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_05_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_05_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_05_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_06" (
  "rowid" BIGSERIAL,
@@ -4636,11 +4636,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_06_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_06_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_06_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_07" (
  "rowid" BIGSERIAL,
@@ -4690,11 +4690,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_07_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_07_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_07_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_08" (
  "rowid" BIGSERIAL,
@@ -4744,11 +4744,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_08_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_08_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_08_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_09" (
  "rowid" BIGSERIAL,
@@ -4798,11 +4798,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_09_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_09_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_09_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_10" (
  "rowid" BIGSERIAL,
@@ -4852,11 +4852,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_10_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_10_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_00_10_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_01" (
  "rowid" BIGSERIAL,
@@ -4906,11 +4906,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_01_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_01_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_01_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_02" (
  "rowid" BIGSERIAL,
@@ -4960,11 +4960,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_02_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_02_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_02_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_03" (
  "rowid" BIGSERIAL,
@@ -5014,11 +5014,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_03_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_03_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_03_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_04" (
  "rowid" BIGSERIAL,
@@ -5068,11 +5068,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_04_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_04_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_04_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_05" (
  "rowid" BIGSERIAL,
@@ -5122,11 +5122,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_05_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_05_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_05_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_06" (
  "rowid" BIGSERIAL,
@@ -5176,11 +5176,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_06_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_06_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_06_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_07" (
  "rowid" BIGSERIAL,
@@ -5230,11 +5230,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_07_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_07_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_07_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_08" (
  "rowid" BIGSERIAL,
@@ -5284,11 +5284,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_08_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_08_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_08_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_09" (
  "rowid" BIGSERIAL,
@@ -5338,11 +5338,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_09_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_09_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_09_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_10" (
  "rowid" BIGSERIAL,
@@ -5392,11 +5392,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_10_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_10_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_01_10_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_01" (
  "rowid" BIGSERIAL,
@@ -5446,11 +5446,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_01_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_01_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_01_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_02" (
  "rowid" BIGSERIAL,
@@ -5500,11 +5500,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_02_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_02_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_02_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_03" (
  "rowid" BIGSERIAL,
@@ -5554,11 +5554,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_03_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_03_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_03_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_04" (
  "rowid" BIGSERIAL,
@@ -5608,11 +5608,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_04_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_04_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_04_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_05" (
  "rowid" BIGSERIAL,
@@ -5662,11 +5662,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_05_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_05_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_05_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_06" (
  "rowid" BIGSERIAL,
@@ -5716,11 +5716,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_06_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_06_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_06_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_07" (
  "rowid" BIGSERIAL,
@@ -5770,11 +5770,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_07_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_07_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_07_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_08" (
  "rowid" BIGSERIAL,
@@ -5824,11 +5824,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_08_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_08_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_08_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_09" (
  "rowid" BIGSERIAL,
@@ -5878,11 +5878,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_09_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_09_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_09_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_10" (
  "rowid" BIGSERIAL,
@@ -5932,11 +5932,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Sewer_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_10_Geometry" ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_10_Name" ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Sewer_02_10_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Sewer_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_01" (
  "rowid" BIGSERIAL,
@@ -5986,11 +5986,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_01_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_01_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_01_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_02" (
  "rowid" BIGSERIAL,
@@ -6040,11 +6040,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_02_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_02_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_02_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_03" (
  "rowid" BIGSERIAL,
@@ -6094,11 +6094,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_03_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_03_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_03_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_04" (
  "rowid" BIGSERIAL,
@@ -6148,11 +6148,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_04_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_04_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_04_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_05" (
  "rowid" BIGSERIAL,
@@ -6202,11 +6202,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_05_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_05_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_05_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_06" (
  "rowid" BIGSERIAL,
@@ -6256,11 +6256,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_06_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_06_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_06_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_07" (
  "rowid" BIGSERIAL,
@@ -6310,11 +6310,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_07_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_07_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_07_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_08" (
  "rowid" BIGSERIAL,
@@ -6364,11 +6364,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_08_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_08_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_08_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_09" (
  "rowid" BIGSERIAL,
@@ -6418,11 +6418,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_09_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_09_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_09_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_10" (
  "rowid" BIGSERIAL,
@@ -6472,11 +6472,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_10_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_10_Name" ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_00_10_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_01" (
  "rowid" BIGSERIAL,
@@ -6526,11 +6526,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_01_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_01_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_01_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_02" (
  "rowid" BIGSERIAL,
@@ -6580,11 +6580,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_02_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_02_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_02_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_03" (
  "rowid" BIGSERIAL,
@@ -6634,11 +6634,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_03_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_03_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_03_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_04" (
  "rowid" BIGSERIAL,
@@ -6688,11 +6688,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_04_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_04_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_04_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_05" (
  "rowid" BIGSERIAL,
@@ -6742,11 +6742,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_05_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_05_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_05_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_06" (
  "rowid" BIGSERIAL,
@@ -6796,11 +6796,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_06_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_06_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_06_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_07" (
  "rowid" BIGSERIAL,
@@ -6850,11 +6850,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_07_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_07_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_07_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_08" (
  "rowid" BIGSERIAL,
@@ -6904,11 +6904,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_08_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_08_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_08_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_09" (
  "rowid" BIGSERIAL,
@@ -6958,11 +6958,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_09_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_09_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_09_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_10" (
  "rowid" BIGSERIAL,
@@ -7012,11 +7012,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_10_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_10_Name" ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_01_10_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_01" (
  "rowid" BIGSERIAL,
@@ -7066,11 +7066,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_01_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_01_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_01_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_02" (
  "rowid" BIGSERIAL,
@@ -7120,11 +7120,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_02_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_02_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_02_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_03" (
  "rowid" BIGSERIAL,
@@ -7174,11 +7174,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_03_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_03_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_03_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_04" (
  "rowid" BIGSERIAL,
@@ -7228,11 +7228,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_04_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_04_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_04_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_05" (
  "rowid" BIGSERIAL,
@@ -7282,11 +7282,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_05_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_05_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_05_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_06" (
  "rowid" BIGSERIAL,
@@ -7336,11 +7336,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_06_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_06_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_06_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_07" (
  "rowid" BIGSERIAL,
@@ -7390,11 +7390,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_07_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_07_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_07_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_08" (
  "rowid" BIGSERIAL,
@@ -7444,11 +7444,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_08_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_08_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_08_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_09" (
  "rowid" BIGSERIAL,
@@ -7498,11 +7498,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_09_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_09_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_09_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_10" (
  "rowid" BIGSERIAL,
@@ -7552,11 +7552,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area1_Water_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_10_Geometry" ON "PipeReplaceResultsRollup3Area1_Water_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_10_Name" ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area1_Water_02_10_Total_Cost" ON "PipeReplaceResultsRollup3Area1_Water_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_01" (
  "rowid" BIGSERIAL,
@@ -7606,11 +7606,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_01_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_01_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_01_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_02" (
  "rowid" BIGSERIAL,
@@ -7660,11 +7660,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_02_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_02_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_02_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_03" (
  "rowid" BIGSERIAL,
@@ -7714,11 +7714,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_03_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_03_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_03_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_04" (
  "rowid" BIGSERIAL,
@@ -7768,11 +7768,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_04_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_04_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_04_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_05" (
  "rowid" BIGSERIAL,
@@ -7822,11 +7822,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_05_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_05_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_05_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_06" (
  "rowid" BIGSERIAL,
@@ -7876,11 +7876,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_06_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_06_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_06_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_07" (
  "rowid" BIGSERIAL,
@@ -7930,11 +7930,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_07_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_07_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_07_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_08" (
  "rowid" BIGSERIAL,
@@ -7984,11 +7984,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_08_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_08_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_08_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_09" (
  "rowid" BIGSERIAL,
@@ -8038,11 +8038,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_09_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_09_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_09_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_10" (
  "rowid" BIGSERIAL,
@@ -8092,11 +8092,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_10_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_10_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_00_10_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_01" (
  "rowid" BIGSERIAL,
@@ -8146,11 +8146,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_01_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_01_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_01_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_02" (
  "rowid" BIGSERIAL,
@@ -8200,11 +8200,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_02_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_02_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_02_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_03" (
  "rowid" BIGSERIAL,
@@ -8254,11 +8254,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_03_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_03_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_03_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_04" (
  "rowid" BIGSERIAL,
@@ -8308,11 +8308,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_04_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_04_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_04_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_05" (
  "rowid" BIGSERIAL,
@@ -8362,11 +8362,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_05_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_05_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_05_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_06" (
  "rowid" BIGSERIAL,
@@ -8416,11 +8416,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_06_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_06_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_06_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_07" (
  "rowid" BIGSERIAL,
@@ -8470,11 +8470,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_07_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_07_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_07_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_08" (
  "rowid" BIGSERIAL,
@@ -8524,11 +8524,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_08_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_08_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_08_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_09" (
  "rowid" BIGSERIAL,
@@ -8578,11 +8578,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_09_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_09_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_09_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_10" (
  "rowid" BIGSERIAL,
@@ -8632,11 +8632,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_10_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_10_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_01_10_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_01" (
  "rowid" BIGSERIAL,
@@ -8686,11 +8686,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_01_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_01_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_01_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_02" (
  "rowid" BIGSERIAL,
@@ -8740,11 +8740,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_02_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_02_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_02_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_03" (
  "rowid" BIGSERIAL,
@@ -8794,11 +8794,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_03_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_03_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_03_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_04" (
  "rowid" BIGSERIAL,
@@ -8848,11 +8848,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_04_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_04_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_04_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_05" (
  "rowid" BIGSERIAL,
@@ -8902,11 +8902,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_05_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_05_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_05_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_06" (
  "rowid" BIGSERIAL,
@@ -8956,11 +8956,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_06_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_06_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_06_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_07" (
  "rowid" BIGSERIAL,
@@ -9010,11 +9010,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_07_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_07_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_07_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_08" (
  "rowid" BIGSERIAL,
@@ -9064,11 +9064,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_08_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_08_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_08_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_09" (
  "rowid" BIGSERIAL,
@@ -9118,11 +9118,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_09_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_09_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_09_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_10" (
  "rowid" BIGSERIAL,
@@ -9172,11 +9172,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Sewer_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_10_Geometry" ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_10_Name" ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Sewer_02_10_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Sewer_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_01" (
  "rowid" BIGSERIAL,
@@ -9226,11 +9226,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_01_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_01_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_01_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_02" (
  "rowid" BIGSERIAL,
@@ -9280,11 +9280,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_02_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_02_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_02_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_03" (
  "rowid" BIGSERIAL,
@@ -9334,11 +9334,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_03_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_03_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_03_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_04" (
  "rowid" BIGSERIAL,
@@ -9388,11 +9388,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_04_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_04_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_04_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_05" (
  "rowid" BIGSERIAL,
@@ -9442,11 +9442,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_05_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_05_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_05_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_06" (
  "rowid" BIGSERIAL,
@@ -9496,11 +9496,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_06_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_06_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_06_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_07" (
  "rowid" BIGSERIAL,
@@ -9550,11 +9550,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_07_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_07_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_07_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_08" (
  "rowid" BIGSERIAL,
@@ -9604,11 +9604,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_08_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_08_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_08_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_09" (
  "rowid" BIGSERIAL,
@@ -9658,11 +9658,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_09_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_09_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_09_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_10" (
  "rowid" BIGSERIAL,
@@ -9712,11 +9712,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_10_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_10_Name" ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_00_10_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_01" (
  "rowid" BIGSERIAL,
@@ -9766,11 +9766,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_01_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_01_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_01_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_02" (
  "rowid" BIGSERIAL,
@@ -9820,11 +9820,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_02_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_02_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_02_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_03" (
  "rowid" BIGSERIAL,
@@ -9874,11 +9874,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_03_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_03_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_03_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_04" (
  "rowid" BIGSERIAL,
@@ -9928,11 +9928,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_04_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_04_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_04_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_05" (
  "rowid" BIGSERIAL,
@@ -9982,11 +9982,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_05_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_05_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_05_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_06" (
  "rowid" BIGSERIAL,
@@ -10036,11 +10036,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_06_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_06_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_06_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_07" (
  "rowid" BIGSERIAL,
@@ -10090,11 +10090,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_07_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_07_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_07_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_08" (
  "rowid" BIGSERIAL,
@@ -10144,11 +10144,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_08_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_08_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_08_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_09" (
  "rowid" BIGSERIAL,
@@ -10198,11 +10198,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_09_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_09_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_09_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_10" (
  "rowid" BIGSERIAL,
@@ -10252,11 +10252,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_10_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_10_Name" ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_01_10_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_01" (
  "rowid" BIGSERIAL,
@@ -10306,11 +10306,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_01_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_01_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_01_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_02" (
  "rowid" BIGSERIAL,
@@ -10360,11 +10360,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_02_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_02_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_02_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_03" (
  "rowid" BIGSERIAL,
@@ -10414,11 +10414,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_03_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_03_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_03_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_04" (
  "rowid" BIGSERIAL,
@@ -10468,11 +10468,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_04_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_04_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_04_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_05" (
  "rowid" BIGSERIAL,
@@ -10522,11 +10522,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_05_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_05_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_05_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_06" (
  "rowid" BIGSERIAL,
@@ -10576,11 +10576,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_06_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_06_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_06_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_07" (
  "rowid" BIGSERIAL,
@@ -10630,11 +10630,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_07_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_07_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_07_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_08" (
  "rowid" BIGSERIAL,
@@ -10684,11 +10684,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_08_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_08_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_08_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_09" (
  "rowid" BIGSERIAL,
@@ -10738,11 +10738,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_09_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_09_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_09_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_10" (
  "rowid" BIGSERIAL,
@@ -10792,11 +10792,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area2_Water_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_10_Geometry" ON "PipeReplaceResultsRollup3Area2_Water_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_10_Name" ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area2_Water_02_10_Total_Cost" ON "PipeReplaceResultsRollup3Area2_Water_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_01" (
  "rowid" BIGSERIAL,
@@ -10846,11 +10846,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_01_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_01_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_01_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_02" (
  "rowid" BIGSERIAL,
@@ -10900,11 +10900,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_02_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_02_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_02_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_03" (
  "rowid" BIGSERIAL,
@@ -10954,11 +10954,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_03_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_03_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_03_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_04" (
  "rowid" BIGSERIAL,
@@ -11008,11 +11008,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_04_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_04_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_04_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_05" (
  "rowid" BIGSERIAL,
@@ -11062,11 +11062,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_05_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_05_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_05_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_06" (
  "rowid" BIGSERIAL,
@@ -11116,11 +11116,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_06_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_06_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_06_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_07" (
  "rowid" BIGSERIAL,
@@ -11170,11 +11170,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_07_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_07_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_07_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_08" (
  "rowid" BIGSERIAL,
@@ -11224,11 +11224,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_08_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_08_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_08_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_09" (
  "rowid" BIGSERIAL,
@@ -11278,11 +11278,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_09_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_09_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_09_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_10" (
  "rowid" BIGSERIAL,
@@ -11332,11 +11332,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_10_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_10_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_00_10_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_01" (
  "rowid" BIGSERIAL,
@@ -11386,11 +11386,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_01_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_01_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_01_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_02" (
  "rowid" BIGSERIAL,
@@ -11440,11 +11440,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_02_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_02_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_02_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_03" (
  "rowid" BIGSERIAL,
@@ -11494,11 +11494,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_03_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_03_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_03_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_04" (
  "rowid" BIGSERIAL,
@@ -11548,11 +11548,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_04_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_04_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_04_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_05" (
  "rowid" BIGSERIAL,
@@ -11602,11 +11602,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_05_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_05_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_05_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_06" (
  "rowid" BIGSERIAL,
@@ -11656,11 +11656,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_06_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_06_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_06_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_07" (
  "rowid" BIGSERIAL,
@@ -11710,11 +11710,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_07_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_07_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_07_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_08" (
  "rowid" BIGSERIAL,
@@ -11764,11 +11764,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_08_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_08_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_08_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_09" (
  "rowid" BIGSERIAL,
@@ -11818,11 +11818,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_09_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_09_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_09_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_10" (
  "rowid" BIGSERIAL,
@@ -11872,11 +11872,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_10_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_10_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_01_10_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_01" (
  "rowid" BIGSERIAL,
@@ -11926,11 +11926,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_01_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_01_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_01_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_02" (
  "rowid" BIGSERIAL,
@@ -11980,11 +11980,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_02_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_02_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_02_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_03" (
  "rowid" BIGSERIAL,
@@ -12034,11 +12034,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_03_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_03_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_03_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_04" (
  "rowid" BIGSERIAL,
@@ -12088,11 +12088,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_04_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_04_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_04_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_05" (
  "rowid" BIGSERIAL,
@@ -12142,11 +12142,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_05_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_05_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_05_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_06" (
  "rowid" BIGSERIAL,
@@ -12196,11 +12196,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_06_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_06_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_06_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_07" (
  "rowid" BIGSERIAL,
@@ -12250,11 +12250,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_07_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_07_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_07_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_08" (
  "rowid" BIGSERIAL,
@@ -12304,11 +12304,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_08_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_08_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_08_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_09" (
  "rowid" BIGSERIAL,
@@ -12358,11 +12358,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_09_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_09_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_09_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_10" (
  "rowid" BIGSERIAL,
@@ -12412,11 +12412,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Sewer_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_10_Geometry" ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_10_Name" ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Sewer_02_10_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Sewer_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_01" (
  "rowid" BIGSERIAL,
@@ -12466,11 +12466,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_01_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_01_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_01_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_02" (
  "rowid" BIGSERIAL,
@@ -12520,11 +12520,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_02_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_02_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_02_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_03" (
  "rowid" BIGSERIAL,
@@ -12574,11 +12574,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_03_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_03_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_03_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_04" (
  "rowid" BIGSERIAL,
@@ -12628,11 +12628,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_04_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_04_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_04_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_05" (
  "rowid" BIGSERIAL,
@@ -12682,11 +12682,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_05_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_05_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_05_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_06" (
  "rowid" BIGSERIAL,
@@ -12736,11 +12736,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_06_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_06_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_06_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_07" (
  "rowid" BIGSERIAL,
@@ -12790,11 +12790,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_07_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_07_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_07_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_08" (
  "rowid" BIGSERIAL,
@@ -12844,11 +12844,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_08_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_08_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_08_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_09" (
  "rowid" BIGSERIAL,
@@ -12898,11 +12898,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_09_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_09_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_09_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_10" (
  "rowid" BIGSERIAL,
@@ -12952,11 +12952,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_00_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_10_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_00_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_10_Name" ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_00_10_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_00_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_01" (
  "rowid" BIGSERIAL,
@@ -13006,11 +13006,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_01_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_01_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_01_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_02" (
  "rowid" BIGSERIAL,
@@ -13060,11 +13060,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_02_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_02_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_02_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_03" (
  "rowid" BIGSERIAL,
@@ -13114,11 +13114,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_03_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_03_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_03_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_04" (
  "rowid" BIGSERIAL,
@@ -13168,11 +13168,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_04_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_04_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_04_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_05" (
  "rowid" BIGSERIAL,
@@ -13222,11 +13222,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_05_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_05_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_05_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_06" (
  "rowid" BIGSERIAL,
@@ -13276,11 +13276,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_06_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_06_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_06_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_07" (
  "rowid" BIGSERIAL,
@@ -13330,11 +13330,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_07_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_07_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_07_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_08" (
  "rowid" BIGSERIAL,
@@ -13384,11 +13384,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_08_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_08_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_08_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_09" (
  "rowid" BIGSERIAL,
@@ -13438,11 +13438,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_09_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_09_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_09_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_10" (
  "rowid" BIGSERIAL,
@@ -13492,11 +13492,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_01_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_10_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_01_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_10_Name" ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_01_10_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_01_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_01" (
  "rowid" BIGSERIAL,
@@ -13546,11 +13546,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_01" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_01" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_01_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_01" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_01_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_01_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_01_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_01_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_01" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_02" (
  "rowid" BIGSERIAL,
@@ -13600,11 +13600,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_02" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_02" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_02_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_02" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_02_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_02_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_02_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_02_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_02" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_03" (
  "rowid" BIGSERIAL,
@@ -13654,11 +13654,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_03" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_03" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_03_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_03" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_03_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_03_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_03_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_03_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_03" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_04" (
  "rowid" BIGSERIAL,
@@ -13708,11 +13708,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_04" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_04" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_04_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_04" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_04_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_04_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_04_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_04_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_04" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_05" (
  "rowid" BIGSERIAL,
@@ -13762,11 +13762,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_05" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_05" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_05_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_05" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_05_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_05_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_05_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_05_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_05" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_06" (
  "rowid" BIGSERIAL,
@@ -13816,11 +13816,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_06" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_06" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_06_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_06" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_06_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_06_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_06_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_06_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_06" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_07" (
  "rowid" BIGSERIAL,
@@ -13870,11 +13870,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_07" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_07" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_07_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_07" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_07_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_07_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_07_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_07_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_07" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_08" (
  "rowid" BIGSERIAL,
@@ -13924,11 +13924,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_08" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_08" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_08_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_08" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_08_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_08_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_08_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_08_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_08" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_09" (
  "rowid" BIGSERIAL,
@@ -13978,11 +13978,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_09" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_09" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_09_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_09" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_09_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_09_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_09_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_09_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_09" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_10" (
  "rowid" BIGSERIAL,
@@ -14032,11 +14032,11 @@ CREATE TABLE "PipeReplaceResultsRollup3Area3_Water_02_10" (
  "W_Avg_AgeP" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_10" USING GIST ("Geometry");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("Name");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("W_Avg_PRPP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("W_Avg_REP");
-CREATE INDEX ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("Total_Cost");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_10_Geometry" ON "PipeReplaceResultsRollup3Area3_Water_02_10" USING GIST ("Geometry");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_10_Name" ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("Name");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_10_W_Avg_PRPP" ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("W_Avg_PRPP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_10_W_Avg_REP" ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("W_Avg_REP");
+CREATE INDEX "idx_PipeReplaceResultsRollup3Area3_Water_02_10_Total_Cost" ON "PipeReplaceResultsRollup3Area3_Water_02_10" ("Total_Cost");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_01" (
  "rowid" BIGSERIAL,
@@ -14066,7 +14066,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_01" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_01" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_01_LinkNr" ON "PipeReplaceSource_Sewer_00_01" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_02" (
  "rowid" BIGSERIAL,
@@ -14096,7 +14096,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_02" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_02" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_02_LinkNr" ON "PipeReplaceSource_Sewer_00_02" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_03" (
  "rowid" BIGSERIAL,
@@ -14126,7 +14126,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_03" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_03" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_03_LinkNr" ON "PipeReplaceSource_Sewer_00_03" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_04" (
  "rowid" BIGSERIAL,
@@ -14156,7 +14156,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_04" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_04" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_04_LinkNr" ON "PipeReplaceSource_Sewer_00_04" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_05" (
  "rowid" BIGSERIAL,
@@ -14186,7 +14186,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_05" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_05" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_05_LinkNr" ON "PipeReplaceSource_Sewer_00_05" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_06" (
  "rowid" BIGSERIAL,
@@ -14216,7 +14216,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_06" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_06" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_06_LinkNr" ON "PipeReplaceSource_Sewer_00_06" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_07" (
  "rowid" BIGSERIAL,
@@ -14246,7 +14246,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_07" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_07" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_07_LinkNr" ON "PipeReplaceSource_Sewer_00_07" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_08" (
  "rowid" BIGSERIAL,
@@ -14276,7 +14276,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_08" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_08" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_08_LinkNr" ON "PipeReplaceSource_Sewer_00_08" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_09" (
  "rowid" BIGSERIAL,
@@ -14306,7 +14306,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_09" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_09" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_09_LinkNr" ON "PipeReplaceSource_Sewer_00_09" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_00_10" (
  "rowid" BIGSERIAL,
@@ -14336,7 +14336,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_00_10" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_00_10" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_00_10_LinkNr" ON "PipeReplaceSource_Sewer_00_10" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_01" (
  "rowid" BIGSERIAL,
@@ -14366,7 +14366,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_01" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_01" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_01_LinkNr" ON "PipeReplaceSource_Sewer_01_01" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_02" (
  "rowid" BIGSERIAL,
@@ -14396,7 +14396,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_02" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_02" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_02_LinkNr" ON "PipeReplaceSource_Sewer_01_02" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_03" (
  "rowid" BIGSERIAL,
@@ -14426,7 +14426,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_03" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_03" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_03_LinkNr" ON "PipeReplaceSource_Sewer_01_03" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_04" (
  "rowid" BIGSERIAL,
@@ -14456,7 +14456,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_04" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_04" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_04_LinkNr" ON "PipeReplaceSource_Sewer_01_04" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_05" (
  "rowid" BIGSERIAL,
@@ -14486,7 +14486,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_05" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_05" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_05_LinkNr" ON "PipeReplaceSource_Sewer_01_05" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_06" (
  "rowid" BIGSERIAL,
@@ -14516,7 +14516,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_06" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_06" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_06_LinkNr" ON "PipeReplaceSource_Sewer_01_06" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_07" (
  "rowid" BIGSERIAL,
@@ -14546,7 +14546,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_07" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_07" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_07_LinkNr" ON "PipeReplaceSource_Sewer_01_07" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_08" (
  "rowid" BIGSERIAL,
@@ -14576,7 +14576,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_08" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_08" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_08_LinkNr" ON "PipeReplaceSource_Sewer_01_08" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_09" (
  "rowid" BIGSERIAL,
@@ -14606,7 +14606,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_09" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_09" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_09_LinkNr" ON "PipeReplaceSource_Sewer_01_09" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_01_10" (
  "rowid" BIGSERIAL,
@@ -14636,7 +14636,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_01_10" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_01_10" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_01_10_LinkNr" ON "PipeReplaceSource_Sewer_01_10" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_01" (
  "rowid" BIGSERIAL,
@@ -14666,7 +14666,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_01" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_01" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_01_LinkNr" ON "PipeReplaceSource_Sewer_02_01" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_02" (
  "rowid" BIGSERIAL,
@@ -14696,7 +14696,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_02" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_02" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_02_LinkNr" ON "PipeReplaceSource_Sewer_02_02" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_03" (
  "rowid" BIGSERIAL,
@@ -14726,7 +14726,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_03" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_03" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_03_LinkNr" ON "PipeReplaceSource_Sewer_02_03" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_04" (
  "rowid" BIGSERIAL,
@@ -14756,7 +14756,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_04" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_04" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_04_LinkNr" ON "PipeReplaceSource_Sewer_02_04" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_05" (
  "rowid" BIGSERIAL,
@@ -14786,7 +14786,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_05" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_05" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_05_LinkNr" ON "PipeReplaceSource_Sewer_02_05" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_06" (
  "rowid" BIGSERIAL,
@@ -14816,7 +14816,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_06" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_06" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_06_LinkNr" ON "PipeReplaceSource_Sewer_02_06" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_07" (
  "rowid" BIGSERIAL,
@@ -14846,7 +14846,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_07" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_07" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_07_LinkNr" ON "PipeReplaceSource_Sewer_02_07" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_08" (
  "rowid" BIGSERIAL,
@@ -14876,7 +14876,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_08" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_08" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_08_LinkNr" ON "PipeReplaceSource_Sewer_02_08" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_09" (
  "rowid" BIGSERIAL,
@@ -14906,7 +14906,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_09" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_09" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_09_LinkNr" ON "PipeReplaceSource_Sewer_02_09" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Sewer_02_10" (
  "rowid" BIGSERIAL,
@@ -14936,7 +14936,7 @@ CREATE TABLE "PipeReplaceSource_Sewer_02_10" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Sewer_02_10" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Sewer_02_10_LinkNr" ON "PipeReplaceSource_Sewer_02_10" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Water_00_01" (
  "rowid" BIGSERIAL,
@@ -14966,7 +14966,7 @@ CREATE TABLE "PipeReplaceSource_Water_00_01" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Water_00_01" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Water_00_01_LinkNr" ON "PipeReplaceSource_Water_00_01" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Water_00_02" (
  "rowid" BIGSERIAL,
@@ -14996,7 +14996,7 @@ CREATE TABLE "PipeReplaceSource_Water_00_02" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Water_00_02" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Water_00_02_LinkNr" ON "PipeReplaceSource_Water_00_02" ("LinkNr");
 
 CREATE TABLE "PipeReplaceSource_Water_00_03" (
  "rowid" BIGSERIAL,
@@ -15026,5 +15026,5 @@ CREATE TABLE "PipeReplaceSource_Water_00_03" (
  "CF_09" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PipeReplaceSource_Water_00_03" ("LinkNr");
+CREATE INDEX "idx_PipeReplaceSource_Water_00_03_LinkNr" ON "PipeReplaceSource_Water_00_03" ("LinkNr");
 

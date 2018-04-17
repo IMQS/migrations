@@ -13,4 +13,4 @@ CREATE TABLE "ImqsPackage" (
  "ImportedTime" TIMESTAMP WITHOUT TIME ZONE,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ImqsPackage" ("PackageName");
+CREATE UNIQUE INDEX "idx_ImqsPackage_PackageName" ON "ImqsPackage" ("PackageName");

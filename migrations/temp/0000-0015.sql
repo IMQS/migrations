@@ -159,7 +159,7 @@ CREATE TABLE "Condition_Assessment" (
  "PipelineID" UUID,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "Condition_Assessment" USING GIST ("Geometry");
+CREATE INDEX "idx_Condition_Assessment_Geometry" ON "Condition_Assessment" USING GIST ("Geometry");
 
 CREATE TABLE "Metadata" (
  "rowid" SERIAL,
@@ -184,5 +184,5 @@ CREATE TABLE "Pure_Pipe" (
  "ID" UUID,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "Pure_Pipe" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "Pure_Pipe" ("ID");
+CREATE INDEX "idx_Pure_Pipe_Geometry" ON "Pure_Pipe" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_Pure_Pipe_ID" ON "Pure_Pipe" ("ID");

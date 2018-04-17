@@ -18,8 +18,8 @@ CREATE TABLE "WaterValve_08" (
  "To_ID" UUID,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "WaterValve_08" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "WaterValve_08" ("ID");
+CREATE INDEX "idx_WaterValve_08_Geometry" ON "WaterValve_08" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_WaterValve_08_ID" ON "WaterValve_08" ("ID");
 
 CREATE TABLE "WaterValve_09" (
  "rowid" BIGSERIAL,
@@ -41,8 +41,8 @@ CREATE TABLE "WaterValve_09" (
  "To_ID" UUID,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "WaterValve_09" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "WaterValve_09" ("ID");
+CREATE INDEX "idx_WaterValve_09_Geometry" ON "WaterValve_09" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_WaterValve_09_ID" ON "WaterValve_09" ("ID");
 
 CREATE TABLE "WaterValve_10" (
  "rowid" BIGSERIAL,
@@ -64,8 +64,8 @@ CREATE TABLE "WaterValve_10" (
  "To_ID" UUID,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "WaterValve_10" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "WaterValve_10" ("ID");
+CREATE INDEX "idx_WaterValve_10_Geometry" ON "WaterValve_10" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_WaterValve_10_ID" ON "WaterValve_10" ("ID");
 
 CREATE TABLE "WidgetLandParcel" (
  "rowid" BIGSERIAL,
@@ -83,9 +83,9 @@ CREATE TABLE "WidgetLandParcel" (
  "sapId" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "WidgetLandParcel" ("SG21Code");
-CREATE INDEX ON "WidgetLandParcel" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "WidgetLandParcel" ("id");
+CREATE INDEX "idx_WidgetLandParcel_SG21Code" ON "WidgetLandParcel" ("SG21Code");
+CREATE INDEX "idx_WidgetLandParcel_Geometry" ON "WidgetLandParcel" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_WidgetLandParcel_id" ON "WidgetLandParcel" ("id");
 
 CREATE TABLE "WorkOrderStatus" (
  "rowid" BIGSERIAL,
@@ -100,7 +100,7 @@ CREATE TABLE "WorkOrderStatus" (
  "LastRefreshDate" TIMESTAMP WITHOUT TIME ZONE,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "WorkOrderStatus" ("WorkOrderID","EquipmentNr");
+CREATE UNIQUE INDEX "idx_WorkOrderStatus_WorkOrderID_EquipmentNr" ON "WorkOrderStatus" ("WorkOrderID","EquipmentNr");
 
 CREATE TABLE "WorkOrderStatusType" (
  "rowid" BIGSERIAL,
@@ -108,7 +108,7 @@ CREATE TABLE "WorkOrderStatusType" (
  "Description" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "WorkOrderStatusType" ("Code");
+CREATE UNIQUE INDEX "idx_WorkOrderStatusType_Code" ON "WorkOrderStatusType" ("Code");
 
 CREATE TABLE "WorkOrderType" (
  "rowid" BIGSERIAL,
@@ -116,7 +116,7 @@ CREATE TABLE "WorkOrderType" (
  "Description" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "WorkOrderType" ("Code");
+CREATE UNIQUE INDEX "idx_WorkOrderType_Code" ON "WorkOrderType" ("Code");
 
 CREATE TABLE "ZedNet" (
  "rowid" BIGSERIAL,
@@ -136,4 +136,4 @@ CREATE TABLE "ZedNet" (
  "Region" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "ZedNet" USING GIST ("Geometry");
+CREATE INDEX "idx_ZedNet_Geometry" ON "ZedNet" USING GIST ("Geometry");

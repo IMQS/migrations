@@ -113,15 +113,15 @@ CREATE TABLE "AssetComponent" (
  "EquipmentNr" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetComponent" ("MapFeatureID");
-CREATE INDEX ON "AssetComponent" ("EquipmentNr");
-CREATE INDEX ON "AssetComponent" ("AccountingGroupID");
-CREATE INDEX ON "AssetComponent" ("AssetCategoryID");
-CREATE INDEX ON "AssetComponent" ("AssetSubCategoryID");
-CREATE INDEX ON "AssetComponent" ("AssetGroupTypeID");
-CREATE INDEX ON "AssetComponent" ("AssetTypeID");
-CREATE INDEX ON "AssetComponent" ("ComponentTypeID");
-CREATE UNIQUE INDEX ON "AssetComponent" ("ComponentID");
+CREATE INDEX "idx_AssetComponent_MapFeatureID" ON "AssetComponent" ("MapFeatureID");
+CREATE INDEX "idx_AssetComponent_EquipmentNr" ON "AssetComponent" ("EquipmentNr");
+CREATE INDEX "idx_AssetComponent_AccountingGroupID" ON "AssetComponent" ("AccountingGroupID");
+CREATE INDEX "idx_AssetComponent_AssetCategoryID" ON "AssetComponent" ("AssetCategoryID");
+CREATE INDEX "idx_AssetComponent_AssetSubCategoryID" ON "AssetComponent" ("AssetSubCategoryID");
+CREATE INDEX "idx_AssetComponent_AssetGroupTypeID" ON "AssetComponent" ("AssetGroupTypeID");
+CREATE INDEX "idx_AssetComponent_AssetTypeID" ON "AssetComponent" ("AssetTypeID");
+CREATE INDEX "idx_AssetComponent_ComponentTypeID" ON "AssetComponent" ("ComponentTypeID");
+CREATE UNIQUE INDEX "idx_AssetComponent_ComponentID" ON "AssetComponent" ("ComponentID");
 
 CREATE TABLE "AssetComponentGeometry" (
  "rowid" BIGSERIAL,
@@ -232,16 +232,16 @@ CREATE TABLE "AssetComponentGeometry" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetComponentGeometry" USING GIST ("Geometry");
-CREATE INDEX ON "AssetComponentGeometry" ("MapFeatureID");
-CREATE INDEX ON "AssetComponentGeometry" ("EquipmentNr");
-CREATE INDEX ON "AssetComponentGeometry" ("AccountingGroupID");
-CREATE INDEX ON "AssetComponentGeometry" ("AssetCategoryID");
-CREATE INDEX ON "AssetComponentGeometry" ("AssetSubCategoryID");
-CREATE INDEX ON "AssetComponentGeometry" ("AssetGroupTypeID");
-CREATE INDEX ON "AssetComponentGeometry" ("AssetTypeID");
-CREATE INDEX ON "AssetComponentGeometry" ("ComponentTypeID");
-CREATE UNIQUE INDEX ON "AssetComponentGeometry" ("ComponentID");
+CREATE INDEX "idx_AssetComponentGeometry_Geometry" ON "AssetComponentGeometry" USING GIST ("Geometry");
+CREATE INDEX "idx_AssetComponentGeometry_MapFeatureID" ON "AssetComponentGeometry" ("MapFeatureID");
+CREATE INDEX "idx_AssetComponentGeometry_EquipmentNr" ON "AssetComponentGeometry" ("EquipmentNr");
+CREATE INDEX "idx_AssetComponentGeometry_AccountingGroupID" ON "AssetComponentGeometry" ("AccountingGroupID");
+CREATE INDEX "idx_AssetComponentGeometry_AssetCategoryID" ON "AssetComponentGeometry" ("AssetCategoryID");
+CREATE INDEX "idx_AssetComponentGeometry_AssetSubCategoryID" ON "AssetComponentGeometry" ("AssetSubCategoryID");
+CREATE INDEX "idx_AssetComponentGeometry_AssetGroupTypeID" ON "AssetComponentGeometry" ("AssetGroupTypeID");
+CREATE INDEX "idx_AssetComponentGeometry_AssetTypeID" ON "AssetComponentGeometry" ("AssetTypeID");
+CREATE INDEX "idx_AssetComponentGeometry_ComponentTypeID" ON "AssetComponentGeometry" ("ComponentTypeID");
+CREATE UNIQUE INDEX "idx_AssetComponentGeometry_ComponentID" ON "AssetComponentGeometry" ("ComponentID");
 
 CREATE TABLE "AssetComponentGeometryDeltas" (
  "rowid" BIGSERIAL,
@@ -352,16 +352,16 @@ CREATE TABLE "AssetComponentGeometryDeltas" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetComponentGeometryDeltas" USING GIST ("Geometry");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("MapFeatureID");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("EquipmentNr");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("AccountingGroupID");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("AssetCategoryID");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("AssetSubCategoryID");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("AssetGroupTypeID");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("AssetTypeID");
-CREATE INDEX ON "AssetComponentGeometryDeltas" ("ComponentTypeID");
-CREATE UNIQUE INDEX ON "AssetComponentGeometryDeltas" ("ComponentID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_Geometry" ON "AssetComponentGeometryDeltas" USING GIST ("Geometry");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_MapFeatureID" ON "AssetComponentGeometryDeltas" ("MapFeatureID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_EquipmentNr" ON "AssetComponentGeometryDeltas" ("EquipmentNr");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_AccountingGroupID" ON "AssetComponentGeometryDeltas" ("AccountingGroupID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_AssetCategoryID" ON "AssetComponentGeometryDeltas" ("AssetCategoryID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_AssetSubCategoryID" ON "AssetComponentGeometryDeltas" ("AssetSubCategoryID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_AssetGroupTypeID" ON "AssetComponentGeometryDeltas" ("AssetGroupTypeID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_AssetTypeID" ON "AssetComponentGeometryDeltas" ("AssetTypeID");
+CREATE INDEX "idx_AssetComponentGeometryDeltas_ComponentTypeID" ON "AssetComponentGeometryDeltas" ("ComponentTypeID");
+CREATE UNIQUE INDEX "idx_AssetComponentGeometryDeltas_ComponentID" ON "AssetComponentGeometryDeltas" ("ComponentID");
 
 CREATE TABLE "AssetConversionComponent" (
  "rowid" BIGSERIAL,
@@ -374,7 +374,7 @@ CREATE TABLE "AssetConversionComponent" (
  "Date" TIMESTAMP WITHOUT TIME ZONE,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetConversionComponent" ("ComponentID","Name");
+CREATE INDEX "idx_AssetConversionComponent_ComponentID_Name" ON "AssetConversionComponent" ("ComponentID","Name");
 
 CREATE TABLE "AssetConversionGrade" (
  "rowid" BIGSERIAL,
@@ -386,7 +386,7 @@ CREATE TABLE "AssetConversionGrade" (
  "ConditionCur" INTEGER,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetConversionGrade" ("ComponentID");
+CREATE INDEX "idx_AssetConversionGrade_ComponentID" ON "AssetConversionGrade" ("ComponentID");
 
 CREATE TABLE "AssetConversionMapFeature" (
  "rowid" BIGSERIAL,
@@ -394,7 +394,7 @@ CREATE TABLE "AssetConversionMapFeature" (
  "Difference" INTEGER,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetConversionMapFeature" ("MapFeatureID");
+CREATE INDEX "idx_AssetConversionMapFeature_MapFeatureID" ON "AssetConversionMapFeature" ("MapFeatureID");
 
 CREATE TABLE "AssetMapFeature" (
  "rowid" BIGSERIAL,
@@ -418,8 +418,8 @@ CREATE TABLE "AssetMapFeature" (
  "WorkOrderStatusLastCreateRequest" INTEGER,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetMapFeature" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "AssetMapFeature" ("MapFeatureID");
+CREATE INDEX "idx_AssetMapFeature_Geometry" ON "AssetMapFeature" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_AssetMapFeature_MapFeatureID" ON "AssetMapFeature" ("MapFeatureID");
 
 CREATE TABLE "AssetMethodDisposal" (
  "rowid" BIGSERIAL,
@@ -429,7 +429,7 @@ CREATE TABLE "AssetMethodDisposal" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetMethodDisposal" ("k");
+CREATE UNIQUE INDEX "idx_AssetMethodDisposal_k" ON "AssetMethodDisposal" ("k");
 
 CREATE TABLE "AssetMethodOwned" (
  "rowid" BIGSERIAL,
@@ -439,7 +439,7 @@ CREATE TABLE "AssetMethodOwned" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetMethodOwned" ("k");
+CREATE UNIQUE INDEX "idx_AssetMethodOwned_k" ON "AssetMethodOwned" ("k");
 
 CREATE TABLE "AssetReasonImpairment" (
  "rowid" BIGSERIAL,
@@ -449,7 +449,7 @@ CREATE TABLE "AssetReasonImpairment" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetReasonImpairment" ("k");
+CREATE UNIQUE INDEX "idx_AssetReasonImpairment_k" ON "AssetReasonImpairment" ("k");
 
 CREATE TABLE "AssetReasonRevImpairment" (
  "rowid" BIGSERIAL,
@@ -459,7 +459,7 @@ CREATE TABLE "AssetReasonRevImpairment" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetReasonRevImpairment" ("k");
+CREATE UNIQUE INDEX "idx_AssetReasonRevImpairment_k" ON "AssetReasonRevImpairment" ("k");
 
 CREATE TABLE "AssetRefAccounting" (
  "rowid" BIGSERIAL,
@@ -469,7 +469,7 @@ CREATE TABLE "AssetRefAccounting" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefAccounting" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefAccounting_k" ON "AssetRefAccounting" ("k");
 
 CREATE TABLE "AssetRefCategory" (
  "rowid" BIGSERIAL,
@@ -480,7 +480,7 @@ CREATE TABLE "AssetRefCategory" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefCategory" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefCategory_k1_k2" ON "AssetRefCategory" ("k1","k2");
 
 CREATE TABLE "AssetRefComponentType" (
  "rowid" BIGSERIAL,
@@ -491,7 +491,7 @@ CREATE TABLE "AssetRefComponentType" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefComponentType" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefComponentType_k1_k2" ON "AssetRefComponentType" ("k1","k2");
 
 CREATE TABLE "AssetRefCostCentre" (
  "rowid" BIGSERIAL,
@@ -502,7 +502,7 @@ CREATE TABLE "AssetRefCostCentre" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefCostCentre" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefCostCentre_k1_k2" ON "AssetRefCostCentre" ("k1","k2");
 
 CREATE TABLE "AssetRefCostCentres" (
  "rowid" BIGSERIAL,
@@ -512,7 +512,7 @@ CREATE TABLE "AssetRefCostCentres" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefCostCentres" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefCostCentres_k" ON "AssetRefCostCentres" ("k");
 
 CREATE TABLE "AssetRefCounter" (
  "rowid" BIGSERIAL,
@@ -522,7 +522,7 @@ CREATE TABLE "AssetRefCounter" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefCounter" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefCounter_k" ON "AssetRefCounter" ("k");
 
 CREATE TABLE "AssetRefDirectorate" (
  "rowid" BIGSERIAL,
@@ -532,7 +532,7 @@ CREATE TABLE "AssetRefDirectorate" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefDirectorate" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefDirectorate_k" ON "AssetRefDirectorate" ("k");
 
 CREATE TABLE "AssetRefDominantCompPerGroup" (
  "rowid" BIGSERIAL,
@@ -543,7 +543,7 @@ CREATE TABLE "AssetRefDominantCompPerGroup" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefDominantCompPerGroup" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefDominantCompPerGroup_k1_k2" ON "AssetRefDominantCompPerGroup" ("k1","k2");
 
 CREATE TABLE "AssetRefGroup" (
  "rowid" BIGSERIAL,
@@ -554,7 +554,7 @@ CREATE TABLE "AssetRefGroup" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefGroup" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefGroup_k1_k2" ON "AssetRefGroup" ("k1","k2");
 
 CREATE TABLE "AssetRefMeasurementModel" (
  "rowid" BIGSERIAL,
@@ -564,7 +564,7 @@ CREATE TABLE "AssetRefMeasurementModel" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefMeasurementModel" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefMeasurementModel_k" ON "AssetRefMeasurementModel" ("k");
 
 CREATE TABLE "AssetRefMeasurementModelLinks" (
  "rowid" BIGSERIAL,
@@ -572,7 +572,7 @@ CREATE TABLE "AssetRefMeasurementModelLinks" (
  "MeasurementModelId" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "AssetRefMeasurementModelLinks" ("AccountingGroup");
+CREATE INDEX "idx_AssetRefMeasurementModelLinks_AccountingGroup" ON "AssetRefMeasurementModelLinks" ("AccountingGroup");
 
 CREATE TABLE "AssetRefMoveable" (
  "rowid" BIGSERIAL,
@@ -582,7 +582,7 @@ CREATE TABLE "AssetRefMoveable" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefMoveable" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefMoveable_k" ON "AssetRefMoveable" ("k");
 
 CREATE TABLE "AssetRefOwner" (
  "rowid" BIGSERIAL,
@@ -592,7 +592,7 @@ CREATE TABLE "AssetRefOwner" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefOwner" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefOwner_k" ON "AssetRefOwner" ("k");
 
 CREATE TABLE "AssetRefPlant" (
  "rowid" BIGSERIAL,
@@ -602,7 +602,7 @@ CREATE TABLE "AssetRefPlant" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefPlant" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefPlant_k" ON "AssetRefPlant" ("k");
 
 CREATE TABLE "AssetRefSubCategory" (
  "rowid" BIGSERIAL,
@@ -613,7 +613,7 @@ CREATE TABLE "AssetRefSubCategory" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefSubCategory" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefSubCategory_k1_k2" ON "AssetRefSubCategory" ("k1","k2");
 
 CREATE TABLE "AssetRefTransactionTypes" (
  "rowid" BIGSERIAL,
@@ -623,7 +623,7 @@ CREATE TABLE "AssetRefTransactionTypes" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefTransactionTypes" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefTransactionTypes_k" ON "AssetRefTransactionTypes" ("k");
 
 CREATE TABLE "AssetRefType" (
  "rowid" BIGSERIAL,
@@ -634,7 +634,7 @@ CREATE TABLE "AssetRefType" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefType" ("k1","k2");
+CREATE UNIQUE INDEX "idx_AssetRefType_k1_k2" ON "AssetRefType" ("k1","k2");
 
 CREATE TABLE "AssetRefUseStatus" (
  "rowid" BIGSERIAL,
@@ -644,7 +644,7 @@ CREATE TABLE "AssetRefUseStatus" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefUseStatus" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefUseStatus_k" ON "AssetRefUseStatus" ("k");
 
 CREATE TABLE "AssetRefWorkCentre" (
  "rowid" BIGSERIAL,
@@ -654,7 +654,7 @@ CREATE TABLE "AssetRefWorkCentre" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "AssetRefWorkCentre" ("k");
+CREATE UNIQUE INDEX "idx_AssetRefWorkCentre_k" ON "AssetRefWorkCentre" ("k");
 
 CREATE TABLE "AssetRender" (
  "rowid" BIGSERIAL,
@@ -683,10 +683,10 @@ CREATE TABLE "DWSFarmPortions" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "DWSFarmPortions" ("id");
-CREATE UNIQUE INDEX ON "DWSFarmPortions" ("objectid");
-CREATE INDEX ON "DWSFarmPortions" ("SG21Code");
-CREATE INDEX ON "DWSFarmPortions" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_DWSFarmPortions_id" ON "DWSFarmPortions" ("id");
+CREATE UNIQUE INDEX "idx_DWSFarmPortions_objectid" ON "DWSFarmPortions" ("objectid");
+CREATE INDEX "idx_DWSFarmPortions_SG21Code" ON "DWSFarmPortions" ("SG21Code");
+CREATE INDEX "idx_DWSFarmPortions_Geometry" ON "DWSFarmPortions" USING GIST ("Geometry");
 
 CREATE TABLE "DwsSchemePolygons" (
  "rowid" BIGSERIAL,
@@ -705,9 +705,9 @@ CREATE TABLE "DwsSchemePolygons" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "DwsSchemePolygons" ("id");
-CREATE INDEX ON "DwsSchemePolygons" ("objectid");
-CREATE INDEX ON "DwsSchemePolygons" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_DwsSchemePolygons_id" ON "DwsSchemePolygons" ("id");
+CREATE INDEX "idx_DwsSchemePolygons_objectid" ON "DwsSchemePolygons" ("objectid");
+CREATE INDEX "idx_DwsSchemePolygons_Geometry" ON "DwsSchemePolygons" USING GIST ("Geometry");
 
 CREATE TABLE "Hydrants" (
  "rowid" BIGSERIAL,
@@ -721,8 +721,8 @@ CREATE TABLE "Hydrants" (
  "New_B2B_ID" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "Hydrants" USING GIST ("Geometry");
-CREATE UNIQUE INDEX ON "Hydrants" ("id");
+CREATE INDEX "idx_Hydrants_Geometry" ON "Hydrants" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_Hydrants_id" ON "Hydrants" ("id");
 
 CREATE TABLE "Metadata" (
  "rowid" SERIAL,
@@ -919,10 +919,10 @@ CREATE TABLE "PurePipeConditionAssessment" (
  "Geometry" geometry(MultiLineString, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "PurePipeConditionAssessment" ("PipelineID");
-CREATE INDEX ON "PurePipeConditionAssessment" ("PipeNo");
-CREATE INDEX ON "PurePipeConditionAssessment" ("Contract");
-CREATE INDEX ON "PurePipeConditionAssessment" USING GIST ("Geometry");
+CREATE INDEX "idx_PurePipeConditionAssessment_PipelineID" ON "PurePipeConditionAssessment" ("PipelineID");
+CREATE INDEX "idx_PurePipeConditionAssessment_PipeNo" ON "PurePipeConditionAssessment" ("PipeNo");
+CREATE INDEX "idx_PurePipeConditionAssessment_Contract" ON "PurePipeConditionAssessment" ("Contract");
+CREATE INDEX "idx_PurePipeConditionAssessment_Geometry" ON "PurePipeConditionAssessment" USING GIST ("Geometry");
 
 CREATE TABLE "ScadaCurrent" (
  "rowid" BIGSERIAL,
@@ -931,7 +931,7 @@ CREATE TABLE "ScadaCurrent" (
  "Value" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ScadaCurrent" ("Tag");
+CREATE UNIQUE INDEX "idx_ScadaCurrent_Tag" ON "ScadaCurrent" ("Tag");
 
 CREATE TABLE "ScadaHistory" (
  "rowid" BIGSERIAL,
@@ -940,7 +940,7 @@ CREATE TABLE "ScadaHistory" (
  "Value" DOUBLE PRECISION,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "ScadaHistory" ("Tag");
+CREATE INDEX "idx_ScadaHistory_Tag" ON "ScadaHistory" ("Tag");
 
 CREATE TABLE "ScadaLocation" (
  "rowid" BIGSERIAL,
@@ -948,8 +948,8 @@ CREATE TABLE "ScadaLocation" (
  "Geometry" geometry(Point, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ScadaLocation" ("LocationName");
-CREATE INDEX ON "ScadaLocation" USING GIST ("Geometry");
+CREATE UNIQUE INDEX "idx_ScadaLocation_LocationName" ON "ScadaLocation" ("LocationName");
+CREATE INDEX "idx_ScadaLocation_Geometry" ON "ScadaLocation" USING GIST ("Geometry");
 
 CREATE TABLE "ScadaMain" (
  "rowid" BIGSERIAL,
@@ -963,24 +963,24 @@ CREATE TABLE "ScadaMain" (
  "SensorTypeID" BIGINT,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ScadaMain" ("Tag");
-CREATE INDEX ON "ScadaMain" ("UnitID");
-CREATE INDEX ON "ScadaMain" ("LocationID");
-CREATE INDEX ON "ScadaMain" ("SensorTypeID");
+CREATE UNIQUE INDEX "idx_ScadaMain_Tag" ON "ScadaMain" ("Tag");
+CREATE INDEX "idx_ScadaMain_UnitID" ON "ScadaMain" ("UnitID");
+CREATE INDEX "idx_ScadaMain_LocationID" ON "ScadaMain" ("LocationID");
+CREATE INDEX "idx_ScadaMain_SensorTypeID" ON "ScadaMain" ("SensorTypeID");
 
 CREATE TABLE "ScadaSensorType" (
  "rowid" BIGSERIAL,
  "SensorType" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ScadaSensorType" ("SensorType");
+CREATE UNIQUE INDEX "idx_ScadaSensorType_SensorType" ON "ScadaSensorType" ("SensorType");
 
 CREATE TABLE "ScadaUnit" (
  "rowid" BIGSERIAL,
  "UnitName" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ScadaUnit" ("UnitName");
+CREATE UNIQUE INDEX "idx_ScadaUnit_UnitName" ON "ScadaUnit" ("UnitName");
 
 CREATE TABLE "mirrormain" (
  "rowid" BIGSERIAL,
@@ -990,7 +990,7 @@ CREATE TABLE "mirrormain" (
  "assetmapfeature_id" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "mirrormain" ("assetmapfeature_id");
+CREATE INDEX "idx_mirrormain_assetmapfeature_id" ON "mirrormain" ("assetmapfeature_id");
 
 CREATE TABLE "ovsBulkMeteringUnit" (
  "rowid" BIGSERIAL,
@@ -1042,8 +1042,8 @@ CREATE TABLE "ovsBulkMeteringUnit" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsBulkMeteringUnit" ("id");
-CREATE UNIQUE INDEX ON "ovsBulkMeteringUnit" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsBulkMeteringUnit_id" ON "ovsBulkMeteringUnit" ("id");
+CREATE UNIQUE INDEX "idx_ovsBulkMeteringUnit_OBJECTID" ON "ovsBulkMeteringUnit" ("OBJECTID");
 
 CREATE TABLE "ovsBulkMeteringUnit_Private" (
  "rowid" BIGSERIAL,
@@ -1095,8 +1095,8 @@ CREATE TABLE "ovsBulkMeteringUnit_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsBulkMeteringUnit_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsBulkMeteringUnit_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsBulkMeteringUnit_Private_id" ON "ovsBulkMeteringUnit_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsBulkMeteringUnit_Private_OBJECTID" ON "ovsBulkMeteringUnit_Private" ("OBJECTID");
 
 CREATE TABLE "ovsGenerator" (
  "rowid" BIGSERIAL,
@@ -1137,8 +1137,8 @@ CREATE TABLE "ovsGenerator" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsGenerator" ("id");
-CREATE UNIQUE INDEX ON "ovsGenerator" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsGenerator_id" ON "ovsGenerator" ("id");
+CREATE UNIQUE INDEX "idx_ovsGenerator_OBJECTID" ON "ovsGenerator" ("OBJECTID");
 
 CREATE TABLE "ovsGenerator_Private" (
  "rowid" BIGSERIAL,
@@ -1179,8 +1179,8 @@ CREATE TABLE "ovsGenerator_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsGenerator_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsGenerator_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsGenerator_Private_id" ON "ovsGenerator_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsGenerator_Private_OBJECTID" ON "ovsGenerator_Private" ("OBJECTID");
 
 CREATE TABLE "ovsJoints" (
  "rowid" BIGSERIAL,
@@ -1206,8 +1206,8 @@ CREATE TABLE "ovsJoints" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsJoints" ("id");
-CREATE UNIQUE INDEX ON "ovsJoints" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsJoints_id" ON "ovsJoints" ("id");
+CREATE UNIQUE INDEX "idx_ovsJoints_OBJECTID" ON "ovsJoints" ("OBJECTID");
 
 CREATE TABLE "ovsJoints_Private" (
  "rowid" BIGSERIAL,
@@ -1233,8 +1233,8 @@ CREATE TABLE "ovsJoints_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsJoints_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsJoints_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsJoints_Private_id" ON "ovsJoints_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsJoints_Private_OBJECTID" ON "ovsJoints_Private" ("OBJECTID");
 
 CREATE TABLE "ovsLVCampPowerPoint_Private" (
  "rowid" BIGSERIAL,
@@ -1263,8 +1263,8 @@ CREATE TABLE "ovsLVCampPowerPoint_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsLVCampPowerPoint_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsLVCampPowerPoint_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsLVCampPowerPoint_Private_id" ON "ovsLVCampPowerPoint_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsLVCampPowerPoint_Private_OBJECTID" ON "ovsLVCampPowerPoint_Private" ("OBJECTID");
 
 CREATE TABLE "ovsLVDistKiosk" (
  "rowid" BIGSERIAL,
@@ -1314,8 +1314,8 @@ CREATE TABLE "ovsLVDistKiosk" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsLVDistKiosk" ("id");
-CREATE UNIQUE INDEX ON "ovsLVDistKiosk" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsLVDistKiosk_id" ON "ovsLVDistKiosk" ("id");
+CREATE UNIQUE INDEX "idx_ovsLVDistKiosk_OBJECTID" ON "ovsLVDistKiosk" ("OBJECTID");
 
 CREATE TABLE "ovsLVDistKiosk_Private" (
  "rowid" BIGSERIAL,
@@ -1365,8 +1365,8 @@ CREATE TABLE "ovsLVDistKiosk_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsLVDistKiosk_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsLVDistKiosk_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsLVDistKiosk_Private_id" ON "ovsLVDistKiosk_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsLVDistKiosk_Private_OBJECTID" ON "ovsLVDistKiosk_Private" ("OBJECTID");
 
 CREATE TABLE "ovsLVFeeder" (
  "rowid" BIGSERIAL,
@@ -1410,8 +1410,8 @@ CREATE TABLE "ovsLVFeeder" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsLVFeeder" ("id");
-CREATE UNIQUE INDEX ON "ovsLVFeeder" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsLVFeeder_id" ON "ovsLVFeeder" ("id");
+CREATE UNIQUE INDEX "idx_ovsLVFeeder_OBJECTID" ON "ovsLVFeeder" ("OBJECTID");
 
 CREATE TABLE "ovsLVFeeder_Private" (
  "rowid" BIGSERIAL,
@@ -1455,8 +1455,8 @@ CREATE TABLE "ovsLVFeeder_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsLVFeeder_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsLVFeeder_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsLVFeeder_Private_id" ON "ovsLVFeeder_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsLVFeeder_Private_OBJECTID" ON "ovsLVFeeder_Private" ("OBJECTID");
 
 CREATE TABLE "ovsLVHighMastLighting_Private" (
  "rowid" BIGSERIAL,
@@ -1505,8 +1505,8 @@ CREATE TABLE "ovsLVHighMastLighting_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsLVHighMastLighting_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsLVHighMastLighting_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsLVHighMastLighting_Private_id" ON "ovsLVHighMastLighting_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsLVHighMastLighting_Private_OBJECTID" ON "ovsLVHighMastLighting_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMVAutoRecloser" (
  "rowid" BIGSERIAL,
@@ -1546,8 +1546,8 @@ CREATE TABLE "ovsMVAutoRecloser" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVAutoRecloser" ("id");
-CREATE UNIQUE INDEX ON "ovsMVAutoRecloser" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVAutoRecloser_id" ON "ovsMVAutoRecloser" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVAutoRecloser_OBJECTID" ON "ovsMVAutoRecloser" ("OBJECTID");
 
 CREATE TABLE "ovsMVAutoRecloser_Private" (
  "rowid" BIGSERIAL,
@@ -1587,8 +1587,8 @@ CREATE TABLE "ovsMVAutoRecloser_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVAutoRecloser_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMVAutoRecloser_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVAutoRecloser_Private_id" ON "ovsMVAutoRecloser_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVAutoRecloser_Private_OBJECTID" ON "ovsMVAutoRecloser_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMVFeeder" (
  "rowid" BIGSERIAL,
@@ -1632,8 +1632,8 @@ CREATE TABLE "ovsMVFeeder" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVFeeder" ("id");
-CREATE UNIQUE INDEX ON "ovsMVFeeder" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVFeeder_id" ON "ovsMVFeeder" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVFeeder_OBJECTID" ON "ovsMVFeeder" ("OBJECTID");
 
 CREATE TABLE "ovsMVFeeder_Private" (
  "rowid" BIGSERIAL,
@@ -1677,8 +1677,8 @@ CREATE TABLE "ovsMVFeeder_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVFeeder_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMVFeeder_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVFeeder_Private_id" ON "ovsMVFeeder_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVFeeder_Private_OBJECTID" ON "ovsMVFeeder_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMVRingMainUnit" (
  "rowid" BIGSERIAL,
@@ -1735,8 +1735,8 @@ CREATE TABLE "ovsMVRingMainUnit" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVRingMainUnit" ("id");
-CREATE UNIQUE INDEX ON "ovsMVRingMainUnit" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVRingMainUnit_id" ON "ovsMVRingMainUnit" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVRingMainUnit_OBJECTID" ON "ovsMVRingMainUnit" ("OBJECTID");
 
 CREATE TABLE "ovsMVRingMainUnit_Private" (
  "rowid" BIGSERIAL,
@@ -1793,8 +1793,8 @@ CREATE TABLE "ovsMVRingMainUnit_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVRingMainUnit_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMVRingMainUnit_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVRingMainUnit_Private_id" ON "ovsMVRingMainUnit_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVRingMainUnit_Private_OBJECTID" ON "ovsMVRingMainUnit_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMVSectionaliser" (
  "rowid" BIGSERIAL,
@@ -1843,8 +1843,8 @@ CREATE TABLE "ovsMVSectionaliser" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVSectionaliser" ("id");
-CREATE UNIQUE INDEX ON "ovsMVSectionaliser" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVSectionaliser_id" ON "ovsMVSectionaliser" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVSectionaliser_OBJECTID" ON "ovsMVSectionaliser" ("OBJECTID");
 
 CREATE TABLE "ovsMVSectionaliser_Private" (
  "rowid" BIGSERIAL,
@@ -1893,8 +1893,8 @@ CREATE TABLE "ovsMVSectionaliser_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVSectionaliser_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMVSectionaliser_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVSectionaliser_Private_id" ON "ovsMVSectionaliser_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVSectionaliser_Private_OBJECTID" ON "ovsMVSectionaliser_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMVSwitchingStation" (
  "rowid" BIGSERIAL,
@@ -1939,8 +1939,8 @@ CREATE TABLE "ovsMVSwitchingStation" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVSwitchingStation" ("id");
-CREATE UNIQUE INDEX ON "ovsMVSwitchingStation" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVSwitchingStation_id" ON "ovsMVSwitchingStation" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVSwitchingStation_OBJECTID" ON "ovsMVSwitchingStation" ("OBJECTID");
 
 CREATE TABLE "ovsMVSwitchingStation_Private" (
  "rowid" BIGSERIAL,
@@ -1985,8 +1985,8 @@ CREATE TABLE "ovsMVSwitchingStation_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVSwitchingStation_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMVSwitchingStation_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVSwitchingStation_Private_id" ON "ovsMVSwitchingStation_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVSwitchingStation_Private_OBJECTID" ON "ovsMVSwitchingStation_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMVTransformer" (
  "rowid" BIGSERIAL,
@@ -2041,8 +2041,8 @@ CREATE TABLE "ovsMVTransformer" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVTransformer" ("id");
-CREATE UNIQUE INDEX ON "ovsMVTransformer" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVTransformer_id" ON "ovsMVTransformer" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVTransformer_OBJECTID" ON "ovsMVTransformer" ("OBJECTID");
 
 CREATE TABLE "ovsMVTransformer_Private" (
  "rowid" BIGSERIAL,
@@ -2097,8 +2097,8 @@ CREATE TABLE "ovsMVTransformer_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMVTransformer_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMVTransformer_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMVTransformer_Private_id" ON "ovsMVTransformer_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMVTransformer_Private_OBJECTID" ON "ovsMVTransformer_Private" ("OBJECTID");
 
 CREATE TABLE "ovsMiniSubstation" (
  "rowid" BIGSERIAL,
@@ -2167,8 +2167,8 @@ CREATE TABLE "ovsMiniSubstation" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMiniSubstation" ("id");
-CREATE UNIQUE INDEX ON "ovsMiniSubstation" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMiniSubstation_id" ON "ovsMiniSubstation" ("id");
+CREATE UNIQUE INDEX "idx_ovsMiniSubstation_OBJECTID" ON "ovsMiniSubstation" ("OBJECTID");
 
 CREATE TABLE "ovsMiniSubstation_Private" (
  "rowid" BIGSERIAL,
@@ -2237,8 +2237,8 @@ CREATE TABLE "ovsMiniSubstation_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsMiniSubstation_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsMiniSubstation_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsMiniSubstation_Private_id" ON "ovsMiniSubstation_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsMiniSubstation_Private_OBJECTID" ON "ovsMiniSubstation_Private" ("OBJECTID");
 
 CREATE TABLE "ovsPole" (
  "rowid" BIGSERIAL,
@@ -2258,8 +2258,8 @@ CREATE TABLE "ovsPole" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsPole" ("id");
-CREATE UNIQUE INDEX ON "ovsPole" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsPole_id" ON "ovsPole" ("id");
+CREATE UNIQUE INDEX "idx_ovsPole_OBJECTID" ON "ovsPole" ("OBJECTID");
 
 CREATE TABLE "ovsPole_Private" (
  "rowid" BIGSERIAL,
@@ -2290,8 +2290,8 @@ CREATE TABLE "ovsPole_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsPole_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsPole_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsPole_Private_id" ON "ovsPole_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsPole_Private_OBJECTID" ON "ovsPole_Private" ("OBJECTID");
 
 CREATE TABLE "ovsPumpstation" (
  "rowid" BIGSERIAL,
@@ -2321,8 +2321,8 @@ CREATE TABLE "ovsPumpstation" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsPumpstation" ("id");
-CREATE UNIQUE INDEX ON "ovsPumpstation" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsPumpstation_id" ON "ovsPumpstation" ("id");
+CREATE UNIQUE INDEX "idx_ovsPumpstation_OBJECTID" ON "ovsPumpstation" ("OBJECTID");
 
 CREATE TABLE "ovsPumpstation_Private" (
  "rowid" BIGSERIAL,
@@ -2352,8 +2352,8 @@ CREATE TABLE "ovsPumpstation_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsPumpstation_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsPumpstation_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsPumpstation_Private_id" ON "ovsPumpstation_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsPumpstation_Private_OBJECTID" ON "ovsPumpstation_Private" ("OBJECTID");
 
 CREATE TABLE "ovsSLFeeder" (
  "rowid" BIGSERIAL,
@@ -2397,8 +2397,8 @@ CREATE TABLE "ovsSLFeeder" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsSLFeeder" ("id");
-CREATE UNIQUE INDEX ON "ovsSLFeeder" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsSLFeeder_id" ON "ovsSLFeeder" ("id");
+CREATE UNIQUE INDEX "idx_ovsSLFeeder_OBJECTID" ON "ovsSLFeeder" ("OBJECTID");
 
 CREATE TABLE "ovsSLFeeder_Private" (
  "rowid" BIGSERIAL,
@@ -2442,8 +2442,8 @@ CREATE TABLE "ovsSLFeeder_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsSLFeeder_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsSLFeeder_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsSLFeeder_Private_id" ON "ovsSLFeeder_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsSLFeeder_Private_OBJECTID" ON "ovsSLFeeder_Private" ("OBJECTID");
 
 CREATE TABLE "ovsServiceConnection" (
  "rowid" BIGSERIAL,
@@ -2487,8 +2487,8 @@ CREATE TABLE "ovsServiceConnection" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsServiceConnection" ("id");
-CREATE UNIQUE INDEX ON "ovsServiceConnection" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsServiceConnection_id" ON "ovsServiceConnection" ("id");
+CREATE UNIQUE INDEX "idx_ovsServiceConnection_OBJECTID" ON "ovsServiceConnection" ("OBJECTID");
 
 CREATE TABLE "ovsStreetLight" (
  "rowid" BIGSERIAL,
@@ -2533,8 +2533,8 @@ CREATE TABLE "ovsStreetLight" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsStreetLight" ("id");
-CREATE UNIQUE INDEX ON "ovsStreetLight" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsStreetLight_id" ON "ovsStreetLight" ("id");
+CREATE UNIQUE INDEX "idx_ovsStreetLight_OBJECTID" ON "ovsStreetLight" ("OBJECTID");
 
 CREATE TABLE "ovsStreetLight_Private" (
  "rowid" BIGSERIAL,
@@ -2579,8 +2579,8 @@ CREATE TABLE "ovsStreetLight_Private" (
  "Geometry" geometry(GeometryZ, 4326),
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "ovsStreetLight_Private" ("id");
-CREATE UNIQUE INDEX ON "ovsStreetLight_Private" ("OBJECTID");
+CREATE UNIQUE INDEX "idx_ovsStreetLight_Private_id" ON "ovsStreetLight_Private" ("id");
+CREATE UNIQUE INDEX "idx_ovsStreetLight_Private_OBJECTID" ON "ovsStreetLight_Private" ("OBJECTID");
 
 CREATE TABLE "refActual_ExpenditureType" (
  "rowid" BIGSERIAL,
@@ -2588,7 +2588,7 @@ CREATE TABLE "refActual_ExpenditureType" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refActual_ExpenditureType" ("k");
+CREATE UNIQUE INDEX "idx_refActual_ExpenditureType_k" ON "refActual_ExpenditureType" ("k");
 
 CREATE TABLE "refBOQ_Unit" (
  "rowid" BIGSERIAL,
@@ -2596,7 +2596,7 @@ CREATE TABLE "refBOQ_Unit" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refBOQ_Unit" ("k");
+CREATE UNIQUE INDEX "idx_refBOQ_Unit_k" ON "refBOQ_Unit" ("k");
 
 CREATE TABLE "refBudget_BudgetType" (
  "rowid" BIGSERIAL,
@@ -2604,7 +2604,7 @@ CREATE TABLE "refBudget_BudgetType" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refBudget_BudgetType" ("k");
+CREATE UNIQUE INDEX "idx_refBudget_BudgetType_k" ON "refBudget_BudgetType" ("k");
 
 CREATE TABLE "refComponent_ComponentNature" (
  "rowid" BIGSERIAL,
@@ -2612,7 +2612,7 @@ CREATE TABLE "refComponent_ComponentNature" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_ComponentNature" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_ComponentNature_k" ON "refComponent_ComponentNature" ("k");
 
 CREATE TABLE "refComponent_Department" (
  "rowid" BIGSERIAL,
@@ -2620,7 +2620,7 @@ CREATE TABLE "refComponent_Department" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_Department" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_Department_k" ON "refComponent_Department" ("k");
 
 CREATE TABLE "refComponent_DepreciationMethod" (
  "rowid" BIGSERIAL,
@@ -2628,7 +2628,7 @@ CREATE TABLE "refComponent_DepreciationMethod" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_DepreciationMethod" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_DepreciationMethod_k" ON "refComponent_DepreciationMethod" ("k");
 
 CREATE TABLE "refComponent_DisposalMethod" (
  "rowid" BIGSERIAL,
@@ -2636,7 +2636,7 @@ CREATE TABLE "refComponent_DisposalMethod" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_DisposalMethod" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_DisposalMethod_k" ON "refComponent_DisposalMethod" ("k");
 
 CREATE TABLE "refComponent_Facility" (
  "rowid" BIGSERIAL,
@@ -2644,7 +2644,7 @@ CREATE TABLE "refComponent_Facility" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_Facility" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_Facility_k" ON "refComponent_Facility" ("k");
 
 CREATE TABLE "refComponent_ImpairmentReason" (
  "rowid" BIGSERIAL,
@@ -2652,7 +2652,7 @@ CREATE TABLE "refComponent_ImpairmentReason" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_ImpairmentReason" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_ImpairmentReason_k" ON "refComponent_ImpairmentReason" ("k");
 
 CREATE TABLE "refComponent_MeasurementModel" (
  "rowid" BIGSERIAL,
@@ -2660,7 +2660,7 @@ CREATE TABLE "refComponent_MeasurementModel" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_MeasurementModel" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_MeasurementModel_k" ON "refComponent_MeasurementModel" ("k");
 
 CREATE TABLE "refComponent_MeasurementModelLinks" (
  "rowid" BIGSERIAL,
@@ -2668,7 +2668,7 @@ CREATE TABLE "refComponent_MeasurementModelLinks" (
  "MeasurementModelId" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE INDEX ON "refComponent_MeasurementModelLinks" ("AccountingGroup");
+CREATE INDEX "idx_refComponent_MeasurementModelLinks_AccountingGroup" ON "refComponent_MeasurementModelLinks" ("AccountingGroup");
 
 CREATE TABLE "refComponent_OwnedLeased" (
  "rowid" BIGSERIAL,
@@ -2676,7 +2676,7 @@ CREATE TABLE "refComponent_OwnedLeased" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_OwnedLeased" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_OwnedLeased_k" ON "refComponent_OwnedLeased" ("k");
 
 CREATE TABLE "refComponent_Region" (
  "rowid" BIGSERIAL,
@@ -2684,7 +2684,7 @@ CREATE TABLE "refComponent_Region" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_Region" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_Region_k" ON "refComponent_Region" ("k");
 
 CREATE TABLE "refComponent_RevaluationMethod" (
  "rowid" BIGSERIAL,
@@ -2692,7 +2692,7 @@ CREATE TABLE "refComponent_RevaluationMethod" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_RevaluationMethod" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_RevaluationMethod_k" ON "refComponent_RevaluationMethod" ("k");
 
 CREATE TABLE "refComponent_ReversalOfImpairmentReason" (
  "rowid" BIGSERIAL,
@@ -2700,7 +2700,7 @@ CREATE TABLE "refComponent_ReversalOfImpairmentReason" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_ReversalOfImpairmentReason" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_ReversalOfImpairmentReason_k" ON "refComponent_ReversalOfImpairmentReason" ("k");
 
 CREATE TABLE "refComponent_Suburb" (
  "rowid" BIGSERIAL,
@@ -2708,7 +2708,7 @@ CREATE TABLE "refComponent_Suburb" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_Suburb" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_Suburb_k" ON "refComponent_Suburb" ("k");
 
 CREATE TABLE "refComponent_Supplier" (
  "rowid" BIGSERIAL,
@@ -2716,7 +2716,7 @@ CREATE TABLE "refComponent_Supplier" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_Supplier" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_Supplier_k" ON "refComponent_Supplier" ("k");
 
 CREATE TABLE "refComponent_UseStatus" (
  "rowid" BIGSERIAL,
@@ -2724,7 +2724,7 @@ CREATE TABLE "refComponent_UseStatus" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_UseStatus" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_UseStatus_k" ON "refComponent_UseStatus" ("k");
 
 CREATE TABLE "refComponent_Ward" (
  "rowid" BIGSERIAL,
@@ -2732,7 +2732,7 @@ CREATE TABLE "refComponent_Ward" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refComponent_Ward" ("k");
+CREATE UNIQUE INDEX "idx_refComponent_Ward_k" ON "refComponent_Ward" ("k");
 
 CREATE TABLE "refProject_CostCentre" (
  "rowid" BIGSERIAL,
@@ -2740,7 +2740,7 @@ CREATE TABLE "refProject_CostCentre" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refProject_CostCentre" ("k");
+CREATE UNIQUE INDEX "idx_refProject_CostCentre_k" ON "refProject_CostCentre" ("k");
 
 CREATE TABLE "refProject_ProjectState" (
  "rowid" BIGSERIAL,
@@ -2748,4 +2748,4 @@ CREATE TABLE "refProject_ProjectState" (
  "v" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX ON "refProject_ProjectState" ("k");
+CREATE UNIQUE INDEX "idx_refProject_ProjectState_k" ON "refProject_ProjectState" ("k");
