@@ -1495,7 +1495,7 @@ CREATE TABLE "WaterMasterPlanSystem" WaterMasterPlanSystem : WaterBaseNoID
 	optional  text		         	Masterplan                                      "Masterplan"							uiorder:1
 	optional  text		         	Network                                     	"Network"								uiorder:2
 	"2.Documents"
-	optional  text					Url 											""					tags:dispDocument	uiorder:1
+	optional  text					Url 											""					tags:dispDocument	uiorder:3
 
 	flags orm_server
 }
@@ -1506,28 +1506,28 @@ CREATE TABLE "WaterMasterPlanProject" WaterMasterPlanProject : WaterBaseNoID
 	"Internal"
 	optional  polygon             	Geometry                                        ""
 	"1. Descriptive"
-	optional  text		           	SystemType                                      "System Type"							uiorder:1
-	optional  text		           	System                                          "System"								uiorder:2
-	optional  text		           	Region                                          "Region"								uiorder:3
-	optional  text		            Network                                         "Network"								uiorder:4
+	optional  text					SystemType                                      "System Type"							uiorder:1
+	optional  text					System                                          "System"								uiorder:2
+	optional  text					Region                                          "Region"								uiorder:3
+	optional  text					Network                                         "Network"								uiorder:4
 	"2.Implementations"
-	optional  text            		ProjectNo                                      	"Project No"							uiorder:1
-	optional  text		           	ProjDescr                                       "Description"							uiorder:2
-	optional  int32               	ImplYear1                                       "Begin Impl Year"		unit:year		uiorder:3
-	optional  int32               	ImplYear2                                       "End Impl Year"			unit:year		uiorder:4
-	optional  int32               	TotItems                                        "Total No of Items"						uiorder:5
-	optional  double              	TotPLen                                         "Total Pipe Length"						uiorder:6
-	optional  int32               	TotValves                                       "Total No of Valves"					uiorder:7
-	optional  int32               	TotPumps                                        "Total No of Pumps"						uiorder:8
-	optional  int32               	TotTanks                                        "Total No of Tanks"						uiorder:9
+	optional  text					ProjectNo                                      	"Project No"							uiorder:1
+	optional  text					ProjectDescription                              "Description"							uiorder:2
+	optional  int32					BeginYear                                      	"Begin Impl Year"		unit:year		uiorder:3
+	optional  int32					EndYear                                       	"End Impl Year"			unit:year		uiorder:4
+	optional  int32					TotalItems                                      "Total No of Items"						uiorder:5
+	optional  double				TotalPipeLength                                 "Total Pipe Length"						uiorder:6
+	optional  int32					TotalValves                                     "Total No of Valves"					uiorder:7
+	optional  int32					TotalPumps                                      "Total No of Pumps"						uiorder:8
+	optional  int32					TotalTanks                                      "Total No of Tanks"						uiorder:9
 	"3.Financial"
-	optional  text		           	BaseYear                                        "Base Year"				unit:year		uiorder:1
-	optional  double              	ConCost                                         "Construction Cost"		unit:ZAR		uiorder:2
-	optional  double              	ExtraCost                                       "Extra Cost"			unit:ZAR		uiorder:3
-	optional  double              	SurchCost                                       "Surcharge"				unit:ZAR		uiorder:4
-	optional  double              	TotalCost                                       "Total Cost"			unit:ZAR		uiorder:5
+	optional  text					BaseYear                                        "Base Year"				unit:year		uiorder:1
+	optional  double				ConstructionCost                                "Construction Cost"		unit:ZAR		uiorder:2
+	optional  double				ExtraCost                                       "Extra Cost"			unit:ZAR		uiorder:3
+	optional  double				Surcharge                                       "Surcharge"				unit:ZAR		uiorder:4
+	optional  double				TotalCost                                       "Total Cost"			unit:ZAR		uiorder:5
 
-	hasmany	  Master_Plan_Items		ProjectNo										WaterMasterPlanItem.MPProjNo
+	hasmany	  Master_Plan_Items		ProjectNo										WaterMasterPlanItem.ProjectNo
 
 	flags orm_server
 }
@@ -1541,27 +1541,28 @@ CREATE TABLE "WaterMasterPlanItem" WaterMasterPlanItem : WaterBaseNoID
 	optional  text           		Region                                          "Region"								uiorder:3
 	optional  text		            Network                                         "Network"								uiorder:4
 	optional  text           		ModelType                                       "Model Type"							uiorder:5
+	optional  text		          	Name                                            "Name"									uiorder:6
+	optional  text		          	SubName                                         "Sub Name"								uiorder:7
+	optional  text		          	Comment                                         "Comment or Phasing"					uiorder:8
 	"2.Implementations"
 	optional  text           		MPItemType                                      "Item Type"								uiorder:1
 	optional  text           		MPItemNo                                        "Item No"								uiorder:2
-	optional  text           		MPProjNo                                        "Project No"							uiorder:3
-	optional  text           		MPProjDes                                       "Project Description"					uiorder:4
-	optional  int32               	MPYear                                          "Implementation Year"	unit:year		uiorder:5
-	optional  double              	MPDetail_1                                      "Extent"								uiorder:6
-	optional  text		           	MPDetail_2                                      "Extent Unit"							uiorder:7
-	optional  double              	MPDetail_3                                      "Size Setting"							uiorder:8
-	optional  text		          	MPDetail_4                                      "Size Unit"								uiorder:9
-	optional  text		          	MPDetail_5                                      "Task"									uiorder:10
-	optional  text		          	MPDetail_6                                      "Subtask"								uiorder:11
-	optional  text		          	Comment                                         "Comment or Phasing"					uiorder:12
-	optional  text		          	Name                                            "Name"									uiorder:13
-	optional  text		          	SubName                                         "Sub Name"								uiorder:14
+	optional  text           		ProjectNo                                       "Project No"							uiorder:3
+	optional  text           		ProjectDescription								"Project Description"					uiorder:4
+	optional  int32               	ImplementYear									"Implementation Year"	unit:year		uiorder:5
+	optional  double              	Extent											"Extent"								uiorder:6
+	optional  text		           	ExtentUnit                                      "Extent Unit"							uiorder:7
+	optional  double              	SizeSetting                                     "Size Setting"							uiorder:8
+	optional  text		          	SizeUnit										"Size Unit"								uiorder:9
+	optional  text		          	Task											"Task"									uiorder:10
+	optional  text		          	Subtask											"Subtask"								uiorder:11
+
 	"3.Financial"
-	optional  int32               	MPCostFn                                        "Cost Function Index"					uiorder:1
+	optional  int32               	CostFn                                        	"Cost Function Index"					uiorder:1
 	optional  text		           	BaseYear                                        "Base Year"				unit:year		uiorder:2
-	optional  double              	ConCost                                         "Construction Cost"		unit:ZAR		uiorder:3
+	optional  double              	ConstructionCost								"Construction Cost"		unit:ZAR		uiorder:3
 	optional  double              	ExtraCost                                       "Extra Cost"			unit:ZAR		uiorder:4
-	optional  double              	SurchCost                                       "Surcharge"				unit:ZAR		uiorder:5
+	optional  double              	Surcharge                                       "Surcharge"				unit:ZAR		uiorder:5
 	optional  double              	TotalCost                                       "Total Cost"			unit:ZAR		uiorder:6
 	"Internal"
 	optional  int32		           	MPBaseYear                                      "MP Base Year"			unit:year		
@@ -1573,7 +1574,7 @@ CREATE TABLE "WaterMasterPlanItem" WaterMasterPlanItem : WaterBaseNoID
 	
 	flags orm_server
 }
-INDEX(MPProjNo);
+INDEX(ProjectNo);
 
 ###################################################################################################################
 # Sewer 
@@ -2427,12 +2428,12 @@ INDEX(Geometry);
 CREATE TABLE "SewerMasterPlanSystem" SewerMasterPlanSystem : SewerBaseNoID
 {
 	"Internal"
-	optional  polygon 	        	Geometry                                        ""
+	optional  polygon 	        	Geometry                                        "" 													
 	"General"
-	optional  text		         	Network                                     	"Network"
-	optional  text		         	Masterplan                                      "Masterplan"
+	optional  text		         	Network                                     	"Drainage Area" 									uiorder:1
+	optional  text		         	Masterplan                                      "Masterplan" 										uiorder:2
 	"Documents"
-	optional  text		         	Url                                     		"Url"			tags:dispDocument
+	optional  text		         	Url                                     		"Url"			tags:dispDocument 					uiorder:3	
 }
 INDEX(Geometry);
 
@@ -2447,26 +2448,26 @@ CREATE TABLE "SewerMasterPlanProject" SewerMasterPlanProject : SewerBaseNoID
 	optional  text		            Network                                         "Drainage Area"										uiorder:4
 	"2.Implementation"
 	optional  text            		ProjectNo                                      	"Project No"										uiorder:1
-	optional  text		           	ProjDescr                                       "Project Description"								uiorder:2
-	optional  int32               	ImplYear1                                       "Begin Impl Year"					unit:year		uiorder:3
-	optional  int32               	ImplYear2                                       "End Impl Year"						unit:year		uiorder:4
-	optional  int32					TotItems										"Total No of Items"									uiorder:5
-	optional  double				TotPLen											"Total Pipe Length"					unit:m			uiorder:6
-	optional  int32					TotWWTW											"Total No of WWTW"									uiorder:7
-	optional  int32					TotPumps										"Total No of Pumps"									uiorder:8
-	optional  int32					TotOther										"Total No of Other Items"							uiorder:9
+	optional  text		           	ProjectDescription								"Project Description"								uiorder:2
+	optional  int32               	BeginYear                                       "Begin Impl Year"					unit:year		uiorder:3
+	optional  int32               	EndYear											"End Impl Year"						unit:year		uiorder:4
+	optional  int32					TotalItems										"Total No of Items"									uiorder:5
+	optional  double				TotalPipeLength									"Total Pipe Length"					unit:m			uiorder:6
+	optional  int32					TotalWWTW										"Total No of WWTW"									uiorder:7
+	optional  int32					TotalPumps										"Total No of Pumps"									uiorder:8
+	optional  int32					TotalOther										"Total No of Other Items"							uiorder:9
 	"3.Financial"
 	optional  text		            BaseYear                                        "Base Year"							unit:year		uiorder:1
 	optional  double                ParCostInc                                      "Parallel Cost Inclusive"			unit:ZAR		uiorder:2
 	optional  double                NewCostInc                                      "New Cost Inclusive"				unit:ZAR		uiorder:3
-	optional  double                OthCostInc                                      "Other Cost Inclusive"				unit:ZAR		uiorder:4
-	optional  double                ExtCostInc                                      "Extra Cost Inclusive"				unit:ZAR		uiorder:5
-	optional  double                TotCostEx                                       "Total Cost Exclusive"				unit:ZAR		uiorder:6
-	optional  double                TotSurchar                                      "Total Surcharge"					unit:ZAR		uiorder:7
-	optional  double                TotCostInc                                      "Total Cost Inclusive"				unit:ZAR		uiorder:8
-	optional  double                InvCostInc                                      "Total Investment Inclusive"		unit:ZAR		uiorder:9
+	optional  double                OtherCostInc									"Other Cost Inclusive"				unit:ZAR		uiorder:4
+	optional  double                ExtraCostInc									"Extra Cost Inclusive"				unit:ZAR		uiorder:5
+	optional  double                TotalCostEx										"Total Cost Exclusive"				unit:ZAR		uiorder:6
+	optional  double                TotalSurcharge									"Total Surcharge"					unit:ZAR		uiorder:7
+	optional  double                TotalCostInc									"Total Cost Inclusive"				unit:ZAR		uiorder:8
+	optional  double                TotalInvestInc									"Total Investment Inclusive"		unit:ZAR		uiorder:9
 
-	hasmany	  Master_Plan_Items		ProjectNo										SewerMasterPlanItem.MPProjNo
+	hasmany	  Master_Plan_Items		ProjectNo										SewerMasterPlanItem.ProjectNo
 }
 INDEX(Geometry);
 
@@ -2478,38 +2479,39 @@ CREATE TABLE "SewerMasterPlanItem" SewerMasterPlanItem : SewerBaseNoID
 	optional  text           		Region                                          "Region"											uiorder:3
 	optional  text		            Network                                         "Drainage Area"										uiorder:4
 	optional  text           		ModelType                                       "Model Type"										uiorder:5
+	optional  text		           	Name                                            "Name"												uiorder:6
+	optional  text		           	SubName                                         "Sub Name"											uiorder:7
+	optional  text		           	Comment                                			"Comment or Phasing"								uiorder:8
 	"2.Implementation"
-	optional  text           		MPItemType                                      "MP Item Type"										uiorder:1
-	optional  text           		MPItemNo                                        "MP Item No"										uiorder:2
-	optional  text           		MPProjNo                                        "Project No"										uiorder:3
-	optional  text           		MPProjDes                                       "Project Description"								uiorder:4
-	optional  int32               	MPYear                                          "Implementation Year"				unit:year		uiorder:5
-	optional  text 		           	MPDescr                                         "Masterplan Description"							uiorder:6
-	optional  double              	ExNomDiam                                       "Existing Nominal Diameter"			unit:mm			uiorder:7
+	optional  text           		MPItemType                                      "Item Type"											uiorder:1
+	optional  text           		MPItemNo                                        "Item No"											uiorder:2
+	optional  text           		ProjectNo                                       "Project No"										uiorder:3
+	optional  text           		ProjectDescription                              "Project Description"								uiorder:4
+	optional  int32               	ImplementYear                                   "Implementation Year"				unit:year		uiorder:5
+	optional  text 		           	MPDescription                                   "Masterplan Description"							uiorder:6
 	optional  double              	ExMinSlope                                      "Existing Minimum Slope"			unit:m/m		uiorder:8
-	optional  double              	TotalLeng                                       "Total Pipe Length"					unit:m			uiorder:9
-	optional  double              	DesignFlow                                      "Design Flow"										uiorder:10
-	optional  text              	DesnFlowUn                                      "Design Flow Unit"									uiorder:11
-	optional  text		           	Comment                                         "Comment/Phasing"									uiorder:12
-	optional  text		           	Name                                            "Name"												uiorder:13
-	optional  text		           	SubName                                         "Sub Name"											uiorder:14
-	optional  double              	ParPipeID                                       "Parallel Pipe Internal Diameter"	unit:mm			uiorder:15
-	optional  double              	ParPipeND                                       "Parallel Pipe Nominal Diameter"	unit:mm			uiorder:16
-	optional  double              	NewPipeID                                       "New Pipe Internal Diameter"		unit:mm			uiorder:17
-	optional  double              	NewPipeND                                       "New Pipe Nominal Diameter"			unit:mm			uiorder:18
+	optional  double              	ExNomDiam                                       "Existing Pipe Nominal Diameter"	unit:mm			uiorder:7
+	optional  double              	ParPipeND                                   	"Parallel Pipe Nominal Diameter"	unit:mm			uiorder:9
+	optional  double              	ParPipeID                                       "Parallel Pipe Internal Diameter"	unit:mm			uiorder:10
+	optional  double              	NewPipeND                                       "New Pipe Nominal Diameter"			unit:mm			uiorder:11
+	optional  double              	NewPipeID                                       "New Pipe Internal Diameter"		unit:mm			uiorder:12
+	optional  double              	TotalLength                                     "Total Pipe Length"					unit:m			uiorder:13
+	optional  double              	DesignFlow                                      "Design Flow"										uiorder:14
+	optional  text              	DesignFlowUnit									"Design Flow Unit"									uiorder:15	
+
 	"3.Financial"
-	optional  int32               	MPCostFn                                        "Cost Function Index"								uiorder:1
+	optional  int32               	CostFn                                        	"Cost Function Index"								uiorder:1
 	optional  text		           	BaseYear                                        "Base Year"							unit:year		uiorder:2
 	optional  double              	ParCostInc                                      "Parallel Cost Inclusive"			unit:ZAR		uiorder:3
 	optional  double              	NewCostInc                                      "New Cost Inclusive"				unit:ZAR		uiorder:4
-	optional  text		           	OthCostDes                                      "Other Cost Description"			unit:ZAR		uiorder:5
-	optional  double              	OthCostInc                                      "Other Cost Inclusive"				unit:ZAR		uiorder:6
-	optional  double              	ExtCostInc                                      "Extra Cost Inclusive"				unit:ZAR		uiorder:7
-	optional  double              	TotCostEx                                       "Total Cost Inclusive"				unit:ZAR		uiorder:8
-	optional  double              	TotSurchar                                      "Total Surcharge"					unit:ZAR		uiorder:9
-	optional  double              	TotCostInc                                      "Total Cost Inclusive"				unit:ZAR		uiorder:10
+	optional  text		           	OtherCostDes                                  	"Other Cost Description"			unit:ZAR		uiorder:5
+	optional  double              	OtherCostInc									"Other Cost Inclusive"				unit:ZAR		uiorder:6
+	optional  double              	ExtraCostInc									"Extra Cost Inclusive"				unit:ZAR		uiorder:7
+	optional  double              	TotalCostEx										"Total Cost Inclusive"				unit:ZAR		uiorder:8
+	optional  double              	TotalSurcharge									"Total Surcharge"					unit:ZAR		uiorder:9
+	optional  double              	TotalCostInc									"Total Cost Inclusive"				unit:ZAR		uiorder:10
 	"Internal"
-	optional  int32               	MPBaseYear                                       "MP Base Year"						unit:year
+	optional  int32               	MPBaseYear										"MP Base Year"						unit:year
 
 
 	hasmany	Sewer_Gravity_Memo		MPItemNo	SewerGravityMemo.MP_Item_No
@@ -2517,7 +2519,25 @@ CREATE TABLE "SewerMasterPlanItem" SewerMasterPlanItem : SewerBaseNoID
 	hasmany	Sewer_Structure_Memo	MPItemNo	SewerStructureMemo.MP_Item_No
 	hasmany	Sewer_Pump_Memo			MPItemNo	SewerPumpMemo.MP_Item_No
 }
-INDEX(MPProjNo);
+INDEX(ProjectNo);
+
+CREATE TABLE "SewerUnitCostsVolume" SewerUnitCostsVolume : SewerBaseNoID
+{
+	"Internal"
+	optional  text					ReportField                                    ""										uiorder:1
+	optional  text					SubSystem                                      ""										uiorder:2
+	optional  double		        SC1Domestic                                    ""										uiorder:3
+	optional  double		        SC1Leakage                                     ""										uiorder:4
+	optional  double		        SC1Infiltration                                ""										uiorder:5
+	optional  double		        SC2Domestic                                    ""										uiorder:6
+	optional  double		        SC2Leakage                                     ""										uiorder:7
+	optional  double		        SC2Infiltration                                ""										uiorder:8
+	optional  double		        SC3Domestic                                    ""										uiorder:9
+	optional  double		        SC3Leakage                                     ""										uiorder:10
+	optional  double		        SC3Infiltration                                ""										uiorder:11
+	
+}
+INDEX(SubSystem);
 
 
 ###################################################################################################################
