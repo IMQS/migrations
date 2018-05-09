@@ -1495,7 +1495,7 @@ CREATE TABLE "WaterMasterPlanSystem" WaterMasterPlanSystem : WaterBaseNoID
 	optional  text		         	Masterplan                                      "Masterplan"							uiorder:1
 	optional  text		         	Network                                     	"Network"								uiorder:2
 	"2.Documents"
-	optional  text					Url 											""					tags:dispDocument	uiorder:3
+	optional  text					Url 											""					tags:dispDocument	uiorder:1
 
 	flags orm_server
 }
@@ -2433,7 +2433,7 @@ CREATE TABLE "SewerMasterPlanSystem" SewerMasterPlanSystem : SewerBaseNoID
 	optional  text		         	Network                                     	"Drainage Area" 									uiorder:1
 	optional  text		         	Masterplan                                      "Masterplan" 										uiorder:2
 	"Documents"
-	optional  text		         	Url                                     		"Url"			tags:dispDocument 					uiorder:3	
+	optional  text		         	Url                                     		"Url"			tags:dispDocument 					uiorder:1	
 }
 INDEX(Geometry);
 
@@ -2489,12 +2489,12 @@ CREATE TABLE "SewerMasterPlanItem" SewerMasterPlanItem : SewerBaseNoID
 	optional  text           		ProjectDescription                              "Project Description"								uiorder:4
 	optional  int32               	ImplementYear                                   "Implementation Year"				unit:year		uiorder:5
 	optional  text 		           	MPDescription                                   "Masterplan Description"							uiorder:6
-	optional  double              	ExMinSlope                                      "Existing Minimum Slope"			unit:m/m		uiorder:8
-	optional  double              	ExNomDiam                                       "Existing Pipe Nominal Diameter"	unit:mm			uiorder:7
-	optional  double              	ParPipeND                                   	"Parallel Pipe Nominal Diameter"	unit:mm			uiorder:9
-	optional  double              	ParPipeID                                       "Parallel Pipe Internal Diameter"	unit:mm			uiorder:10
-	optional  double              	NewPipeND                                       "New Pipe Nominal Diameter"			unit:mm			uiorder:11
-	optional  double              	NewPipeID                                       "New Pipe Internal Diameter"		unit:mm			uiorder:12
+	optional  double              	ExMinSlope                                      "Existing Minimum Slope"			unit:m/m		uiorder:7
+	optional  double              	ExNomDiam                                       "Existing Pipe Nominal Diameter"	unit:mm			uiorder:8	
+	optional  double              	ParPipeID                                       "Parallel Pipe Internal Diameter"	unit:mm			uiorder:9
+	optional  double              	ParPipeND                                   	"Parallel Pipe Nominal Diameter"	unit:mm			uiorder:10
+	optional  double              	NewPipeID                                       "New Pipe Internal Diameter"		unit:mm			uiorder:11
+	optional  double              	NewPipeND                                       "New Pipe Nominal Diameter"			unit:mm			uiorder:12	
 	optional  double              	TotalLength                                     "Total Pipe Length"					unit:m			uiorder:13
 	optional  double              	DesignFlow                                      "Design Flow"										uiorder:14
 	optional  text              	DesignFlowUnit									"Design Flow Unit"									uiorder:15	
