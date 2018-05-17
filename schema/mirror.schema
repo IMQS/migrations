@@ -2248,6 +2248,10 @@ CREATE TABLE "ScadaMain" ScadaMain
     optional    double              Intercept               "Intercept"
     optional    double              Gradient                "Gradient"
     optional    int64               SensorTypeID            "Sensor Type ID"
+    optional    double              WarningLow              "Low Warning"
+    optional    double              WarningHigh             "High Warning"
+    optional    double              LimitLow                "Low Limit"
+    optional    double              LimitHigh               "High Limit"
 
     hasone  Current Tag ScadaCurrent.Tag
     hasone  Location LocationID ScadaLocation.rowid
