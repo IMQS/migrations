@@ -2252,6 +2252,7 @@ CREATE TABLE "ScadaMain" ScadaMain
     optional    double              WarningHigh             "High Warning"
     optional    double              LimitLow                "Low Limit"
     optional    double              LimitHigh               "High Limit"
+    optional    bool                Enabled                 "Enabled"
 
     hasone  Current Tag ScadaCurrent.Tag
     hasone  Location LocationID ScadaLocation.rowid
