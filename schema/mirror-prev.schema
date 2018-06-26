@@ -2217,6 +2217,10 @@ CREATE TABLE "refCapitalisationState" refCapitalisationState : Wip_Lookup
 {
 };
 
+CREATE TABLE "refProject_FinSysProjectState" refProject_FinSysProjectState : Wip_Lookup
+{
+};
+
 CREATE TABLE "refComponent_MeasurementModelLinks" refComponent_MeasurementModelLinks
 {
 	"Internal"
