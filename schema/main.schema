@@ -8232,3 +8232,29 @@ INDEX(Geometry);
 CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrder
 {	
 };
+
+#############################################################################################
+#	AI Roads
+#############################################################################################
+
+CREATE TABLE "MLRoads" MLRoads
+{
+	"Internal"
+	required	int64				rowid											""
+	optional	text				Locality 										""
+	optional	polylinez 			Geometry            							""
+	required	text	 		 	Reference            							""
+	optional	datetime			Updated											""
+	"1. General"
+	required	int64				Organisation									"Organisation"
+	optional 	int64				RoadID											"Road ID"
+	optional	text				Name											"Road Name"
+	optional	int32				AuthorityID										"Authority"
+	optional 	text				Code											"Code"
+	"2. Condition"
+	required	double				Condition										"Condition Rating"
+	optional	datetime			LastInspection									"Last Inspected"
+	optional 	int64				InspectorID										"Inspector"
+}
+PRIMARY KEY(rowid)
+INDEX(Geometry);
