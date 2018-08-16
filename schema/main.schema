@@ -8245,16 +8245,27 @@ CREATE TABLE "MLRoads" MLRoads
 	optional	polylinez 			Geometry            							""
 	required	text	 		 	Reference            							""
 	optional	datetime			Updated											""
-	"1. General"
 	required	int64				Organisation									"Organisation"
+	"1. General"
 	optional 	int64				RoadID											"Road ID"
 	optional	text				Name											"Road Name"
-	optional	int32				AuthorityID										"Authority"
+	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey
 	optional 	text				Code											"Code"
 	"2. Condition"
 	required	double				Condition										"Condition Rating"
-	optional	datetime			LastInspection									"Last Inspected"
+	optional	datetime			LastInspection									"Last Inspected"							tags:short-date-time
 	optional 	int64				InspectorID										"Inspector"
 }
 PRIMARY KEY(rowid)
-INDEX(Geometry);
+INDEX(Geometry)
+INDEX(Locality);
+
+CREATE TABLE "MLRoadsAuthorities" MLRoadsAuthorities
+{
+	"Internal"
+	required	int64				rowid											"lookup:IncidentRefStatus:k:v:Status"
+	required	int32				key 											""
+	required	text	 			value            							    ""
+}
+PRIMARY KEY(rowid)
+INDEX(key);
