@@ -8249,11 +8249,12 @@ CREATE TABLE "MLRoads" MLRoads
 	"1. General"
 	optional 	int64				RoadID											"Road ID"
 	optional	text				Name											"Road Name"
-	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey
+	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch
 	optional 	text				Code											"Code"
 	"2. Condition"
 	required	double				Condition										"Condition Rating"
-	optional	datetime			LastInspection									"Last Inspected"							tags:short-date-time
+	optional	datetime			LastInspection									"Last Inspected"
+	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"
 	optional 	int64				InspectorID										"Inspector"
 }
 PRIMARY KEY(rowid)
