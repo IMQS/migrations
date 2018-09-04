@@ -8256,10 +8256,27 @@ CREATE TABLE "MLRoads" MLRoads
 	optional	datetime			LastInspection									"Last Inspected"
 	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"
 	optional 	int64				InspectorID										"Inspector"
+	"3. Defects Summary"
+	optional    double 				Nothing											"No Defect"
+	optional    double 				SurfaceFailure									"Surface Failure"
+	optional    double 				SurfaceCrack									"Surface Crack"
+	optional    double 				LongCrack										"Long Crack"
+	optional    double 				TransCrack										"Transverse Crack"
+	optional    double 				BlockCrack										"Block Crack"
+	optional    double 				CrocCrack										"Crocodile Crack"
+	optional    double 				Patching										"Patching"
+	optional    double 				Pothole											"Pothole"
+	optional    double 				Cut												"Cutting"
+
+	optional    double 				AggregateLoss									"Aggregate Loss"
+	optional    double 				Binder											"Binder"
+	optional    double 				Bleeding										"Bleeding"
+	optional    double 				Pumping											"Pumping"
 }
 PRIMARY KEY(rowid)
 INDEX(Geometry)
-INDEX(Locality);
+INDEX(Locality)
+INDEX(RoadID);
 
 CREATE TABLE "MLRoadsAuthorities" MLRoadsAuthorities
 {
