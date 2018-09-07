@@ -1,0 +1,8 @@
+TRUNCATE TABLE "HydroJetActivity";
+TRUNCATE TABLE "HydroJetStatus";
+
+INSERT INTO "HydroJetActivity" ("Code", "Description") VALUES
+('SPMJET', 'SEWER P.M. JETTING.'), ('S09', 'S:CCTV INSPECTION'), ('S47', 'S:OUTFALL SEWERS INSPECTION'), ('S06', 'S:PREVENTATIVE MAINTEN RODDING');
+
+INSERT INTO "HydroJetStatus" ("Code", "Description") VALUES
+('INT', 'IMQS INITIATED'), ('CRTD', 'SAP CREATED'), ('REL', 'RELEASED'), ('TECO', 'CLOSED');
