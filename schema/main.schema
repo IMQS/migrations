@@ -8196,13 +8196,11 @@ CREATE TABLE "HydroJetStatus" HydroJetStatus : HydroJetBase
 }
 INDEX(Code);
 
-CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetBase
+CREATE TABLE "" HydroJetWorkOrderBase : HydroJetBase
 {
 	"Internal"	
 	optional	polylinez				Geometry								""
 	optional	uuid					BatchID									""
-	optional	uuid					PipeID									""
-	optional	text					ActivityCode							"Activity Code"						tags:workOrder
 	optional	text					Status									"Status"
 	optional	text					HouseNumber								"House Number"
 	optional	text					StreetName								"Street Name"
@@ -8222,16 +8220,27 @@ CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetBase
 	hasone		Activity_Code			ActivityCode							HydroJetActivity.Code				order:10
 	hasone		Status					Status									HydroJetStatus.Code
 }
-INDEX(PipeID)
 INDEX(Status)
-INDEX(ActivityCode)
 INDEX(ID)
 INDEX(ExternalID)
 INDEX(Geometry);
 
-CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrder
+CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetWorkOrderBase
 {	
-};
+	optional	uuid					PipeID									""
+	optional	text					ActivityCode							"Activity Code"						tags:workOrder
+}
+INDEX(PipeID)
+INDEX(ActivityCode)
+UNIQUE INDEX(PipeID, ActivityCode);
+
+CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrderBase
+{	
+	optional	uuid					PipeID									""
+	optional	text					ActivityCode							"Activity Code"						tags:workOrder
+}
+INDEX(PipeID)
+INDEX(ActivityCode);
 
 #############################################################################################
 #	AI Roads
