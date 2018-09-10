@@ -8196,13 +8196,11 @@ CREATE TABLE "HydroJetStatus" HydroJetStatus : HydroJetBase
 }
 INDEX(Code);
 
-CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetBase
+CREATE TABLE "" HydroJetWorkOrderBase : HydroJetBase
 {
 	"Internal"	
 	optional	polylinez				Geometry								""
 	optional	uuid					BatchID									""
-	optional	uuid					PipeID									""
-	optional	text					ActivityCode							"Activity Code"						tags:workOrder
 	optional	text					Status									"Status"
 	optional	text					HouseNumber								"House Number"
 	optional	text					StreetName								"Street Name"
@@ -8222,16 +8220,27 @@ CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetBase
 	hasone		Activity_Code			ActivityCode							HydroJetActivity.Code				order:10
 	hasone		Status					Status									HydroJetStatus.Code
 }
-INDEX(PipeID)
 INDEX(Status)
-INDEX(ActivityCode)
 INDEX(ID)
 INDEX(ExternalID)
 INDEX(Geometry);
 
-CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrder
+CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetWorkOrderBase
 {	
-};
+	optional	uuid					PipeID									""
+	optional	text					ActivityCode							"Activity Code"						tags:workOrder
+}
+INDEX(PipeID)
+INDEX(ActivityCode)
+UNIQUE INDEX(PipeID, ActivityCode);
+
+CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrderBase
+{	
+	optional	uuid					PipeID									""
+	optional	text					ActivityCode							"Activity Code"						tags:workOrder
+}
+INDEX(PipeID)
+INDEX(ActivityCode);
 
 #############################################################################################
 #	AI Roads
@@ -8257,21 +8266,21 @@ CREATE TABLE "MLRoads" MLRoads
 	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"
 	optional 	int64				InspectorID										"Inspector"
 	"3. Defects Summary"
-	optional    double 				Nothing											"No Defect"
-	optional    double 				SurfaceFailure									"Surface Failure"
-	optional    double 				SurfaceCrack									"Surface Crack"
-	optional    double 				LongCrack										"Long Crack"
-	optional    double 				TransCrack										"Transverse Crack"
-	optional    double 				BlockCrack										"Block Crack"
-	optional    double 				CrocCrack										"Crocodile Crack"
-	optional    double 				Patching										"Patching"
-	optional    double 				Pothole											"Pothole"
-	optional    double 				Cut												"Cutting"
+	optional    double 				Nothing											"No Defect" 								unit:%
+	optional    double 				SurfaceFailure									"Surface Failure"							unit:%
+	optional    double 				SurfaceCrack									"Surface Crack"								unit:%
+	optional    double 				LongCrack										"Long Crack"								unit:%
+	optional    double 				TransCrack										"Transverse Crack"							unit:%
+	optional    double 				BlockCrack										"Block Crack"								unit:%
+	optional    double 				CrocCrack										"Crocodile Crack"							unit:%
+	optional    double 				Patching										"Patching"									unit:%
+	optional    double 				Pothole											"Pothole"									unit:%
+	optional    double 				Cut												"Cutting"									unit:%
 
-	optional    double 				AggregateLoss									"Aggregate Loss"
-	optional    double 				Binder											"Binder"
-	optional    double 				Bleeding										"Bleeding"
-	optional    double 				Pumping											"Pumping"
+	optional    double 				AggregateLoss									"Aggregate Loss" 							unit:%
+	optional    double 				Binder											"Binder" 									unit:%
+	optional    double 				Bleeding										"Bleeding" 									unit:%
+	optional    double 				Pumping											"Pumping" 									unit:%
 }
 PRIMARY KEY(rowid)
 INDEX(Geometry)
