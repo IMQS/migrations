@@ -8227,6 +8227,7 @@ INDEX(Geometry);
 
 CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetWorkOrderBase
 {	
+	"Internal"
 	optional	uuid					PipeID									""
 	optional	text					ActivityCode							"Activity Code"						tags:workOrder
 }
@@ -8236,6 +8237,7 @@ UNIQUE INDEX(PipeID, ActivityCode);
 
 CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrderBase
 {	
+	"Internal"
 	optional	uuid					PipeID									""
 	optional	text					ActivityCode							"Activity Code"						tags:workOrder
 }
