@@ -8263,6 +8263,7 @@ CREATE TABLE "MLRoads" MLRoads
 	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch
 	optional 	text				Code											"Code"
 	"2. Condition"
+	optional 	bool				Surfaced										"Surfaced"
 	required	double				Condition										"Condition Rating"
 	optional	datetime			LastInspection									"Last Inspected"
 	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"
@@ -8283,6 +8284,8 @@ CREATE TABLE "MLRoads" MLRoads
 	optional    double 				Binder											"Binder" 									unit:%
 	optional    double 				Bleeding										"Bleeding" 									unit:%
 	optional    double 				Pumping											"Pumping" 									unit:%
+
+	optional 	double 				GravelRoadQuality								"Gravel Road Quality"						unit:%
 }
 PRIMARY KEY(rowid)
 INDEX(Geometry)
