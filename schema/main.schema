@@ -8267,7 +8267,7 @@ CREATE TABLE "MLRoads" MLRoads
 	required	double				Condition										"Condition Rating"
 	optional	datetime			LastInspection									"Last Inspected"
 	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"
-	optional 	int64				InspectorID										"Inspector"
+	optional 	int64				InspectorID										"MLRoadsUsers|key|value|Inspector"			tags:lookup,showLookupKey
 	optional	text				Assessment										"Assessment Reference"
 	"3. Defects Summary"
 	optional    double 				Nothing											"No Defect" 								unit:%
@@ -8296,8 +8296,18 @@ INDEX(RoadID);
 CREATE TABLE "MLRoadsAuthorities" MLRoadsAuthorities
 {
 	"Internal"
-	required	int64				rowid											"lookup:IncidentRefStatus:k:v:Status"
+	required	int64				rowid											""
 	required	int32				key 											""
+	required	text	 			value            							    ""
+}
+PRIMARY KEY(rowid)
+INDEX(key);
+
+CREATE TABLE "MLRoadUsers" MLRoadUsers
+{
+	"Internal"
+	required	int64				rowid											""
+	required	int64				key 											""
 	required	text	 			value            							    ""
 }
 PRIMARY KEY(rowid)
