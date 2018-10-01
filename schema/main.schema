@@ -8303,7 +8303,7 @@ CREATE TABLE "MLRoadsAuthorities" MLRoadsAuthorities
 PRIMARY KEY(rowid)
 INDEX(key);
 
-CREATE TABLE "MLRoadUsers" MLRoadUsers
+CREATE TABLE "MLRoadsUsers" MLRoadsUsers
 {
 	"Internal"
 	required	int64				rowid											""
