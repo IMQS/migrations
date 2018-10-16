@@ -4165,24 +4165,30 @@ INDEX(Geometry);
 CREATE TABLE "RoadWalkways" RoadWalkways : RoadBaseNoID
 {
 	"Internal"
-	optional	point				Geometry										""
-	"General"
-	optional	int64				GISID											"GIS ID"
-	optional	text				Component_										"Component"
-	optional	text				Asset_Name										"Asset Name"
-	optional	text				Facility_N										"Facility"
-	optional	text				Area_Name										"Area"
-	optional	text				Class											""
-	optional	text				Condition										""
-	optional	text				Unit_Rate										"Unit Rate"
+	optional	polyline			Geometry										""
+	"General"	
+	optional	int64				Walkway_ID										"Walkway ID"									uiorder:1
+	optional	int64				Surface_ID										"Surface ID"									uiorder:2
+	optional	int64				SubSurface										"Sub Surface"									uiorder:3
+	optional	int64				Kerb_ID											"Kerb ID"										uiorder:4
+	optional	double				LinkLength										"Link Length"									uiorder:5
+	optional	int64				RoadLink_I										"Roadlink ID"									uiorder:6
+	optional	text				Surface_Ty										"Surface Type"									uiorder:7
+	optional	double			    Length_Km										"Length"					unit:km 			uiorder:8
+	optional	text				Component										"Component"										uiorder:9
+	optional	text				Asset_Type										"Asset Type"									uiorder:10
+	optional	text				Facility_N										"Facility"										uiorder:11
+	optional	text				Area_Name										"Location"										uiorder:12
+	optional	text				Class											"Class"											uiorder:13
+	optional	text				Condition										"Condition"										uiorder:14
+	optional	text				Unit_Rate										"Unit Rate"										uiorder:15
+	optional	text				Sidewalk_T										"Sidewalk Type"									uiorder:16
 	"Size"
-	optional	int32				Size_Lengt										"Length"
-	optional	int32				Size_Width										"Width"
-	optional	int32				Size_Depth										"Depth"
-	optional	int32				Size_Volum										"Volume"
-	"General"
-	optional	int32				Quantity										""
-	optional	text				Descriptio										"Description"
+	optional	double				Length_Met										"Length"					unit:m				uiorder:1
+	optional	double				Width_Mete										"Width"						unit:m				uiorder:2
+	optional	double				Depth_Mete										"Depth"						unit:m				uiorder:3
+	optional	double				Volume_Met										"Volume"					unit:m^3			uiorder:4
+	optional	double				Area_Meter										"Area"						unit:m^2			uiorder:5
 }
 INDEX(Geometry);
 
