@@ -4165,30 +4165,30 @@ INDEX(Geometry);
 CREATE TABLE "RoadWalkways" RoadWalkways : RoadBaseNoID
 {
 	"Internal"
-	optional	polyline				Geometry										""
-	"General"
-	optional	int64				Walkway_ID										"Walkway ID"
-	optional	int64				Surface_ID										"Surface ID"
-	optional	int64				SubSurface										"Sub Surface"
-	optional	int64				Kerb_ID											"Kerb ID"
-	optional	double				LinkLength										"Link Length"
-	optional	int64				RoadLink_I										"Roadlink ID"
-	optional	text				Surface_Ty										"Surface Type"
-	optional	double				Length_Km										"Length (km)"
-	optional	text				Component										"Component"
-	optional	text				Asset_Type										"Asset Type"
-	optional	text				Facility_N										"Facility"	
-	optional	text				Area_Name										"Location Area"
-	optional	text				Class											"Class"
-	optional	text				Condition										"Condition"
-	optional	text				Unit_Rate										"Unit Rate"
-	optional	text				Sidewalk_T										"Sidewalk Type"
+	optional	polyline			Geometry										""
+	"General"	
+	optional	int64				Walkway_ID										"Walkway ID"									uiorder:1
+	optional	int64				Surface_ID										"Surface ID"									uiorder:2
+	optional	int64				SubSurface										"Sub Surface"									uiorder:3
+	optional	int64				Kerb_ID											"Kerb ID"										uiorder:4
+	optional	double				LinkLength										"Link Length"									uiorder:5
+	optional	int64				RoadLink_I										"Roadlink ID"									uiorder:6
+	optional	text				Surface_Ty										"Surface Type"									uiorder:7
+	optional	double			    Length_Km										"Length"					unit:km 			uiorder:8
+	optional	text				Component										"Component"										uiorder:9
+	optional	text				Asset_Type										"Asset Type"									uiorder:10
+	optional	text				Facility_N										"Facility"										uiorder:11
+	optional	text				Area_Name										"Location"										uiorder:12
+	optional	text				Class											"Class"											uiorder:13
+	optional	text				Condition										"Condition"										uiorder:14
+	optional	text				Unit_Rate										"Unit Rate"										uiorder:15
+	optional	text				Sidewalk_T										"Sidewalk Type"									uiorder:16
 	"Size"
-	optional	double				Length_Met										"Length (m)"
-	optional	double				Width_Mete										"Width (m)"
-	optional	double				Depth_Mete										"Depth (m)"
-	optional	double				Volume_Met										"Volume (m3)"
-	optional	double				Area_Meter										"Area (m2)"
+	optional	double				Length_Met										"Length"					unit:m				uiorder:1
+	optional	double				Width_Mete										"Width"						unit:m				uiorder:2
+	optional	double				Depth_Mete										"Depth"						unit:m				uiorder:3
+	optional	double				Volume_Met										"Volume"					unit:m^3			uiorder:4
+	optional	double				Area_Meter										"Area"						unit:m^2			uiorder:5
 }
 INDEX(Geometry);
 
@@ -8268,6 +8268,7 @@ CREATE TABLE "MLRoads" MLRoads
 	optional	text				Name											"Road Name"
 	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch
 	optional 	text				Code											"Code"
+	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch
 	"2. Condition"
 	optional 	bool				Surfaced										"Surfaced"
 	required	double				Condition										"Condition Rating"
@@ -8300,6 +8301,16 @@ INDEX(Locality)
 INDEX(RoadID);
 
 CREATE TABLE "MLRoadsAuthorities" MLRoadsAuthorities
+{
+	"Internal"
+	required	int64				rowid											""
+	required	int32				key 											""
+	required	text	 			value            							    ""
+}
+PRIMARY KEY(rowid)
+INDEX(key);
+
+CREATE TABLE "MLRoadsClassifications" MLRoadsClassifications
 {
 	"Internal"
 	required	int64				rowid											""

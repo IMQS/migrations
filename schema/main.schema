@@ -8268,6 +8268,7 @@ CREATE TABLE "MLRoads" MLRoads
 	optional	text				Name											"Road Name"
 	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch
 	optional 	text				Code											"Code"
+	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch
 	"2. Condition"
 	optional 	bool				Surfaced										"Surfaced"
 	required	double				Condition										"Condition Rating"
@@ -8300,6 +8301,16 @@ INDEX(Locality)
 INDEX(RoadID);
 
 CREATE TABLE "MLRoadsAuthorities" MLRoadsAuthorities
+{
+	"Internal"
+	required	int64				rowid											""
+	required	int32				key 											""
+	required	text	 			value            							    ""
+}
+PRIMARY KEY(rowid)
+INDEX(key);
+
+CREATE TABLE "MLRoadsClassifications" MLRoadsClassifications
 {
 	"Internal"
 	required	int64				rowid											""
