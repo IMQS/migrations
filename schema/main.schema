@@ -8293,10 +8293,10 @@ CREATE TABLE "MLRoads" MLRoads
 	optional 	text				Municipality									"Local Municipality"									uiorder:38
 	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch		uiorder:39
 
-	optional	double				StartLat										"Start Latitude"							unit:deg	uiorder:40
-	optional	double				EndLat											"End Latitude"								unit:deg	uiorder:41
-	optional	double				StartLon										"Start Longitude"							unit:deg	uiorder:42
-	optional	double				EndLon											"End Longitude"								unit:deg	uiorder:43
+	optional	double				StartLat										"Start Latitude"										uiorder:40
+	optional	double				EndLat											"End Latitude"											uiorder:41
+	optional	double				StartLon										"Start Longitude"										uiorder:42
+	optional	double				EndLon											"End Longitude"											uiorder:43
 
 	optional	text				SegmentStatus									"Segment Status"										uiorder:44
 
