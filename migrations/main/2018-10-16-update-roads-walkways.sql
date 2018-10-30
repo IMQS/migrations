@@ -1,3 +1,4 @@
+TRUNCATE "RoadWalkways";
 ALTER TABLE "RoadWalkways" ALTER COLUMN "Geometry" TYPE geometry(MultiLineString, 4326);
 ALTER TABLE "RoadWalkways" ADD COLUMN "Walkway_ID" BIGINT;
 ALTER TABLE "RoadWalkways" ADD COLUMN "Surface_ID" BIGINT;
