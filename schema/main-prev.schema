@@ -5504,14 +5504,17 @@ CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 {
 	"Internal"
 	optional	polygon				Geometry			""
+	optional	text				URL					"Url"
 	"General"
 	optional	text				GIS_CODE			"GIS Code"		tags:longLivedID	uiorder:1
 	optional	text				TAG_VALUE			"Tag Value"				uiorder:2
 	optional	text				SG_ID				"SG ID"					uiorder:3
-	optional	text				INTEGRITY			"Integrity"				uiorder:4
-	optional	text				SUBURB				"Suburb"				uiorder:5
-	optional	text				NETWORK				"Network"				uiorder:6
-	optional	text				REGION				"Region"				uiorder:7
+	optional	text				SG_DIAGRAM			"SG Diagram"			uiorder:4
+	optional	text				INTEGRITY			"Integrity"				uiorder:5
+	optional	text				SUBURB				"Suburb"				uiorder:6
+	optional	text				NETWORK				"Network"				uiorder:7
+	optional	text				WARD				"Ward"					uiorder:8
+	optional	text				REGION				"Region"				uiorder:9
 }
 INDEX(Geometry);
 
@@ -8265,65 +8268,65 @@ CREATE TABLE "MLRoads" MLRoads
 	optional	datetime			Updated											""
 	required	int64				Organisation									"Organisation"
 	"1. General"
-	optional	text				Name											"Road Name"
-	optional 	text				Code											"Code"
+	optional	text				Name											"Road Name"												uiorder:11
+	optional 	text				Code											"Code"													uiorder:12
 	"2. Road Classification"
-	optional 	int64				SegmentID										"Segment ID"
-	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch
+	optional 	int64				SegmentID										"Segment ID"											uiorder:20
+	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch 	uiorder:21
 	
-	optional 	double 				StartDistance									"Start Distance"							unit:km
-	optional 	double 				EndDistance										"End Distance"								unit:km
-	optional	double				Length											"Length"									unit:km
-	optional 	double				Width											"Width"										unit:m
+	optional 	double 				StartDistance									"Start Distance"							unit:km		uiorder:22
+	optional 	double 				EndDistance										"End Distance"								unit:km		uiorder:23
+	optional	double				Length											"Length"									unit:km		uiorder:24
+	optional 	double				Width											"Width"										unit:m		uiorder:25
 
-	optional 	int32				Status											"Status"
-	optional 	bool				Surfaced										"Surfaced"
-	optional	text 				SurfaceType										"Surface Type"
-	optional 	text				RoadType										"Road Type"
-	optional 	int32 				NumLanes										"Number of Lanes"
-	optional 	int32 				NumShoulders									"Number of Shoulders"
-	optional	text				Terrain											"Terrain Classification"
+	optional 	int32				Status											"Status"												uiorder:26
+	optional 	bool				Surfaced										"Surfaced"												uiorder:27
+	optional	text 				SurfaceType										"Surface Type"											uiorder:28
+	optional 	text				RoadType										"Road Type"												uiorder:29
+	optional 	int32 				NumLanes										"Number of Lanes"										uiorder:30
+	optional 	int32 				NumShoulders									"Number of Shoulders"									uiorder:31
+	optional	text				Terrain											"Terrain Classification"								uiorder:32
 
-	optional	datetime			StartDate										"Start Date"
-	optional 	datetime			EndDate											"End Date"
-	optional 	datetime			BaseDate										"Base Date"
-	optional 	datetime			SurfaceDate										"Surface Date"
+	optional	datetime			StartDate										"Start Date"											uiorder:33
+	optional 	datetime			EndDate											"End Date"												uiorder:34
+	optional 	datetime			BaseDate										"Base Date"												uiorder:35
+	optional 	datetime			SurfaceDate										"Surface Date"											uiorder:36
 	
-	optional 	text				District										"District"
-	optional 	text				Municipality									"Local Municipality"
-	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch
+	optional 	text				District										"District"												uiorder:37
+	optional 	text				Municipality									"Local Municipality"									uiorder:38
+	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch		uiorder:39
 
-	optional	double				StartLat										"Start Latitude"							unit:deg
-	optional	double				EndLat											"End Latitude"								unit:deg
-	optional	double				StartLon										"Start Longitude"							unit:deg
-	optional	double				EndLon											"End Longitude"								unit:deg
+	optional	double				StartLat										"Start Latitude"										uiorder:40
+	optional	double				EndLat											"End Latitude"											uiorder:41
+	optional	double				StartLon										"Start Longitude"										uiorder:42
+	optional	double				EndLon											"End Longitude"											uiorder:43
 
-	optional	text				SegmentStatus									"Segment Status"
+	optional	text				SegmentStatus									"Segment Status"										uiorder:44
 
 	"3. Condition"
-	required	double				Condition										"Condition Rating"
-	optional	datetime			LastInspection									"Last Inspected"
-	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"
-	optional 	int64				InspectorID										"MLRoadsUsers|key|value|Inspector"			tags:lookup,showLookupKey,simpleTextSearch
-	optional	text				Assessment										"Assessment Reference"
+	required	double				Condition										"Condition Rating"										uiorder:50
+	optional	datetime			LastInspection									"Last Inspected"										uiorder:51
+	optional 	int32				YearsSinceInspect								"Years Since Last Inspection"							uiorder:52
+	optional 	int64				InspectorID										"MLRoadsUsers|key|value|Inspector"			tags:lookup,showLookupKey,simpleTextSearch		uiorder:53
+	optional	text				Assessment										"Assessment Reference"									uiorder:53
 	"4. Defects Summary"
-	optional    double 				Nothing											"No Defect" 								unit:%
-	optional    double 				SurfaceFailure									"Surface Failure"							unit:%
-	optional    double 				SurfaceCrack									"Surface Crack"								unit:%
-	optional    double 				LongCrack										"Long Crack"								unit:%
-	optional    double 				TransCrack										"Transverse Crack"							unit:%
-	optional    double 				BlockCrack										"Block Crack"								unit:%
-	optional    double 				CrocCrack										"Crocodile Crack"							unit:%
-	optional    double 				Patching										"Patching"									unit:%
-	optional    double 				Pothole											"Pothole"									unit:%
-	optional    double 				Cut												"Cutting"									unit:%
+	optional    double 				Nothing											"No Defect" 								unit:%		uiorder:60	
+	optional    double 				SurfaceFailure									"Surface Failure"							unit:%		uiorder:61
+	optional    double 				SurfaceCrack									"Surface Crack"								unit:%		uiorder:62
+	optional    double 				LongCrack										"Long Crack"								unit:%		uiorder:63
+	optional    double 				TransCrack										"Transverse Crack"							unit:%		uiorder:64
+	optional    double 				BlockCrack										"Block Crack"								unit:%		uiorder:65
+	optional    double 				CrocCrack										"Crocodile Crack"							unit:%		uiorder:66
+	optional    double 				Patching										"Patching"									unit:%		uiorder:67
+	optional    double 				Pothole											"Pothole"									unit:%		uiorder:68
+	optional    double 				Cut												"Cutting"									unit:%		uiorder:69
 
-	optional    double 				AggregateLoss									"Aggregate Loss" 							unit:%
-	optional    double 				Binder											"Binder" 									unit:%
-	optional    double 				Bleeding										"Bleeding" 									unit:%
-	optional    double 				Pumping											"Pumping" 									unit:%
+	optional    double 				AggregateLoss									"Aggregate Loss" 							unit:%		uiorder:70
+	optional    double 				Binder											"Binder" 									unit:%		uiorder:71
+	optional    double 				Bleeding										"Bleeding" 									unit:%		uiorder:72
+	optional    double 				Pumping											"Pumping" 									unit:%		uiorder:73
 
-	optional 	double 				GravelRoadQuality								"Gravel Road Quality"						unit:%
+	optional 	double 				GravelRoadQuality								"Gravel Road Quality"						unit:%		uiorder:74
 }
 PRIMARY KEY(rowid)
 INDEX(Geometry)
