@@ -8267,6 +8267,7 @@ CREATE TABLE "MLRoads" MLRoads
 	"1. General"
 	optional	text				Name											"Road Name"												uiorder:11
 	optional 	text				Code											"Code"													uiorder:12
+	optional	text				Video											"Footage"												uiorder:13		tags:hideInGrid,dispSeekableVideo
 	"2. Road Classification"
 	optional 	int64				SegmentID										"Segment ID"											uiorder:20
 	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch 	uiorder:21
