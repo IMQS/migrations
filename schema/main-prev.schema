@@ -2341,6 +2341,47 @@ CREATE SUFFIX TABLES
 	Future, Existing;
 };
 
+CREATE TABLE "" SewerAuxAppurtenance : SewerBase
+{
+	"Internal"
+	optional  point             	Geometry                                        ""
+	optional  double              	ROTATION                                        ""
+	optional  int64               	PIPE_YEAR                                       "Pipe Year"												unit:year
+	optional  text		           	P_YR_INT                                        "Pipe Year Integrity"
+	optional  double              	PIPE_DIAM                                       "Pipe Diameter"											unit:mm
+	"01.Topology"
+	optional  text	            	S_TYPE                                          "Type"																uiorder:1
+	optional  text	            	S_SUB_TYPE                                      "Sub Type"															uiorder:2
+	optional  text            		PIPE_NO                                         "Pipe Code"															uiorder:3
+	optional  text	            	LP_CODE                                         "Land Parcel Code"													uiorder:4
+	optional  text	            	SYMB_ID                                         "Symbol ID"															uiorder:5
+	"02.Physical"
+	optional  text		           	S_PRESS                                         "Pressure Rating"								unit:kPa			uiorder:1
+	optional  double              	S_SIZE                                          "Size"											unit:mm				uiorder:2
+	optional  text		           	S_SPECIAL                                       "Special"															uiorder:3
+	optional  int64               	S_YEAR                                          "Year"											unit:year			uiorder:4
+	"03.Descriptive"
+	optional  text	            	SYS_TYPE                                        "System Type"														uiorder:1
+	optional  text		           	SYSTEM                                          "System"															uiorder:2
+	optional  text		           	COMMENT                                         "Comment"															uiorder:3
+	optional  text		           	REGION                                          "Region"															uiorder:4
+	optional  text		           	NETWORK                                         "Drainage Area"														uiorder:5
+	"04.Asset Information"
+	optional  text		           	S_MAKE                                          "Make"																uiorder:1
+	"05.Integrity"
+	optional  text		           	S_YR_INT                                        "Year Integrity"													uiorder:1
+	optional  text		           	S_DRW_NO                                        "Drawing No"														uiorder:2
+
+	flags orm_server
+}
+INDEX(Geometry);
+
+CREATE SUFFIX TABLES
+{
+	SewerAuxAppurtenance;
+	AsBuilt, Existing;
+};
+
 CREATE TABLE "" SewerAuxHouseConnection : SewerBaseNoID
 {
 	"Internal"
@@ -5504,14 +5545,17 @@ CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 {
 	"Internal"
 	optional	polygon				Geometry			""
+	optional	text				URL					"Url"
 	"General"
 	optional	text				GIS_CODE			"GIS Code"		tags:longLivedID	uiorder:1
 	optional	text				TAG_VALUE			"Tag Value"				uiorder:2
 	optional	text				SG_ID				"SG ID"					uiorder:3
-	optional	text				INTEGRITY			"Integrity"				uiorder:4
-	optional	text				SUBURB				"Suburb"				uiorder:5
-	optional	text				NETWORK				"Network"				uiorder:6
-	optional	text				REGION				"Region"				uiorder:7
+	optional	text				SG_DIAGRAM			"SG Diagram"			uiorder:4
+	optional	text				INTEGRITY			"Integrity"				uiorder:5
+	optional	text				SUBURB				"Suburb"				uiorder:6
+	optional	text				NETWORK				"Network"				uiorder:7
+	optional	text				WARD				"Ward"					uiorder:8
+	optional	text				REGION				"Region"				uiorder:9
 }
 INDEX(Geometry);
 
@@ -8267,7 +8311,7 @@ CREATE TABLE "MLRoads" MLRoads
 	"1. General"
 	optional	text				Name											"Road Name"												uiorder:11
 	optional 	text				Code											"Code"													uiorder:12
-	optional	text				VideoURL										"Footage"												uiorder:13		tags:hideInGrid,dispSeekableVideo
+	optional	text				Video										"Footage"												uiorder:13		tags:hideInGrid,dispSeekableVideo
 	"2. Road Classification"
 	optional 	int64				SegmentID										"Segment ID"											uiorder:20
 	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch 	uiorder:21
