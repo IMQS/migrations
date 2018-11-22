@@ -5545,17 +5545,17 @@ CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 {
 	"Internal"
 	optional	polygon				Geometry			""
-	optional	text				URL					"Url"
 	"General"
-	optional	text				GIS_CODE			"GIS Code"		tags:longLivedID	uiorder:1
-	optional	text				TAG_VALUE			"Tag Value"				uiorder:2
-	optional	text				SG_ID				"SG ID"					uiorder:3
-	optional	text				SG_DIAGRAM			"SG Diagram"			uiorder:4
-	optional	text				INTEGRITY			"Integrity"				uiorder:5
-	optional	text				SUBURB				"Suburb"				uiorder:6
-	optional	text				NETWORK				"Network"				uiorder:7
-	optional	text				WARD				"Ward"					uiorder:8
-	optional	text				REGION				"Region"				uiorder:9
+	optional	text				GIS_CODE			"GIS Code"		tags:longLivedID		uiorder:1
+	optional	text				TAG_VALUE			"Tag Value"								uiorder:2
+	optional	text				SG_ID				"SG ID"									uiorder:3
+	optional	text				SG_DIAGRAM			"SG Diagram"							uiorder:4
+	optional	text				INTEGRITY			"Integrity"								uiorder:5
+	optional	text				SUBURB				"Suburb"								uiorder:6
+	optional	text				NETWORK				"Network"								uiorder:7
+	optional	text				WARD				"Ward"									uiorder:8
+	optional	text				REGION				"Region"								uiorder:9
+	optional	text				URL					"Url"	tags:hideInPropertiesIfNull		uiorder:10
 }
 INDEX(Geometry);
 
@@ -8311,7 +8311,7 @@ CREATE TABLE "MLRoads" MLRoads
 	"1. General"
 	optional	text				Name											"Road Name"												uiorder:11
 	optional 	text				Code											"Code"													uiorder:12
-	optional	text				Video										"Footage"												uiorder:13		tags:hideInGrid,dispSeekableVideo
+	optional	text				Video											"Footage"												uiorder:13		tags:hideInGrid,dispSeekableVideo
 	"2. Road Classification"
 	optional 	int64				SegmentID										"Segment ID"											uiorder:20
 	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch 	uiorder:21
