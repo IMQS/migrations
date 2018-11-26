@@ -1287,20 +1287,23 @@ CREATE TABLE "" WaterAuxBaseAppurtHouseConn : WaterBaseNoID
 CREATE TABLE "" WaterAuxAppurtenance : WaterAuxBaseAppurtHouseConn
 {
 	"Internal"
-	optional  point             	Geometry                                        ""
-	optional  double              	Rotation                                        ""
-	optional  uuid		           	ID				                                "ID"
-	"General"
-	optional  text		           	SymbolYearIntegrity                             "Symbol Year Integrity"
-	optional  text		           	SymbolMake                                      "Symbol Make"
-	optional  double              	PipeDiameter                                    "Pipe Diameter"								unit:mm
-	optional  text	            	SymbolType                                      "Symbol Type"
-	optional  text	            	SymbolSubType                                   "Symbol Sub Type"
-	optional  double              	SymbolSize                                      "Symbol Size"								unit:mm
-	optional  text		           	SymbolSpecial                                   "Symbol Special"
-	optional  text		           	SymbolPressureRating                            "Symbol Pressure Rating"					unit:kPa
-	optional  int64               	SymbolYear                                      "Symbol Year"								unit:year
-	optional  text		           	SymbolDrawingNo                                 "Symbol Drawing No"
+	optional  point             	Geometry                                        ""															
+	optional  double              	Rotation                                        ""                                                          
+	optional  uuid		           	ID				                                "ID"                                                        
+	optional  double              	PipeDiameter                                    "Pipe Diameter"								unit:mm         
+	"01.Topology"                                                                                                                              
+	optional  text	            	SymbolType                                      "Type"                                                      uiorder:1
+	optional  text	            	SymbolSubType                                   "Sub Type"                                                  uiorder:2
+	"02.Physical"                                                                                                                               
+	optional  text		           	SymbolPressureRating                            "Pressure Rating"							unit:kPa        uiorder:1
+	optional  double              	SymbolSize                                      "Size"										unit:mm         uiorder:2
+	optional  text		           	SymbolSpecial                                   "pecial"                                                    uiorder:3
+	optional  int64               	SymbolYear                                      "Year"										unit:year       uiorder:4
+	"04.Asset Information"                                                                                                                      
+	optional  text		           	SymbolMake                                 		"Make"                                                      uiorder:1
+	"05.Integrity"                                                                                                                              
+	optional  text		           	SymbolYearIntegrity                             "Year Integrity"                                            uiorder:1
+	optional  text		           	SymbolDrawingNo                                 "Drawing Number"                                            uiorder:2
 
 	flags orm_server
 }
@@ -2345,32 +2348,36 @@ CREATE TABLE "" SewerAuxAppurtenance : SewerBase
 {
 	"Internal"
 	optional  point             	Geometry                                        ""
-	optional  double              	ROTATION                                        ""
-	optional  int64               	PIPE_YEAR                                       "Pipe Year"												unit:year
-	optional  text		           	P_YR_INT                                        "Pipe Year Integrity"
-	optional  double              	PIPE_DIAM                                       "Pipe Diameter"											unit:mm
-	"01.Topology"
-	optional  text	            	S_TYPE                                          "Type"																uiorder:1
-	optional  text	            	S_SUB_TYPE                                      "Sub Type"															uiorder:2
-	optional  text            		PIPE_NO                                         "Pipe Code"															uiorder:3
-	optional  text	            	LP_CODE                                         "Land Parcel Code"													uiorder:4
-	optional  text	            	SYMB_ID                                         "Symbol ID"															uiorder:5
+	optional  double              	Rotation                                        ""
+	optional  uuid                  Link_ID                                         ""
+	"01.Network Topology"
+	optional  text	            	Symbol_Type                                     "Symbol Type"														uiorder:1
+	optional  text	            	Symbol_Sub_Type                                 "Symbol Sub-Type"													uiorder:2
+	optional  text            		Symbol_Code                                     "Symbol Code"														uiorder:3
+	optional  text	            	Link_Code                                       "Link Code"															uiorder:4
 	"02.Physical"
-	optional  text		           	S_PRESS                                         "Pressure Rating"								unit:kPa			uiorder:1
-	optional  double              	S_SIZE                                          "Size"											unit:mm				uiorder:2
-	optional  text		           	S_SPECIAL                                       "Special"															uiorder:3
-	optional  int64               	S_YEAR                                          "Year"											unit:year			uiorder:4
+	optional  double	           	Pressure_Rating                                 "Pressure Rating"							unit:kPa				uiorder:1
+	optional  double              	Size                                            "Size"										unit:mm					uiorder:2
+	optional  text		           	Special                                         "Special"															uiorder:3
+	optional  int64               	Year                                            "Year"										unit:year				uiorder:5
 	"03.Descriptive"
-	optional  text	            	SYS_TYPE                                        "System Type"														uiorder:1
-	optional  text		           	SYSTEM                                          "System"															uiorder:2
-	optional  text		           	COMMENT                                         "Comment"															uiorder:3
-	optional  text		           	REGION                                          "Region"															uiorder:4
-	optional  text		           	NETWORK                                         "Drainage Area"														uiorder:5
+	optional  text	            	System_Type                                     "System Type"														uiorder:1
+	optional  text		           	System                                          "System"															uiorder:2
+	optional  text		           	Comment                                         "Comment"															uiorder:3
+	optional  text		           	Ward                                            "Ward"																uiorder:4
+	optional  text		           	Region                                          "Region"															uiorder:5
+	optional  text		           	Network                                         "Network"															uiorder:6
 	"04.Asset Information"
-	optional  text		           	S_MAKE                                          "Make"																uiorder:1
+	optional  text		           	AM_Make                                         "Make"																uiorder:1
+	optional  int64		           	Cost_Function                                   "Cost Function Index"												uiorder:2
+	optional  int64		           	AM_Base_Year                                    "Base Year"									unit:year				uiorder:3
+	optional  double	           	AM_Replace_Value                                "Construction Value"						unit:ZAR				uiorder:4
 	"05.Integrity"
-	optional  text		           	S_YR_INT                                        "Year Integrity"													uiorder:1
-	optional  text		           	S_DRW_NO                                        "Drawing No"														uiorder:2
+	optional  text		           	Integrity                                        "Integrity"														uiorder:1
+	optional  text		           	Drawing_No                                       "Drawing Number"													uiorder:2
+	"06.External Links"
+	optional  text		           	URL                                              "URL"										tags:hideInGrid			uiorder:1
+	"Internal"
 
 	flags orm_server
 }
