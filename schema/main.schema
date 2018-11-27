@@ -8304,11 +8304,11 @@ CREATE TABLE "MLRoads" MLRoads
 	"Internal"
 	required	int64				rowid											""
 	optional	text				Locality 										""
-	optional	polylinez 			Geometry            							""
+	optional	polyline 			Geometry            							""
 	required	text	 		 	Reference            							""
 	optional	datetime			Updated											""
 	required	int64				Organisation									"Organisation"
-	optional 	polylinez			VideoTrack										""	
+	optional 	polyline			VideoTrack										""	
 	"1. General"
 	optional	text				Name											"Road Name"												uiorder:11
 	optional 	text				Code											"Code"													uiorder:12
