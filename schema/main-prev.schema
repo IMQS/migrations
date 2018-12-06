@@ -8308,7 +8308,10 @@ CREATE TABLE "MLRoads" MLRoads
 	required	text	 		 	Reference            							""
 	optional	datetime			Updated											""
 	required	int64				Organisation									"Organisation"
-	optional 	polyline			VideoTrack										""	
+	optional 	polyline			VideoTrack										""
+	optional 	text				VideoTiming										""
+	optional	int32				VideoIndexStart									""
+	optional	int32				VideoIndexEnd									""
 	"1. General"
 	optional	text				Name											"Road Name"												uiorder:11
 	optional 	text				Code											"Code"													uiorder:12

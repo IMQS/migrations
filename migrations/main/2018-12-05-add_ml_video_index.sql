@@ -1,0 +1,2 @@
+ALTER TABLE "MLRoads" ADD COLUMN "VideoIndexStart" INTEGER;
+ALTER TABLE "MLRoads" ADD COLUMN "VideoIndexEnd" INTEGER;
