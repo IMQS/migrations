@@ -8319,6 +8319,7 @@ CREATE TABLE "MLRoads" MLRoads
 	optional 	text				VideoTiming										""
 	optional	int32				VideoIndexStart									""
 	optional	int32				VideoIndexEnd									""
+	optional	int64				VideoID											""
 	"1. General"
 	optional	text				Name											"Road Name"												uiorder:11
 	optional 	text				Code											"Code"													uiorder:12
