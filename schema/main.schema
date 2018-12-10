@@ -3518,7 +3518,7 @@ CREATE TABLE "WaterDemandMeterWater" WaterDemandMeterWater : WaterDemandBaseNoID
 	optional	double				Ratio1											"1 Month Ratio"												uiorder:5
 	optional	double				Ratio3											"3 Month Ratio"												uiorder:6
 	optional	int32				Days_Reading									"Days since last reading"         		unit:days			uiorder:7
-	optional	double				Last_Consumption								""															uiorder:8
+	optional	double				Last_Consumption								"Last Consumption"											uiorder:8
 	optional	double				Measurement_1									"Last Measurement"											uiorder:9
 	optional	date				Measurement_Date_1								"Last Measurement Date"					unit:MSE			uiorder:10
 	optional	text				Measurement_Type_1								"Last Measurement Code"										uiorder:11
@@ -3527,13 +3527,13 @@ CREATE TABLE "WaterDemandMeterWater" WaterDemandMeterWater : WaterDemandBaseNoID
 	optional	text				Route_No										"Route Number"												uiorder:14
 	optional	double				Factor											"Meter Factor"												uiorder:15
 	"2.Asset"
-	optional	text				Meter_Type										""															uiorder:16
-	optional	text				Meter_Make										""															uiorder:17
-	optional	double				Meter_Size										""															uiorder:18
+	optional	text				Meter_Type										"Meter Type"												uiorder:16
+	optional	text				Meter_Make										"Meter Make"												uiorder:17
+	optional	double				Meter_Size										"Meter Size"												uiorder:18
 	optional	date				Meter_Installation								"Installation Date"						unit:MSE			uiorder:19
 	optional	date				Meter_Removal									"Removal Date"							unit:MSE			uiorder:20
 	optional	text				Meter_Status									"Meter Status"												uiorder:21
-	optional	double				Meter_Age										"Age"									unit:years			uiorder:22
+	optional	double				Meter_Age										"Age"									unit:months			uiorder:22
 	optional	int32				Display_Size									"Number of digits on display"								uiorder:23
 	optional	int32				Active											"Active/Inactive"											uiorder:24
 	"3.Additional"
