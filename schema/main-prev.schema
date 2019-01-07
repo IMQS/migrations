@@ -2259,6 +2259,45 @@ CREATE TABLE "" SewerStructureResults : SewerBase
 	optional  double              US_No_User_Hydrograph                           "Upstream User Hydrograph"
 };
 
+CREATE TABLE "" SewerAppurtenances : SewerBase
+{
+	"Internal"
+	optional  point					Geometry                                        ""
+	optional  double              	Rotation                                        ""
+	optional  uuid					Link_ID                                         ""
+	"01.Network Topology"
+	optional  text	            	Symbol_Type                                     "Symbol Type"														uiorder:1
+	optional  text	            	Symbol_Sub_Type                                 "Symbol Sub-Type"													uiorder:2
+	optional  text            		Symbol_Code                                     "Symbol Code"														uiorder:3
+	optional  text	            	Link_Code                                       "Link Code"															uiorder:4
+	"02.Physical"
+	optional  double	           	Pressure_Rating                                 "Pressure Rating"							unit:kPa				uiorder:1
+	optional  double              	Size                                            "Size"										unit:mm					uiorder:2
+	optional  text		           	Special                                         "Special"															uiorder:3
+	optional  int64               	Year                                            "Year"										unit:year				uiorder:5
+	"03.Descriptive"
+	optional  text	            	System_Type                                     "System Type"														uiorder:1
+	optional  text		           	System                                          "System"															uiorder:2
+	optional  text		           	Comment                                         "Comment"															uiorder:3
+	optional  text		           	Ward                                            "Ward"																uiorder:4
+	optional  text		           	Region                                          "Region"															uiorder:5
+	optional  text		           	Network                                         "Network"															uiorder:6
+	"04.Asset Information"
+	optional  text		           	AM_Make                                         "Make"																uiorder:1
+	optional  int64		           	Cost_Function                                   "Cost Function Index"												uiorder:2
+	optional  int64		           	AM_Base_Year                                    "Base Year"									unit:year				uiorder:3
+	optional  double	           	AM_Replace_Value                                "Construction Value"						unit:ZAR				uiorder:4
+	"05.Integrity"
+	optional  text		           	Integrity                                       "Integrity"															uiorder:1
+	optional  text		           	Drawing_No                                      "Drawing Number"													uiorder:2
+	"06.External Links"
+	optional  text		           	URL                                             "URL"										tags:hideInGrid			uiorder:1
+
+	flags orm_server
+}
+INDEX(Geometry);
+
+
 CREATE SUFFIX TABLES
 {
 	SewerGravity,	  SewerGravityMemo,		SewerGravityResults,
@@ -2266,7 +2305,7 @@ CREATE SUFFIX TABLES
 	SewerStructure,	  SewerStructureMemo,	SewerStructureResults,
 	SewerPump,		  SewerPumpMemo,		SewerPumpResults,
 	SewerScenario1,	  SewerScenario2,		SewerScenario3,
-	SewerDiversion,   SewerStructureMemoTshwane;
+	SewerDiversion,   SewerStructureMemoTshwane, SewerAppurtenances;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
@@ -2342,51 +2381,6 @@ CREATE SUFFIX TABLES
 {
 	SewerAuxWwtpSites;
 	Future, Existing;
-};
-
-CREATE TABLE "" SewerAuxAppurtenance : SewerBase
-{
-	"Internal"
-	optional  point             	Geometry                                        ""
-	optional  double              	Rotation                                        ""
-	optional  uuid                  Link_ID                                         ""
-	"01.Network Topology"
-	optional  text	            	Symbol_Type                                     "Symbol Type"														uiorder:1
-	optional  text	            	Symbol_Sub_Type                                 "Symbol Sub-Type"													uiorder:2
-	optional  text            		Symbol_Code                                     "Symbol Code"														uiorder:3
-	optional  text	            	Link_Code                                       "Link Code"															uiorder:4
-	"02.Physical"
-	optional  double	           	Pressure_Rating                                 "Pressure Rating"							unit:kPa				uiorder:1
-	optional  double              	Size                                            "Size"										unit:mm					uiorder:2
-	optional  text		           	Special                                         "Special"															uiorder:3
-	optional  int64               	Year                                            "Year"										unit:year				uiorder:5
-	"03.Descriptive"
-	optional  text	            	System_Type                                     "System Type"														uiorder:1
-	optional  text		           	System                                          "System"															uiorder:2
-	optional  text		           	Comment                                         "Comment"															uiorder:3
-	optional  text		           	Ward                                            "Ward"																uiorder:4
-	optional  text		           	Region                                          "Region"															uiorder:5
-	optional  text		           	Network                                         "Network"															uiorder:6
-	"04.Asset Information"
-	optional  text		           	AM_Make                                         "Make"																uiorder:1
-	optional  int64		           	Cost_Function                                   "Cost Function Index"												uiorder:2
-	optional  int64		           	AM_Base_Year                                    "Base Year"									unit:year				uiorder:3
-	optional  double	           	AM_Replace_Value                                "Construction Value"						unit:ZAR				uiorder:4
-	"05.Integrity"
-	optional  text		           	Integrity                                        "Integrity"														uiorder:1
-	optional  text		           	Drawing_No                                       "Drawing Number"													uiorder:2
-	"06.External Links"
-	optional  text		           	URL                                              "URL"										tags:hideInGrid			uiorder:1
-	"Internal"
-
-	flags orm_server
-}
-INDEX(Geometry);
-
-CREATE SUFFIX TABLES
-{
-	SewerAuxAppurtenance;
-	AsBuilt, Existing;
 };
 
 CREATE TABLE "" SewerAuxHouseConnection : SewerBaseNoID
@@ -3518,7 +3512,7 @@ CREATE TABLE "WaterDemandMeterWater" WaterDemandMeterWater : WaterDemandBaseNoID
 	optional	double				Ratio1											"1 Month Ratio"												uiorder:5
 	optional	double				Ratio3											"3 Month Ratio"												uiorder:6
 	optional	int32				Days_Reading									"Days since last reading"         		unit:days			uiorder:7
-	optional	double				Last_Consumption								""															uiorder:8
+	optional	double				Last_Consumption								"Last Consumption"											uiorder:8
 	optional	double				Measurement_1									"Last Measurement"											uiorder:9
 	optional	date				Measurement_Date_1								"Last Measurement Date"					unit:MSE			uiorder:10
 	optional	text				Measurement_Type_1								"Last Measurement Code"										uiorder:11
@@ -3527,13 +3521,13 @@ CREATE TABLE "WaterDemandMeterWater" WaterDemandMeterWater : WaterDemandBaseNoID
 	optional	text				Route_No										"Route Number"												uiorder:14
 	optional	double				Factor											"Meter Factor"												uiorder:15
 	"2.Asset"
-	optional	text				Meter_Type										""															uiorder:16
-	optional	text				Meter_Make										""															uiorder:17
-	optional	double				Meter_Size										""															uiorder:18
+	optional	text				Meter_Type										"Meter Type"												uiorder:16
+	optional	text				Meter_Make										"Meter Make"												uiorder:17
+	optional	double				Meter_Size										"Meter Size"												uiorder:18
 	optional	date				Meter_Installation								"Installation Date"						unit:MSE			uiorder:19
 	optional	date				Meter_Removal									"Removal Date"							unit:MSE			uiorder:20
 	optional	text				Meter_Status									"Meter Status"												uiorder:21
-	optional	double				Meter_Age										"Age"									unit:years			uiorder:22
+	optional	double				Meter_Age										"Age"									unit:months			uiorder:22
 	optional	int32				Display_Size									"Number of digits on display"								uiorder:23
 	optional	int32				Active											"Active/Inactive"											uiorder:24
 	"3.Additional"
