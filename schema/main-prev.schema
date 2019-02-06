@@ -8402,3 +8402,30 @@ CREATE TABLE "MLRoadsClassifications" MLRoadsClassifications : MLRoadsLookup
 CREATE TABLE "MLRoadsUsers" MLRoadsUsers : MLRoadsLookup
 {
 };
+
+#############################################################################################
+#	Linking table between main and mirror DBs
+#############################################################################################
+
+CREATE TABLE "LinkingMainAndMirror" LinkingMainAndMirror
+{
+"Internal"
+	required	int64		recid							""
+	optional	geometryz	geometry						""
+"1. General"
+	optional	text		main_table_name					""
+	optional	uuid		main_id							""
+	optional	text		assetmapfeature_id				""
+	optional	text		assetcomponent_id				""
+}
+PRIMARY KEY(recid);
+
+CREATE TABLE "LinkingMainAndMirrorTrackTable" LinkingMainAndMirrorTrackTable
+{
+"Internal"
+	required	int64		recid				""
+	optional	text		tablename			""
+	optional	int64		createcount			""
+	optional	int64		stamp				""
+}
+PRIMARY KEY(recid);
