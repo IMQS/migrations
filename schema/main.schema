@@ -2773,7 +2773,8 @@ CREATE TABLE "ElectricityDemandZone" ElectricityDemandZone : SwiftBaseNoID
 	optional  double              Theor_Z_Loss                                     "Theor. Loss (Zoning)  inc. vacant"				unit:kWh/d	uiorder:4
 	optional  double              Theor_Z_Inc                                      "Theor. AADE (Zoning) inc. losses & inc. vacant"	unit:kWh/d	uiorder:5
 }
-INDEX(Zone_ID);
+UNIQUE INDEX(Zone_ID)
+INDEX(Geometry);
 
 CREATE TABLE "ElectricityDemandSuburbCategory" ElectricityDemandSuburbCategory : SwiftBaseNoID
 {
@@ -8418,7 +8419,8 @@ CREATE TABLE "LinkingMainAndMirror" LinkingMainAndMirror
 	optional	text		assetmapfeature_id				"Asset Map Feature ID"				uiorder:2
 	optional	text		assetcomponent_id				"Asset Component ID"				uiorder:3
 }
-PRIMARY KEY(recid);
+PRIMARY KEY(recid)
+INDEX(geometry);
 
 CREATE TABLE "LinkingMainAndMirrorTrackTable" LinkingMainAndMirrorTrackTable
 {
