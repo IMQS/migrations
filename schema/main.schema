@@ -331,6 +331,7 @@ CREATE TABLE "" WaterPipe : WaterBaseLink
 
 	hasone Memo			ID	WaterPipeMemo.ID
 	hasone Results		ID	WaterPipeResult.ID
+	hasone User			ID	WaterPipeUser.ID
 	hasone Timeseries	ID	WaterLinkTimeseriesResult.ID
 }
 INDEX(Geometry);
@@ -370,8 +371,9 @@ CREATE TABLE "" WaterPump : WaterBaseLink
  	optional	uuid                From_ID                                         ""
  	optional	uuid                To_ID                                           ""
 
-	hasone Memo		ID	WaterPumpMemo.ID
-	hasone Results	ID	WaterPumpResult.ID
+	hasone Memo			ID	WaterPumpMemo.ID
+	hasone Results		ID	WaterPumpResult.ID
+	hasone User			ID	WaterPumpUser.ID
 	hasone Timeseries	ID	WaterLinkTimeseriesResult.ID
 }
 INDEX(Geometry);
@@ -398,6 +400,7 @@ CREATE TABLE "" WaterValve : WaterBaseLink
 
 	hasone Memo			ID	WaterValveMemo.ID
 	hasone Results		ID	WaterValveResult.ID
+	hasone User			ID	WaterValveUser.ID
 	hasone Timeseries	ID	WaterLinkTimeseriesResult.ID
 }
 INDEX(Geometry);
@@ -449,8 +452,9 @@ CREATE TABLE "" WaterNode : WaterBaseNode
 	optional	double              Tsim_Percent_Output5                            ""
 	optional	double              Tsim_Initial_Quality                            ""
 
-	hasone Memo		ID	WaterNodeMemo.ID
-	hasone Results	ID	WaterNodeResult.ID
+	hasone Memo			ID	WaterNodeMemo.ID
+	hasone Results		ID	WaterNodeResult.ID
+	hasone User			ID	WaterNodeUser.ID
 	hasone Timeseries	ID	WaterNodeTimeseriesResult.ID
 
 	flags orm_server
@@ -492,6 +496,7 @@ CREATE TABLE "" WaterTank : WaterBaseNode
 
 	hasone Memo			ID	WaterTankMemo.ID
 	hasone Results		ID	WaterTankResult.ID
+	hasone User			ID	WaterTankUser.ID
 	hasone Timeseries	ID	WaterNodeTimeseriesResult.ID
 }
 INDEX(Geometry);
@@ -600,7 +605,6 @@ CREATE TABLE "" WaterCurve : WaterBase
 	flags orm_server
 };
 
-
 CREATE TABLE "" WaterPipeMemo : WaterBase
 {
 	"3.Physical"
@@ -649,7 +653,6 @@ CREATE TABLE "" WaterPipeMemo : WaterBase
 	optional	int32               MP_Cost_FN                                      "Masterplan Cost Function"
 	optional	bool                Exists                                          ""
 };
-
 
 CREATE TABLE "" WaterPumpMemo : WaterBase
 {
@@ -706,7 +709,6 @@ CREATE TABLE "" WaterPumpMemo : WaterBase
 	optional	bool                Exists                                          ""
 };
 
-
 CREATE TABLE "" WaterValveMemo : WaterBase
 {
 	"3.Physical"
@@ -756,7 +758,6 @@ CREATE TABLE "" WaterValveMemo : WaterBase
 	optional	bool                Exists                                          ""
 };
 
-
 CREATE TABLE "" WaterNodeMemo : WaterBase
 {
 	"3.Demand.1.Peak Factors"
@@ -801,7 +802,6 @@ CREATE TABLE "" WaterNodeMemo : WaterBase
 	optional	text                AM_Utilization_Integ                            ""
 	optional	bool                Exists                                          ""
 };
-
 
 CREATE TABLE "" WaterTankMemo : WaterBase
 {
@@ -855,6 +855,30 @@ CREATE TABLE "" WaterTankMemo : WaterBase
 	optional	bool                Exists                                          ""
 };
 
+CREATE TABLE "" WaterPipeUser : WaterBase
+{
+	flags runtime_schema
+};
+
+CREATE TABLE "" WaterPumpUser : WaterBase
+{
+	flags runtime_schema
+};
+
+CREATE TABLE "" WaterValveUser : WaterBase
+{
+	flags runtime_schema
+};
+
+CREATE TABLE "" WaterNodeUser : WaterBase
+{
+	flags runtime_schema
+};
+
+CREATE TABLE "" WaterTankUser : WaterBase
+{
+	flags runtime_schema
+};
 
 CREATE TABLE "" WaterPipeResult : WaterBase
 {
@@ -1015,11 +1039,11 @@ CREATE TABLE "WaterNodeTimeseriesResult" WaterNodeTimeseriesResult : WaterBase
 
 CREATE SUFFIX TABLES
 {
-	WaterPipe,		WaterPipeMemo,				WaterPipeResult,
-	WaterPump,		WaterPumpResult,			WaterPumpMemo,
-	WaterValve,		WaterValveResult,			WaterValveMemo,
-	WaterNode,	    WaterNodeResult,	    	WaterNodeMemo,
-	WaterTank,	    WaterTankResult,			WaterTankMemo,
+	WaterPipe,		WaterPipeMemo,				WaterPipeResult,	WaterPipeUser,
+	WaterPump,		WaterPumpResult,			WaterPumpMemo,		WaterPumpUser,
+	WaterValve,		WaterValveResult,			WaterValveMemo,		WaterValveUser,
+	WaterNode,	    WaterNodeResult,	    	WaterNodeMemo,		WaterNodeUser,
+	WaterTank,	    WaterTankResult,			WaterTankMemo,		WaterTankUser,
 	WaterSpecial,   WaterProject,           	WaterUnit, 
 	WaterCurve, 	WaterLinkTimeseriesResult, 	WaterNodeTimeseriesResult;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
@@ -1663,6 +1687,7 @@ CREATE TABLE "" SewerGravity : SewerBaseLink
 
 	hasone 		Memo				ID				SewerGravityMemo.ID
 	hasone 		Results				ID				SewerGravityResults.ID
+	hasone		User 				ID				SewerGravityUser.ID
 	hasmany		Work_Orders			ID				HydroJetWorkOrder.PipeID			module:Sewer		order:6
 	hasone		Pipe 				Link_Code		SpimPipe.PipeCode
 
@@ -1722,6 +1747,10 @@ CREATE TABLE "" SewerGravityMemo : SewerBase
 	optional  text                AM_ID_No                                         "Asset Management ID Number"
 	optional  double              AM_Utilization                                   "Asset Management Utilization"
 	optional  text                AM_Utilization_Integ                             "Asset Management Utilization Integrity"
+
+	# NOTE: The following block of fields (down to Cctv_Material) must be removed, now
+	# that we have the SewerGravityUser table. The reason we're leaving them in for now,
+	# is for backward compatibility sake.
 	optional  double              GIS_Diameter                                     "GIS Diameter"
 	optional  text                GIS_Gradient                                     "GIS Gradient"
 	optional  text                Old_GIS_ID                                       "Old GIS ID"
@@ -1734,6 +1763,11 @@ CREATE TABLE "" SewerGravityMemo : SewerBase
 	optional  text                Cctv_Material                                    "Cctv Material"
 
 	flags orm_server
+};
+
+CREATE TABLE "" SewerGravityUser : SewerBase
+{
+	flags runtime_schema
 };
 
 CREATE TABLE "" SewerGravityResults : SewerBase
@@ -1789,8 +1823,9 @@ CREATE TABLE "" SewerDiversion : SewerBase
 	optional  uuid                From_ID                                     	  ""
 	optional  uuid                To_ID                                       	  ""
 	"1.Topology"
-	optional  text                From_Structure_Code                             "From Structure Code"																uiorder:1
-	optional  text                To_Structure_Code                               "To Structure Code"																uiorder:2
+	optional  text                Link_Code                                       "Link Code"								tags:humanID							uiorder:1
+	optional  text                From_Structure_Code                             "From Structure Code"																uiorder:2
+	optional  text                To_Structure_Code                               "To Structure Code"																uiorder:3
 	"2.Hydraulic"
 	optional  double              Percent_Of_Flow_1                               "Flow Percentage 1"						unit:%									uiorder:1
 	optional  double              Flow_1                                          "Flow1"									unit:L/s								uiorder:2
@@ -1812,6 +1847,11 @@ CREATE TABLE "" SewerDiversion : SewerBase
 	optional  double              Flow_9                                          "Flow9"									unit:L/s								uiorder:18
 	optional  double              Percent_Of_Flow_10                              "Flow Percentage 10"						unit:%									uiorder:19
 	optional  double              Flow_10                                         "Flow10"									unit:L/s								uiorder:20
+};
+
+CREATE TABLE "" SewerDiversionUser : SewerBase
+{
+	flags runtime_schema
 };
 
 CREATE TABLE "" SewerPump : SewerBase
@@ -1858,6 +1898,7 @@ CREATE TABLE "" SewerPump : SewerBase
 
 	hasone Memo		ID	SewerPumpMemo.ID
 	hasone Results	ID	SewerPumpResults.ID
+	hasone User	    ID  SewerPumpUser.ID
 };
 
 CREATE TABLE "" SewerPumpMemo : SewerBase
@@ -1912,6 +1953,11 @@ CREATE TABLE "" SewerPumpMemo : SewerBase
 	optional  text                AM_Utilization_Integ		                      "Asset Management Utilization Integrity"
 };
 
+CREATE TABLE "" SewerPumpUser : SewerBase
+{
+	flags runtime_schema
+};
+
 CREATE TABLE "" SewerPumpResults : SewerBase
 {
 	"6.Results.1.Sewer Flow"
@@ -1959,6 +2005,7 @@ CREATE TABLE "" SewerRising : SewerBaseLink
 
 	hasone 		Memo					ID				SewerRisingMemo.ID
 	hasone 		Results					ID				SewerRisingResults.ID
+	hasone		User 					ID				SewerRisingUser.ID
 	hasone		Pipe 					Link_Code		SpimPipe.PipeCode
 }
 INDEX(Geometry)
@@ -2009,9 +2056,12 @@ CREATE TABLE "" SewerRisingMemo : SewerBase
 	optional  text                Year_Integrity                                  "Year Integrity"																	uiorder:5
 	optional  text                Drawing_No                                      "Drawing Number"																	uiorder:6
 	"Internal"
+	
+	# NOTE: The following 3 fields (down to Old_GIS_Int) should be deleted, now that we have SewerRisingUser
 	optional  double              GIS_Diameter                                    "GIS Diameter"
 	optional  text                Old_GIS_ID                                      "Old GIS ID"
 	optional  text                Old_GIS_Int                                     "Old GIS Int"
+
 	optional  text                MP_Design_Type                                  "Masterplan Design Type"
 	optional  text                MP_Cost_Detail                                  "Masterplan Cost Detail"
 	optional  int32               MP_Cost_FN                                      "Masterplan Cost Function"
@@ -2019,6 +2069,11 @@ CREATE TABLE "" SewerRisingMemo : SewerBase
 	optional  text                AM_ID_No                                        "Asset Management ID Number"
 	optional  double              AM_Utilization                                  "Asset Management Utilization"
 	optional  text                AM_Utilization_Integ                            "Asset Management Utilization Integrity"
+};
+
+CREATE TABLE "" SewerRisingUser : SewerBase
+{
+	flags runtime_schema
 };
 
 CREATE TABLE "" SewerRisingResults : SewerBase
@@ -2126,6 +2181,7 @@ CREATE TABLE "" SewerStructure : SewerBaseNode
 	hasone    Scenario2    ID	SewerScenario2.ID
 	hasone    Scenario3    ID	SewerScenario3.ID
 	hasone    Memo         ID	SewerStructureMemo.ID
+	hasone    User 	       ID   SewerStructureUser.ID
 	hasone    Results      ID	SewerStructureResults.ID
 	hasone    Pumps        ID	SewerPump.From_ID																													order:5
 	hasone    Diversion    ID	SewerDiversion.From_ID																												order:6
@@ -2195,6 +2251,12 @@ CREATE TABLE "" SewerStructureMemo : SewerBase
 	hasone TshwaneData		ID	SewerStructureMemoTshwane.ID
 };
 
+CREATE TABLE "" SewerStructureUser : SewerBase
+{
+	flags runtime_schema
+};
+
+# NOTE: Now that we have SewerStructureUser, we should get rid of SewerStructureMemoTshwane
 CREATE TABLE "" SewerStructureMemoTshwane : SewerBase
 {
 	"10.Integrity"
@@ -2300,12 +2362,13 @@ INDEX(Geometry);
 
 CREATE SUFFIX TABLES
 {
-	SewerGravity,	  SewerGravityMemo,		SewerGravityResults,
-	SewerRising,	  SewerRisingMemo,		SewerRisingResults,
-	SewerStructure,	  SewerStructureMemo,	SewerStructureResults,
-	SewerPump,		  SewerPumpMemo,		SewerPumpResults,
+	SewerGravity,	  SewerGravityMemo,		SewerGravityResults,	SewerGravityUser,
+	SewerRising,	  SewerRisingMemo,		SewerRisingResults,		SewerRisingUser,
+	SewerStructure,	  SewerStructureMemo,	SewerStructureResults,	SewerStructureUser,
+	SewerPump,		  SewerPumpMemo,		SewerPumpResults,		SewerPumpUser,
 	SewerScenario1,	  SewerScenario2,		SewerScenario3,
-	SewerDiversion,   SewerStructureMemoTshwane, SewerAppurtenances;
+	SewerDiversion,   SewerDiversionUser,
+	SewerStructureMemoTshwane, SewerAppurtenances;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
