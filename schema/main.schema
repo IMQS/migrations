@@ -8476,11 +8476,13 @@ CREATE TABLE "LinkingMainAndMirror" LinkingMainAndMirror
 "Internal"
 	required	int64		recid							""
 	optional	geometryz	geometry						""
-"1. General"
-	optional	text		main_table_name					"Engineering Table"					uiorder:0
-	optional	uuid		main_id							"ID In Engineering Table"			uiorder:1
-	optional	text		assetmapfeature_id				"Asset Map Feature ID"				uiorder:2
-	optional	text		assetcomponent_id				"Asset Component ID"				uiorder:3
+	optional	text		main_table_name					""
+"1.As_built Data"
+	optional	uuid		main_id							"ID In Engineering Table"			tags:allPropFromMainTable
+"2.Asset Map Feature"	
+	optional	text		assetmapfeature_id				"Asset Map Feature ID"				tags:allPropFromAssetMapFeature
+"3.Asset Component"	
+	optional	text		assetcomponent_id				"Asset Component ID"				tags:allPropFromAssetComponent
 }
 PRIMARY KEY(recid)
 INDEX(geometry);
