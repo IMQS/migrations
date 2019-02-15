@@ -5984,111 +5984,131 @@ INDEX(SG21Code);
 
 
 ###################################################################################################################
-# PRP 
+# Water and Sewer PRP 
 ###################################################################################################################
 
 CREATE TABLE "" PRPBaseNoID
 {
 	"Internal"
 	required	int64				rowid											""
+	required	text				GeneratedYear									""
 	optional	text				Locality 										""
 	"General"
 	optional 	int32 				MetaID											""  	tags:dispMeta,hideInGrid
 
 }
-PRIMARY KEY (rowid);
+PRIMARY KEY (rowid)
+INDEX (GeneratedYear);
 
-# Base table used by all PipeReplaceResults* tables
 CREATE TABLE "" PipeReplaceResultsBase : PRPBaseNoID
 {
 	"Internal"
+	optional  text                Rollup                                          ""
+	optional  text                Area        									  ""
 	optional  polygon             Geometry                                        ""
-	optional  double              Min_RE                                          "Minimum RE score of pipes in area"																				uiorder:24
-	optional  double              Max_RE                                          "Maximum RE score of pipes in area"																				uiorder:25
-	optional  double              W_Avg_RE                                        "Length weighted-average RE score of pipes in area"																uiorder:26
-	optional  double              W_Avg_REP                                       "Rank of length weighted-average RE scores of pipes in area"			unit:%										uiorder:27
+	optional  double              Min_RE                                          "Minimum RE score of pipes in area"
+	optional  double              Max_RE                                          "Maximum RE score of pipes in area"
+	optional  double              W_Avg_RE                                        "Length weighted-average RE score of pipes in area"
+	optional  double              W_Avg_REP                                       "Rank of length weighted-average RE scores of pipes in area"			unit:%
 	"1.General"
-	optional  text                Name                                        	  "Area Name"																										uiorder:10
-	optional  int64               Pipe_Count                                      "Number of pipes in area"																							uiorder:11
-	optional  double              Total_Leng                                      "Total length of pipes in area"										unit:m										uiorder:12
-	"6.Failure Count"
-	optional  double              Min_FC                                          "Minimum FC of pipes in area"											unit:years									uiorder:60
-	optional  double              Max_FC                                          "Maximum FC of pipes in area"											unit:years									uiorder:61
-	optional  double              W_Avg_FC                                        "Length weighted-average FC of pipes in area"							unit:years									uiorder:62
-	optional  double              W_Avg_FCP                                       "Rank of length weighted-average FC of pipes in area"					unit:%										uiorder:63
-	"7.Assessed Condition"
-	optional  double              Min_AC                                          "Minimum AC score of pipes in area"																				uiorder:70
-	optional  double              Max_AC                                          "Maximum AC score of pipes in area"																				uiorder:71
-	optional  double              W_Avg_AC                                        "Length weighted-average AC score of pipes in area"																uiorder:72
-	optional  double              W_Avg_ACP                                       "Rank of length weighted-average AC scores of pipes in area"			unit:%										uiorder:73
-	"4.Likelihood of Failure"
-	optional  double              Min_LF                                          "Minimum LF score of pipes in area"																				uiorder:40
-	optional  double              Max_LF                                          "Maximum LF score of pipes in area"																				uiorder:41
-	optional  double              W_Avg_LF                                        "Length weighted-average LF score of pipes in area"																uiorder:42
-	optional  double              W_Avg_LFP                                       "Rank of length weighted-average LF scores of pipes in area"			unit:%										uiorder:43
-	"5.Consequence of Failure"
-	optional  double              Min_CF                                          "Minimum CF score of pipes in area"																				uiorder:50
-	optional  double              Max_CF                                          "Maximum CF score of pipes in area"																				uiorder:51
-	optional  double              W_Avg_CF                                        "Length weighted-average CF score of pipes in area"																uiorder:52
-	optional  double              W_Avg_CFP                                       "Rank of length weighted-average CF scores of pipes in area"			unit:%										uiorder:53
+	optional  text                Name                                        	  "Area Name"																										uiorder:0
+	optional  int64               Pipe_Count                                      "Number of pipes in area"																							uiorder:1
+	optional  double              Total_Leng                                      "Total length of pipes in area"										unit:m										uiorder:2
+	optional  double              Used_Leng                                       "Correct length as used for length weighted calculation"				unit:m										uiorder:3
+	optional  double              Total_Cost                                      "Replacement cost of all pipes in area"								unit:ZAR									uiorder:4
 	"2.Replacement Priority"
-	optional  double              Min_PRP                                         "Minimum PRP score of pipes in area"																				uiorder:20
-	optional  double              Max_PRP                                         "Maximum PRP score of pipes in area"																				uiorder:21
-	optional  double              W_Avg_PRP                                       "Length weighted-average PRP score of pipes in area"																uiorder:22
-	optional  double              W_Avg_PRPP                                      "Rank of length weighted-average PRP scores of pipes in area"			unit:%										uiorder:23
+	optional  double              Min_PRP                                         "Minimum PRP score of pipes in area"																				uiorder:0
+	optional  double              Max_PRP                                         "Maximum PRP score of pipes in area"																				uiorder:1
+	optional  double              W_Avg_PRP                                       "Length weighted-average PRP score of pipes in area"																uiorder:2
+	optional  double              W_Avg_PRPP                                      "Rank of length weighted-average PRP scores of pipes in area"			unit:%										uiorder:3
 	"3.Remaining Useful Life"
-	optional  double              Min_RUL                                         "Minimum RUL of pipes in area"										unit:years									uiorder:30
-	optional  double              Max_RUL                                         "Maximum RUL of pipes in area"										unit:years									uiorder:31
-	optional  double              W_Avg_RUL                                       "Length weighted-average RUL of pipes in area"						unit:years									uiorder:32
-	optional  double              W_Avg_RULP                                      "Rank of length weighted-average RUL of pipes in area"				unit:%										uiorder:33
-	"Criticality Grade"
-	optional  double              Min_CG                                          "Minimum CG score of pipes in area"													tags:hideInProperties		uiorder:80
-	optional  double              Max_CG                                          "Maximum CG score of pipes in area"													tags:hideInProperties		uiorder:81
-	optional  double              W_Avg_CG                                        "Length weighted-average CG score of pipes in area"									tags:hideInProperties		uiorder:82
-	optional  double              W_Avg_CGP                                       "Rank of length weighted-average CG scores of pipes in area"			unit:%			tags:hideInProperties		uiorder:83
-	"1.General"
-	optional  double              Total_Cost                                      "Replacement cost of all pipes in area"								unit:ZAR									uiorder:14
-	optional  double              Used_Leng                                       "Correct length as used for length weighted calculation"				unit:m										uiorder:13
-	"8.Pipe Age"
-	optional  double			  Min_Age										"Minimum Age of pipes in area"																						uiorder:90
-	optional  double			  Max_Age										"Maximum Age of pipes in area"																						uiorder:91
-	optional  double			  W_Avg_Age										"Length weighted-average Age of pipes in area"																		uiorder:92
-	optional  double			  W_Avg_AgeP									"Length weighted-average Age% of pipes in area"						unit:%											uiorder:93
+	optional  double              Min_RUL                                         "Minimum RUL of pipes in area"										unit:years									uiorder:0
+	optional  double              Max_RUL                                         "Maximum RUL of pipes in area"										unit:years									uiorder:1
+	optional  double              W_Avg_RUL                                       "Length weighted-average RUL of pipes in area"						unit:years									uiorder:2
+	optional  double              W_Avg_RULP                                      "Rank of length weighted-average RUL of pipes in area"				unit:%										uiorder:3
+	"4.Likelihood of Failure"
+	optional  double              Min_LF                                          "Minimum LF score of pipes in area"																				uiorder:0
+	optional  double              Max_LF                                          "Maximum LF score of pipes in area"																				uiorder:1
+	optional  double              W_Avg_LF                                        "Length weighted-average LF score of pipes in area"																uiorder:2
+	optional  double              W_Avg_LFP                                       "Rank of length weighted-average LF scores of pipes in area"			unit:%										uiorder:3
+	"5.Consequence of Failure"
+	optional  double              Min_CF                                          "Minimum CF score of pipes in area"																				uiorder:0
+	optional  double              Max_CF                                          "Maximum CF score of pipes in area"																				uiorder:1
+	optional  double              W_Avg_CF                                        "Length weighted-average CF score of pipes in area"																uiorder:2
+	optional  double              W_Avg_CFP                                       "Rank of length weighted-average CF scores of pipes in area"			unit:%										uiorder:3
+	"6.Failure Count"
+	optional  double              Min_FC                                          "Minimum FC of pipes in area"											unit:years									uiorder:0
+	optional  double              Max_FC                                          "Maximum FC of pipes in area"											unit:years									uiorder:1
+	optional  double              W_Avg_FC                                        "Length weighted-average FC of pipes in area"							unit:years									uiorder:2
+	optional  double              W_Avg_FCP                                       "Rank of length weighted-average FC of pipes in area"					unit:%										uiorder:3
+	"7.Assessed Condition"
+	optional  double              Min_AC                                          "Minimum AC score of pipes in area"																				uiorder:0
+	optional  double              Max_AC                                          "Maximum AC score of pipes in area"																				uiorder:1
+	optional  double              W_Avg_AC                                        "Length weighted-average AC score of pipes in area"																uiorder:2
+	optional  double              W_Avg_ACP                                       "Rank of length weighted-average AC scores of pipes in area"			unit:%										uiorder:3
+	"8.Criticality Grade"
+	optional  double              Min_CG                                          "Minimum CG score of pipes in area"													tags:hideInProperties		uiorder:0
+	optional  double              Max_CG                                          "Maximum CG score of pipes in area"													tags:hideInProperties		uiorder:1
+	optional  double              W_Avg_CG                                        "Length weighted-average CG score of pipes in area"									tags:hideInProperties		uiorder:2
+	optional  double              W_Avg_CGP                                       "Rank of length weighted-average CG scores of pipes in area"			unit:%			tags:hideInProperties		uiorder:3
+	"9.Pipe Age"
+	optional  double			  Min_Age									   	"Minimum Age of pipes in area"																						uiorder:0
+	optional  double			  Max_Age										"Maximum Age of pipes in area"																						uiorder:1
+	optional  double			  W_Avg_Age										"Length weighted-average Age of pipes in area"																		uiorder:2
+	optional  double			  W_Avg_AgeP									"Length weighted-average Age% of pipes in area"						unit:%											uiorder:3
 }
 INDEX(Geometry)
 INDEX(Name)
 INDEX(W_Avg_PRPP)
 INDEX(W_Avg_REP)
-INDEX(Total_Cost);
+INDEX(Total_Cost)
+INDEX(Rollup)
+INDEX(Area);
 
-###################################################################################################################
-# PipeReplaceData table is dropped and recreated in the DB at import time. The reason this table is created at  
-# import time is because it contains arbitrary fields that differ per client. So, there is no way of knowing upfront  
-# what the fields are except for the ones specified here. Even though the table is created at import time, it is 
-# related to another table that is created at migration time. We create this table with minimun known fields at
-# migration time so that the table relationships are recognized at runtime when the schema is parsed.
-# We use the runtime_schema flag to inform the server that it must merge this schema with the DBs actual schema.
-###################################################################################################################
+CREATE TABLE "" WaterPipeReplaceResults : PipeReplaceResultsBase
+{
+};
 
-CREATE TABLE "" PipeReplaceData : PRPBaseNoID
+CREATE TABLE "" SewerPipeReplaceResults : PipeReplaceResultsBase
+{
+};
+
+CREATE TABLE "" PipeReplaceDataBase : PRPBaseNoID
 {
 	optional  polygon             Geometry                                        ""
 	optional  text                UserLinkNo                                      ""
-
-	hasone Pipe_List	UserLinkNo	PipeReplaceTotals.LinkNr
-	flags runtime_schema
 }
 INDEX(Geometry)
 INDEX(UserLinkNo);
 
-CREATE TABLE "" PipeReplaceDefaults : PRPBaseNoID
+CREATE TABLE "" WaterPipeReplaceData : PipeReplaceDataBase
+{
+	flags runtime_schema
+	hasone Pipe_List	UserLinkNo	WaterPipeReplaceTotals.LinkNr
+};
+
+CREATE TABLE "" SewerPipeReplaceData : PipeReplaceDataBase
+{
+	flags runtime_schema
+	hasone Pipe_List	UserLinkNo	SewerPipeReplaceTotals.LinkNr
+};
+
+CREATE TABLE "" PipeReplaceDefaultsBase : PRPBaseNoID
 {
 	optional  text                FieldName                                       "Field Name"
 	optional  double              FieldVal                                        "Field Value"
 	optional  text                FieldDesc                                       "Description"
 };
 
-CREATE TABLE "" PipeReplaceFailurePoints : PRPBaseNoID
+CREATE TABLE "" WaterPipeReplaceDefaults : PipeReplaceDefaultsBase
+{
+};
+
+CREATE TABLE "" SewerPipeReplaceDefaults : PipeReplaceDefaultsBase
+{
+};
+
+CREATE TABLE "" PipeReplaceFailurePointsBase : PRPBaseNoID
 {
 	optional  point               Geometry                                        ""
 	optional  date                Date                                            ""		unit:MSE
@@ -6097,7 +6117,15 @@ CREATE TABLE "" PipeReplaceFailurePoints : PRPBaseNoID
 INDEX(Geometry)
 INDEX(Date);
 
-CREATE TABLE "" PipeReplacePRPPercentageCategories : PRPBaseNoID
+CREATE TABLE "" WaterPipeReplaceFailurePoints : PipeReplaceFailurePointsBase
+{
+};
+
+CREATE TABLE "" SewerPipeReplaceFailurePoints : PipeReplaceFailurePointsBase
+{
+};
+
+CREATE TABLE "" PipeReplacePRPPercentageCategoriesBase : PRPBaseNoID
 {
 	optional  double              Minimum                                         ""
 	optional  double              Maximum                                         ""
@@ -6105,38 +6133,54 @@ CREATE TABLE "" PipeReplacePRPPercentageCategories : PRPBaseNoID
 	optional  text                Colour                                          ""
 };
 
+CREATE TABLE "" WaterPipeReplacePRPPercentageCategories : PipeReplacePRPPercentageCategoriesBase
+{
+};
 
-CREATE TABLE "" PipeReplaceSource : PRPBaseNoID
+CREATE TABLE "" SewerPipeReplacePRPPercentageCategories : PipeReplacePRPPercentageCategoriesBase
+{
+};
+
+
+CREATE TABLE "" PipeReplaceSourceBase : PRPBaseNoID
 {
 	"Internal"
 	optional  text                LinkNr                                          "Link Number"
 	optional  int32               NetworkNr                                       "Network Number"
-	"Likelihood of Failure"
-	optional  double              LF_01                                           ""
-	optional  double              LF_02                                           ""
-	optional  double              LF_03                                           ""
-	optional  double              LF_04                                           ""
-	optional  double              LF_05                                           ""
-	optional  double              LF_06                                           ""
-	optional  double              LF_07                                           ""
-	optional  double              LF_08                                           ""
-	optional  double              LF_09                                           ""
-	optional  double              LF_10                                           ""
-	optional  double              LF_11                                           ""
-	"Consequence of Failure"
-	optional  double              CF_01                                           ""
-	optional  double              CF_02                                           ""
-	optional  double              CF_03                                           ""
-	optional  double              CF_04                                           ""
-	optional  double              CF_05                                           ""
-	optional  double              CF_06                                           ""
-	optional  double              CF_07                                           ""
-	optional  double              CF_08                                           ""
-	optional  double              CF_09                                           ""
+	"1.Likelihood of Failure"
+	optional  double              LF_01                                           ""					uiorder:0
+	optional  double              LF_02                                           ""					uiorder:1
+	optional  double              LF_03                                           ""					uiorder:2
+	optional  double              LF_04                                           ""					uiorder:3
+	optional  double              LF_05                                           ""					uiorder:4
+	optional  double              LF_06                                           ""					uiorder:5
+	optional  double              LF_07                                           ""					uiorder:6
+	optional  double              LF_08                                           ""					uiorder:7
+	optional  double              LF_09                                           ""					uiorder:8
+	optional  double              LF_10                                           ""					uiorder:9
+	optional  double              LF_11                                           ""					uiorder:10
+	"2.Consequence of Failure"
+	optional  double              CF_01                                           ""					uiorder:0
+	optional  double              CF_02                                           ""					uiorder:1
+	optional  double              CF_03                                           ""					uiorder:2
+	optional  double              CF_04                                           ""					uiorder:3
+	optional  double              CF_05                                           ""					uiorder:4
+	optional  double              CF_06                                           ""					uiorder:5
+	optional  double              CF_07                                           ""					uiorder:6
+	optional  double              CF_08                                           ""					uiorder:7
+	optional  double              CF_09                                           ""					uiorder:8
 }   
 INDEX(LinkNr);
 
-CREATE TABLE "" PipeReplaceTotals : PRPBaseNoID
+CREATE TABLE "" WaterPipeReplaceSource : PipeReplaceSourceBase
+{
+};
+
+CREATE TABLE "" SewerPipeReplaceSource : PipeReplaceSourceBase
+{
+};
+
+CREATE TABLE "" PipeReplaceTotalsBase : PRPBaseNoID
 {
 	"Internal"
 	optional  text                LinkNr                                          "Link Number"
@@ -6146,39 +6190,38 @@ CREATE TABLE "" PipeReplaceTotals : PRPBaseNoID
 	optional  double              RE                                              "Risk Exposure Score"							tags:hideInGrid
 	optional  double              RE_Perc                                         "Risk Exposure Rank"							unit:%										tags:hideInGrid
 	"1.General"
-	optional  text                Area1                                           "Rollup Area1"																			uiorder:2
-	optional  text                Area2                                           "Rollup Area2"																			uiorder:3
-	optional  text                Area3                                   		  "Rollup Area3"																			uiorder:4
-	optional  double              PipeCost                                        "Pipe Cost"									unit:ZAR									uiorder:5
-	"3.Likelihood of Failure"
-	optional  double              LF_Total                                        "Likelihood of Failure Score"					tags:dispPRPDetail							uiorder:30
-	optional  double              LF_Perc                                         "Likelihood of Failure Rank"					unit:%										uiorder:31
-	"4.Consequence of Failure"
-	optional  double              CF_Total                                        "Consequence of Failure Score"				tags:dispPRPDetail							uiorder:40
-	optional  double              CF_Perc                                         "Consequence of Failure Rank"					unit:%										uiorder:41
+	optional  text                Area1                                           "Rollup Area1"																			uiorder:0
+	optional  text                Area2                                           "Rollup Area2"																			uiorder:1
+	optional  text                Area3                                   		  "Rollup Area3"																			uiorder:2
+	optional  double              PipeCost                                        "Pipe Cost"									unit:ZAR									uiorder:3
 	"2.Replacement Priority"
-	optional  double              PRP                                             "PRP Score = LF x CF"																		uiorder:20
-	optional  double              PRP_Perc                                        "PRP Rank"									unit:%										uiorder:21
+	optional  double              PRP                                             "PRP Score = LF x CF"																		uiorder:0
+	optional  double              PRP_Perc                                        "PRP Rank"									unit:%										uiorder:1
+	"3.Likelihood of Failure"
+	optional  double              LF_Total                                        "Likelihood of Failure Score"					tags:dispPRPDetail							uiorder:0
+	optional  double              LF_Perc                                         "Likelihood of Failure Rank"					unit:%										uiorder:1
+	"4.Consequence of Failure"
+	optional  double              CF_Total                                        "Consequence of Failure Score"				tags:dispPRPDetail							uiorder:0
+	optional  double              CF_Perc                                         "Consequence of Failure Rank"					unit:%										uiorder:1
 	"5.Remaining Useful Life"
-	optional  double              RUL                                             "Remaining Useful Life"						unit:years tags:dispPRPDetail				uiorder:50
-	optional  double              RUL_Perc                                        "Remaining Useful Life Rank"					unit:%										uiorder:51
+	optional  double              RUL                                             "Remaining Useful Life"						unit:years tags:dispPRPDetail				uiorder:0
+	optional  double              RUL_Perc                                        "Remaining Useful Life Rank"					unit:%										uiorder:1
 	"6.Base Data"
-	optional  double              Age                                             "Pipe Age"									unit:years tags:hideInProperties			uiorder:60
-	optional  double              CRUL                                            "Catalogue Remaining Useful Life"				unit:years tags:hideInProperties			uiorder:61
-	optional  double              CEUL                                            "Catalogue Expected Useful Life"				unit:years tags:hideInProperties			uiorder:62
-	optional  double              RUL_CAP                                         "Remaining Useful Life Capacity"				unit:years tags:hideInProperties			uiorder:63
-	optional  double              RUL_PER                                         "Remaining Useful Life Performance"			unit:years tags:hideInProperties			uiorder:64
-	optional  double              RUL_CON                                         "Remaining Useful Life Condition"				unit:years tags:hideInProperties			uiorder:65
-	optional  double              RUL_TOT                                         "Total Remaining Useful Life"					unit:years tags:hideInProperties			uiorder:66
+	optional  double              Age                                             "Pipe Age"									unit:years tags:hideInProperties			uiorder:0
+	optional  double              CRUL                                            "Catalogue Remaining Useful Life"				unit:years tags:hideInProperties			uiorder:1
+	optional  double              CEUL                                            "Catalogue Expected Useful Life"				unit:years tags:hideInProperties			uiorder:2
+	optional  double              RUL_CAP                                         "Remaining Useful Life Capacity"				unit:years tags:hideInProperties			uiorder:3
+	optional  double              RUL_PER                                         "Remaining Useful Life Performance"			unit:years tags:hideInProperties			uiorder:4
+	optional  double              RUL_CON                                         "Remaining Useful Life Condition"				unit:years tags:hideInProperties			uiorder:5
+	optional  double              RUL_TOT                                         "Total Remaining Useful Life"					unit:years tags:hideInProperties			uiorder:6
 	"7.Multi-Year Analysis"
-	optional  double			  Cum_Exp										  "Cumulative Expenditure" 						unit:ZAR									uiorder:70
-	optional  double			  To_Replace									  "Pipe Replace Priority Index"																uiorder:71
-	optional  double			  CAPEX											  "Capital Expenditure"							unit:ZAR									uiorder:72
-	optional  double			  OPPEX											  "Operational Expenditure"						unit:ZAR									uiorder:73
-	optional  double			  KP1											  "Key performance Indicator 1"																uiorder:74
-	optional  double			  KP2											  "Key performance Indicator 2"																uiorder:75
+	optional  double			  Cum_Exp										  "Cumulative Expenditure" 						unit:ZAR									uiorder:0
+	optional  double			  To_Replace									  "Pipe Replace Priority Index"																uiorder:1
+	optional  double			  CAPEX											  "Capital Expenditure"							unit:ZAR									uiorder:2
+	optional  double			  OPPEX											  "Operational Expenditure"						unit:ZAR									uiorder:3
+	optional  double			  KP1											  "Key performance Indicator 1"																uiorder:4
+	optional  double			  KP2											  "Key performance Indicator 2"																uiorder:5
 
-	hasone Pipe_List	LinkNr	PipeReplaceData.UserLinkNo
 	flags runtime_schema
 }   
 INDEX(LinkNr)
@@ -6191,79 +6234,42 @@ INDEX(PRP_Perc)
 INDEX(RE)
 INDEX(RE_Perc);
 
-CREATE TABLE "" PipeReplaceWeights : PRPBaseNoID
+CREATE TABLE "" WaterPipeReplaceTotals : PipeReplaceTotalsBase
 {
-	"Criticality Grade and Consequence of Failure"
-	optional  text                FactorName                                      "Factor Name"
-	optional  double              FactorVal                                       "Factor Value"
-	optional  text                FactorDesc                                      "Factor Description"
+};
+
+CREATE TABLE "" SewerPipeReplaceTotals : PipeReplaceTotalsBase
+{
+};
+
+CREATE TABLE "" PipeReplaceWeightsBase : PRPBaseNoID
+{
+	"1.Criticality Grade and Consequence of Failure"
+	optional  text                FactorName                                      "Factor Name"							uiorder:0
+	optional  double              FactorVal                                       "Factor Value"						uiorder:1
+	optional  text                FactorDesc                                      "Factor Description"					uiorder:2
 }   
 INDEX(FactorName);
 
-CREATE TABLE "" PipeReplaceResultsRollup1Area1 : PipeReplaceResultsBase
+CREATE TABLE "" WaterPipeReplaceWeights : PipeReplaceWeightsBase
 {
 };
 
-
-CREATE TABLE "" PipeReplaceResultsRollup1Area2 : PipeReplaceResultsBase
+CREATE TABLE "" SewerPipeReplaceWeights : PipeReplaceWeightsBase
 {
 };
-
-
-CREATE TABLE "" PipeReplaceResultsRollup1Area3 : PipeReplaceResultsBase
-{
-};
-
-
-CREATE TABLE "" PipeReplaceResultsRollup2Area1 : PipeReplaceResultsBase
-{
-};
-
-
-CREATE TABLE "" PipeReplaceResultsRollup2Area2 : PipeReplaceResultsBase
-{
-};
-
-
-CREATE TABLE "" PipeReplaceResultsRollup2Area3 : PipeReplaceResultsBase
-{
-};
-
-
-CREATE TABLE "" PipeReplaceResultsRollup3Area1 : PipeReplaceResultsBase
-{
-};
-
-
-CREATE TABLE "" PipeReplaceResultsRollup3Area2 : PipeReplaceResultsBase
-{
-};
-
-
-CREATE TABLE "" PipeReplaceResultsRollup3Area3 : PipeReplaceResultsBase
-{
-};
-
 
 CREATE SUFFIX TABLES
 {
-	PipeReplaceData, PipeReplaceDefaults, PipeReplaceFailurePoints, PipeReplacePRPPercentageCategories,
-	PipeReplaceSource, PipeReplaceTotals,PipeReplaceWeights, PipeReplaceResultsRollup1Area1, 
-	PipeReplaceResultsRollup1Area2,PipeReplaceResultsRollup1Area3, PipeReplaceResultsRollup2Area1, 
-	PipeReplaceResultsRollup2Area2,PipeReplaceResultsRollup2Area3, PipeReplaceResultsRollup3Area1,
-	PipeReplaceResultsRollup3Area2, PipeReplaceResultsRollup3Area3;
-	Water_00_01, Water_00_02, Water_00_03, Water_00_04, Water_00_05, 
-	Water_00_06, Water_00_07, Water_00_08, Water_00_09, Water_00_10, 
-	Water_01_01, Water_01_02, Water_01_03, Water_01_04, Water_01_05, 
-	Water_01_06, Water_01_07, Water_01_08, Water_01_09, Water_01_10, 
-	Water_02_01, Water_02_02, Water_02_03, Water_02_04, Water_02_05, 
-	Water_02_06, Water_02_07, Water_02_08, Water_02_09, Water_02_10, 
-	Sewer_00_01, Sewer_00_02, Sewer_00_03, Sewer_00_04, Sewer_00_05, 
-	Sewer_00_06, Sewer_00_07, Sewer_00_08, Sewer_00_09, Sewer_00_10,
-	Sewer_01_01, Sewer_01_02, Sewer_01_03, Sewer_01_04, Sewer_01_05, 
-	Sewer_01_06, Sewer_01_07, Sewer_01_08, Sewer_01_09, Sewer_01_10, 
-	Sewer_02_01, Sewer_02_02, Sewer_02_03, Sewer_02_04, Sewer_02_05,
-	Sewer_02_06, Sewer_02_07, Sewer_02_08, Sewer_02_09, Sewer_02_10;
+	WaterPipeReplaceResults, 					SewerPipeReplaceResults,
+	WaterPipeReplaceData,						SewerPipeReplaceData,
+	WaterPipeReplaceDefaults, 					SewerPipeReplaceDefaults,
+	WaterPipeReplaceFailurePoints, 				SewerPipeReplaceFailurePoints,
+	WaterPipeReplacePRPPercentageCategories, 	SewerPipeReplacePRPPercentageCategories,
+	WaterPipeReplaceSource,						SewerPipeReplaceSource,
+	WaterPipeReplaceTotals,						SewerPipeReplaceTotals,
+	WaterPipeReplaceWeights,					SewerPipeReplaceWeights;
+	00, 01, 02;
 };
 
 ###################################################################################################################
