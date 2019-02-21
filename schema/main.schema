@@ -2493,6 +2493,7 @@ CREATE TABLE "" SewerAuxHouseConnection : SewerBaseNoID
 }
 INDEX(Geometry);
 
+# If you are not sure use Preliminary as AsBuilt
 CREATE SUFFIX TABLES
 {
 	SewerAuxHouseConnection;
