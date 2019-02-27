@@ -1290,7 +1290,7 @@ INDEX(Geometry);
 # GLS Water Auxiliary Data
 ###################################################################################################################
 
-CREATE TABLE "" WaterAuxBaseAppurtHouseConn : WaterBaseNoID
+CREATE TABLE "" WaterAuxBaseAppurtHouseConn : WaterBase
 {
 	"Internal"
 	optional  text	            	YearIntegrity                                   "Year Integrity"
@@ -1313,7 +1313,6 @@ CREATE TABLE "" WaterAuxAppurtenance : WaterAuxBaseAppurtHouseConn
 	"Internal"
 	optional  point             	Geometry                                        ""															
 	optional  double              	Rotation                                        ""                                                          
-	optional  uuid		           	ID				                                "ID"                                                        
 	optional  double              	PipeDiameter                                    "Pipe Diameter"								unit:mm         
 	"01.Topology"                                                                                                                              
 	optional  text	            	SymbolType                                      "Type"                                                      uiorder:1
@@ -1356,9 +1355,15 @@ CREATE TABLE "" WaterAuxHouseConnection : WaterAuxBaseAppurtHouseConn
 	"General"
 	optional  text	            	DataSource                                      "Source"
 
+	hasone User     ID            WaterAuxHouseConnectionUser.ID
 	flags orm_server
 }
 INDEX(Geometry);
+
+CREATE TABLE "WaterAuxHouseConnectionUser" WaterAuxHouseConnectionUser : WaterBase
+{
+	flags runtime_schema
+};
 
 CREATE TABLE "" WaterAuxBaseArea : WaterBaseNoID
 {
@@ -1471,7 +1476,7 @@ CREATE TABLE "" WaterDistributionSubZone : WaterAuxBaseZone
 
 CREATE SUFFIX TABLES
 {
-	WaterAuxAppurtenance, WaterAuxHouseConnection;
+	WaterAuxAppurtenance, WaterAuxHouseConnection, WaterAuxHouseConnectionUser;
 	AsBuilt, Existing;
 };
 
@@ -2446,7 +2451,7 @@ CREATE SUFFIX TABLES
 	Future, Existing;
 };
 
-CREATE TABLE "" SewerAuxHouseConnection : SewerBaseNoID
+CREATE TABLE "" SewerAuxHouseConnection : SewerBase
 {
 	"Internal"
 	optional  polyline            Geometry                                        ""
@@ -2490,13 +2495,20 @@ CREATE TABLE "" SewerAuxHouseConnection : SewerBaseNoID
 	optional  double              S_DISTANCE                                      "Symbol Distance"
 	optional  double              S_X_COORD                                       ""
 	optional  double              S_Y_COORD                                       ""
+	
+	hasone User     ID            SewerAuxHouseConnectionUser.ID
 }
 INDEX(Geometry);
+
+CREATE TABLE "SewerAuxHouseConnectionUser" SewerAuxHouseConnectionUser : SewerBase
+{
+	flags runtime_schema
+};
 
 # If you are not sure use Preliminary as AsBuilt
 CREATE SUFFIX TABLES
 {
-	SewerAuxHouseConnection;
+	SewerAuxHouseConnection, SewerAuxHouseConnectionUser;
 	Preliminary, Existing;
 };
 
