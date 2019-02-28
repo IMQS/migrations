@@ -1341,7 +1341,6 @@ CREATE TABLE "" WaterAuxHouseConnection : WaterAuxBaseAppurtHouseConn
 	optional  text	            	HouseConnSpecial                                "House Connection Special"
 	optional  double              	HouseConnYear                                   "House Connection Year"						unit:year
 	optional  text		           	HouseConnYearIntegrity                          "House Connection Year Integrity"
-	"Internal"
 	optional  double              	HouseConnDiameter                               "House Connection Diameter"					unit:mm
 	optional  text	            	HouseConnMaterial                               "House Connection Material"
 	optional  double              	HouseConnPressure                               "House Connection Pressure"
@@ -1352,7 +1351,6 @@ CREATE TABLE "" WaterAuxHouseConnection : WaterAuxBaseAppurtHouseConn
 	optional  double              	MeterPressure                                   "Meter Pressure"							unit:kPa
 	optional  int64               	MeterYear                                       "Meter Year"								unit:year
 	optional  text		           	MeterYearIntegrity                              "Meter Year Integrity"
-	"General"
 	optional  text	            	DataSource                                      "Source"
 
 	hasone User     ID            WaterAuxHouseConnectionUser.ID
