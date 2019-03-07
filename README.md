@@ -5,10 +5,13 @@ This repository holds .sql scripts that migrate certain databases:
 * main
 * generic
 * mirror
+* road
 * temp
 
 ## Creating a new migration
-Migrations are built by a program called `dbatool`, which lives in source code form, inside `github.com/IMQS/maps`. On Windows deployments, it lives under `c:\imqsbin\bin\aries`. For Linux, there is a docker container on our hub called `imqs/dbatool`.
+Migrations are built by a program called `dbatool`, which lives in source code form, inside `github.com/IMQS/maps`. On Windows deployments, it lives under `c:\imqsbin\bin\aries`. For Linux, there is a docker container on our hub called `imqs/dbatool`.  
+  
+If the db does not exists yet follow [this](#creating-a-new-migration-for-a-new-db).
 
 ### Linux
 For Linux, there is a wrapper script that invokes `dbatool`'s migration generator:
@@ -50,3 +53,20 @@ You should see a message informing you that your migration has run. Every migrat
 Once the migration generator has generated an .sql script, it will ask you if you are happy with the output. If you choose Yes, then the generator will copy `dbname.schema -> dbname-prev.schema`. If you choose No, then it will leave your .sql script in the output directory, and exit.
 
 Once you commit this repository with the updated .sql script, CI servers will start to pick it up and run it.
+
+# Extra
+
+## Creating a new migration for a new db
+
+* Create two new files in `schema` labeled `${db-name}.schema` and
+`${db-name}-prev.schema`
+* Fill `${db-name}.schema` with `VERSION 0` followed by your statements.
+* Fill `${db-name}-prev.schema` with
+```
+VERSION 0
+
+CREATE TABLE "" ${table-name}
+{
+};
+```
+`${table-name}` should be one of the tables you have made in `.schema`
