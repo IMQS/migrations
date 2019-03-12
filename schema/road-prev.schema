@@ -334,3 +334,28 @@ CREATE TABLE "lane" lane {
 }
 PRIMARY KEY (_id)
 INDEX(road_id);
+
+CREATE TABLE "photo" photo {
+	"Internal"
+	required	int64		_id							""
+	required	text		url							""
+	optional	pointz		geometry					""
+	optional	text		locality					""
+	optional	date		date_taken					""
+}
+PRIMARY KEY (_id)
+UNIQUE INDEX (url)
+INDEX(geometry);
+
+CREATE TABLE "photo_track" photo_track {
+	"Internal"
+	required	int64		_id							""
+	required	int64		photo_1_id					""
+	required	int64		photo_2_id					""
+	optional	polylinez	geometry					""
+	optional	text		locality					""
+}
+PRIMARY KEY (_id)
+INDEX(photo_1_id)
+INDEX(photo_2_id)
+INDEX(geometry);
