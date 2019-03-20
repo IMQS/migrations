@@ -9,7 +9,7 @@ CREATE TABLE "User" User
 	optional	text		Email				""
 	optional	text		Password			""
 	optional	text		PermissionGroups	""
-		
+
 	flags		orm_noclient
 }
 PRIMARY KEY(rowid)
@@ -35,7 +35,7 @@ CREATE TABLE "Client" Client
 	optional	text		Name				""
 	optional	text		PrimaryLocality		""
 	optional	text		LogoPath			""
-	
+
 	flags		orm_readonly
 }
 PRIMARY KEY(rowid);
@@ -48,7 +48,7 @@ CREATE TABLE "Module" Module
 	optional	text		Name				""
 	optional	text		ImagePath			""
 	optional 	text		Url					""
-	
+
 	flags		orm_readonly
 }
 PRIMARY KEY(rowid);
@@ -61,7 +61,7 @@ CREATE TABLE "PermissionGroup" PermissionGroup
 	optional	text		Name				""
 	optional	text		ClientPermissions	""
 	optional	text		ModulePermissions	""
-	
+
 	flags		orm_readonly
 }
 PRIMARY KEY(rowid);
@@ -86,7 +86,7 @@ CREATE TABLE "Metadata" Metadata
 	"Internal"
 	required	int32		rowid				""
 	optional 	text		value				""
-	
+
 	flags		orm_server, orm_readonly
 }
 PRIMARY KEY(rowid);
@@ -168,7 +168,7 @@ CREATE TABLE "" AssetCap_Base
 	optional	datetime	ModTime				""
 	optional	datetime	ServerTime			""
 	optional	bool		Erased				""
-	
+
 	flags		orm_server, orm_skiperased
 }
 PRIMARY KEY(rowid)
@@ -352,7 +352,7 @@ CREATE TABLE "" WaterPump : WaterBaseLink
  	optional	double              Head_Point2                                     ""			unit:m
  	optional	double              Flow_Point3                                     ""			unit:L/s
  	optional	double              Head_Point3                                     ""			unit:m
-	"2.Hydraulic" 	
+	"2.Hydraulic"
  	optional	int32               Curve_No	                                    "Pump Curve Number"																uiorder:1
  	optional	double              Relative_Speed                                  "Relative Pump Speed"															uiorder:2
  	"Internal"
@@ -414,10 +414,10 @@ CREATE TABLE "" WaterNode : WaterBaseNode
 	optional	text                Node_Type                                       "Node Type"																		uiorder:1
 	optional	text                Node_Code                                       "Node Code"																		uiorder:2
 	optional	double              Elevation                                       "Elevation"												unit:m.asl			uiorder:3
-	"2.Hydraulic"		
+	"2.Hydraulic"
 	optional	double              Output                                          "Output"												unit:L/s				uiorder:1
 	optional	double              Emitter_Coefficient                             "Emitter Coefficient"															uiorder:2
-	"7.Results"		
+	"7.Results"
 	optional	double              Static_EGL                                      "Static EGL"											unit:m.asl			uiorder:5
 	optional	double              Static_Head                                     "Static Head"											unit:m					uiorder:6
 	"3.Demand.2.Demand Scenarios"
@@ -971,22 +971,22 @@ CREATE TABLE "" WaterValveResult : WaterBase
 	"5.Results.1.Head"
 	optional	double              From_Head                                       "From Head"							unit:m										uiorder:1
 	optional	double              To_Head                                         "To Head"							unit:m										uiorder:2
-	"5.Results.2.Static Head"                                                       
+	"5.Results.2.Static Head"
 	optional	double              From_Static_Head                                "From Static Head"					unit:m										uiorder:1
 	optional	double              To_Static_Head                                  "To Static Head"					unit:m										uiorder:2
-	"5.Results.3.Future Static Head"                                                
+	"5.Results.3.Future Static Head"
 	optional	double              From_Future_Static_Head                         "From Future Static Head"			unit:m										uiorder:1
 	optional	double              To_Future_Static_Head                           "To Future Static Head"				unit:m										uiorder:2
-	"5.Results.4.Elevation"                                                         
+	"5.Results.4.Elevation"
 	optional	double              From_Elevation                                  "From Elevation"					unit:m.asl								uiorder:1
 	optional	double              To_Elevation                                    "To Elevation"						unit:m.asl								uiorder:2
-	"5.Results.5.EGL"                                                               
+	"5.Results.5.EGL"
 	optional	double              From_EGL                                        "From EGL"							unit:m.asl								uiorder:1
 	optional	double              To_EGL                                          "To EGL"							unit:m.asl								uiorder:2
-	"5.Results.6.Static EGL"                                                        
+	"5.Results.6.Static EGL"
 	optional	double              From_Static_EGL                                 "From Static EGL"					unit:m.asl								uiorder:1
 	optional	double              To_Static_EGL                                   "To Static EGL"						unit:m.asl								uiorder:2
-	"5.Results.7.Future Static EGL"                                                 
+	"5.Results.7.Future Static EGL"
 	optional	double              From_Future_Static_EGL                          "From Future Static Head"			unit:m.asl								uiorder:1
 	optional	double              To_Future_Static_EGL                            "To Future Static Head"				unit:m.asl								uiorder:2
 	"5.Results.8.Quality"
@@ -1026,7 +1026,7 @@ CREATE TABLE "WaterLinkTimeseriesResult" WaterLinkTimeseriesResult : WaterBase
 	optional	bin              	HeadlossTimeseries       	                    "TSim Headloss"			unit:m 			tags:dispTimeseriesGLS
 	optional	bin              	QualityTimeseries       	                    "Tsim Quality"							tags:dispTimeseriesGLS
 	"Internal"
-	optional	bin              	StatusTimeseries       	                        "Status" 								
+	optional	bin              	StatusTimeseries       	                        "Status"
 };
 
 CREATE TABLE "WaterNodeTimeseriesResult" WaterNodeTimeseriesResult : WaterBase
@@ -1044,7 +1044,7 @@ CREATE SUFFIX TABLES
 	WaterValve,		WaterValveResult,			WaterValveMemo,		WaterValveUser,
 	WaterNode,	    WaterNodeResult,	    	WaterNodeMemo,		WaterNodeUser,
 	WaterTank,	    WaterTankResult,			WaterTankMemo,		WaterTankUser,
-	WaterSpecial,   WaterProject,           	WaterUnit, 
+	WaterSpecial,   WaterProject,           	WaterUnit,
 	WaterCurve, 	WaterLinkTimeseriesResult, 	WaterNodeTimeseriesResult;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
@@ -1311,20 +1311,20 @@ CREATE TABLE "" WaterAuxBaseAppurtHouseConn : WaterBase
 CREATE TABLE "" WaterAuxAppurtenance : WaterAuxBaseAppurtHouseConn
 {
 	"Internal"
-	optional  point             	Geometry                                        ""															
-	optional  double              	Rotation                                        ""                                                          
-	optional  double              	PipeDiameter                                    "Pipe Diameter"								unit:mm         
-	"01.Topology"                                                                                                                              
+	optional  point             	Geometry                                        ""
+	optional  double              	Rotation                                        ""
+	optional  double              	PipeDiameter                                    "Pipe Diameter"								unit:mm
+	"01.Topology"
 	optional  text	            	SymbolType                                      "Type"                                                      uiorder:1
 	optional  text	            	SymbolSubType                                   "Sub Type"                                                  uiorder:2
-	"02.Physical"                                                                                                                               
+	"02.Physical"
 	optional  text		           	SymbolPressureRating                            "Pressure Rating"							unit:kPa        uiorder:1
 	optional  double              	SymbolSize                                      "Size"										unit:mm         uiorder:2
 	optional  text		           	SymbolSpecial                                   "pecial"                                                    uiorder:3
 	optional  int64               	SymbolYear                                      "Year"										unit:year       uiorder:4
-	"04.Asset Information"                                                                                                                      
+	"04.Asset Information"
 	optional  text		           	SymbolMake                                 		"Make"                                                      uiorder:1
-	"05.Integrity"                                                                                                                              
+	"05.Integrity"
 	optional  text		           	SymbolYearIntegrity                             "Year Integrity"                                            uiorder:1
 	optional  text		           	SymbolDrawingNo                                 "Drawing Number"                                            uiorder:2
 
@@ -1428,14 +1428,14 @@ CREATE TABLE "" WaterAuxInformalArea : WaterAuxBaseArea
 	optional  text		           	ExistingSewerService                            "Existing Sewer Service"
 	optional  text	            	ExistingZone                                    "Existing Zone"
 	optional  int64               	Node                                            "Node"
-	
+
 	flags orm_server
 };
 
 CREATE TABLE "" WaterAuxDevelopmentArea : WaterAuxBaseArea
 {
 	flags orm_server
-};		
+};
 
 CREATE TABLE "" WaterAuxBaseZone : WaterBaseNoID
 {
@@ -1595,19 +1595,19 @@ CREATE TABLE "WaterMasterPlanItem" WaterMasterPlanItem : WaterBaseNoID
 	optional  double              	Surcharge                                       "Surcharge"				unit:ZAR		uiorder:5
 	optional  double              	TotalCost                                       "Total Cost"			unit:ZAR		uiorder:6
 	"Internal"
-	optional  int32		           	MPBaseYear                                      "MP Base Year"			unit:year		
+	optional  int32		           	MPBaseYear                                      "MP Base Year"			unit:year
 
 	hasmany	Water_Pipe_Memo		MPItemNo	WaterPipeMemo.MP_Item_No
 	hasmany	Water_Pump_Memo		MPItemNo	WaterPumpMemo.MP_Item_No
 	hasmany	Water_Valve_Memo	MPItemNo	WaterValveMemo.MP_Item_No
 	hasmany	Water_Tank_Memo		MPItemNo	WaterTankMemo.MP_Item_No
-	
+
 	flags orm_server
 }
 INDEX(ProjectNo);
 
 ###################################################################################################################
-# Sewer 
+# Sewer
 ###################################################################################################################
 
 CREATE TABLE "" SewerBaseNoID
@@ -1858,7 +1858,7 @@ CREATE TABLE "" SewerDiversionUser : SewerBase
 };
 
 CREATE TABLE "" SewerPump : SewerBase
-{	
+{
 	"Internal"
 	optional  uuid                From_ID                                         "From ID"
 	optional  double              On_Level                                        "On Level"								unit:m
@@ -2059,7 +2059,7 @@ CREATE TABLE "" SewerRisingMemo : SewerBase
 	optional  text                Year_Integrity                                  "Year Integrity"																	uiorder:5
 	optional  text                Drawing_No                                      "Drawing Number"																	uiorder:6
 	"Internal"
-	
+
 	# NOTE: The following 3 fields (down to Old_GIS_Int) should be deleted, now that we have SewerRisingUser
 	optional  double              GIS_Diameter                                    "GIS Diameter"
 	optional  text                Old_GIS_ID                                      "Old GIS ID"
@@ -2428,7 +2428,7 @@ CREATE TABLE "" SewerAuxWwtpSites : SewerBaseNoID
 {
 	"Internal"
 	optional  polygon             Geometry                                        ""
-	"General"	
+	"General"
 	optional  text                DESCR                                           "Name"													uiorder:1
 	optional  double              CAP_ML_D                                        "Capacity"							unit:ML/d			uiorder:2
 	optional  text		          SYSTEM                                          "System"													uiorder:3
@@ -2493,7 +2493,7 @@ CREATE TABLE "" SewerAuxHouseConnection : SewerBase
 	optional  double              S_DISTANCE                                      "Symbol Distance"
 	optional  double              S_X_COORD                                       ""
 	optional  double              S_Y_COORD                                       ""
-	
+
 	hasone User     ID            SewerAuxHouseConnectionUser.ID
 }
 INDEX(Geometry);
@@ -2544,12 +2544,12 @@ INDEX(Geometry);
 CREATE TABLE "SewerMasterPlanSystem" SewerMasterPlanSystem : SewerBaseNoID
 {
 	"Internal"
-	optional  polygon 	        	Geometry                                        "" 													
+	optional  polygon 	        	Geometry                                        ""
 	"General"
 	optional  text		         	Network                                     	"Drainage Area" 									uiorder:1
 	optional  text		         	Masterplan                                      "Masterplan" 										uiorder:2
 	"Documents"
-	optional  text		         	Url                                     		"Url"			tags:dispDocument 					uiorder:1	
+	optional  text		         	Url                                     		"Url"			tags:dispDocument 					uiorder:1
 }
 INDEX(Geometry);
 
@@ -2606,14 +2606,14 @@ CREATE TABLE "SewerMasterPlanItem" SewerMasterPlanItem : SewerBaseNoID
 	optional  int32               	ImplementYear                                   "Implementation Year"				unit:year		uiorder:5
 	optional  text 		           	MPDescription                                   "Masterplan Description"							uiorder:6
 	optional  double              	ExMinSlope                                      "Existing Minimum Slope"			unit:m/m		uiorder:7
-	optional  double              	ExNomDiam                                       "Existing Pipe Nominal Diameter"	unit:mm			uiorder:8	
+	optional  double              	ExNomDiam                                       "Existing Pipe Nominal Diameter"	unit:mm			uiorder:8
 	optional  double              	ParPipeID                                       "Parallel Pipe Internal Diameter"	unit:mm			uiorder:9
 	optional  double              	ParPipeND                                   	"Parallel Pipe Nominal Diameter"	unit:mm			uiorder:10
 	optional  double              	NewPipeID                                       "New Pipe Internal Diameter"		unit:mm			uiorder:11
-	optional  double              	NewPipeND                                       "New Pipe Nominal Diameter"			unit:mm			uiorder:12	
+	optional  double              	NewPipeND                                       "New Pipe Nominal Diameter"			unit:mm			uiorder:12
 	optional  double              	TotalLength                                     "Total Pipe Length"					unit:m			uiorder:13
 	optional  double              	DesignFlow                                      "Design Flow"										uiorder:14
-	optional  text              	DesignFlowUnit									"Design Flow Unit"									uiorder:15	
+	optional  text              	DesignFlowUnit									"Design Flow Unit"									uiorder:15
 
 	"3.Financial"
 	optional  int32               	CostFn                                        	"Cost Function Index"								uiorder:1
@@ -2651,7 +2651,7 @@ CREATE TABLE "SewerUnitCostsVolume" SewerUnitCostsVolume : SewerBaseNoID
 	optional  double		        SC3Domestic                                    ""										uiorder:9
 	optional  double		        SC3Leakage                                     ""										uiorder:10
 	optional  double		        SC3Infiltration                                ""										uiorder:11
-	
+
 }
 INDEX(SubSystem);
 
@@ -2706,13 +2706,13 @@ CREATE TABLE "ElectricityDemandStandElectricity" ElectricityDemandStandElectrici
 	optional	bin					Stand_Chart										""										tags:dispCompositeElecConsumption,hideInGrid
 	optional	double				Stand_AADD										"Stand Metered Consumption (AADC)"		unit:kWh/d			uiorder:1
 	optional	double				Stand_TWD										"Stand Metered Consumption (TWD)"		unit:kWh/yr			uiorder:2
-	optional	text				Integrity_Metered								"Metered/Estimated/Calculated"								uiorder:3 
-	optional	text				Integrity_Billed								"Electricity Balance Group"									uiorder:4 
-	optional	bool				Large											"Large Consumer"											uiorder:5 
-	optional	bool				Vacant											"Vacant Stand"												uiorder:6 
-	optional	int32				Connection_Count								"Number of Electricity Connections"							uiorder:7 
-	optional	int32				Meter_Count										"Number of Electricity Meters"								uiorder:8 
-	optional	double				Stand_Ratio1									"Stand 1 Month Ratio"										uiorder:9 
+	optional	text				Integrity_Metered								"Metered/Estimated/Calculated"								uiorder:3
+	optional	text				Integrity_Billed								"Electricity Balance Group"									uiorder:4
+	optional	bool				Large											"Large Consumer"											uiorder:5
+	optional	bool				Vacant											"Vacant Stand"												uiorder:6
+	optional	int32				Connection_Count								"Number of Electricity Connections"							uiorder:7
+	optional	int32				Meter_Count										"Number of Electricity Meters"								uiorder:8
+	optional	double				Stand_Ratio1									"Stand 1 Month Ratio"										uiorder:9
 	optional	double				Stand_Ratio3									"Stand 3 Month Ratio"										uiorder:10
 	optional	double				Stand_Last_Consumption							"Stand Last Consumption" 				unit:kWh			uiorder:11
 	"9.Revenue Enhancement.1.Account Comparison"
@@ -2746,81 +2746,81 @@ CREATE TABLE "ElectricityDemandZone" ElectricityDemandZone : SwiftBaseNoID
 	optional  double              Cost                                            "Supply cost of charge (Cost)"
 	optional  double              Cost_AL                                         "Supply cost of charge (AL)"
 	"0.Default"
-	optional  text                Zone_ID                                         "Zone (DMA) ID/Code"											uiorder:1 
-	optional  text                Description                                     "Zone (DMA) Name/Description"									uiorder:2 
-	optional  text                Area                                            "Gross Area"							unit:ha					uiorder:3 
-	optional  int32               Level                                           "Zone (DMA) Level"											uiorder:4 
-	optional  bin                 ChartSeries                                     "ChartSeries"	tags:dispCompositeElecConsumption,hideInGrid	uiorder:5 
-	optional  bin                 MonthSeries                                     ""															uiorder:6 
-	optional  bin                 TrendSeries                                     ""															uiorder:7 
-	"1.DMA Integrity"											    
-	optional  text                Integrity                                       "Consumption Sales data integrity"							uiorder:4 
-	optional  text                B_Integrity                                     "Bulk meter data integrity"									uiorder:5 
-	optional  text                Comment                                         ""															uiorder:6 
-	optional  double              Metered_Cons_Perc                               "Metered / Authorised Consumption"	unit:%					uiorder:7 
-	optional  double              Metered_Input_Perc                              "Metered / Total Bulk Input"			unit:%					uiorder:8 
-	"2.Consumption Balance.0.Default"							    
-	optional  date                Update                                          "Last update"							unit:MSE				uiorder:1 
+	optional  text                Zone_ID                                         "Zone (DMA) ID/Code"											uiorder:1
+	optional  text                Description                                     "Zone (DMA) Name/Description"									uiorder:2
+	optional  text                Area                                            "Gross Area"							unit:ha					uiorder:3
+	optional  int32               Level                                           "Zone (DMA) Level"											uiorder:4
+	optional  bin                 ChartSeries                                     "ChartSeries"	tags:dispCompositeElecConsumption,hideInGrid	uiorder:5
+	optional  bin                 MonthSeries                                     ""															uiorder:6
+	optional  bin                 TrendSeries                                     ""															uiorder:7
+	"1.DMA Integrity"
+	optional  text                Integrity                                       "Consumption Sales data integrity"							uiorder:4
+	optional  text                B_Integrity                                     "Bulk meter data integrity"									uiorder:5
+	optional  text                Comment                                         ""															uiorder:6
+	optional  double              Metered_Cons_Perc                               "Metered / Authorised Consumption"	unit:%					uiorder:7
+	optional  double              Metered_Input_Perc                              "Metered / Total Bulk Input"			unit:%					uiorder:8
+	"2.Consumption Balance.0.Default"
+	optional  date                Update                                          "Last update"							unit:MSE				uiorder:1
 	optional  double              NonRevenue_Percent                              "Non revenue water"					unit:%					uiorder:10
 	optional  double              Loss_Percent                                    "Total Loss"							unit:%					uiorder:17
-	"2.Consumption Balance.1.Per annum"							    
-	optional  double              Input                                           "Bulk Input for year"											uiorder:3 
-	optional  double              Auth_Consumption                                "Total Authorised Consumption"								uiorder:4 
-	optional  double              Billed_Metered                                  "Billed metered sales"										uiorder:5 
-	optional  double              Billed_UnMetered                                "Billed unmetered sales"										uiorder:6 
-	optional  double              Free_Metered                                    "Metered free supply"											uiorder:7 
-	optional  double              Free_UnMetered                                  "Unmetered free supply"										uiorder:8 
-	optional  double              NonRevenue                                      "Non Revenue Water"											uiorder:9 
+	"2.Consumption Balance.1.Per annum"
+	optional  double              Input                                           "Bulk Input for year"											uiorder:3
+	optional  double              Auth_Consumption                                "Total Authorised Consumption"								uiorder:4
+	optional  double              Billed_Metered                                  "Billed metered sales"										uiorder:5
+	optional  double              Billed_UnMetered                                "Billed unmetered sales"										uiorder:6
+	optional  double              Free_Metered                                    "Metered free supply"											uiorder:7
+	optional  double              Free_UnMetered                                  "Unmetered free supply"										uiorder:8
+	optional  double              NonRevenue                                      "Non Revenue Water"											uiorder:9
 	optional  double              Unbilled_Metered                                "Unbilled metered supply"										uiorder:11
 	optional  double              Unbilled_UnMetered                              "Unbilled unmetered supply"									uiorder:12
 	optional  double              Loss                                            "Total Annual Consumption Loss"								uiorder:15
-	#not in source												    
-	optional  double              CURL                                            "Current Annual Real Losses (CARL)"									
+	#not in source
+	optional  double              CURL                                            "Current Annual Real Losses (CARL)"
 	optional  double              UARL                                            "Unavoidable real loss (UARL)"								uiorder:18
 	optional  double              PotentialSave                                   "Potential real loss reduction"								uiorder:19
-	"2.Consumption Balance.2.Ave Per Day"						    
-	optional  double              Input_AADD                                      "Input Volume"												uiorder:2 
+	"2.Consumption Balance.2.Ave Per Day"
+	optional  double              Input_AADD                                      "Input Volume"												uiorder:2
 	optional  double              Auth_AADD                                       "Total Authorised Consumption"								uiorder:13
 	optional  double              Sold_AADD                                       "Metered AADE & water balance estimates"						uiorder:15
 	optional  double              AADD_UWD                                        "Metered AADE & unit water demand estimates"					uiorder:16
 	optional  double              Loss_AADD                                       "Total Loss"													uiorder:16
-	"3. Consumption Balance KPI's.0.Data"						    
-	optional  double              Pressure                                         "System pressure"			unit:m							uiorder:1 
-	optional  double              Population                                       ""															uiorder:2 
-	optional  double              Mains                                            "Length of mains"				unit:km						uiorder:3 
-	optional  bin                 Meters                                           "Number of meters"											uiorder:4 
-	optional  int32               Meter_Count                                      "Number of Water Meters"										uiorder:4 
-	optional  int32               Connections                                      "Number of connections"										uiorder:5 
-	optional  double              Units                                            "Rationalised Number of Units (Treasury)"					uiorder:6 
-	optional  double              Households                                       "Number of households supplied"								uiorder:7 
-	"3. Consumption Balance KPI's.1.Consumption KPI's"			    
-	optional  double              Usage_Capita                                     "Consumption per capita"			unit:kWh/Capita/day			uiorder:1 
-	optional  double              Usage_Household                                  "Consumption per household"		unit:kWh/Household/month	uiorder:2 
-	optional  double              Usage_Connection                                 "Consumption per connection"		unit:kWh/Connection/month	uiorder:3 
-	"3. Consumption Balance KPI's.2.Input KPI's"				    
-	optional  double              Input_Capita                                     "Bulk input per capita"			unit:kWh/Capita/day			uiorder:1 
-	optional  double              Input_Household                                  "Bulk input per household"		unit:kWh/Household/month	uiorder:2 
-	optional  double              Input_Connection                                 "Bulk input per connection"		unit:kWh/Connection/month	uiorder:3 
-	optional  double              InputPerUnit                                     "Bulk input per unit"			unit:kWh/Unit/month			uiorder:4 
-	"3. Consumption Balance KPI's.2.Loss KPI's"					    
-	optional  double              ILI                                              "Infrastructure leakage index (ILI)"							uiorder:1 
-	optional  double              LossPerLength                                    "Loss per length mains"			unit:kWh/km/day				uiorder:2 
-	optional  double              LossPerConnection                                "Loss per connection"			unit:kWh/Connection/day		uiorder:3 
-	optional  double              Loss_Capita                                      "Loss per capita"				unit:kWh/Capita/day			uiorder:4 
-	optional  double              Loss_Household                                   "Loss per household"				unit:kWh/Household/month	uiorder:5 
-	optional  double              UARL_Connection                                  "UARL per connection"			unit:kWh/Connection/day		uiorder:6 
-	optional  double              CARL_Connection                                  "CARL per connection"			unit:kWh/Connection/day		uiorder:7 
-	optional  double              CARL_Mains                                       "CARL per length mains"			unit:kWh/km/day				uiorder:8 
-	"4.Consumption.0.Actual Supply"								    
-	optional  int32               Occ_Units                                        "Units (Metered Supply)"										uiorder:1 
-	optional  int32               Est_Units                                        "Units (Estimated Supply)"									uiorder:2 
-	optional  int32               All_Units                                        "Units (Total)"												uiorder:3 
-	optional  int32               Occ_Stands                                       "Stands (Metered Supply)"									uiorder:4 
-	optional  int32               Est_Stands                                       "Stands (Estimated Supply)"									uiorder:5 
-	optional  int32               Vac_Stands                                       "Stands (Vacant)"											uiorder:6 
-	optional  double              AADD                                             "AADE (Metered)"						unit:kWh/d				uiorder:7 
-	optional  double              Est_AADD                                         "AADE (Estimated)"					unit:kWh/d				uiorder:8 
-	optional  double              AADD_Total                                       "AADE (Total)"						unit:kWh/d				uiorder:9 
+	"3. Consumption Balance KPI's.0.Data"
+	optional  double              Pressure                                         "System pressure"			unit:m							uiorder:1
+	optional  double              Population                                       ""															uiorder:2
+	optional  double              Mains                                            "Length of mains"				unit:km						uiorder:3
+	optional  bin                 Meters                                           "Number of meters"											uiorder:4
+	optional  int32               Meter_Count                                      "Number of Water Meters"										uiorder:4
+	optional  int32               Connections                                      "Number of connections"										uiorder:5
+	optional  double              Units                                            "Rationalised Number of Units (Treasury)"					uiorder:6
+	optional  double              Households                                       "Number of households supplied"								uiorder:7
+	"3. Consumption Balance KPI's.1.Consumption KPI's"
+	optional  double              Usage_Capita                                     "Consumption per capita"			unit:kWh/Capita/day			uiorder:1
+	optional  double              Usage_Household                                  "Consumption per household"		unit:kWh/Household/month	uiorder:2
+	optional  double              Usage_Connection                                 "Consumption per connection"		unit:kWh/Connection/month	uiorder:3
+	"3. Consumption Balance KPI's.2.Input KPI's"
+	optional  double              Input_Capita                                     "Bulk input per capita"			unit:kWh/Capita/day			uiorder:1
+	optional  double              Input_Household                                  "Bulk input per household"		unit:kWh/Household/month	uiorder:2
+	optional  double              Input_Connection                                 "Bulk input per connection"		unit:kWh/Connection/month	uiorder:3
+	optional  double              InputPerUnit                                     "Bulk input per unit"			unit:kWh/Unit/month			uiorder:4
+	"3. Consumption Balance KPI's.2.Loss KPI's"
+	optional  double              ILI                                              "Infrastructure leakage index (ILI)"							uiorder:1
+	optional  double              LossPerLength                                    "Loss per length mains"			unit:kWh/km/day				uiorder:2
+	optional  double              LossPerConnection                                "Loss per connection"			unit:kWh/Connection/day		uiorder:3
+	optional  double              Loss_Capita                                      "Loss per capita"				unit:kWh/Capita/day			uiorder:4
+	optional  double              Loss_Household                                   "Loss per household"				unit:kWh/Household/month	uiorder:5
+	optional  double              UARL_Connection                                  "UARL per connection"			unit:kWh/Connection/day		uiorder:6
+	optional  double              CARL_Connection                                  "CARL per connection"			unit:kWh/Connection/day		uiorder:7
+	optional  double              CARL_Mains                                       "CARL per length mains"			unit:kWh/km/day				uiorder:8
+	"4.Consumption.0.Actual Supply"
+	optional  int32               Occ_Units                                        "Units (Metered Supply)"										uiorder:1
+	optional  int32               Est_Units                                        "Units (Estimated Supply)"									uiorder:2
+	optional  int32               All_Units                                        "Units (Total)"												uiorder:3
+	optional  int32               Occ_Stands                                       "Stands (Metered Supply)"									uiorder:4
+	optional  int32               Est_Stands                                       "Stands (Estimated Supply)"									uiorder:5
+	optional  int32               Vac_Stands                                       "Stands (Vacant)"											uiorder:6
+	optional  double              AADD                                             "AADE (Metered)"						unit:kWh/d				uiorder:7
+	optional  double              Est_AADD                                         "AADE (Estimated)"					unit:kWh/d				uiorder:8
+	optional  double              AADD_Total                                       "AADE (Total)"						unit:kWh/d				uiorder:9
 	optional  double              AADD_Loss                                        "Loss (Theoretical)"				unit:kWh/d					uiorder:10
 	optional  double              AADD_Inc                                         "AADE inc. Loss"					unit:kWh/d					uiorder:11
 	"4.Consumption.1.Unit Water Demands"
@@ -2831,9 +2831,9 @@ CREATE TABLE "ElectricityDemandZone" ElectricityDemandZone : SwiftBaseNoID
 	optional  double              AADD_UWD_ha                                      "Supply per hectare"					unit:kWh/day/ha		uiorder:5
 	optional  double              Theor_UWD                                        "Theoretical unit water demand" 		unit:kWh/day/unit	uiorder:6
 	"4.Consumption.2.Theoretical (Land use)"
-	optional  double              Theor_Occ                                        "Theor. AADE (LUse) exc. losses"  	unit:kWh/d			uiorder:1 
-	optional  double              Theor_Occ_Loss                                   "Theor. Loss (LUse) "				unit:kWh/d			uiorder:2 
-	optional  double              Theor_Occ_Inc                                    "Theor. AADE (LUse) inc. losses"		unit:kWh/d			uiorder:3 
+	optional  double              Theor_Occ                                        "Theor. AADE (LUse) exc. losses"  	unit:kWh/d			uiorder:1
+	optional  double              Theor_Occ_Loss                                   "Theor. Loss (LUse) "				unit:kWh/d			uiorder:2
+	optional  double              Theor_Occ_Inc                                    "Theor. AADE (LUse) inc. losses"		unit:kWh/d			uiorder:3
 	"4.Consumption.3.Theoretical (Land use) inc. vacants"
 	optional  int32               Units_LU_All                                     "Calculated Units (Landuse)"									uiorder:1
 	optional  int32               All_Stands                                       "All Stands"													uiorder:2
@@ -2928,31 +2928,31 @@ CREATE TABLE "ElectricityDemandBulkMeter" ElectricityDemandBulkMeter : SwiftBase
 	#Sourced from BulkMeters_Comment_Electricity
 	optional  text                Integrity                                        ""
 	"0.Default"
-	optional  text                Meter_ID                                         "Meter ID"												uiorder:1 
-	optional  text                Description                                      "Meter Description"										uiorder:2 
-	optional  text                Source                                           "Supply Source"											uiorder:3 
-	#Sourced from BulkMeters_Comment_Electricity				  
-	optional  text                Comment                                          ""														uiorder:3 
-	optional  text                isMetered                                        "Metered / Estimated"									uiorder:4 
-	optional  text                Integrity_Metered                                "Integrity"												uiorder:5 
-	optional  text                Type                                             "Type / Purpose"											uiorder:6 
-	optional  bin                 ChartSeries					                   "ChartSeries"		tags:dispBulkElecMeter,hideInGrid			  
-	"1.Flow Data"												  
-	optional  double              AADD                                             "Metered Flow (AADC)"	unit:kWh/d						uiorder:1 
-	optional  double              TWD                                              "Metered Flow (TWD)"		unit:kWh/yr						uiorder:2 
-	optional  double              Measurement_1                                    "Last reading"											uiorder:4 
-	optional  date                Measurement_Date_1                               "Last reading date"										uiorder:5 
-	optional  text                Measurement_Type_1                               "Last reading code"										uiorder:6 
-	"2.Additional"												  
-	optional  text                Data_1                                           ""														uiorder:1 
-	optional  text                Data_2                                           ""														uiorder:2 
-	optional  text                Data_3                                           ""														uiorder:3 
-	optional  text                Data_4                                           ""														uiorder:4 
-	optional  text                Data_5                                           ""														uiorder:5 
-	optional  text                Data_6                                           ""														uiorder:6 
-	optional  text                Data_7                                           ""														uiorder:7 
-	optional  text                Data_8                                           ""														uiorder:8 
-	optional  text                Data_9                                           ""														uiorder:9 
+	optional  text                Meter_ID                                         "Meter ID"												uiorder:1
+	optional  text                Description                                      "Meter Description"										uiorder:2
+	optional  text                Source                                           "Supply Source"											uiorder:3
+	#Sourced from BulkMeters_Comment_Electricity
+	optional  text                Comment                                          ""														uiorder:3
+	optional  text                isMetered                                        "Metered / Estimated"									uiorder:4
+	optional  text                Integrity_Metered                                "Integrity"												uiorder:5
+	optional  text                Type                                             "Type / Purpose"											uiorder:6
+	optional  bin                 ChartSeries					                   "ChartSeries"		tags:dispBulkElecMeter,hideInGrid
+	"1.Flow Data"
+	optional  double              AADD                                             "Metered Flow (AADC)"	unit:kWh/d						uiorder:1
+	optional  double              TWD                                              "Metered Flow (TWD)"		unit:kWh/yr						uiorder:2
+	optional  double              Measurement_1                                    "Last reading"											uiorder:4
+	optional  date                Measurement_Date_1                               "Last reading date"										uiorder:5
+	optional  text                Measurement_Type_1                               "Last reading code"										uiorder:6
+	"2.Additional"
+	optional  text                Data_1                                           ""														uiorder:1
+	optional  text                Data_2                                           ""														uiorder:2
+	optional  text                Data_3                                           ""														uiorder:3
+	optional  text                Data_4                                           ""														uiorder:4
+	optional  text                Data_5                                           ""														uiorder:5
+	optional  text                Data_6                                           ""														uiorder:6
+	optional  text                Data_7                                           ""														uiorder:7
+	optional  text                Data_8                                           ""														uiorder:8
+	optional  text                Data_9                                           ""														uiorder:9
 	optional  text                Data_10                                          ""														uiorder:10
 	optional  text                Data_11                                          ""														uiorder:11
 	optional  text                Data_12                                          ""														uiorder:12
@@ -2993,36 +2993,36 @@ CREATE TABLE "ElectricityDemandMeterMeters_kVA" ElectricityDemandMeterMeters_kVA
 	optional  bin                 NewReadings                                     ""
 	optional  int32               NewWarnCode                                     ""
 	"0.Default"
-	optional  text                Meter_ID                                        "Meter ID"										uiorder:1 
-	optional  bin                 ChartSeries                                     "ChartSeries"		tags:dispWaterMeter,hideInGrid	uiorder:2 
-	optional  text                Serial_No                                       "Serial Number"									uiorder:3 
-	optional  double              kVA_Min                                         "Minimum Peak Monthly kVA"		unit:kVA		uiorder:4 
-	optional  double              kVA_Max                                         "Maximum Peak Monthly kVA"		unit:kVA		uiorder:4 
-	optional  double              kVA_Ave                                         "Average Peak Monthly kVA"		unit:kVA		uiorder:4 
-	optional  double              Load_factor                                     "Load factor"										uiorder:4 
-	"1.Readings"					 
-	optional  int32               Adjust                                          "Adjustment Code"									uiorder:1 
-	optional  int32               Days_Reading                                    "Days since last reading"			unit:days		uiorder:4 
-	optional  double              Measurement_1                                   "Last Measurement"								uiorder:6 
-	optional  date                Measurement_Date_1                              "Last Measurement Date"							uiorder:7 
-	optional  text                Measurement_Type_1                              "Last Measurement Code"							uiorder:8 
+	optional  text                Meter_ID                                        "Meter ID"										uiorder:1
+	optional  bin                 ChartSeries                                     "ChartSeries"		tags:dispWaterMeter,hideInGrid	uiorder:2
+	optional  text                Serial_No                                       "Serial Number"									uiorder:3
+	optional  double              kVA_Min                                         "Minimum Peak Monthly kVA"		unit:kVA		uiorder:4
+	optional  double              kVA_Max                                         "Maximum Peak Monthly kVA"		unit:kVA		uiorder:4
+	optional  double              kVA_Ave                                         "Average Peak Monthly kVA"		unit:kVA		uiorder:4
+	optional  double              Load_factor                                     "Load factor"										uiorder:4
+	"1.Readings"
+	optional  int32               Adjust                                          "Adjustment Code"									uiorder:1
+	optional  int32               Days_Reading                                    "Days since last reading"			unit:days		uiorder:4
+	optional  double              Measurement_1                                   "Last Measurement"								uiorder:6
+	optional  date                Measurement_Date_1                              "Last Measurement Date"							uiorder:7
+	optional  text                Measurement_Type_1                              "Last Measurement Code"							uiorder:8
 	optional  text                Route_No                                        "Route Number"									uiorder:11
-	optional  double              Factor					                      "Meter Factor"											  
-	"2.Asset"					 
-	optional  text                Meter_Type                                      "Meter_Type"										uiorder:1 
-	optional  text                Meter_Make                                      "Meter_Make"										uiorder:2 
-	optional  double              Meter_Size                                      "Meter_Size"										uiorder:3 
-	optional  date                Meter_Installation                              "Installation Date"								uiorder:4 
-	optional  date                Meter_Removal                                   "Removal Date"									uiorder:5 
+	optional  double              Factor					                      "Meter Factor"
+	"2.Asset"
+	optional  text                Meter_Type                                      "Meter_Type"										uiorder:1
+	optional  text                Meter_Make                                      "Meter_Make"										uiorder:2
+	optional  double              Meter_Size                                      "Meter_Size"										uiorder:3
+	optional  date                Meter_Installation                              "Installation Date"								uiorder:4
+	optional  date                Meter_Removal                                   "Removal Date"									uiorder:5
 	optional  text                Meter_Status                                    "Meter Status"                                    uiorder:6
 	optional  double              Meter_Age                                       "Age"								unit:months		uiorder:7
-	optional  int32               Display_Size                                    "Number of digits on display"						uiorder:8 
-	optional  int32               Active                                          "Active/Inactive"									uiorder:9 
-	"3.Additional"				 
-	optional  text                Equipment_No                                    "Device ID"										uiorder:1 
-	optional  text                Device_Loc                                      "Device Location Code"							uiorder:2 
-	optional  text                Function_Class                                  "Function Class"									uiorder:3 
-	optional  text                Reg_Group                                       "Register Group"									uiorder:4 
+	optional  int32               Display_Size                                    "Number of digits on display"						uiorder:8
+	optional  int32               Active                                          "Active/Inactive"									uiorder:9
+	"3.Additional"
+	optional  text                Equipment_No                                    "Device ID"										uiorder:1
+	optional  text                Device_Loc                                      "Device Location Code"							uiorder:2
+	optional  text                Function_Class                                  "Function Class"									uiorder:3
+	optional  text                Reg_Group                                       "Register Group"									uiorder:4
 }
 INDEX(Meter_ID)
 INDEX(Stand_ID);
@@ -3046,39 +3046,39 @@ CREATE TABLE "ElectricityDemandMeterMeters_kWh" ElectricityDemandMeterMeters_kWh
 	optional  bin                 NewReadings                                     ""
 	optional  int32               NewWarnCode                                     ""
 	"0.Default"
-	optional  text                Meter_ID                                        "Meter ID"												uiorder:1  
-	optional  bin                 ChartSeries                                     "ChartSeries" 			tags:dispWaterMeter,hideInGrid	uiorder:2  
-	optional  text                Serial_No                                       "Serial Number"											uiorder:3  
-	optional  double              AADD                                            "Metered Flow (AADC)"										uiorder:4  
-	optional  double              TWD                                             "Metered Flow (TWD)"										uiorder:5  
-	"1.Readings"					    
-	optional  int32               Adjust                                          "Adjustment Code"											 uiorder:1 
-	optional  double              Ratio1                                          "1 Month Ratio"											 uiorder:2 
-	optional  double              Ratio3                                          "3 Month Ratio"											 uiorder:3 
-	optional  int32               Days_Reading                                    "Days since last reading"		unit:days					 uiorder:4 
-	optional  double              Last_Consumption                                "Last_Consumption"										 uiorder:5 
-	optional  double              Measurement_1                                   "Last Measurement"										 uiorder:6 
-	optional  date                Measurement_Date_1                              "Last Measurement Date"									 uiorder:7 
-	optional  text                Measurement_Type_1                              "Last Measurement Code"									 uiorder:8 
-	optional  double              Meter_Flow                                      "Total Flow through the meter"							 uiorder:9 
+	optional  text                Meter_ID                                        "Meter ID"												uiorder:1
+	optional  bin                 ChartSeries                                     "ChartSeries" 			tags:dispWaterMeter,hideInGrid	uiorder:2
+	optional  text                Serial_No                                       "Serial Number"											uiorder:3
+	optional  double              AADD                                            "Metered Flow (AADC)"										uiorder:4
+	optional  double              TWD                                             "Metered Flow (TWD)"										uiorder:5
+	"1.Readings"
+	optional  int32               Adjust                                          "Adjustment Code"											 uiorder:1
+	optional  double              Ratio1                                          "1 Month Ratio"											 uiorder:2
+	optional  double              Ratio3                                          "3 Month Ratio"											 uiorder:3
+	optional  int32               Days_Reading                                    "Days since last reading"		unit:days					 uiorder:4
+	optional  double              Last_Consumption                                "Last_Consumption"										 uiorder:5
+	optional  double              Measurement_1                                   "Last Measurement"										 uiorder:6
+	optional  date                Measurement_Date_1                              "Last Measurement Date"									 uiorder:7
+	optional  text                Measurement_Type_1                              "Last Measurement Code"									 uiorder:8
+	optional  double              Meter_Flow                                      "Total Flow through the meter"							 uiorder:9
 	optional  double              Constant                                        "Period of Constant Consumption"	unit:days				 uiorder:10
 	optional  text                Route_No                                        "Route Number"											 uiorder:11
-	optional  double              Factor						                  "Meter Factor"													 
-	"2.Asset"					    																			 
-	optional  text                Meter_Type                                      "Meter_Type"												 uiorder:1 
-	optional  text                Meter_Make                                      "Meter_Make"												 uiorder:2 
-	optional  double              Meter_Size                                      "Meter_Size"												 uiorder:3 
-	optional  date                Meter_Installation                              "Installation Date"										 uiorder:4 
-	optional  date                Meter_Removal                                   "Removal Date"											 uiorder:5 
+	optional  double              Factor						                  "Meter Factor"
+	"2.Asset"
+	optional  text                Meter_Type                                      "Meter_Type"												 uiorder:1
+	optional  text                Meter_Make                                      "Meter_Make"												 uiorder:2
+	optional  double              Meter_Size                                      "Meter_Size"												 uiorder:3
+	optional  date                Meter_Installation                              "Installation Date"										 uiorder:4
+	optional  date                Meter_Removal                                   "Removal Date"											 uiorder:5
 	optional  text                Meter_Status                                    "Meter Status"                            			     uiorder:6
-	optional  double              Meter_Age                                       "Age"								unit:months				 uiorder:7 
-	optional  int32               Display_Size                                    "Number of digits on display"								 uiorder:8 
-	optional  int32               Active                                          "Active/Inactive"											 uiorder:9 
-	"3.Additional"				    																			 
-	optional  text                Equipment_No                                    "Device ID"												 uiorder:1 
-	optional  text                Device_Loc                                      "Device Location Code"									 uiorder:2 
-	optional  text                Function_Class                                  "Function Class"											 uiorder:3 
-	optional  text                Reg_Group                                       "Register Group"											 uiorder:4 
+	optional  double              Meter_Age                                       "Age"								unit:months				 uiorder:7
+	optional  int32               Display_Size                                    "Number of digits on display"								 uiorder:8
+	optional  int32               Active                                          "Active/Inactive"											 uiorder:9
+	"3.Additional"
+	optional  text                Equipment_No                                    "Device ID"												 uiorder:1
+	optional  text                Device_Loc                                      "Device Location Code"									 uiorder:2
+	optional  text                Function_Class                                  "Function Class"											 uiorder:3
+	optional  text                Reg_Group                                       "Register Group"											 uiorder:4
 }
 INDEX(Meter_ID)
 INDEX(Stand_ID);
@@ -3096,7 +3096,7 @@ CREATE TABLE "ElectricityDemandAccountElectricity" ElectricityDemandAccountElect
 	optional	text				Avail_Code										"Availability/Basic Code"								uiorder:4
 	optional	text				Prepaid_Code									"Prepaid Code"											uiorder:5
 	optional	text				Indigent_Code									"Indigent Code"											uiorder:6
-	"1.Additional"							
+	"1.Additional"
 	optional	text				Installation_ID									"Installation"											uiorder:0
 	optional	text				Installation_Type								"Installation Type"										uiorder:1
 	optional	text				Installation_Status								"Status"												uiorder:2
@@ -3268,20 +3268,20 @@ CREATE TABLE "ElectricityDemandConsLUPivot" ElectricityDemandConsLUPivot : Swift
 };
 
 
-CREATE TABLE "ElectricityDemandConsLUexcLargeSubCatExistPivot" ElectricityDemandConsLUexcLargeSubCatExistPivot : ElectricityDemandConsLUPivot 
+CREATE TABLE "ElectricityDemandConsLUexcLargeSubCatExistPivot" ElectricityDemandConsLUexcLargeSubCatExistPivot : ElectricityDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category                          	""
 };
 
-CREATE TABLE "ElectricityDemandConsLUexcLargeSubCatTheorPivot" ElectricityDemandConsLUexcLargeSubCatTheorPivot : ElectricityDemandConsLUPivot 
+CREATE TABLE "ElectricityDemandConsLUexcLargeSubCatTheorPivot" ElectricityDemandConsLUexcLargeSubCatTheorPivot : ElectricityDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category                          	""
 	optional  text                Scenario		                          	""
 };
 
-CREATE TABLE "ElectricityDemandConsLUincLargeDMAExistPivot" ElectricityDemandConsLUincLargeDMAExistPivot : ElectricityDemandConsLUPivot 
+CREATE TABLE "ElectricityDemandConsLUincLargeDMAExistPivot" ElectricityDemandConsLUincLargeDMAExistPivot : ElectricityDemandConsLUPivot
 {
 	"Internal"
 	optional  text                DMA                          				""
@@ -3292,7 +3292,7 @@ CREATE TABLE "ElectricityDemandConsLUincLargeDMAExistPivot" ElectricityDemandCon
 	optional  int64               LOSSES_Actual__Input					""
 };
 
-CREATE TABLE "ElectricityDemandConsLUincLargeDMATheorPivot" ElectricityDemandConsLUincLargeDMATheorPivot : ElectricityDemandConsLUPivot 
+CREATE TABLE "ElectricityDemandConsLUincLargeDMATheorPivot" ElectricityDemandConsLUincLargeDMATheorPivot : ElectricityDemandConsLUPivot
 {
 	"Internal"
 	optional  text                DMA                          				""
@@ -3301,14 +3301,14 @@ CREATE TABLE "ElectricityDemandConsLUincLargeDMATheorPivot" ElectricityDemandCon
 	optional  int64               LOSSES_Theoretical__Input			""
 };
 
-CREATE TABLE "ElectricityDemandConsLUincLargeSubCatExistPivot" ElectricityDemandConsLUincLargeSubCatExistPivot : ElectricityDemandConsLUPivot 
+CREATE TABLE "ElectricityDemandConsLUincLargeSubCatExistPivot" ElectricityDemandConsLUincLargeSubCatExistPivot : ElectricityDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category             				""
 	optional  double              LARGE_                       				""
 };
 
-CREATE TABLE "ElectricityDemandConsLUincLargeSubCatTheorPivot" ElectricityDemandConsLUincLargeSubCatTheorPivot : ElectricityDemandConsLUPivot 
+CREATE TABLE "ElectricityDemandConsLUincLargeSubCatTheorPivot" ElectricityDemandConsLUincLargeSubCatTheorPivot : ElectricityDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category             				""
@@ -3475,10 +3475,10 @@ CREATE TABLE "WaterDemandStand" WaterDemandStand : WaterDemandBaseNoID
 	hasmany		Electricity_Meters_kVA		Stand_ID		ElectricityDemandMeterMeters_kVA.Stand_ID			module:Electricity_Demand 									order:11
 	hasmany		Electricity_Meters_kWh		Stand_ID		ElectricityDemandMeterMeters_kWh.Stand_ID			module:Electricity_Demand 									order:12
 	hasone		Electricity_Use				Stand_ID		ElectricityDemandStandElectricity.Stand_ID			module:Electricity_Demand,Revenue_Enhancement 				order:13
-	
+
 	hasmany		Arrears_Stand				Stand_ID		ArrearsStand.Stand_ID								module:Revenue_Enhancement									order:14
 	hasone		Waste_Account				Stand_ID		WasteDemandStandWaste.Stand_ID						module:Revenue_Enhancement									order:15
-	
+
 	hasmany		Connections					Premise			MeterMaintenanceConnections.SAPPremise				module:Meter_Maintenance								order:16
 
 	flags orm_server
@@ -3578,7 +3578,7 @@ CREATE TABLE "WaterDemandMeterWater" WaterDemandMeterWater : WaterDemandBaseNoID
 	optional	text				Stand_ID										"Stand ID"
 	"0.General"
 	optional	text				Meter_ID										"Meter ID"								tags:humanID						uiorder:0
-	optional	bin					ChartSeries										"ChartSeries"							tags:dispWaterMeter,hideInGrid		
+	optional	bin					ChartSeries										"ChartSeries"							tags:dispWaterMeter,hideInGrid
 	optional	text				Serial_No										"Serial Number"												uiorder:1
 	optional	double				AADD											"Metered Flow"							unit:kL/d			uiorder:2
 	optional	double				TWD												"Metered Flow"							unit:kL/yr			uiorder:3
@@ -3959,7 +3959,7 @@ CREATE TABLE "WaterDemandWaterBalanceDMA" WaterDemandWaterBalanceDMA : WaterDema
 	optional  int64               Households                                ""
 	optional  int32               Connections                               ""
 	optional  int64               Meters                                    ""
-	optional  double              AADD                                 		""	
+	optional  double              AADD                                 		""
 	optional  double              AADD_LU_Occ                               ""
 	optional  double              AADD_LU_All                              	""
 	optional  double              AADD_Z                                    ""
@@ -3992,7 +3992,7 @@ CREATE TABLE "WaterDemandWaterBalanceSystem" WaterDemandWaterBalanceSystem : Wat
 	optional  int64               Households                                ""
 	optional  int32               Connections                               ""
 	optional  int64               Meters                                    ""
-	optional  double              AADD                                 		""	
+	optional  double              AADD                                 		""
 	optional  double              AADD_LU_Occ                               ""
 	optional  double              AADD_LU_All                              	""
 	optional  double              AADD_Z                                    ""
@@ -4084,20 +4084,20 @@ CREATE TABLE "WaterDemandConsLUPivot" WaterDemandConsLUPivot : WaterDemandBaseNo
 	optional  int64               Index1                           			""
 };
 
-CREATE TABLE "WaterDemandConsLUexcLargeSubCatExistPivot" WaterDemandConsLUexcLargeSubCatExistPivot : WaterDemandConsLUPivot 
+CREATE TABLE "WaterDemandConsLUexcLargeSubCatExistPivot" WaterDemandConsLUexcLargeSubCatExistPivot : WaterDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category                          	""
 };
 
-CREATE TABLE "WaterDemandConsLUexcLargeSubCatTheorPivot" WaterDemandConsLUexcLargeSubCatTheorPivot : WaterDemandConsLUPivot 
+CREATE TABLE "WaterDemandConsLUexcLargeSubCatTheorPivot" WaterDemandConsLUexcLargeSubCatTheorPivot : WaterDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category                          	""
 	optional  text                Scenario		                          	""
 };
 
-CREATE TABLE "WaterDemandConsLUincLargeDMAExistPivot" WaterDemandConsLUincLargeDMAExistPivot : WaterDemandConsLUPivot 
+CREATE TABLE "WaterDemandConsLUincLargeDMAExistPivot" WaterDemandConsLUincLargeDMAExistPivot : WaterDemandConsLUPivot
 {
 	"Internal"
 	optional  text                DMA                          				""
@@ -4108,7 +4108,7 @@ CREATE TABLE "WaterDemandConsLUincLargeDMAExistPivot" WaterDemandConsLUincLargeD
 	optional  int64               LOSSES_Actual_Perc_Input					""
 };
 
-CREATE TABLE "WaterDemandConsLUincLargeDMATheorPivot" WaterDemandConsLUincLargeDMATheorPivot : WaterDemandConsLUPivot 
+CREATE TABLE "WaterDemandConsLUincLargeDMATheorPivot" WaterDemandConsLUincLargeDMATheorPivot : WaterDemandConsLUPivot
 {
 	"Internal"
 	optional  text                DMA                          				""
@@ -4117,14 +4117,14 @@ CREATE TABLE "WaterDemandConsLUincLargeDMATheorPivot" WaterDemandConsLUincLargeD
 	optional  int64               LOSSES_Theoretical_Perc_Input			""
 };
 
-CREATE TABLE "WaterDemandConsLUincLargeSubCatExistPivot" WaterDemandConsLUincLargeSubCatExistPivot : WaterDemandConsLUPivot 
+CREATE TABLE "WaterDemandConsLUincLargeSubCatExistPivot" WaterDemandConsLUincLargeSubCatExistPivot : WaterDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category             				""
 	optional  double              LARGE                       				""
 };
 
-CREATE TABLE "WaterDemandConsLUincLargeSubCatTheorPivot" WaterDemandConsLUincLargeSubCatTheorPivot : WaterDemandConsLUPivot 
+CREATE TABLE "WaterDemandConsLUincLargeSubCatTheorPivot" WaterDemandConsLUincLargeSubCatTheorPivot : WaterDemandConsLUPivot
 {
 	"Internal"
 	optional  text                Suburb_Category             				""
@@ -4283,7 +4283,7 @@ CREATE TABLE "RoadWalkways" RoadWalkways : RoadBaseNoID
 {
 	"Internal"
 	optional	polyline			Geometry										""
-	"General"	
+	"General"
 	optional	int64				Walkway_ID										"Walkway ID"									uiorder:1
 	optional	int64				Surface_ID										"Surface ID"									uiorder:2
 	optional	int64				SubSurface										"Sub Surface"									uiorder:3
@@ -4352,9 +4352,9 @@ CREATE TABLE "Incident" Incident : Incident_Base
 	optional	text				RequestedByContact  "Contact"
 	optional	text				IncidentGroupCode	"LOOKUP:IncidentType:IncidentGroupCode:IncidentGroupDescription:Incident Group"
 	optional	text				IncidentType		"LOOKUP:IncidentType:IncidentTypeCode:IncidentTypeDescription:Incident Type"
-	optional	text				OrderTypeCode		"LOOKUP:WorkOrderType:Code:Description:Order Type"	
+	optional	text				OrderTypeCode		"LOOKUP:WorkOrderType:Code:Description:Order Type"
 
-	hasmany 	IncidentAssets		ID 			IncidentAsset.IncidentID	
+	hasmany 	IncidentAssets		ID 			IncidentAsset.IncidentID
 }
 INDEX(Geometry);
 
@@ -4391,8 +4391,8 @@ CREATE TABLE "IncidentType" IncidentType
 	required	text		IncidentGroupDescription		""
 	required	text		IncidentTypeCode 				""
 	required	text		IncidentTypeDescription			""
-	
-	
+
+
 }
 PRIMARY KEY (rowid)
 UNIQUE INDEX(IncidentGroupCode,IncidentTypeCode);
@@ -4531,7 +4531,7 @@ CREATE TABLE "ZedNet" ZedNet
 	optional	text                Zone_Code              "Zone Code"
 	optional	double              Longitude              ""
 	optional	double              Latitude               ""
-	
+
 	"General"
 	required	text				FeatureName			"ID"								uiorder:1
 	required	text				Description			"Description"						uiorder:2
@@ -4547,14 +4547,14 @@ INDEX(Geometry);
 # Storm Water
 ###################################################################################################################
 
-CREATE TABLE "" StormWaterBase  
+CREATE TABLE "" StormWaterBase
 {
 	"Internal"
 	required 	int64				rowid				""
 	optional 	text 				Locality 			""
 	"General"
 	optional 	int32 				MetaID				""								tags:dispMeta,hideInGrid
-	
+
 }
 PRIMARY KEY (rowid);
 
@@ -4579,7 +4579,7 @@ CREATE TABLE "StormWaterLink" StormWaterLink : StormWaterBaseID
 	optional 	text				SIZE				"Size"				unit:mm
 	optional	text				BEDDING				"Bedding"
 	optional	double				FIX_SLOPE			"Slope"
-	optional	double				FIX_RSLOPE			"R Slope"	
+	optional	double				FIX_RSLOPE			"R Slope"
 }
 INDEX(Geometry);
 
@@ -4592,7 +4592,7 @@ CREATE TABLE "StormWaterNode" StormWaterNode : StormWaterBaseID
 	optional	text				MH_BOTTOM			"MH Bottom"
 	optional	double				MIN_COVER			"Minimum Cover"		unit:m
 	optional	double				FIX_INVERT			"Invert"			unit:m
-	
+
 }
 INDEX(Geometry);
 
@@ -4649,6 +4649,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 
 	hasone Memo				ID				StormWaterConduitMemo.ID
 	hasone Results				ID				StormWaterConduitResults.ID
+	hasone User			ID	StormWaterConduitUser.ID
 }
 INDEX(Geometry);
 
@@ -4703,6 +4704,10 @@ CREATE TABLE "" StormWaterConduitMemo : StormWaterBaseID
 	optional	text				Drawing_No				"Drawing Number"
 };
 
+CREATE TABLE "" StormWaterConduitUser : StormWaterBaseID
+{
+	flags runtime_schema
+};
 
 CREATE TABLE "" StormWaterConduitResults : StormWaterBaseID
 {
@@ -4739,7 +4744,7 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	double				Suction_Head			"Suction_Head"
 	optional	double				Conductivity			"Conductivity"
 	optional	double				Initial_Deficit			"Initial Deficit"
-	optional	double				ZeroImpervPct			"Zero Percentage Impervious"			unit:%			
+	optional	double				ZeroImpervPct			"Zero Percentage Impervious"			unit:%
 	optional	double				RoutedPct				"Percentage Routed"
 	optional	text				SubAreaRoute			"Subarea Routing"
 	"3.Descriptive"
@@ -4902,7 +4907,7 @@ CREATE TABLE "" StormwaterOrificeMemo : StormWaterBaseID
 	optional	text				MP_Cost_Detail			"Masterplan Cost Detail"
 	optional	int32				MP_Cost_FN				"Masterplan Cost Function"
 	optional	double				MP_Extra_Cost_Fact		"Masterplan Extra Cost Fact"
-	optional	text				Files					"Files"	
+	optional	text				Files					"Files"
 	"3.Physical"
 	optional	text				Material				"Material"
 	optional	int32				Year					"Year"
@@ -4975,7 +4980,7 @@ CREATE TABLE "" StormwaterWeir : StormWaterBaseID
 	optional	double				Length				"Length"					unit:m
 	optional	double				Side_Slope			"Side Slope"
 	optional	double				Inlet_Offset		"Inlet Offset"				unit:m
-	optional	double				Discharge_Coeff		"Discharge Coefficient" 	
+	optional	double				Discharge_Coeff		"Discharge Coefficient"
 	optional	bool				Flap_Gate			"Flap Gate"
 	optional	double				End_Contractions	"End Contractions"
 	optional	double				End_Coefficients	"End Coefficients"
@@ -5258,6 +5263,7 @@ CREATE TABLE "" StormwaterJunction : StormWaterBaseID
 
 	hasone Memo				ID				StormwaterJunctionMemo.ID
 	hasone Results				ID				StormwaterJunctionResults.ID
+	hasone User			ID	StormwaterJunctionUser.ID
 }
 INDEX(Geometry);
 
@@ -5309,6 +5315,10 @@ CREATE TABLE "" StormwaterJunctionMemo : StormWaterBaseID
 	optional	text				Drawing_No				"Drawing Number"
 };
 
+CREATE TABLE "" StormwaterJunctionUser : StormWaterBaseID
+{
+	flags runtime_schema
+};
 
 CREATE TABLE "" StormwaterJunctionResults : StormWaterBaseID
 {
@@ -5340,7 +5350,7 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	text				Time_Series				"Time Series"
 	optional	double				Scale_Factor			"Scale Factor"
 	optional	text				Baseline_Pattern		"Baseline Pattern"
-	optional	double				Baseline				"Baseline"	
+	optional	double				Baseline				"Baseline"
 	optional	bool				Treatment				"Treatment"
 	optional	double				Initial_Depth			"Initial Depth"					unit:m
 	optional	double				Surchage_Depth			"Surcharge Depth"				unit:m
@@ -5348,7 +5358,7 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	bool				Diverted_Link			"Diverted Link"
 	optional	double				Cutoff_Flow				"Cutoff Flow"
 	optional	double				Curve_Name				"Curve Name"
-	optional	double				Divider_Min_Flow		"Divider Minimum Flow"		
+	optional	double				Divider_Min_Flow		"Divider Minimum Flow"
 	optional	double				Divider_Max_Depth		"Divider Maximum Depth"			unit:m
 	optional	double				Divider_Coefficient		"Divider Coefficient"
 	optional	double				Ground_Level			"Ground Level"					unit:m.asl
@@ -5441,7 +5451,7 @@ CREATE TABLE "" StormwaterOutfall : StormWaterBaseID
 	optional	text				Time_Series			"Time Series"
 	optional	double				Scale_Factor		"Scale Factor"
 	optional	text				Baseline_Pattern	"Baseline Pattern"
-	optional	double				Baseline			"Baseline"	
+	optional	double				Baseline			"Baseline"
 	optional	bool				Treatment			"Treatment"
 	optional	text				Tide_Gate			"Tide Gate"
 	optional	text				Route_To			"Route To"
@@ -5558,15 +5568,15 @@ CREATE TABLE "" StormSchematicCurveCurrent : StormWaterBase
 };
 
 CREATE SUFFIX TABLES
-{	
-	StormWaterConduit, 		StormWaterConduitMemo ,	  			StormWaterConduitResults,
-	StormwaterCatchment,	StormwaterCatchmentResults,	
+{
+	StormWaterConduit, 		StormWaterConduitMemo ,	  			StormWaterConduitResults,	StormWaterConduitUser,
+	StormwaterCatchment,	StormwaterCatchmentResults,
 	StormwaterPumps,	 	StormwaterPumpsMemo,				StormwaterPumpsResults,
 	StormwaterOrifice,		StormwaterOrificeMemo,				StormwaterOrificeResults,
 	StormwaterWeir,			StormwaterWeirMemo,					StormwaterWeirResults,
 	StormwaterOutlet,		StormwaterOutletMemo,				StormwaterOutletResults,
 	StormwaterStorage,		StormwaterStorageMemo,				StormwaterStorageResults,
-	StormwaterJunction,		StormwaterJunctionMemo,				StormwaterJunctionResults,
+	StormwaterJunction,		StormwaterJunctionMemo,				StormwaterJunctionResults,	StormwaterJunctionUser,
 	StormwaterDivider,		StormwaterDividerMemo,				StormwaterDividerResults,
 	StormwaterOutfall,		StormwaterOutfallMemo,				StormwaterOutfallResults,
 	StormwaterRainfall,		StormSchematicTransectionCurrent,	StormSchematicCurveCurrent;
@@ -5584,7 +5594,7 @@ CREATE TABLE "" LandBaseNoID
 	optional 	text 				Locality 			""
 	"General"
 	optional 	int32 				MetaID											""  	tags:dispMeta,hideInGrid
-		
+
 }
 PRIMARY KEY (rowid);
 
@@ -5706,37 +5716,37 @@ CREATE TABLE "LandAssetSummary" LandAssetSummary : LandBase
 	"Asset Summary"
 	optional	double				CRC_total							"Total Replacement Cost" 					unit:ZAR
 	optional	double				RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				Condition_avg						"Average Condition Grade" 					
+	optional	double				Condition_avg						"Average Condition Grade"
 	optional	double				Criticality_avg						"Average Criticality Grade"
 	"Electricity"
 	optional	double				E_CRC_total							"Total Replacement Cost" 					unit:ZAR
 	optional	double				E_RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				E_Condition_avg						"Average Condition Grade" 					
+	optional	double				E_Condition_avg						"Average Condition Grade"
 	optional	double				E_Criticality_avg					"Average Criticality Grade"
 	"Water"
 	optional	double				W_CRC_total							"Total Replacement Cost" 					unit:ZAR
 	optional	double				W_RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				W_Condition_avg						"Average Condition Grade" 					
+	optional	double				W_Condition_avg						"Average Condition Grade"
 	optional	double				W_Criticality_avg					"Average Criticality Grade"
 	"Sanitation"
 	optional	double				S_CRC_total							"Total Replacement Cost" 					unit:ZAR
 	optional	double				S_RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				S_Condition_avg						"Average Condition Grade" 					
+	optional	double				S_Condition_avg						"Average Condition Grade"
 	optional	double				S_Criticality_avg					"Average Criticality Grade"
 	"Property & Buildings"
 	optional	double				P_CRC_total							"Total Replacement Cost" 					unit:ZAR
 	optional	double				P_RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				P_Condition_avg						"Average Condition Grade" 					
+	optional	double				P_Condition_avg						"Average Condition Grade"
 	optional	double				P_Criticality_avg					"Average Criticality Grade"
 	"Road, Railways, Stormwater"
 	optional	double				RS_CRC_total						"Total Replacement Cost" 					unit:ZAR
 	optional	double				RS_RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				RS_Condition_avg					"Average Condition Grade" 					
+	optional	double				RS_Condition_avg					"Average Condition Grade"
 	optional	double				RS_Criticality_avg					"Average Criticality Grade"
 	"Other"
 	optional	double				OT_CRC_total						"Total Replacement Cost" 					unit:ZAR
 	optional	double				OT_RUL_category_avg					"Average RUL/EUL" 							unit:%
-	optional	double				OT_Condition_avg					"Average Condition Grade" 					
+	optional	double				OT_Condition_avg					"Average Condition Grade"
 	optional	double				OT_Criticality_avg					"Average Criticality Grade"
 	"Graphs"
 	optional	text				RUL_category_chart					"RUL Chart"									tags:dispBarGraph,hideInGrid
@@ -5783,12 +5793,12 @@ CREATE TABLE "FarmPortions" FarmPortions : LandBaseNoID
 	"General"
 	optional	text				Stand_NO			"Stand Number"
 	optional	text				SG_ID				"SG ID"
-	optional	text				Zoning				"Zone ID"  		
-	optional	text				Zone				"Zone"  	
-	optional	text				Zone2				""  		
-	optional	text				Zone3				""  		
-	optional	int64				Area				"Area"  			unit:m^2	
-	
+	optional	text				Zoning				"Zone ID"
+	optional	text				Zone				"Zone"
+	optional	text				Zone2				""
+	optional	text				Zone3				""
+	optional	int64				Area				"Area"  			unit:m^2
+
 }
 INDEX(Geometry)
 INDEX(SG_ID);
@@ -5804,7 +5814,7 @@ CREATE TABLE "WorkOrderStatusType" WorkOrderStatusType
 	"General"
 	required	text				Code				""
 	optional	text				Description			""
-	
+
 }
 PRIMARY KEY (rowid)
 UNIQUE INDEX(Code);
@@ -5816,7 +5826,7 @@ CREATE TABLE "WorkOrderType" WorkOrderType
 	"General"
 	required	text				Code				""
 	optional	text				Description			""
-	
+
 }
 PRIMARY KEY (rowid)
 UNIQUE INDEX(Code);
@@ -5830,12 +5840,12 @@ CREATE TABLE "WorkOrderStatus" WorkOrderStatus
 	required	text		EquipmentNr 			"Equipment Number"
 	optional	text		Description				""
 	optional	text		TypeID					"WorkOrderType|Code|Description|Work Order Type"			tags:lookup,showLookupKey
-	optional	text		StatusID				"WorkOrderStatusType|Code|Description|Work Order Status"	tags:lookup,showLookupKey	
+	optional	text		StatusID				"WorkOrderStatusType|Code|Description|Work Order Status"	tags:lookup,showLookupKey
 	optional	date		CreateDate				"Date Created"                  unit:MSE
 	optional	date		StartDate				"Start Date"                      unit:MSE
 	optional	date		EndDate					"End Date"                        unit:MSE
-	optional	date		LastRefreshDate			"Last Refresh Date"           unit:MSE 
-	
+	optional	date		LastRefreshDate			"Last Refresh Date"           unit:MSE
+
 }
 PRIMARY KEY (rowid)
 UNIQUE INDEX(WorkOrderID,EquipmentNr);
@@ -5872,7 +5882,7 @@ CREATE TABLE "Annotations" Annotations
 	optional	text		Text		"Text"
 	optional	text		Style		"Style"
 	optional	text		Status		"Status"
-	
+
 }
 PRIMARY KEY (rowid)
 UNIQUE INDEX(id)
@@ -5895,27 +5905,27 @@ UNIQUE INDEX(id);
 
 CREATE TABLE "" DWSBaseGeometry : DWSBase
 {
-	"Internal"	
+	"Internal"
 	optional	geometryz				Geometry			""
 }
 INDEX(Geometry);
 
 CREATE TABLE "DWSCluster" DWSCluster : DWSBaseGeometry
 {
-	"General"	
+	"General"
 	optional	text				clusterName		"Cluster Name"
 };
 
 CREATE TABLE "DWSCMA" DWSCMA : DWSBaseGeometry
-{	
-	"General"	
+{
+	"General"
 	optional	text				cmaName			"CMA Name"
 	optional	text				majorRivers		"Major Rivers"
 };
 
 CREATE TABLE "DWSScheme" DWSScheme : DWSBaseGeometry
 {
-	"General"	
+	"General"
 	optional	text				region				"Region"
 	optional	text				schemeName			"Scheme Name"
 };
@@ -5931,7 +5941,7 @@ CREATE TABLE "DWSSGFarmPortion" DWSSGFarmPortion : DWSBaseGeometry
 	optional	text				portion				"Portion"
 	optional	date				dateStamp			"Data Capture Date"							unit:MSE
 	optional	bool				isCopied			"Changed"
-	
+
 	hasone		DamBaseData			SG21Code			DWSDamBaseData.SG21Code
 }
 INDEX(SG21Code);
@@ -5945,7 +5955,7 @@ CREATE TABLE "DWSDamBaseData" DWSDamBaseData : DWSBase
 	optional	text				province				"Province"
 	optional	text				magisterialDistrict		"Magisterial District"
 	optional	text				damNo					"Dam Number"
-	optional	text				damName					"Dam Name"	
+	optional	text				damName					"Dam Name"
 	optional	text				schemeName				"Scheme Name"
 	optional	text				town					"Town"
 	optional	text				allotmentRegion			"Allotment Region"
@@ -5956,7 +5966,7 @@ CREATE TABLE "DWSDamBaseData" DWSDamBaseData : DWSBase
 	optional 	int32				WARMS_Dam_ID			"WARMS Dam ID"
 	optional	text				quatDrainageArea		"Quat. Drainage Area"
 	optional	text				townNearest				"Nearest Town"
-	optional	text				farmName				"Name of Farm"	
+	optional	text				farmName				"Name of Farm"
 	optional	int32				completionDate			"Completion date"						unit:year
 	optional	text				riverOrWatercourse		"River or Watercourse"
 	optional	text				wallType				"Wall type"
@@ -5970,7 +5980,7 @@ CREATE TABLE "DWSDamBaseData" DWSDamBaseData : DWSBase
 	optional	text				ownerName				"Owner name"
 	optional	text				designer				"Designer"
 	optional	text				hazardPotential			"Hazard Potential"
-	optional	date				registrationDate		"Registration Date"						unit:MSE 
+	optional	date				registrationDate		"Registration Date"						unit:MSE
 	optional	date				classificationDate		"Classification Date"					unit:MSE
 	optional	date				dateLastDSI				"Last Dam Safety Inspection"			unit:MSE
 }
@@ -5988,13 +5998,13 @@ CREATE TABLE "WidgetLandParcel" WidgetLandParcel : DWSBaseGeometry
 	optional	date				dateStamp			"Data Capture Date"							unit:MSE
 	optional	text				systemId			"Originating System (e.g. LandParcel)"
 	optional	text				sapId				"sapId"
-	
+
 	hasone		DamBaseData			SG21Code			DWSDamBaseData.SG21Code
 }
 INDEX(SG21Code);
 
 ###################################################################################################################
-# Water and Sewer PRP 
+# Water and Sewer PRP
 ###################################################################################################################
 
 CREATE TABLE "" PRPBaseNoID
@@ -6088,7 +6098,7 @@ CREATE TABLE "" PipeReplaceDataBase : PRPBaseNoID
 	optional  polyline            Geometry                                        ""
 	"1.General"
 	optional  text                UserLinkNo                                      ""			uiorder:4
-	
+
 	flags runtime_schema
 }
 INDEX(Geometry)
@@ -6122,7 +6132,7 @@ CREATE TABLE "" PipeReplaceFailurePointsBase : PRPBaseNoID
 	optional  point               Geometry                                        ""
 	optional  date                Date                                            ""		unit:MSE
 	optional  int64               Year                                            ""		unit:year
-}   
+}
 INDEX(Geometry)
 INDEX(Date);
 
@@ -6178,7 +6188,7 @@ CREATE TABLE "" PipeReplaceSourceBase : PRPBaseNoID
 	optional  double              CF_07                                           ""					uiorder:6
 	optional  double              CF_08                                           ""					uiorder:7
 	optional  double              CF_09                                           ""					uiorder:8
-}   
+}
 INDEX(LinkNr);
 
 CREATE TABLE "" WaterPipeReplaceSource : PipeReplaceSourceBase
@@ -6232,7 +6242,7 @@ CREATE TABLE "" PipeReplaceTotalsBase : PRPBaseNoID
 	optional  double			  KP2											  "Key performance Indicator 2"																uiorder:5
 
 	flags runtime_schema
-}   
+}
 INDEX(LinkNr)
 INDEX(Area1)
 INDEX(Area2)
@@ -6259,7 +6269,7 @@ CREATE TABLE "" PipeReplaceWeightsBase : PRPBaseNoID
 	optional  text                FactorName                                      "Factor Name"							uiorder:0
 	optional  double              FactorVal                                       "Factor Value"						uiorder:1
 	optional  text                FactorDesc                                      "Factor Description"					uiorder:2
-}   
+}
 INDEX(FactorName);
 
 CREATE TABLE "" WaterPipeReplaceWeights : PipeReplaceWeightsBase
@@ -6300,7 +6310,7 @@ CREATE TABLE "" ElectricityBaseNoID
 	optional	text				Locality 										""
 	"General"
 	optional 	int32 				MetaID											""  	tags:dispMeta,hideInGrid
-	
+
 }
 PRIMARY KEY (rowid);
 
@@ -6356,11 +6366,11 @@ CREATE TABLE "ElectricityCables" ElectricityCables : ElectricityBase
 	optional  double              Zero_Seq_Reactance                              "Zero Sequence Reactance"						unit:ohm                        uiorder:28
 	optional  double              Positive_Seq_Capacitance                        "Positive Sequence Capacitance"				unit:ohm                        uiorder:29
 	optional  double              Zero_Seq_Capacitance                            "Zero Sequence Capacitance"                                                   uiorder:30
-	
+
 	hasone Memo     ID            ElectricityCablesMemo.ID
 	hasone Results  ID            ElectricityCablesResults.ID
 	hasone User     ID            ElectricityCablesUser.ID
-	
+
 	flags orm_server
 }
 INDEX(Geometry);
@@ -6419,7 +6429,7 @@ CREATE TABLE "ElectricityCablesResults" ElectricityCablesResults : ElectricityBa
 	optional  double              Voltage_R_Angle                                 "(A) Phase Voltage Angle"						unit:deg                        uiorder:66
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:67
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:68
-	"8.Results.2.Currents"					
+	"8.Results.2.Currents"
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:69
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:70
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:71
@@ -6438,7 +6448,7 @@ CREATE TABLE "ElectricityCablesResults" ElectricityCablesResults : ElectricityBa
 	optional  double              Phase_to_Ground_Fault_Angle                     "Phase to Ground Fault Angle"					unit:deg                        uiorder:83
 	optional  double              Phase_to_Phase_Fault_Angle                      "Phase to Phase Fault Angle"					unit:deg                        uiorder:84
 	optional  double              Two_Phases_to_Ground_Fault_Angle                "Two Phases to Ground Fault Angle"			unit:deg                        uiorder:85
-	"8.Results.4.Losses"			
+	"8.Results.4.Losses"
 	optional  double              Total_Active_Loss                               "Total Active Losses (P)"						unit:W                          uiorder:86
 	optional  double              Total_Reactive_Loss                             "Total Reactive Losses (Q)"					unit:Var                        uiorder:87
 	optional  double              Total_Losses                                    "Total Apparent Losses (S)"					unit:VA                         uiorder:88
@@ -6540,11 +6550,11 @@ CREATE TABLE "ElectricityLoads" ElectricityLoads : ElectricityBase
 	optional  double              Vmin_Normal                                     ""
 	optional  double              Vmin_Emergency                                  ""
 	optional  double              Vlow_pu                                         ""
-	
+
 	hasone Memo     ID            ElectricityLoadsMemo.ID
 	hasone Results  ID            ElectricityLoadsResults.ID
 	hasone User     ID            ElectricityLoadsUser.ID
-	
+
 }
 INDEX(Geometry);
 
@@ -6583,7 +6593,7 @@ CREATE TABLE "ElectricityLoadsMemo" ElectricityLoadsMemo : ElectricityBase
 	optional  text                Locality_Integrity                              "Locality Integrity"                                                          uiorder:66
 	optional  text                Year_Integrity                     			  "Year Integrity"                                                              uiorder:67
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:68
-	"Internal"                
+	"Internal"
 	optional  text 				  Treasury_Fix									  "Treasury_Fix"
 	optional  text 				  Future_Development							  "Future_Development"
 	optional  text 				  Informal_Development							  "Informal_Development"
@@ -6642,9 +6652,9 @@ CREATE TABLE "ElectricityLoadsResults" ElectricityLoadsResults : ElectricityBase
 	optional  double              Total_Load                                      "Total Apparent Load (S)"						unit:VA                         uiorder:102
 	optional  double              Total_Energy                                    "Total Energy"								unit:kWh                        uiorder:103
 	"Internal"
-	optional  double			  Voltage_R_Expected							  "Expected (A) Phase Voltage"					unit:V	
+	optional  double			  Voltage_R_Expected							  "Expected (A) Phase Voltage"					unit:V
 	optional  double			  Voltage_W_Expected							  "Expected (B) Phase Voltage"					unit:V
-	optional  double			  Voltage_B_Expected							  "Expected (C) Phase Voltage"					unit:V	
+	optional  double			  Voltage_B_Expected							  "Expected (C) Phase Voltage"					unit:V
 	optional  double              Current_R_Expected							  "Expected (A) Phase Current"					unit:A
 	optional  double              Current_W_Expected							  "Expected (B) Phase Current"					unit:A
 	optional  double              Current_B_Expected							  "Expected (C) Phase Current"					unit:A
@@ -6674,8 +6684,8 @@ CREATE TABLE "ElectricityNodes" ElectricityNodes : ElectricityBase
 
 	hasone Memo     ID            ElectricityNodesMemo.ID
     hasone Results  ID            ElectricityNodesResult.ID
-    hasone User     ID            ElectricityNodesUser.ID	
-	
+    hasone User     ID            ElectricityNodesUser.ID
+
 }
 INDEX(Geometry);
 
@@ -6762,7 +6772,7 @@ CREATE TABLE "ElectricityNodesResult" ElectricityNodesResult : ElectricityBase
 	optional  double              Total_Load                                      "Total Apparent Load (S)"						unit:VA                         uiorder:68
 	optional  double              Total_Energy                                    "Total Energy"								unit:kVAh                       uiorder:69
 	"Internal"
-	optional  double              Voltage_R_Expected                              "Expected (A) Phase Voltage"					unit:V	
+	optional  double              Voltage_R_Expected                              "Expected (A) Phase Voltage"					unit:V
 	optional  double              Voltage_W_Expected                              "Expected (B) Phase Voltage"					unit:V
 	optional  double              Voltage_B_Expected                              "Expected (C) Phase Voltage"					unit:V
 	optional  double              Current_R_Expected                              "Expected (A) Phase Current"					unit:A
@@ -6803,7 +6813,7 @@ CREATE TABLE "ElectricitySource" ElectricitySource : ElectricityBase
 	hasone Memo     ID            ElectricitySourceMemo.ID
 	hasone Results  ID            ElectricitySourceResult.ID
 	hasone User     ID            ElectricitySourceUser.ID
-	
+
 }
 INDEX(Geometry);
 
@@ -6922,7 +6932,7 @@ CREATE TABLE "ElectricitySwitchgear" ElectricitySwitchgear : ElectricityBase
 	"3.Specification.2.Electrical.1.Voltage"
 	optional  text                Nominal_Voltage                                 "Nominal Voltage"                                                             uiorder:8
 	optional  text                Voltage_Category                                "Voltage Category"                                                            uiorder:9
-	
+
 	hasone Memo     ID            ElectricitySwitchgearMemo.ID
 	hasone Results  ID            ElectricitySwitchgearResult.ID
 	hasone User     ID            ElectricitySwitchgearUser.ID
@@ -7014,7 +7024,7 @@ CREATE TABLE "ElectricitySwitchgearResult" ElectricitySwitchgearResult : Electri
 	optional  double              Total_Load                                      "Total Apparent Load (S)"						unit:VA                         uiorder:71
 	optional  double              Total_Energy                                    "Total Energy"								unit:kVAh                       uiorder:72
 	"Internal"
-	optional  double              Voltage_R_Expected                              "Expected (A) Phase Voltage"					unit:V	
+	optional  double              Voltage_R_Expected                              "Expected (A) Phase Voltage"					unit:V
 	optional  double              Voltage_W_Expected                              "Expected (B) Phase Voltage"					unit:V
 	optional  double              Voltage_B_Expected                              "Expected (C) Phase Voltage"					unit:V
 	optional  double              Current_R_Expected                              "Expected (A) Phase Current"					unit:A
@@ -7032,7 +7042,7 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 {
 	"Internal"
 	optional  polylinezm          Geometry                                        "Geometry"
-	"1.Status"	
+	"1.Status"
 	optional  text                Live                                            "Live Status"                                                                 uiorder:1
 	"2.Connection"
 	optional  uuid                From_Connection                                 "From Bus ID"                                                                 uiorder:2
@@ -7052,22 +7062,22 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  double              Phase_Shift                                     "Phase Shift"									unit:deg                        uiorder:14
 	optional  double              Base_Frequency                                  "Base Frequency"								unit:Hz                         uiorder:15
 	optional  double              Fault_Rate                                      "Failure Rate of Transformer"                                                 uiorder:16
-	"3.Specifications.2.Electrical.2.Voltage&Current"	
+	"3.Specifications.2.Electrical.2.Voltage&Current"
 	optional  double              Prim_Voltage                                    "Primary Coil Voltage"						unit:V                          uiorder:17
 	optional  double              Sec_Voltage                                     "Secondary Coil Voltage"						unit:V                          uiorder:18
 	optional  double              Percent_Magnetising_Current                     "Percent Magnetising Current"					unit:%                          uiorder:19
-	"3.Specifications.2.Electrical.3.Power"	
-	optional  double              kVA                                             "kVA Rating"									unit:kVA                        uiorder:20	
+	"3.Specifications.2.Electrical.3.Power"
+	optional  double              kVA                                             "kVA Rating"									unit:kVA                        uiorder:20
 	optional  double              Overload                                        "Permissible Per-unit Overload"                                               uiorder:21
 	optional  double              Normal_H_Max_kVA                                "Normal Maximum kVA Rating for H Winding"		unit:kVA                        uiorder:22
 	optional  double              Emergency_H_max_kVA                             "Emergency Maximum kVA Rating for H Winding"	unit:kVA                        uiorder:23
-	"3.Specifications.2.Electrical.4.Windings Configuration"	
+	"3.Specifications.2.Electrical.4.Windings Configuration"
 	optional  int32               Phases                                          "Number of Phases"                                                            uiorder:24
 	optional  int32               Windings                                        "Number of Windings"	                                                        uiorder:25
 	optional  text                Prim_Config                                     "Primary Coil Configuration"                                                  uiorder:26
 	optional  text                Sec_Config                                      "Secondary Coil Configuration"                                                uiorder:27
 	optional  double              Internal_Boost                                  "Internal Boost Percentage"					unit:%                          uiorder:28
-	"3.Specifications.2.Electrical.5.Tap Settings"	
+	"3.Specifications.2.Electrical.5.Tap Settings"
 	optional  double              Min_Tap                                         "Minimum Tap Per-unit"                                                        uiorder:29
 	optional  double              Max_Tap                                         "Maximum Tap Per-unit"                                                        uiorder:30
 	optional  double              Prim_Tap                                        "Primary Tap Per-unit"                                                        uiorder:31
@@ -7076,7 +7086,7 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  double              No_of_Taps                                      "Nunber of Taps"                                                              uiorder:34
 	optional  double              Tap_Vmax_pu                                     "Tap Vmax Per-unit"                                                           uiorder:35
 	optional  double              Tap_Vmin_pu                                     "Tap Vmin Per-unit"                                                           uiorder:36
-	"3.Specifications.2.Electrical.6.Conductivity"	
+	"3.Specifications.2.Electrical.6.Conductivity"
 	optional  double              Percentage_Impedance                            "Percentage Impedance"						unit:%                          uiorder:37
 	optional  double              Reactance_Resistance_Ratio_X_R                  "Reactance Resistance Ratio X/R"                                              uiorder:38
 	optional  double              Zero_Seq_Percentage_Impedance                   "Zero Sequence Percentage Impedance"			unit:%                          uiorder:39
@@ -7085,12 +7095,12 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  double              Neutral_Reactance_to_Ground                     "Neutral Reactance to Ground"					unit:ohm                        uiorder:42
 	optional  double              Sec_Earth_Zero_Seq_Resistance                   "Secondary Earth Zero Sequence Resistance"	unit:ohm                        uiorder:43
 	optional  double              Sec_Earth_Zero_Seq_Reactance                    "Secondary Earth Zero Sequence Reactance"		unit:ohm                        uiorder:44
-	"3.Specifications.2.Electrical.7.Losses"	
+	"3.Specifications.2.Electrical.7.Losses"
 	optional  double              I_Loss_Watt                                     "Iron Losses in Watt"							unit:W                          uiorder:45
 	optional  double              I_Loss_VAR                                      "Iron Losses in VAR"							unit:Var                        uiorder:46
 	optional  double              Percentage_Load_Loss                            "Percentage Load-loss"						unit:%                          uiorder:47
 	optional  double              Percentage_No_Load_Loss                         "Percentage No Load-loss"						unit:%	                        uiorder:48
-	"3.Specifications.2.Electrical.8.Thermal Ratings"	
+	"3.Specifications.2.Electrical.8.Thermal Ratings"
 	optional  double              Thermal_hrs                                     "Thermal Time Constant, hrs"					unit:h                          uiorder:49
 	optional  double              Thermal_n                                       "Thermal Exponent n"                                                          uiorder:50
 	optional  double              Thermal_m                                       "Thermal Exponent m"                                                          uiorder:51
@@ -7101,11 +7111,11 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  double              XHL                                             "Percent Reactance High to Low"				unit:%
 	optional  double              XHT                                             "Percent Reactance Low to Tertiary"			unit:%
 	optional  double              XLT                                             "Percent Reactance High to Tertiary"			unit:%
-	
+
 	hasone Memo     ID            ElectricityTrfrsMemo.ID
     hasone Results  ID            ElectricityTrfrsResult.ID
     hasone User     ID            ElectricityTrfrsUser.ID
-	
+
 	}
 INDEX(Geometry);
 
@@ -7229,7 +7239,7 @@ CREATE TABLE "ElectricityTrfrsResult" ElectricityTrfrsResult : ElectricityBase
 	optional  double              Prim_Current_R_Expected                         "Expected (A) Phase Current"					unit:A
 	optional  double              Prim_Current_W_Expected                         "Expected (B) Phase Current"					unit:A
 	optional  double              Prim_Current_B_Expected                         "Expected (C) Phase Current"					unit:A
-	optional  double              Sec_Voltage_R_Expected                          "Expected (A) Phase Voltage"					unit:V	
+	optional  double              Sec_Voltage_R_Expected                          "Expected (A) Phase Voltage"					unit:V
 	optional  double              Sec_Voltage_W_Expected                          "Expected (B) Phase Voltage"					unit:V
 	optional  double              Sec_Voltage_B_Expected                          "Expected (C) Phase Voltage"					unit:V
 	optional  double              Sec_Current_R_Expected                          "Expected (A) Phase Current"					unit:A
@@ -7289,11 +7299,11 @@ CREATE TABLE "ElectricityGenerators" ElectricityGenerators : ElectricityBase
 	"Internal"
 	optional  bool				  Generator 									  ""
 	optional  text 				  PFsc_Machine_Type								  ""
-	
+
 	hasone Memo     ID            ElectricityGeneratorsMemo.ID
 	hasone Results  ID            ElectricityGeneratorsResult.ID
 	hasone User     ID            ElectricityGeneratorsUser.ID
-	
+
 }
 INDEX(Geometry);
 
@@ -7331,7 +7341,7 @@ CREATE TABLE "ElectricityGeneratorsMemo" ElectricityGeneratorsMemo : Electricity
 	optional  text                Locality_Integrity                              "Locality Integrity"                                                          uiorder:57
 	optional  text                Year_Integrity                     			  "Year Integrity"                                                              uiorder:58
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:59
-	"Internal"                
+	"Internal"
 	optional  text 				  Treasury_Fix									  "Treasury_Fix"
 	optional  text 				  Future_Development							  "Future_Development"
 	optional  text 				  Informal_Development							  "Informal_Development"
@@ -7389,9 +7399,9 @@ CREATE TABLE "ElectricityGeneratorsResult" ElectricityGeneratorsResult : Electri
 	optional  double              Total_Load                                      "Total Apparent Load (S)"						unit:VA                         uiorder:92
 	optional  double              Total_Energy                                    "Total Energy"								unit:kWh                        uiorder:93
 	"Internal"
-	optional  double			  Voltage_R_Expected							  "Expected (A) Phase Voltage"					unit:V	
+	optional  double			  Voltage_R_Expected							  "Expected (A) Phase Voltage"					unit:V
 	optional  double			  Voltage_W_Expected							  "Expected (B) Phase Voltage"					unit:V
-	optional  double			  Voltage_B_Expected							  "Expected (C) Phase Voltage"					unit:V	
+	optional  double			  Voltage_B_Expected							  "Expected (C) Phase Voltage"					unit:V
 	optional  double              Current_R_Expected							  "Expected (A) Phase Current"					unit:A
 	optional  double              Current_W_Expected							  "Expected (B) Phase Current"					unit:A
 	optional  double              Current_B_Expected							  "Expected (C) Phase Current"					unit:A
@@ -7405,15 +7415,15 @@ CREATE TABLE "ElectricityGeneratorsUser" ElectricityGeneratorsUser : Electricity
 
 CREATE SUFFIX TABLES
 {
-    ElectricityCables,              ElectricityCablesMemo,      ElectricityCablesResults, 
-    ElectricityCablesUser,          ElectricityLoads,           ElectricityLoadsMemo, 
-    ElectricityLoadsResults,        ElectricityLoadsUser,       ElectricityNodes, 
-    ElectricityNodesMemo,           ElectricityNodesResult,     ElectricityNodesUser, 
-    ElectricitySource,              ElectricitySourceMemo,      ElectricitySourceResult, 
-    ElectricitySourceUser,          ElectricitySwitchgear,      ElectricitySwitchgearMemo, 
-    ElectricitySwitchgearResult,    ElectricitySwitchgearUser,  ElectricityTrfrs, 
-    ElectricityTrfrsMemo,           ElectricityTrfrsResult,     ElectricityTrfrsUser, 
-    ElectricityGenerators,          ElectricityGeneratorsMemo,  ElectricityGeneratorsResult, 
+    ElectricityCables,              ElectricityCablesMemo,      ElectricityCablesResults,
+    ElectricityCablesUser,          ElectricityLoads,           ElectricityLoadsMemo,
+    ElectricityLoadsResults,        ElectricityLoadsUser,       ElectricityNodes,
+    ElectricityNodesMemo,           ElectricityNodesResult,     ElectricityNodesUser,
+    ElectricitySource,              ElectricitySourceMemo,      ElectricitySourceResult,
+    ElectricitySourceUser,          ElectricitySwitchgear,      ElectricitySwitchgearMemo,
+    ElectricitySwitchgearResult,    ElectricitySwitchgearUser,  ElectricityTrfrs,
+    ElectricityTrfrsMemo,           ElectricityTrfrsResult,     ElectricityTrfrsUser,
+    ElectricityGenerators,          ElectricityGeneratorsMemo,  ElectricityGeneratorsResult,
     ElectricityGeneratorsUser;
     01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
@@ -7444,7 +7454,7 @@ CREATE TABLE "WaterDemandStandNT" WaterDemandStandNT
 	optional	text				Stand_ID		"Stand ID"
 	optional	text				GIS_Code		"GIS Code"
 	optional	text				GIS_Orig		"GIS Code (Original)"
-	
+
 }
 PRIMARY KEY (rowid)
 UNIQUE INDEX(id)
@@ -7608,7 +7618,7 @@ CREATE TABLE "WaterSchematicZonesCurrent" WaterSchematicZonesCurrent : WaterBase
 	optional	text                District                                        "Network"
  	optional	text                TrimName                                        "Display Label"
  	optional	text                Status                                          "Status"
-	
+
  	hasone		WaterDemandZone		Code											WaterDemandZone.Zone_ID
 }
 INDEX(Geometry);
@@ -7935,7 +7945,7 @@ INDEX(Geometry);
 
 
 ###################################################################################################################
-# Meter Maintenance submodule of Maintenance Management 
+# Meter Maintenance submodule of Maintenance Management
 ###################################################################################################################
 
 
@@ -7948,26 +7958,26 @@ CREATE TABLE "MeterMaintenanceConnections" MeterMaintenanceConnections
 	optional	text				CONRegion								"CON Region"													uiorder:0
 	optional	text				SAPObject								"SAP Object"													uiorder:1
 	optional	text				SAPPremise								"SAP Premise"					tags:humanID					uiorder:2
-	optional	text				SAPInstallation							"SAP Installation"												uiorder:3	
+	optional	text				SAPInstallation							"SAP Installation"												uiorder:3
 	optional	text				CONSubReg								"CON Sub Reg"													uiorder:4
 	optional	text				serial									"Serial"														uiorder:5
 	optional	text				reference								"Reference"														uiorder:6
  	optional	text				customer								"Customer"														uiorder:7
- 	optional	text				IDPWard									"IDP Ward"														uiorder:8	
+ 	optional	text				IDPWard									"IDP Ward"														uiorder:8
 	optional	text				MRU										"MRU"															uiorder:9
 	optional	text				suburb									"Suburb"														uiorder:10
 	optional	text				extension								"Extension"														uiorder:11
 	optional	text				stand									"Stand"															uiorder:12
 	optional	text				ptn										"Ptn"															uiorder:13
 	optional	text				SAPPortion								"SAP Portion"													uiorder:14
-	optional	int32				stand_size								"Stand Size"													uiorder:15		
+	optional	int32				stand_size								"Stand Size"													uiorder:15
 	optional	text				build_area								"Build Area"													uiorder:16
 	optional	text				build_plan								"Build Plan"													uiorder:17
 	optional	text				zoning									"Zoning"														uiorder:18
 	optional	text				status									"Status"														uiorder:19
 	optional	date				StatusExpiryDate						"Status Expiry Date"			unit:MSE						uiorder:20
 	optional	text				ConsumptionStatus						"Consumption Status"											uiorder:21
-	optional	text				scale									"Scale"															uiorder:22	
+	optional	text				scale									"Scale"															uiorder:22
 	optional	text				s_code									"S Code"														uiorder:23
 	optional	text				s_code1									"S Code 1"														uiorder:24
 	optional	text				s_code2									"S Code 2"														uiorder:25
@@ -7993,7 +8003,7 @@ CREATE TABLE "MeterMaintenanceConnections" MeterMaintenanceConnections
 	optional	text				meter_pos								"Meter Pos"														uiorder:45
 	optional	text				MeterAccessibility						"Meter Accessibility"											uiorder:46
 	optional	text				position								"Position"														uiorder:47
-	optional	text				heavylid								"Heavy Lid"														uiorder:48	
+	optional	text				heavylid								"Heavy Lid"														uiorder:48
 	optional	text				doublecheck								"Double Check"													uiorder:49
 	optional	date				TreasuryCompare							"Treasury Compare"				unit:MSE						uiorder:50
 	optional	text				ReadBy									"Read By"														uiorder:51
@@ -8007,9 +8017,9 @@ CREATE TABLE "MeterMaintenanceConnections" MeterMaintenanceConnections
 	optional	text				remarks									"Remarks"														uiorder:59
 	optional	uuid				ID										"View Connection"				tags:viewConnection,hideInGrid	uiorder:60
 	optional 	int32 				MetaID									"" 								tags:dispMeta,hideInGrid		uiorder:61
-	
+
 	hasmany		Transactions		serial									MeterMaintenanceTransactions.conserial
-	
+
 }
 PRIMARY KEY(rowid)
 UNIQUE INDEX(ID)
@@ -8026,26 +8036,26 @@ CREATE TABLE "MeterMaintenanceTransactions" MeterMaintenanceTransactions
 	optional	text					SysId									"Sys Id"					tags:humanID						uiorder:0
 	optional	text					conserial								"Con Serial"													uiorder:1
 	optional	text					reference								"Reference"														uiorder:2
-	optional	text					EmpSysid								"Emp Sys Id"													uiorder:3	
+	optional	text					EmpSysid								"Emp Sys Id"													uiorder:3
 	optional	date					date_cap								"Date Cap"					unit:MSE							uiorder:4
 	optional	date					inspect_date							"Inspect Date"				unit:MSE							uiorder:5
 	optional	date					date									"Date"						unit:MSE							uiorder:6
  	optional	text					ReasonCode								"Reason Code"													uiorder:7
- 	optional	text					old_number								"Old Number"													uiorder:8	
+ 	optional	text					old_number								"Old Number"													uiorder:8
 	optional	int32					old_reading								"Old_Reading"													uiorder:9
 	optional	int32					old_reading_elec						"Old Reading Elec"												uiorder:10
 	optional	text					OldDeviceCat							"Old Device Cat"												uiorder:11
 	optional	text					OldRegisterGroup						"Old Register Group"											uiorder:12
 	optional	text					new_number								"New Number"													uiorder:13
 	optional	int32					new_reading								"New Reading"													uiorder:14
-	optional	int32					new_reading_elec						"New Reading Elec"												uiorder:15		
+	optional	int32					new_reading_elec						"New Reading Elec"												uiorder:15
 	optional	text					EvidenceTheft							"Evidence Theft"												uiorder:16
 	optional	text					SecurityCollars							"Security Collars"												uiorder:17
 	optional	text					PaymentType								"Payment Type"													uiorder:18
 	optional	text					VisibleLeaks							"Visible Leaks"													uiorder:19
 	optional	text					InvisibleLeaks							"Invisible Leaks"												uiorder:20
 	optional	text					type									"Type"															uiorder:21
-	optional	text					Restriction								"Restriction"													uiorder:22	
+	optional	text					Restriction								"Restriction"													uiorder:22
 	optional	text					TreasuryNo								"Treasury No"													uiorder:23
 	optional	text					SAPInstallation							"SAP Installation"												uiorder:24
 	optional	text					captured_by								"Captured By"													uiorder:25
@@ -8053,9 +8063,9 @@ CREATE TABLE "MeterMaintenanceTransactions" MeterMaintenanceTransactions
 	optional	date					last_update								"Last Update"				unit:MSE							uiorder:27
 	optional	text					remarks									"Remarks"														uiorder:28
 	optional 	int32 					MetaID									"" 							tags:dispMeta,hideInGrid			uiorder:29
-	
+
 	hasmany		Meters					new_number								MeterMaintenanceMeters.NumStr
-	
+
 }
 PRIMARY KEY(rowid)
 UNIQUE INDEX(ID)
@@ -8071,25 +8081,25 @@ CREATE TABLE "MeterMaintenanceMeters" MeterMaintenanceMeters
 	optional	text					NumStr									"Meter Number"				tags:humanID						uiorder:0
 	optional	text					Manufacturer							"Manufacturer"													uiorder:1
 	optional	text					Model									"Model"															uiorder:2
-	optional	double					length									"Length"														uiorder:3	
+	optional	double					length									"Length"														uiorder:3
 	optional	text					digits									"Digits"														uiorder:4
 	optional	text					meter_size								"Meter Size"													uiorder:5
 	optional	int32					last_reading							"Last Reading"													uiorder:6
  	optional	date					last_inst								"Last Inst"					unit:MSE							uiorder:7
- 	optional	text					type									"Type"															uiorder:8	
+ 	optional	text					type									"Type"															uiorder:8
 	optional	text					mechanism								"Mechanism"														uiorder:9
 	optional	text					BodyType								"Body Type"														uiorder:10
 	optional	text					MeterFunction							"Meter Function"												uiorder:11
 	optional	text					Requisition								"Requisition"													uiorder:12
 	optional	text					status									"status"														uiorder:13
 	optional	text					connection								"Connection"													uiorder:14
-	optional	text					EmpSysid								"Emp Sys Id"													uiorder:15		
+	optional	text					EmpSysid								"Emp Sys Id"													uiorder:15
 	optional	text					ReadFactor								"Read Factor"													uiorder:16
 	optional	text					captured_by								"Captured By"													uiorder:17
 	optional	date					last_update								"Last Update"				unit:MSE							uiorder:18
 	optional 	uuid 					ID							            "View Meter"				tags:meterDetail,hideInGrid		    uiorder:19
 	optional 	int32 					MetaID									"" 							tags:dispMeta,hideInGrid			uiorder:20
-	
+
 }
 PRIMARY KEY(rowid)
 UNIQUE INDEX(ID)
@@ -8180,7 +8190,7 @@ CREATE TABLE "SpimInspection" SpimInspection :  SpimBaseNoID
 	optional 	bool 					FullPipeInspected 						"Full Pipe Inspected"
 	optional 	bool 					UsedForGrading 							"Used For Grading"
 	optional 	int64 					InspectorID 							"Inspector ID"
-	optional	text					PipeCode								"Pipe Code"	
+	optional	text					PipeCode								"Pipe Code"
 }
 UNIQUE INDEX(ID)
 INDEX(PipeID)
@@ -8203,7 +8213,7 @@ CREATE TABLE "SpimManhole" SpimManhole: SpimBase
 	optional 	text 					Street									"Street"
 	optional 	text 					StreetNumber							"Street Number"
 	optional 	text 					StandID									"Stand"
-	optional 	double 					SurveyDepth 							"Survey Depth"	
+	optional 	double 					SurveyDepth 							"Survey Depth"
 	optional 	text 					Steps									"Steps"
 	optional 	text 					Shaft									"Shaft"
 	optional 	text 					Comment									"Comment"
@@ -8247,7 +8257,7 @@ CREATE TABLE "SpimContractor" SpimContractor : SpimBase
 CREATE TABLE "SpimMemo" SpimMemo : SpimBase
 {
 	"Internal"
-	optional	int64					IncidentID								"Incident ID"	
+	optional	int64					IncidentID								"Incident ID"
 	optional 	text 					RecordingPosition						"Recording Position"
 	optional 	text 					MemoText								"Memo Text"
 }
@@ -8305,7 +8315,7 @@ CREATE TABLE "SpimPipe" SpimPipe : SpimBase
 	optional 	double 					PipeDiameter							"Inspection Diameter"				unit:mm			uiorder:3
 	optional 	double 					InspectionLength						"Inspection Length"					unit:m			uiorder:4
 	optional 	text 					PipeMaterial							"Inspection Material"								uiorder:5
- 						
+
 	hasmany		SPIM_Inspections 		PipeCode		SpimInspection.PipeCode		order:1
 	hasmany		SPIM_Incidents			PipeCode		SpimIncident.PipeCode		order:2
 	hasmany		SPIM_Job_cards			PipeCode		SpimJobcard.PipeName		order:3
@@ -8323,7 +8333,7 @@ CREATE TABLE "" HydroJetBase
 	required	int64					rowid									""
 	optional 	text					Locality								""
 	"General"
-	optional	int32					MetaID									""				tags:dispMeta,hideInGrid,hideInProperties	
+	optional	int32					MetaID									""				tags:dispMeta,hideInGrid,hideInProperties
 
 }
 PRIMARY KEY(rowid);
@@ -8331,7 +8341,7 @@ PRIMARY KEY(rowid);
 CREATE TABLE "HydroJetActivity" HydroJetActivity : HydroJetBase
 {
 	"Internal"
-	optional	text					Code									"Code"					
+	optional	text					Code									"Code"
 	"General"
 	optional	text					Description								"Activity"		tags:humanID		uiorder:2
 
@@ -8350,7 +8360,7 @@ INDEX(Code);
 
 CREATE TABLE "" HydroJetWorkOrderBase : HydroJetBase
 {
-	"Internal"	
+	"Internal"
 	optional	polylinez				Geometry								""
 	optional	uuid					BatchID									""
 	optional	text					Status									"Status"
@@ -8361,14 +8371,14 @@ CREATE TABLE "" HydroJetWorkOrderBase : HydroJetBase
 	optional	text					PlantCode								"Plant Code"
 	optional	double					Length									"Length"							unit:m
 	optional	text					Suburb									"Suburb"
-	optional	uuid					ID										"IMQS ID"					
+	optional	uuid					ID										"IMQS ID"
 	optional 	text 					PipeType								"Pipe Type"
 	optional 	int32					RetryCount								"Retry Count"
-	"General"	
+	"General"
 	optional	text					ExternalID								"SAP Work Order ID"					uiorder:1
 	optional	datetime				Created									"SAP Date Created"					uiorder:4
 	optional	datetime				Modified								"Last Date Modified"				uiorder:5
-	
+
 	hasone		Activity_Code			ActivityCode							HydroJetActivity.Code				order:10
 	hasone		Status					Status									HydroJetStatus.Code
 }
@@ -8378,7 +8388,7 @@ INDEX(ExternalID)
 INDEX(Geometry);
 
 CREATE TABLE "HydroJetWorkOrder" HydroJetWorkOrder : HydroJetWorkOrderBase
-{	
+{
 	"Internal"
 	optional	uuid					PipeID									""
 	optional	text					ActivityCode							"Activity Code"						tags:workOrder
@@ -8388,7 +8398,7 @@ INDEX(ActivityCode)
 UNIQUE INDEX(PipeID, ActivityCode);
 
 CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkOrderBase
-{	
+{
 	"Internal"
 	optional	uuid					PipeID									""
 	optional	text					ActivityCode							"Activity Code"						tags:workOrder
@@ -8422,7 +8432,7 @@ CREATE TABLE "MLRoads" MLRoads
 	"2. Road Classification"
 	optional 	int64				SegmentID										"Segment ID"											uiorder:20
 	optional	int32				Classification									"MLRoadsClassifications|key|value|Road Classification" tags:lookup,showLookupKey,simpleTextSearch 	uiorder:21
-	
+
 	optional 	double 				StartDistance									"Start Distance"							unit:km		uiorder:22
 	optional 	double 				EndDistance										"End Distance"								unit:km		uiorder:23
 	optional	double				Length											"Length"									unit:km		uiorder:24
@@ -8440,7 +8450,7 @@ CREATE TABLE "MLRoads" MLRoads
 	optional 	datetime			EndDate											"End Date"												uiorder:34
 	optional 	datetime			BaseDate										"Base Date"												uiorder:35
 	optional 	datetime			SurfaceDate										"Surface Date"											uiorder:36
-	
+
 	optional 	text				District										"District"												uiorder:37
 	optional 	text				Municipality									"Local Municipality"									uiorder:38
 	optional	int32				AuthorityID										"MLRoadsAuthorities|key|value|Authority"	tags:lookup,showLookupKey,simpleTextSearch		uiorder:39
@@ -8459,7 +8469,7 @@ CREATE TABLE "MLRoads" MLRoads
 	optional 	int64				InspectorID										"MLRoadsUsers|key|value|Inspector"			tags:lookup,showLookupKey,simpleTextSearch		uiorder:53
 	optional	text				Assessment										"Assessment Reference"									uiorder:53
 	"4. Defects Summary"
-	optional    double 				Nothing											"No Defect" 								unit:%		uiorder:60	
+	optional    double 				Nothing											"No Defect" 								unit:%		uiorder:60
 	optional    double 				SurfaceFailure									"Surface Failure"							unit:%		uiorder:61
 	optional    double 				SurfaceCrack									"Surface Crack"								unit:%		uiorder:62
 	optional    double 				LongCrack										"Long Crack"								unit:%		uiorder:63
@@ -8516,9 +8526,9 @@ CREATE TABLE "LinkingMainAndMirror" LinkingMainAndMirror
 	optional	text		main_table_name					""
 "1.As_built Data"
 	optional	uuid		main_id							"ID In Engineering Table"			tags:allPropFromMainTable
-"2.Asset Map Feature"	
+"2.Asset Map Feature"
 	optional	text		assetmapfeature_id				"Asset Map Feature ID"				tags:allPropFromAssetMapFeature
-"3.Asset Component"	
+"3.Asset Component"
 	optional	text		assetcomponent_id				"Asset Component ID"				tags:allPropFromAssetComponent
 }
 PRIMARY KEY(recid)
