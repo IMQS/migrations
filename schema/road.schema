@@ -17,6 +17,7 @@ CREATE TABLE "road" road
 	hasone		road_traffic_link_volume		_id		traffic_link_volume.road_id
 	hasone		road_user_data					_id		road_user.road_id
 	hasmany		Surveys							_id		survey.road_id
+	hasmany		Components						_id		component.road_id
 	hasmany		Segments						_id		segment.road_id
 	hasmany		Lanes							_id		lane.road_id
 }
@@ -202,7 +203,7 @@ CREATE TABLE "road_static" road_static
 	optional	text		trad_auth							""
 	optional	int64		rds_per_ward						""
 	optional	text		cllr_name							""
-	optional	text		description							""
+	optional	text		description							"Description"
 	optional	text		data_source							""
 	optional	text		criteria_category					""
 	optional	text		cllr_request						""
@@ -310,24 +311,6 @@ CREATE TABLE "road_static" road_static
 	optional	int16		last_ayear							""
 }
 UNIQUE INDEX(road_id);
-
-CREATE TABLE "survey" survey
-{
-	"Internal"
-	required	int64		road_id						""
-	optional	text		locality					""
-	"Survey"
-	optional	int64		survey_nr					""
-	optional	int64		survey_year					""
-	optional	datetime	measure_date				""
-	optional	float		survey_km					""
-	optional	date		start_date					""
-	optional	date		end_date					""
-	optional	int64		cond_year					"Assessment Year"
-	optional	int64		surface_cond_index			""
-	optional	int64		pavement_cond_index			""
-}
-INDEX(road_id);
 
 CREATE TABLE "condition" condition
 {
@@ -545,8 +528,8 @@ INDEX(mni);
 CREATE TABLE "recommended_maintenance" recommended_maintenance
 {
 	"Internal"
-	required	int64		road_id						""
-	optional	text		locality					""
+	required	int64		road_id							""
+	optional	text		locality						""
 	"Recommended Maintenance"
 	optional	int64		rem_surface_lif					""
 	optional	int64		rem_struc_li					""
@@ -641,6 +624,49 @@ CREATE TABLE "road_user" road_user
 }
 UNIQUE INDEX(road_id);
 
+CREATE TABLE "survey" survey
+{
+	"Internal"
+	required	int64		_id							""
+	required	int64		road_id						""
+	optional	text		locality					""
+	"Survey"
+	optional	int64		survey_nr					""
+	optional	int64		survey_year					""									tags:humanID
+	optional	datetime	measure_date				""
+	optional	float		survey_km					""
+	optional	date		start_date					""
+	optional	date		end_date					""
+	optional	int64		cond_year					"Assessment Year"
+	optional	int64		surface_cond_index			""
+	optional	int64		pavement_cond_index			""
+}
+PRIMARY KEY (_id)
+INDEX(road_id);
+
+CREATE TABLE "component" component
+{
+	"Internal"
+	required	int64		_id							""
+	required	int64		road_id						""
+	optional	text		locality					""
+	"Component"
+	optional	double		area						"Area (m²)"
+	optional	int64		asset_type					"Asset Type"
+	optional	text		component_type				"Component Index"					tags:humanID
+	optional	text		description					"Description"
+	optional	int64		financial_data_id			"Financial"
+	optional	text		name						"Road Name"
+	"Component Condition"
+	optional	text		condition_rating			"Condition Rating"
+	optional	double		crc							"Current Replacement Cost"
+	optional	double		drc							"Depreciation Replacement Cost"
+	optional	int64		index						"Index"
+	optional	int64		inspection_year				"Inspection Year"
+}
+PRIMARY KEY (_id)
+INDEX(road_id);
+
 CREATE TABLE "segment" segment
 {
 	"Internal"
@@ -650,7 +676,7 @@ CREATE TABLE "segment" segment
 	optional	text		data_provider				""
 	"Segment"
 	optional	text		road_code					""
-	optional	float		start_km					""
+	optional	float		start_km					""									tags:humanID
 	optional	float		end_km						""
 	optional	date		start_date					""
 	optional	date		end_date					""
@@ -672,7 +698,7 @@ CREATE TABLE "lane" lane
 	optional	text		data_provider				""
 	"Lane"
 	optional	text		road_code					""
-	optional	text		lane_code					""
+	optional	text		lane_code					""									tags:humanID
 	optional	text		direction					""
 	optional	text(1)		lane_type					""
 	optional	int16		lane_position				""
