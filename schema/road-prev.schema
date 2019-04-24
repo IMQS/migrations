@@ -48,7 +48,7 @@ CREATE TABLE "road_static" road_static
 	optional	text		route								""
 	optional	int16		route_seq							""
 	optional	text		lane_code							""
-	optional	double		length_km							"Length (km)"
+	optional	double		length_km							"Length"							unit:km
 	optional	double		start_km							"From km"
 	optional	double		end_km								"To km"
 	optional	text		from_node							""
@@ -270,17 +270,17 @@ CREATE TABLE "road_static" road_static
 	optional	text		road_link							"Road Link"
 	optional	text		from_link							"From Link"
 	optional	text		to_link								"To Link"
-	optional	float		paved_width							"Paved Width (m)"
+	optional	float		paved_width							"Paved Width"						unit:m
 	optional	text		gen_cond_rating						"General Condition rating"
 	optional	double		surface_area						"Surface Area"
-	optional	int64		surface_cond_index					"Surface Condition Index"
+	optional	int64		surface_cond_index					"Surface Condition Index"			unit:%
 	optional	double		pavement_area						"Pavement Area"
 	optional	int64		pavement_cond_index					"Pavement Condition"
 	optional	text		name								"Road Name"
 	optional	int64		asset_type							"Asset Type"
 	optional	text		component_type						"Component Index"
 	optional	text		mp_name								"Main Place Name"
-	optional	double		area								"Area (m²)"
+	optional	double		area								"Area"								unit:m^2
 	optional	double		mass								""
 	optional	text		custodian							"Custodian"
 	optional	int64		gid									""
@@ -293,7 +293,7 @@ CREATE TABLE "road_static" road_static
 	optional	int64		subplace_code						"Sub Place Code"
 	optional	int64		sp_name								"Sub Place Name"
 	optional	text		sidewalk_type						""
-	optional	double		link_length							"Link Length (m)"
+	optional	double		link_length							"Link Length"						unit:m
 	optional	text		phase								""
 	optional	int64		segment_number						""
 	optional	int64		model_number						""
@@ -576,20 +576,20 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	int64		financial_data_id				"Financial"
 	optional	int64		acquisition_date				""
 	optional	int64		crc_adjustment_factor			""
-	optional	double		crc								"Current Replacement Cost"
+	optional	double		crc								"Current Replacement Cost"						unit:ZAR
 	optional	text		acquisition_cost				""
 	optional	int64		index							"Index"
 	optional	int64		insp_year						"Inspection Year"
 	optional	text		cond_rating						"Condition Rating"
-	optional	double		drc								"Depreciation Replacement Cost"
-	optional	double		surface_crc						"Surface Current Replacement Cost"
-	optional	double		surface_drc						"Surface Depreciated Replacement Cost"
-	optional	double		pavement_crc					"Pavement Current Replacement Cost"
-	optional	double		pavement_drc					"Pavement Depreciated Replacement Cost"
+	optional	double		drc								"Depreciation Replacement Cost"					unit:ZAR
+	optional	double		surface_crc						"Surface Current Replacement Cost"				unit:ZAR
+	optional	double		surface_drc						"Surface Depreciated Replacement Cost"			unit:ZAR
+	optional	double		pavement_crc					"Pavement Current Replacement Cost"				unit:ZAR
+	optional	double		pavement_drc					"Pavement Depreciated Replacement Cost"			unit:ZAR
 	optional	int64		fmtn_cond_index					"Formation Condition"
 	optional	text		fmtn_type						"Formation Type"
-	optional	double		fmtn_crc						"Formation Current Replacement Cost"
-	optional	double		fmtn_drc						"Formation Depreciated Replacement Cost"
+	optional	double		fmtn_crc						"Formation Current Replacement Cost"			unit:ZAR
+	optional	double		fmtn_drc						"Formation Depreciated Replacement Cost"		unit:ZAR
 }
 UNIQUE INDEX(road_id);
 
@@ -651,8 +651,8 @@ CREATE TABLE "component" component
 	required	int64		road_id						""
 	optional	text		locality					""
 	"Component"
-	optional	double		area						"Area (m²)"
-	optional	int64		asset_type					"Asset Type"
+	optional	double		area						"Area"								unit:m^2
+	optional	text		asset_type					"Asset Type"
 	optional	text		component_type				"Component Index"					tags:humanID
 	optional	text		description					"Description"
 	optional	int64		financial_data_id			"Financial"
@@ -661,7 +661,7 @@ CREATE TABLE "component" component
 	optional	text		condition_rating			"Condition Rating"
 	optional	double		crc							"Current Replacement Cost"
 	optional	double		drc							"Depreciation Replacement Cost"
-	optional	int64		index						"Index"
+	optional	int64		index						"Index"								unit:%
 	optional	int64		inspection_year				"Inspection Year"
 }
 PRIMARY KEY (_id)
