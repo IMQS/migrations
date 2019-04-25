@@ -1,0 +1,10 @@
+ALTER TABLE "StormwaterDivider_01" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_02" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_03" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_04" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_05" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_06" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_07" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_08" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_09" ADD COLUMN "Invert_Level" DOUBLE PRECISION;
+ALTER TABLE "StormwaterDivider_10" ADD COLUMN "Invert_Level" DOUBLE PRECISION;

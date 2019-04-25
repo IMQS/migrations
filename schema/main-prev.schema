@@ -5381,6 +5381,7 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	double				Divider_Coefficient		"Divider Coefficient"
 	optional	double				Ground_Level			"Ground Level"					unit:m.asl
 	optional	double				Cover_Level				"Cover Level"					unit:m.asl
+	optional	double				Invert_Level			"Invert Level"				unit:m.asl
 	optional	double				Max_Depth				"Maximum Depth"					unit:m
 	optional	double				User_Depth				"User Depth"					unit:m
 
