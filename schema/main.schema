@@ -4641,6 +4641,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	bin					Transect_Data			"Transect Data"
 	optional	text				Description				"Description"
 	optional	text				Tag						"Tag"
+	optional	int32				Direction				"Direction"
 	"3.Design_Data"
 	optional	text				Design_Group			"Design Group"
 	optional	double				Design_Spare_Cap		"Design Spare Capacity"				unit:%
@@ -4722,6 +4723,19 @@ CREATE TABLE "" StormWaterConduitResults : StormWaterBaseID
 
 };
 
+CREATE TABLE "" StormWaterRainGage : StormWaterBaseID
+{
+	"Internal"
+	optional	point				Geometry				"Geometry"
+	optional	text				Code					"Code"
+	optional	text				Format					"Format"
+	optional	text				Interval				"Interval"
+	optional	double				SCF						"SCF"
+	optional	text				DataSource				"DataSource"
+
+}
+INDEX(Geometry);
+
 CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 {
 	"Internal"
@@ -4747,6 +4761,7 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	double				ZeroImpervPct			"Zero Percentage Impervious"			unit:%
 	optional	double				RoutedPct				"Percentage Routed"
 	optional	text				SubAreaRoute			"Subarea Routing"
+	optional	double				Curblen					"Curblen"
 	"3.Descriptive"
 	optional	text				Description			"Description"
 	optional	text				Tag					"Tag"
@@ -4770,6 +4785,9 @@ CREATE TABLE "" StormwaterCatchmentResults : StormWaterBaseID
 	optional	double				Max_Grd_Water_Outflow		"Max Ground Water Outflow"
 	optional	double				Max_Grd_Water_Elev			"Max Ground Water Elevation"
 	optional	double				Max_Unsat_Zone_Moist		"Max Unsaturated Zone Moist"
+	optional	double				CurveNum1					"CurveNum1"
+	optional	double				CurveNum2					"CurveNum2"
+	optional	double				DryTime						"DryTime"
 };
 
 
@@ -5355,7 +5373,7 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	double				Initial_Depth			"Initial Depth"					unit:m
 	optional	double				Surchage_Depth			"Surcharge Depth"				unit:m
 	optional	double				Ponded_Area				"Ponded Area"					unit:m^2
-	optional	bool				Diverted_Link			"Diverted Link"
+	optional	text				Diverted_Link			"Diverted Link"
 	optional	double				Cutoff_Flow				"Cutoff Flow"
 	optional	double				Curve_Name				"Curve Name"
 	optional	double				Divider_Min_Flow		"Divider Minimum Flow"
@@ -5363,7 +5381,6 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	double				Divider_Coefficient		"Divider Coefficient"
 	optional	double				Ground_Level			"Ground Level"					unit:m.asl
 	optional	double				Cover_Level				"Cover Level"					unit:m.asl
-	optional	bool				Invert_Level			"Invert Level"					unit:m.asl
 	optional	double				Max_Depth				"Maximum Depth"					unit:m
 	optional	double				User_Depth				"User Depth"					unit:m
 
@@ -5461,6 +5478,7 @@ CREATE TABLE "" StormwaterOutfall : StormWaterBaseID
 	optional	double				Ground_Level		"Ground Level"				unit:m.asl
 	optional	double				Cover_Level			"Cover Level"				unit:m.asl
 	optional	double				Invert_Level		"Invert Level"				unit:m.asl
+	optional	double				Max_Depth			"Maximum Depth"				unit:m
 
 	hasone Memo				ID				StormwaterOutfallMemo.ID
 	hasone Results				ID				StormwaterOutfallResults.ID
@@ -5579,7 +5597,8 @@ CREATE SUFFIX TABLES
 	StormwaterJunction,		StormwaterJunctionMemo,				StormwaterJunctionResults,	StormwaterJunctionUser,
 	StormwaterDivider,		StormwaterDividerMemo,				StormwaterDividerResults,
 	StormwaterOutfall,		StormwaterOutfallMemo,				StormwaterOutfallResults,
-	StormwaterRainfall,		StormSchematicTransectionCurrent,	StormSchematicCurveCurrent;
+	StormwaterRainfall,		StormSchematicTransectionCurrent,	StormSchematicCurveCurrent,
+	StormWaterRainGage;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
