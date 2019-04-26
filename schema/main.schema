@@ -4776,7 +4776,7 @@ CREATE TABLE "" StormwaterCatchmentResults : StormWaterBaseID
 {
 	"Internal"
 	optional	bin					SWMM_Results				"SWMM Results"
-	"5.Results"
+	"4.Results"
 	optional	double				Max_Rainfall				"Max Rainfall"
 	optional	double				Max_Snow_Depth				"Max Snow Depth"
 	optional	double				Max_Evap_Loss				"Max Evaporation Loss"
