@@ -5635,7 +5635,7 @@ CREATE TABLE "" LandBase : LandBaseNoID
 }
 UNIQUE INDEX(ID);
 
-CREATE TABLE "CadastralDetail" CadastralDetail : LandBaseNoID
+CREATE TABLE "CadastralDetail" CadastralDetail : LandBase
 {
 	"Internal"
 	optional 	int64				GID 				"GID"
@@ -5654,8 +5654,15 @@ CREATE TABLE "CadastralDetail" CadastralDetail : LandBaseNoID
 	optional	text				Address				"Address"
 	optional	text				Ward_Code			"Ward Code"
 	optional	text				Region				"Region"
+
+	hasone User     ID            CadastralDetailUser.ID
 }
 INDEX(Geometry);
+
+CREATE TABLE "CadastralDetailUser" CadastralDetailUser : LandBase
+{
+	flags runtime_schema
+};
 
 CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 {
