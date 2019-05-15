@@ -738,6 +738,7 @@ CREATE TABLE "photo" photo
 	optional	pointz		geometry					""
 	optional	text		locality					""
 	optional	date		date_taken					""
+	optional	jsonb		analysis					""
 }
 PRIMARY KEY (_id)
 UNIQUE INDEX (url)
