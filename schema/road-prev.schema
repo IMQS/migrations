@@ -27,8 +27,8 @@ INDEX(geometry);
 CREATE TABLE "road_static" road_static
 {
 	"Internal"
-	required	int64		road_id						""
-	optional	text		locality					""
+	required	int64		road_id								""
+	optional	text		locality							""
 	"0.General"
 	optional	int64		link_id								"Link ID"
 	optional	text		road_nr								""
@@ -63,6 +63,7 @@ CREATE TABLE "road_static" road_static
 	optional	int64		order_nr							""
 	optional	text		active_ind							""
 	optional	text		surf_type							"Surface Type"
+	optional	text		structural_type						"Structural Type"
 	optional	text		street_name							"Street Name"
 	optional	int64		feature_id							"Feature ID"
 	optional	int64		feature_type						""
@@ -273,7 +274,6 @@ CREATE TABLE "road_static" road_static
 	optional	text		gen_cond_rating						"General Condition rating"
 	optional	double		surface_area						"Surface Area"
 	optional	double		pavement_area						"Pavement Area"
-	optional	int64		pavement_cond_index					"Pavement Condition"
 	optional	text		name								"Road Name"
 	optional	int64		asset_type							"Asset Type"
 	optional	text		component_type						"Component Index"
@@ -285,7 +285,7 @@ CREATE TABLE "road_static" road_static
 	optional	text		one_way								"One Way"
 	optional	float		lane_width							"Lane Width"
 	optional	float		sidewalk_width						""
-	optional	double		fmtn_area							"Formation Area"
+	optional	double		structural_area						"Structural Area"
 	optional	text		prop_shelter_type					""
 	optional	int64		subplace_code						"Sub Place Code"
 	optional	int64		sp_name								"Sub Place Name"
@@ -318,9 +318,10 @@ CREATE TABLE "condition" condition
 	optional	float		rci							"Reseal Condition Index"
 	optional	float		mni							"Maintenance Need Index"
 	optional	float		sci							"Surface Condition Index"					unit:%
-	optional	float		stci						"Structural Condition Index"
+	optional	float		stci						"Structural Condition Index"				unit:%
 	optional	float		fci							"Functional Condition Index"
 	optional	float		cci							"Crack Condition Index"
+	optional	int64		pavement_cond_index			"Pavement Condition Index"					unit:%
 	optional	int16		spalled_crack_deg			""
 	optional	int16		spalled_crack_ext			""
 	optional	int16		surf_integrity_deg			""
@@ -519,6 +520,7 @@ INDEX(vci)
 INDEX(sci)
 INDEX(opc)
 INDEX(stci)
+INDEX(pavement_cond_index)
 INDEX(mni);
 
 CREATE TABLE "recommended_maintenance" recommended_maintenance
@@ -569,7 +571,6 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	float		amount							"Amount"										unit:ZAR
 	optional	text		priority						"Treatment Priority"
 	optional	int64		cost_code_id					""
-	optional	int64		financial_data_id				"Financial"
 	optional	int64		acquisition_date				""
 	optional	int64		crc_adjustment_factor			""
 	optional	double		crc								"Current Replacement Cost"						unit:ZAR
@@ -582,10 +583,8 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	double		surface_drc						"Surface Depreciated Replacement Cost"			unit:ZAR
 	optional	double		pavement_crc					"Pavement Current Replacement Cost"				unit:ZAR
 	optional	double		pavement_drc					"Pavement Depreciated Replacement Cost"			unit:ZAR
-	optional	int64		fmtn_cond_index					"Formation Condition"
-	optional	text		fmtn_type						"Formation Type"
-	optional	double		fmtn_crc						"Formation Current Replacement Cost"			unit:ZAR
-	optional	double		fmtn_drc						"Formation Depreciated Replacement Cost"		unit:ZAR
+	optional	double		structural_crc					"Structural Current Replacement Cost"			unit:ZAR
+	optional	double		structural_drc					"Structural Depreciated Replacement Cost"		unit:ZAR
 }
 UNIQUE INDEX(road_id);
 
