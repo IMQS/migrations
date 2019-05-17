@@ -4617,7 +4617,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	double				Geom_2					"Geometry 2"					unit:m
 	optional	double				Geom_3					"Geometry 3"					unit:m
 	optional	double				Geom_4					"Geometry 4"					unit:m
-	optional	double				Flow_Area				"Flow Area"						unit:m^2
+	optional	double				Max_Flow_Area			"Max Flow Area"					unit:m^2
 	optional	double				Length					"Length"						unit:m
 	optional	double				Calc_Slope				"Calculated Slope"
 	optional	double				Roughness				"Roughness"						unit:n
@@ -4636,6 +4636,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	double				From_Cover_Level		"From Cover Level"				unit:m.asl
 	optional	double				To_Cover_Level			"To Cover Level"				unit:m.asl
 	optional	double				From_Invert_Level		"From Invert Level"				unit:m.asl
+	optional	double				To_Invert_Level			"To Invert Level"				unit:m.asl
 	optional	double				To_Ground_Level			"To Ground Level"				unit:m.asl
 	optional	text				Transect_Name			"Transect Name"
 	optional	bin					Transect_Data			"Transect Data"
@@ -4715,6 +4716,7 @@ CREATE TABLE "" StormWaterConduitResults : StormWaterBaseID
 	"Internal"
 	optional	bin					SWMM_Results			"SWMM Results"
 	"9.Results"
+	optional	double				Flow_Area				"Current Flow Area"					unit:m^2
 	optional	double				Max_Flow_Rate			"Max Flow Rate"
 	optional	double				Max_Flow_Depth			"Max Flow Depth"					unit:m
 	optional	double				Max_Flow_Velocity		"Max Flow Velocity"					unit:m/s
@@ -4744,11 +4746,16 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	text				Type					"Catchment Type"
 	optional	text				Code					"Subcatchment Code"
 	optional	text				DrainTo					"Drain To"
+	optional	text				Description				"Description"
+	optional	text				Tag						"Tag"
 	"2.Hydraulic"
 	optional	text				Raingage				"Raingage"
 	optional	double				Area					"Area"									unit:ha
 	optional	double				Width					"Width"									unit:m
 	optional	double				SubSlope				"Sub Slope"								unit:%
+	optional	double				OverlandFlowLen			"Over land Flow Length"
+	optional	double				AverageSlope			"Average Slope"
+	optional	double				AverageCatchmentSlope	"Average Catchment Slope"
 	optional	double				ImperviousPct			"Impervious Percentage"					unit:%
 	optional	double				FutureImperviousPct		"Future Impervious Percentage"			unit:%
 	optional	double				ImpMannings				"Impervious Mannings"					unit:n
@@ -4762,15 +4769,30 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	double				RoutedPct				"Percentage Routed"
 	optional	text				SubAreaRoute			"Subarea Routing"
 	optional	double				Curblen					"Curblen"
-	"3.Descriptive"
-	optional	text				Description			"Description"
-	optional	text				Tag					"Tag"
-	optional	text				ExistDrainArea		"Existing Drainage Area"
-	optional	text				FutDrainArea		"Future Drainage Area"
 
 	hasone Results				ID				StormwaterCatchmentResults.ID
+	hasone Memo				ID				StormwaterCatchmentMemo.ID
+	hasone User				ID				StormwaterCatchmentUser.ID
+	hasone Watercourse				ID				StormwaterCatchmentWatercourse.ID
 }
 INDEX(Geometry);
+
+CREATE TABLE "" StormwaterCatchmentMemo : StormWaterBaseID
+{
+	"3.Descriptive"
+	optional	text				Integrity					"Integrity"
+	optional	text				System						"System"
+	optional	text				Comment						"Comment"
+	optional	text				Sub_Name					"Sub Name"
+	optional	text				Name						"Name"
+	optional	text				Future_System				"Future System"
+	optional	text				Region						"Region"
+	optional	text				ExistDrainArea				"Existing Drainage Area"
+	optional	text				FutDrainArea				"Future Drainage Area"
+	optional	text				Suburb						"Suburb"
+	optional	text				Ward						"Ward"
+
+};
 
 CREATE TABLE "" StormwaterCatchmentResults : StormWaterBaseID
 {
@@ -4790,6 +4812,17 @@ CREATE TABLE "" StormwaterCatchmentResults : StormWaterBaseID
 	optional	double				DryTime						"DryTime"
 };
 
+CREATE TABLE "" StormwaterCatchmentWatercourse : StormWaterBaseID
+{
+	"Internal"
+	optional	polylinezm			Geometry					"Geometry"
+
+};
+
+CREATE TABLE "" StormwaterCatchmentUser : StormWaterBaseID
+{
+	flags runtime_schema
+};
 
 CREATE TABLE "" StormwaterPumps : StormWaterBaseID
 {
@@ -5530,6 +5563,7 @@ CREATE TABLE "" StormwaterOutfallMemo : StormWaterBaseID
 	optional	text				AM_Utilization			"Asset Management Utilization"
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Integrity"
 	optional	int32				AM_Base_Year			"Base Year"										unit:year
+	optional	double				AM_Cost_FN				"Asset Management Cost"								unit:ZAR
 	optional	double				AM_Replace_Value		"Replacement Value"								unit:ZAR
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
@@ -5575,8 +5609,24 @@ CREATE TABLE "" StormwaterRainfall : StormWaterBaseID
 	optional	text			Station_ID			"Station ID"
 	optional	text			Rain_Units			"Rainfall Units"
 	optional	text			IDFType				"Intensity Duration Frequency Type"
+
+	hasone User		ID		StormwaterRainfallUser.ID
+	hasone Memo		ID		StormwaterRainfallMemo.ID
 }
 INDEX(Geometry);
+
+CREATE TABLE "" StormwaterRainfallUser : StormWaterBaseID
+{
+	flags runtime_schema
+};
+
+CREATE TABLE "" StormwaterRainfallMemo : StormWaterBaseID
+{
+
+	optional	text				Sub_Name					"Sub Name"
+	optional	text				Name						"Name"
+
+};
 
 CREATE TABLE "" StormSchematicTransectionCurrent : StormWaterBase
 {
@@ -5599,7 +5649,7 @@ CREATE TABLE "" StormSchematicCurveCurrent : StormWaterBase
 CREATE SUFFIX TABLES
 {
 	StormWaterConduit, 		StormWaterConduitMemo ,	  			StormWaterConduitResults,	StormWaterConduitUser,
-	StormwaterCatchment,	StormwaterCatchmentResults,
+	StormwaterCatchment,	StormwaterCatchmentMemo,			StormwaterCatchmentResults,	StormwaterCatchmentUser,	StormwaterCatchmentWatercourse,
 	StormwaterPumps,	 	StormwaterPumpsMemo,				StormwaterPumpsResults,
 	StormwaterOrifice,		StormwaterOrificeMemo,				StormwaterOrificeResults,
 	StormwaterWeir,			StormwaterWeirMemo,					StormwaterWeirResults,
@@ -5608,7 +5658,8 @@ CREATE SUFFIX TABLES
 	StormwaterJunction,		StormwaterJunctionMemo,				StormwaterJunctionResults,	StormwaterJunctionUser,
 	StormwaterDivider,		StormwaterDividerMemo,				StormwaterDividerResults,	StormwaterDividerUser,
 	StormwaterOutfall,		StormwaterOutfallMemo,				StormwaterOutfallResults,	StormwaterOutfallUser,
-	StormwaterRainfall,		StormSchematicTransectionCurrent,	StormSchematicCurveCurrent,
+	StormwaterRainfall,		StormwaterRainfallMemo,				StormwaterRainfallUser,
+	StormSchematicTransectionCurrent,	StormSchematicCurveCurrent,
 	StormWaterRainGage;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
