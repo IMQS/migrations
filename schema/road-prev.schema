@@ -296,11 +296,7 @@ CREATE TABLE "road_static" road_static
 	optional	int64		traffic_cla							""
 	optional	text		traffic_tex							""
 	optional	text		exist_text							""
-	optional	int64		func_index							""
-	optional	text		func_text							""
 	optional	text		text								""
-	optional	int64		struc_index							""
-	optional	text		struc_text							""
 	optional	int64		comb_index							""
 	optional	int64		taxi_route							""
 	optional	text		asset_combo							""
@@ -514,6 +510,9 @@ CREATE TABLE "condition" condition
 	optional	bool		drain_prob_culverts			""
 	optional	bool		drain_prob_mitre			""
 	optional	bool		drain_prob_level			""
+	optional	text		func_text					""
+	optional	text		struc_text					""
+	optional	text		maintenance_text				""
 }
 UNIQUE INDEX(road_id)
 INDEX(vci)
@@ -534,9 +533,7 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	int64		rehab_index						""
 	optional	int64		rehab_category					""
 	optional	text		rehab_text						""
-	optional	int64		maintenance_index				""
 	optional	int64		maintenance_category			""
-	optional	text		maintenance_text				""
 	optional	int64		min_maintenance_ty				""
 	optional	int64		rec_maintenance_ty				""
 	optional	text		min_maintenance_te				""
