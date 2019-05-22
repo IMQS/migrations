@@ -6100,11 +6100,13 @@ CREATE TABLE "" PRPBaseNoID
 	"Internal"
 	required	int64				rowid											""
 	required	text				ScenarioGeneratedYear							""
+	required	text				AssetType										""
 	optional	text				Locality 										""
 	optional 	int32 				MetaID											""  	tags:dispMeta,hideInGrid
 
 }
 PRIMARY KEY (rowid)
+INDEX (AssetType)
 INDEX (ScenarioGeneratedYear);
 
 CREATE TABLE "" PipeReplaceResultsBase : PRPBaseNoID
@@ -6180,10 +6182,14 @@ CREATE TABLE "" SewerPipeReplaceResults : PipeReplaceResultsBase
 {
 };
 
+CREATE TABLE "" ReplacePriorityResults : PipeReplaceResultsBase
+{
+};
+
 CREATE TABLE "" PipeReplaceDataBase : PRPBaseNoID
 {
 	"Internal"
-	optional  polyline            Geometry                                        ""
+	optional  geometry            Geometry                                        ""
 	"1.General"
 	optional  text                UserLinkNo                                      ""			uiorder:4
 
@@ -6200,6 +6206,10 @@ CREATE TABLE "" SewerPipeReplaceData : PipeReplaceDataBase
 {
 };
 
+CREATE TABLE "" ReplacePriorityData : PipeReplaceDataBase
+{
+};
+
 CREATE TABLE "" PipeReplaceDefaultsBase : PRPBaseNoID
 {
 	optional  text                FieldName                                       "Field Name"
@@ -6212,6 +6222,10 @@ CREATE TABLE "" WaterPipeReplaceDefaults : PipeReplaceDefaultsBase
 };
 
 CREATE TABLE "" SewerPipeReplaceDefaults : PipeReplaceDefaultsBase
+{
+};
+
+CREATE TABLE "" ReplacePriorityDefaults : PipeReplaceDefaultsBase
 {
 };
 
@@ -6232,6 +6246,10 @@ CREATE TABLE "" SewerPipeReplaceFailurePoints : PipeReplaceFailurePointsBase
 {
 };
 
+CREATE TABLE "" ReplacePriorityFailurePoints : PipeReplaceFailurePointsBase
+{
+};
+
 CREATE TABLE "" PipeReplacePRPPercentageCategoriesBase : PRPBaseNoID
 {
 	optional  double              Minimum                                         ""
@@ -6245,6 +6263,10 @@ CREATE TABLE "" WaterPipeReplacePRPPercentageCategories : PipeReplacePRPPercenta
 };
 
 CREATE TABLE "" SewerPipeReplacePRPPercentageCategories : PipeReplacePRPPercentageCategoriesBase
+{
+};
+
+CREATE TABLE "" ReplacePriorityPRPPercentageCategories : PipeReplacePRPPercentageCategoriesBase
 {
 };
 
@@ -6277,13 +6299,17 @@ CREATE TABLE "" PipeReplaceSourceBase : PRPBaseNoID
 	optional  double              CF_08                                           ""					uiorder:7
 	optional  double              CF_09                                           ""					uiorder:8
 }
-INDEX(LinkNr);
+UNIQUE INDEX(LinkNr);
 
 CREATE TABLE "" WaterPipeReplaceSource : PipeReplaceSourceBase
 {
 };
 
 CREATE TABLE "" SewerPipeReplaceSource : PipeReplaceSourceBase
+{
+};
+
+CREATE TABLE "" ReplacePrioritySource : PipeReplaceSourceBase
 {
 };
 
@@ -6331,7 +6357,7 @@ CREATE TABLE "" PipeReplaceTotalsBase : PRPBaseNoID
 
 	flags runtime_schema
 }
-INDEX(LinkNr)
+UNIQUE INDEX(LinkNr)
 INDEX(Area1)
 INDEX(Area2)
 INDEX(Area3)
@@ -6351,6 +6377,11 @@ CREATE TABLE "" SewerPipeReplaceTotals : PipeReplaceTotalsBase
 	hasone Pipe_List	LinkNr	SewerPipeReplaceData.UserLinkNo
 };
 
+CREATE TABLE "" ReplacePriorityTotals : PipeReplaceTotalsBase
+{
+	hasone Asset_List	LinkNr	ReplacePriorityData.UserLinkNo
+};
+
 CREATE TABLE "" PipeReplaceWeightsBase : PRPBaseNoID
 {
 	"1.Criticality Grade and Consequence of Failure"
@@ -6368,6 +6399,10 @@ CREATE TABLE "" SewerPipeReplaceWeights : PipeReplaceWeightsBase
 {
 };
 
+CREATE TABLE "" ReplacePriorityWeights : PipeReplaceWeightsBase
+{
+};
+
 CREATE SUFFIX TABLES
 {
 	WaterPipeReplaceResults, 					SewerPipeReplaceResults,
@@ -6378,6 +6413,19 @@ CREATE SUFFIX TABLES
 	WaterPipeReplaceSource,						SewerPipeReplaceSource,
 	WaterPipeReplaceTotals,						SewerPipeReplaceTotals,
 	WaterPipeReplaceWeights,					SewerPipeReplaceWeights;
+	00, 01, 02;
+};
+
+CREATE SUFFIX TABLES
+{
+	ReplacePriorityResults,
+	ReplacePriorityData,
+	ReplacePriorityDefaults,
+	ReplacePriorityFailurePoints,
+	ReplacePriorityPRPPercentageCategories,
+	ReplacePrioritySource,
+	ReplacePriorityTotals,
+	ReplacePriorityWeights;
 	00, 01, 02;
 };
 
