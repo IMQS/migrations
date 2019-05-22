@@ -6079,6 +6079,8 @@ INDEX(SG21Code);
 
 ###################################################################################################################
 # Water and Sewer PRP
+# NOT: See note below, about our unified "replacement priority" tables.
+# The plan is to get rid of these Water/Sewer tables, and just run everything off the unified tables.
 ###################################################################################################################
 
 CREATE TABLE "" PRPBaseNoID
@@ -6364,6 +6366,239 @@ CREATE SUFFIX TABLES
 	WaterPipeReplaceSource,						SewerPipeReplaceSource,
 	WaterPipeReplaceTotals,						SewerPipeReplaceTotals,
 	WaterPipeReplaceWeights,					SewerPipeReplaceWeights;
+	00, 01, 02;
+};
+
+##########################################################################################################################################
+# 2019-05-29
+# We're creating a new, unified, "replacement" schema here, with the idea that we can use this across all asset types,
+# at least, across the ones that GLS manages (Water, Sewer, Storm, Electricity).
+# For now, we're just leaving the Water and Sewer tables as they were, to ease the effort in deploying this rather urgent
+# deliverable for CoU. However, this change does impact the Water and Sewer schemas, because we're making
+# the LinkNr index unique. The idea is that this will make it much easier to move data from the existing Sewer/Water tables
+# into the new tables.
+##########################################################################################################################################
+
+CREATE TABLE "" RPBaseNoID
+{
+	"Internal"
+	required	int64				rowid											""
+	required	text				ScenarioGeneratedYear							""
+	required	text				AssetType										""
+	optional	text				Locality 										""
+	optional 	int32 				MetaID											""  	tags:dispMeta,hideInGrid
+
+}
+PRIMARY KEY (rowid)
+INDEX (AssetType)
+INDEX (ScenarioGeneratedYear);
+
+CREATE TABLE "" ReplacePriorityResults : RPBaseNoID
+{
+	"Internal"
+	optional  text                ScenarioRollup                                  ""
+	optional  text                ScenarioArea        						      ""
+	optional  polygon             Geometry                                        ""
+	optional  double              Min_RE                                          "Minimum RE score of assets in area"
+	optional  double              Max_RE                                          "Maximum RE score of assets in area"
+	optional  double              W_Avg_RE                                        "Length weighted-average RE score of assets in area"
+	optional  double              W_Avg_REP                                       "Rank of length weighted-average RE scores of assets in area"			unit:%
+	"1.General"
+	optional  text                Name                                        	  "Area Name"																										uiorder:0
+	optional  int64               Asset_Count                                     "Number of assets in area"																							uiorder:1
+	optional  double              Total_Leng                                      "Total length of assets in area"										unit:m										uiorder:2
+	optional  double              Used_Leng                                       "Correct length as used for length weighted calculation"				unit:m										uiorder:3
+	optional  double              Total_Cost                                      "Replacement cost of all assets in area"								unit:ZAR									uiorder:4
+	"2.Replacement Priority"
+	optional  double              Min_RP                                          "Minimum RP score of assets in area"																				uiorder:0
+	optional  double              Max_RP                                          "Maximum RP score of assets in area"																				uiorder:1
+	optional  double              W_Avg_RP                                        "Length weighted-average RP score of assets in area"																uiorder:2
+	optional  double              W_Avg_RPP                                       "Rank of length weighted-average RP scores of assets in area"			unit:%										uiorder:3
+	"3.Remaining Useful Life"
+	optional  double              Min_RUL                                         "Minimum RUL of assets in area"										unit:years									uiorder:0
+	optional  double              Max_RUL                                         "Maximum RUL of assets in area"										unit:years									uiorder:1
+	optional  double              W_Avg_RUL                                       "Length weighted-average RUL of assets in area"						unit:years									uiorder:2
+	optional  double              W_Avg_RULP                                      "Rank of length weighted-average RUL of assets in area"				unit:%										uiorder:3
+	"4.Likelihood of Failure"
+	optional  double              Min_LF                                          "Minimum LF score of assets in area"																				uiorder:0
+	optional  double              Max_LF                                          "Maximum LF score of assets in area"																				uiorder:1
+	optional  double              W_Avg_LF                                        "Length weighted-average LF score of assets in area"																uiorder:2
+	optional  double              W_Avg_LFP                                       "Rank of length weighted-average LF scores of assets in area"			unit:%										uiorder:3
+	"5.Consequence of Failure"
+	optional  double              Min_CF                                          "Minimum CF score of assets in area"																				uiorder:0
+	optional  double              Max_CF                                          "Maximum CF score of assets in area"																				uiorder:1
+	optional  double              W_Avg_CF                                        "Length weighted-average CF score of assets in area"																uiorder:2
+	optional  double              W_Avg_CFP                                       "Rank of length weighted-average CF scores of assets in area"			unit:%										uiorder:3
+	"6.Failure Count"
+	optional  double              Min_FC                                          "Minimum FC of assets in area"											unit:years									uiorder:0
+	optional  double              Max_FC                                          "Maximum FC of assets in area"											unit:years									uiorder:1
+	optional  double              W_Avg_FC                                        "Length weighted-average FC of assets in area"							unit:years									uiorder:2
+	optional  double              W_Avg_FCP                                       "Rank of length weighted-average FC of assets in area"					unit:%										uiorder:3
+	"7.Assessed Condition"
+	optional  double              Min_AC                                          "Minimum AC score of assets in area"																				uiorder:0
+	optional  double              Max_AC                                          "Maximum AC score of assets in area"																				uiorder:1
+	optional  double              W_Avg_AC                                        "Length weighted-average AC score of assets in area"																uiorder:2
+	optional  double              W_Avg_ACP                                       "Rank of length weighted-average AC scores of assets in area"			unit:%										uiorder:3
+	"8.Criticality Grade"
+	optional  double              Min_CG                                          "Minimum CG score of assets in area"													tags:hideInProperties		uiorder:0
+	optional  double              Max_CG                                          "Maximum CG score of assets in area"													tags:hideInProperties		uiorder:1
+	optional  double              W_Avg_CG                                        "Length weighted-average CG score of assets in area"									tags:hideInProperties		uiorder:2
+	optional  double              W_Avg_CGP                                       "Rank of length weighted-average CG scores of assets in area"			unit:%			tags:hideInProperties		uiorder:3
+	"9.Asset Age"
+	optional  double			  Min_Age									   	  "Minimum Age of assets in area"																						uiorder:0
+	optional  double			  Max_Age										  "Maximum Age of assets in area"																						uiorder:1
+	optional  double			  W_Avg_Age										  "Length weighted-average Age of assets in area"																		uiorder:2
+	optional  double			  W_Avg_AgeP									  "Length weighted-average Age% of assets in area"						unit:%											uiorder:3
+}
+INDEX(Geometry)
+INDEX(Name)
+INDEX(W_Avg_RPP)
+INDEX(W_Avg_REP)
+INDEX(Total_Cost)
+INDEX(ScenarioRollup)
+INDEX(ScenarioArea);
+
+CREATE TABLE "" ReplacePriorityData : RPBaseNoID
+{
+	"Internal"
+	optional  geometry            Geometry                                        ""
+	"1.General"
+	optional  text                AssetNr                                         ""			uiorder:4
+
+	flags runtime_schema
+}
+INDEX(Geometry)
+INDEX(AssetNr);
+
+CREATE TABLE "" ReplacePriorityDefaults : RPBaseNoID
+{
+	optional  text                FieldName                                       "Field Name"
+	optional  double              FieldVal                                        "Field Value"
+	optional  text                FieldDesc                                       "Description"
+};
+
+CREATE TABLE "" ReplacePriorityFailurePoints : RPBaseNoID
+{
+	optional  point               Geometry                                        ""
+	optional  date                Date                                            ""		unit:MSE
+	optional  int64               Year                                            ""		unit:year
+}
+INDEX(Geometry)
+INDEX(Date);
+
+CREATE TABLE "" ReplacePriorityPercentageCategories : RPBaseNoID
+{
+	optional  double              Minimum                                         ""
+	optional  double              Maximum                                         ""
+	optional  text                Label                                           ""
+	optional  text                Colour                                          ""
+};
+
+CREATE TABLE "" ReplacePrioritySource : RPBaseNoID
+{
+	"Internal"
+	optional  text                AssetNr                                         "Asset Number"
+	optional  int32               NetworkNr                                       "Network Number"
+	"1.Likelihood of Failure"
+	optional  double              LF_01                                           ""					uiorder:0
+	optional  double              LF_02                                           ""					uiorder:1
+	optional  double              LF_03                                           ""					uiorder:2
+	optional  double              LF_04                                           ""					uiorder:3
+	optional  double              LF_05                                           ""					uiorder:4
+	optional  double              LF_06                                           ""					uiorder:5
+	optional  double              LF_07                                           ""					uiorder:6
+	optional  double              LF_08                                           ""					uiorder:7
+	optional  double              LF_09                                           ""					uiorder:8
+	optional  double              LF_10                                           ""					uiorder:9
+	optional  double              LF_11                                           ""					uiorder:10
+	"2.Consequence of Failure"
+	optional  double              CF_01                                           ""					uiorder:0
+	optional  double              CF_02                                           ""					uiorder:1
+	optional  double              CF_03                                           ""					uiorder:2
+	optional  double              CF_04                                           ""					uiorder:3
+	optional  double              CF_05                                           ""					uiorder:4
+	optional  double              CF_06                                           ""					uiorder:5
+	optional  double              CF_07                                           ""					uiorder:6
+	optional  double              CF_08                                           ""					uiorder:7
+	optional  double              CF_09                                           ""					uiorder:8
+}
+UNIQUE INDEX(AssetNr);
+
+CREATE TABLE "" ReplacePriorityTotals : RPBaseNoID
+{
+	"Internal"
+	optional  text                AssetNr                                         "Asset Number"
+	optional  int32               NetworkNr                                       "Network Number"
+	optional  double              CG                                              "Criticality Grade Score"						tags:hideInGrid
+	optional  double              CG_Perc                                         "Criticality Grade Rank"						unit:%										tags:hideInGrid
+	optional  double              RE                                              "Risk Exposure Score"							                                            tags:hideInGrid,hideInPropertiesIfNull
+	optional  double              RE_Perc                                         "Risk Exposure Rank"							unit:%										tags:hideInGrid,hideInPropertiesIfNull
+	"1.General"
+	optional  text                Area1                                           "Rollup Area1"																			uiorder:0
+	optional  text                Area2                                           "Rollup Area2"																			uiorder:1
+	optional  text                Area3                                   		  "Rollup Area3"																			uiorder:2
+	optional  double              ReplCost                                        "Replacement Cost"							unit:ZAR									uiorder:3
+	"2.Replacement Priority"
+	optional  double              RP                                              "RP Score = LF x CF"																		uiorder:0
+	optional  double              RP_Perc                                         "RP Rank"										unit:%										uiorder:1
+	"3.Likelihood of Failure"
+	optional  double              LF_Total                                        "Likelihood of Failure Score"					tags:dispPRPDetail							uiorder:0
+	optional  double              LF_Perc                                         "Likelihood of Failure Rank"					unit:%										uiorder:1
+	"4.Consequence of Failure"
+	optional  double              CF_Total                                        "Consequence of Failure Score"				tags:dispPRPDetail							uiorder:0
+	optional  double              CF_Perc                                         "Consequence of Failure Rank"					unit:%										uiorder:1
+	"5.Remaining Useful Life"
+	optional  double              RUL                                             "Remaining Useful Life"						unit:years tags:dispPRPDetail				uiorder:0
+	optional  double              RUL_Perc                                        "Remaining Useful Life Rank"					unit:%										uiorder:1
+	"6.Base Data"
+	optional  double              Age                                             "Asset Age"									unit:years tags:hideInProperties			uiorder:0
+	optional  double              CRUL                                            "Catalogue Remaining Useful Life"				unit:years tags:hideInProperties			uiorder:1
+	optional  double              CEUL                                            "Catalogue Expected Useful Life"				unit:years tags:hideInProperties			uiorder:2
+	optional  double              RUL_CAP                                         "Remaining Useful Life Capacity"				unit:years tags:hideInProperties			uiorder:3
+	optional  double              RUL_PER                                         "Remaining Useful Life Performance"			unit:years tags:hideInProperties			uiorder:4
+	optional  double              RUL_CON                                         "Remaining Useful Life Condition"				unit:years tags:hideInProperties			uiorder:5
+	optional  double              RUL_TOT                                         "Total Remaining Useful Life"					unit:years tags:hideInProperties			uiorder:6
+	"7.Multi-Year Analysis"
+	optional  double			  Cum_Exp										  "Cumulative Expenditure" 						unit:ZAR									uiorder:0
+	optional  double			  To_Replace									  "Asset Replace Priority Index"															uiorder:1
+	optional  double			  CAPEX											  "Capital Expenditure"							unit:ZAR									uiorder:2
+	optional  double			  OPPEX											  "Operational Expenditure"						unit:ZAR									uiorder:3
+	optional  double			  KP1											  "Key performance Indicator 1"																uiorder:4
+	optional  double			  KP2											  "Key performance Indicator 2"																uiorder:5
+
+	hasone Asset_List AssetNr ReplacePriorityData.AssetNr
+
+	flags runtime_schema
+}
+UNIQUE INDEX(AssetNr)
+INDEX(Area1)
+INDEX(Area2)
+INDEX(Area3)
+INDEX(ReplCost)
+INDEX(RP)
+INDEX(RP_Perc)
+INDEX(RE)
+INDEX(RE_Perc);
+
+CREATE TABLE "" ReplacePriorityWeights : RPBaseNoID
+{
+	"1.Criticality Grade and Consequence of Failure"
+	optional  text                FactorName                                      "Factor Name"							uiorder:0
+	optional  double              FactorVal                                       "Factor Value"						uiorder:1
+	optional  text                FactorDesc                                      "Factor Description"					uiorder:2
+}
+INDEX(FactorName);
+
+CREATE SUFFIX TABLES
+{
+	ReplacePriorityResults,
+	ReplacePriorityData,
+	ReplacePriorityDefaults,
+	ReplacePriorityFailurePoints,
+	ReplacePriorityPercentageCategories,
+	ReplacePrioritySource,
+	ReplacePriorityTotals,
+	ReplacePriorityWeights;
 	00, 01, 02;
 };
 
