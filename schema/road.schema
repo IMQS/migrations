@@ -9,6 +9,7 @@ CREATE TABLE "road" road
 	optional	text		data_provider				""
 	"0.General"
 	optional	text		rcam_class					"Road Class"
+	optional	text		surf_type					"Surface Type"
 	optional	text		pavement_type				"Pavement Type"
 
 	hasone		road_static						_id		road_static.road_id
@@ -22,6 +23,9 @@ CREATE TABLE "road" road
 	hasmany		Lanes							_id		lane.road_id							order:6
 }
 PRIMARY KEY (_id)
+INDEX(rcam_class)
+INDEX(surf_type)
+INDEX(pavement_type)
 INDEX(geometry);
 
 CREATE TABLE "road_static" road_static
@@ -62,7 +66,6 @@ CREATE TABLE "road_static" road_static
 	optional	double		end_latitude						""
 	optional	int64		order_nr							""
 	optional	text		active_ind							""
-	optional	text		surf_type							"Surface Type"
 	optional	text		structural_type						"Structural Type"
 	optional	text		street_name							"Street Name"
 	optional	int64		feature_id							"Feature ID"
