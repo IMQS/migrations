@@ -4725,19 +4725,6 @@ CREATE TABLE "" StormWaterConduitResults : StormWaterBaseID
 
 };
 
-CREATE TABLE "" StormWaterRainGage : StormWaterBaseID
-{
-	"Internal"
-	optional	point				Geometry				"Geometry"
-	optional	text				Code					"Code"
-	optional	text				Format					"Format"
-	optional	text				Interval				"Interval"
-	optional	double				SCF						"SCF"
-	optional	text				DataSource				"DataSource"
-
-}
-INDEX(Geometry);
-
 CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 {
 	"Internal"
@@ -5659,8 +5646,7 @@ CREATE SUFFIX TABLES
 	StormwaterDivider,		StormwaterDividerMemo,				StormwaterDividerResults,	StormwaterDividerUser,
 	StormwaterOutfall,		StormwaterOutfallMemo,				StormwaterOutfallResults,	StormwaterOutfallUser,
 	StormwaterRainfall,		StormwaterRainfallMemo,				StormwaterRainfallUser,
-	StormSchematicTransectionCurrent,	StormSchematicCurveCurrent,
-	StormWaterRainGage;
+	StormSchematicTransectionCurrent,	StormSchematicCurveCurrent;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
