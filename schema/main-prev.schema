@@ -8480,6 +8480,22 @@ CREATE TABLE "HydroJetWorkOrderHistory" HydroJetWorkOrderHistory : HydroJetWorkO
 INDEX(PipeID)
 INDEX(ActivityCode);
 
+#############################################################################################
+# Buildings
+#############################################################################################
+
+CREATE TABLE "Building" Building
+{
+	"Internal"
+	required 	int64				rowid				""
+	optional 	text 				Locality 			""
+	optional 	polygon				Geometry 			""
+	"General"
+	optional 	text 				Name 				""
+	optional 	int32 				MetaID				""  	tags:dispMeta,hideInGrid
+}
+PRIMARY KEY(rowid)
+INDEX(Geometry);
 
 #############################################################################################
 #	AI Roads
