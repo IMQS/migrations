@@ -18,9 +18,10 @@ CREATE TABLE "road" road
 	hasone		road_traffic_link_volume		_id		traffic_link_volume.road_id
 	hasone		road_user_data					_id		road_user.road_id
 	hasmany		Components						_id		component.road_id						order:2
-	hasmany		Surveys							_id		survey.road_id							order:4
-	hasmany		Segments						_id		segment.road_id							order:5
-	hasmany		Lanes							_id		lane.road_id							order:6
+	hasmany		Rutting_Points					_id		rutting_point.road_id					order:4
+	hasmany		Surveys							_id		survey.road_id							order:5
+	hasmany		Segments						_id		segment.road_id							order:6
+	hasmany		Lanes							_id		lane.road_id							order:7
 }
 PRIMARY KEY (_id)
 INDEX(rcam_class)
@@ -329,8 +330,8 @@ CREATE TABLE "condition" condition
 	optional	int16		joint_loss_ext				""
 	optional	int16		edge_damage_deg				""
 	optional	int16		edge_damage_ext				""
-	optional	int16		rutting_deg					""
-	optional	int16		rutting_ext					""
+	optional	int16		rutting_deg					"Rutting Degree"
+	optional	int16		rutting_ext					"Rutting Extent"
 	optional	int16		pot_patch_deg				""
 	optional	int16		pot_patc_ext				""
 	optional	int16		undulation_deg				""
@@ -364,10 +365,10 @@ CREATE TABLE "condition" condition
 	optional	float		iri_r_stdv					""
 	optional	float		avg_hri						""
 	optional	float		hri_stdv					""
-	optional	float		avg_rut_l					""
-	optional	float		avg_rut_r					""
-	optional	float		rut_l_stdv					""
-	optional	float		rut_r_stdv					""
+	optional	float		avg_rut_l					"Avg. Rut in Left Wheel path"
+	optional	float		avg_rut_r					"Avg. Rut in right Wheel path"
+	optional	float		rut_l_stdv					"Rut Std. Dev. Left"
+	optional	float		rut_r_stdv					"Rut Std. Dev. Right"
 	optional	float		avg_mpd_l					""
 	optional	float		avg_mpd_c					""
 	optional	float		avg_mpd_r					""
@@ -515,7 +516,9 @@ CREATE TABLE "condition" condition
 	optional	bool		drain_prob_level			""
 	optional	text		func_text					""
 	optional	text		struc_text					""
-	optional	text		maintenance_text				""
+	optional	text		maintenance_text			""
+	optional	int16		85_percentile_rutting		"85 Percentile Rutting"
+	optional	int16		num_measur					""
 }
 UNIQUE INDEX(road_id)
 INDEX(vci)
@@ -661,6 +664,38 @@ CREATE TABLE "component" component
 }
 PRIMARY KEY (_id)
 INDEX(road_id);
+
+CREATE TABLE "rutting_point" rutting_point
+{
+	"Internal"
+	required	int64		_id							""
+	optional	geometry	geometry					""
+	required	int64		road_id						""
+	optional	text		locality					""
+	"Rutting Point"
+	optional	text		fulcrum_id					""						tags:humanID
+	optional	datetime	created_date				"Created Date"
+	optional	text		created_by					"Created By"
+	optional	datetime	updated_date				"Updated Date"
+	optional	text		updated_by					"Updated By"
+	optional	datetime	system_created_date			"System Created Date"
+	optional	datetime	system_updated_date			"System Updated Date"
+	optional	float		version						"Version"
+	optional	int16		status						"Status"
+	optional	text		project						"Project"
+	optional	text		assigned_to					"Assigned To"
+	optional	double		lat							"Lat"
+	optional	double		long						"Long"
+	optional	text		street_name					"Street Name"
+	optional	float		rut_measur					""
+	optional	text		photo_of_r					""
+	optional	text		photo_of_1					""
+	optional	text		photo_of_2					""
+	optional	int16		degree						"Degree"
+}
+PRIMARY KEY (_id)
+INDEX(road_id)
+INDEX(geometry);
 
 CREATE TABLE "segment" segment
 {
