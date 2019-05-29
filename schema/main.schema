@@ -6415,7 +6415,7 @@ CREATE TABLE "ElectricityCables" ElectricityCables : ElectricityBase
 	optional  text                Link_Code                                       "Link Code"                                                                   uiorder:7
 	optional  text                Phase_Connection                                "Phase Connection"                                                            uiorder:8
 	optional  text                Tech                                            "Connection Type at Secondary Bus"                                            uiorder:9
-	optional  text                Transformer_Zone                                "Transformer Zone"                                                            uiorder:10
+	optional  text                Load_Zone                                       "Load Zone"                                                                   uiorder:10
 	optional  text                Distribution_Zone                               "Distribution Zone"                                                           uiorder:11
 	optional  text                Feeder                               			  "Feeder"                                                                      uiorder:12
 	"3.Specifications.1.Physical"
@@ -6423,16 +6423,19 @@ CREATE TABLE "ElectricityCables" ElectricityCables : ElectricityBase
 	optional  text                Core_Material                                   "Core Material"                                                               uiorder:14
 	optional  text                Cable_Group                                     "Cable Group"                                                                 uiorder:15
 	optional  text                Installation_Type                               "Installation Type"                                                           uiorder:16
+	optional  text                Size                                            ""                                                                            uiorder:17
 	"3.Specifications.2.Electrical.1.General"
 	optional  double              Length                                     	  "Cable Length"								unit:m                          uiorder:17
 	optional  int32               Phases                                          "Number of Phases"                                                            uiorder:18
 	optional  double              Base_Frequency                                  "Base Frequency"								unit:Hz                         uiorder:19
 	optional  double              Temperature                                     "Cable Temperature"							unit:oC                         uiorder:20
 	"3.Specifications.2.Electrical.2.Voltage&Current"
-	optional  text                Voltage_Category                                "Voltage Category"                                                            uiorder:21
-	optional  double              Nominal_Voltage                                 "Nominal Voltage"								unit:V                          uiorder:22
-	optional  double              Normal_Ampacity                                 "Normal Ampacity"								unit:A                          uiorder:23
-	optional  double              Emergency_Ampacity                              "Emergency Ampacity"							unit:A                          uiorder:24
+	optional  text                Voltage_Category                                "Voltage Category"                                                            uiorder:1
+	optional  double              Voltage_Rating                                  ""                                                                            uiorder:2
+	optional  double              Nominal_Voltage                                 "Nominal Voltage"								unit:V                          uiorder:3
+	optional  double              Nominal_Voltage_pu                              ""                                                                            uiorder:4
+	optional  double              Normal_Ampacity                                 "Normal Ampacity"								unit:A                          uiorder:5
+	optional  double              Emergency_Ampacity                              "Emergency Ampacity"							unit:A                          uiorder:6
 	"3.Specifications.2.Electrical.3.Conductivity"
 	optional  double              Positive_Seq_Resistance                         "Positive Sequence Resistace"					unit:ohm                        uiorder:25
 	optional  double              Positive_Seq_Reactance                          "Positive Sequence Reactance"					unit:ohm                        uiorder:26
@@ -6452,16 +6455,19 @@ INDEX(Geometry);
 CREATE TABLE "ElectricityCablesMemo" ElectricityCablesMemo : ElectricityBase
 {
 	"4.Descriptive"
-	optional	text              System_Type                                     "System Type"																	uiorder:31
-	optional	text              System                                          "System"																		uiorder:32
-	optional	text              Future_System_Type                              "Future System Type"															uiorder:33
-	optional	text              Future_System                                   "Future System"																uiorder:34
-	optional	text              Name                                            "Name"																		uiorder:35
-	optional	text              Sub_Name                                        "Sub Name"																	uiorder:36
-	optional	text              Comment                                         "Comment"																		uiorder:37
-	optional	text              Region                                          "Region"																		uiorder:38
-	optional	text              Network                                         ""																			uiorder:39
-	optional	text              Future_Network                                  "Future Network"                                                              uiorder:40
+	optional	text              System_Type                                     "System Type"																	uiorder:1
+	optional	text              System                                          "System"																		uiorder:2
+	optional	text              Future_System_Type                              "Future System Type"															uiorder:3
+	optional	text              Future_System                                   "Future System"																uiorder:4
+	optional	text              Name                                            "Name"																		uiorder:5
+	optional	text              Sub_Name                                        "Sub Name"																	uiorder:6
+	optional	text              Comment                                         "Comment"																		uiorder:7
+	optional	text              Region                                          "Region"																		uiorder:8
+	optional	text              Network                                         ""																			uiorder:9
+	optional	text              Future_Network                                  "Future Network"                                                              uiorder:10
+	optional    text              Suburb                                          ""                                                                            uiorder:11
+	optional    text              Ward                                            ""                                                                            uiorder:12
+	optional    bool              Exists                                          ""                                                                            uiorder:13
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:41
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:42
@@ -6469,6 +6475,7 @@ CREATE TABLE "ElectricityCablesMemo" ElectricityCablesMemo : ElectricityBase
 	optional  text                MP_Comment                                      "Master Plan Comment"                                                         uiorder:44
 	optional  text                MP_Project_No                                   "Master Plan Project Number"                                                  uiorder:45
 	optional  text                MP_Project_Description                          "Master Plan Project Description"                                             uiorder:46
+	optional  double              MP_New_Cable_Type                               "Master Plan New Cable Type"                                                  uiorder:47
 	"6.Asset Information"
 	optional  text                AM_Make                                         "Asset Make"                                                                  uiorder:47
 	optional  text                AM_Type                                         "Asset Type"                                                                  uiorder:48
@@ -6476,7 +6483,7 @@ CREATE TABLE "ElectricityCablesMemo" ElectricityCablesMemo : ElectricityBase
 	optional  text                AM_Utilization                                  "Asset Utilization"                                                           uiorder:50
 	optional  text                AM_Base_Year                                    "Asset Cost Calculation Year"                                                 uiorder:51
 	optional  double              AM_Replace_Value                                "Asset Replace Value"                                                         uiorder:52
-	optional  text                Year                               			  "Year"                                                                        uiorder:53
+	optional  int32               Year                               			  "Year"                                                                        uiorder:53
 	"7.Integrity"
 	optional  text                Specification_Integrity      		              "Specification Integrity"                                                     uiorder:54
 	optional  text                Phase_Connection_Integrity                   	  "Phase Connection Integrity"                                                  uiorder:55
@@ -6486,7 +6493,7 @@ CREATE TABLE "ElectricityCablesMemo" ElectricityCablesMemo : ElectricityBase
 	optional  text                Drawing_No                                      "Drawing No"									tags:dispDocument               uiorder:59
 	"Internal"
 	optional  text                MP_Cost_Detail                                  "Master Plan Cost Detail"						unit:ZAR
-	optional  int32               MP_Cost_Function                                "Master Plan Cost Function"
+	optional  text                MP_Cost_Function                                "Master Plan Cost Function"
 	optional  double              MP_Extra_Cost_Factor                            "Master Plan Extra Cost Factor"
 	optional  text                Cost_Function                                   "Cost Function"
 };
@@ -6494,6 +6501,8 @@ CREATE TABLE "ElectricityCablesMemo" ElectricityCablesMemo : ElectricityBase
 CREATE TABLE "ElectricityCablesResults" ElectricityCablesResults : ElectricityBase
 {
 	"8.Results.1.Voltages"
+	optional  double              Voltage                                         "Voltage"                                     unit:V                          uiorder:58
+	optional  double              Voltage_pu                                      "Per-unit Voltage"                                                            uiorder:59
 	optional  double              Voltage_R_pu                                    "(A) Phase Per-unit Voltage"                                                  uiorder:60
 	optional  double              Voltage_W_pu                                    "(B) Phase Per-unit Voltage"                                                  uiorder:61
 	optional  double              Voltage_B_pu                                    "(C) Phase Per-unit Voltage"                                                  uiorder:62
@@ -6504,6 +6513,7 @@ CREATE TABLE "ElectricityCablesResults" ElectricityCablesResults : ElectricityBa
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:67
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:68
 	"8.Results.2.Currents"
+	optional  double              Current                                         "Current"										unit:A                          uiorder:68
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:69
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:70
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:71
@@ -6541,6 +6551,7 @@ CREATE TABLE "ElectricityCablesResults" ElectricityCablesResults : ElectricityBa
 	optional  double              Current_W_Expected							  "Expected (B) Phase Current"					unit:A
 	optional  double              Current_B_Expected							  "Expected (C) Phase Current"					unit:A
 	optional  double              Total_Expected_Losses                           "Total Expected Losses"						unit:VA
+	optional  int32               Flow                                            ""
 };
 
 CREATE TABLE "ElectricityCablesUser" ElectricityCablesUser : ElectricityBase
@@ -6558,11 +6569,13 @@ CREATE TABLE "ElectricityLoads" ElectricityLoads : ElectricityBase
 	"2.Connection"
 	optional  text                Node_Code                                       "Node Code"                                                                   uiorder:3
 	"3.Specifications.1.Physical"
-	optional  text                Load_Type                                       "Load Type"                                                                   uiorder:4
-	optional  text                Transformer_Zone                                "Transformer_Zone"                                                            uiorder:5
+	optional  text                Load_Type                                       "Load Type"                                                                   uiorder:3
+	optional  text                Load_Zone                                       "Load Zone"                                                                   uiorder:4
+	optional  text                Transformer_Zone                                "Transformer Zone"                                                            uiorder:5
 	optional  text                Distribution_Zone                               "Distribution Zone"                                                           uiorder:6
 	optional  text                Feeder                               			  "Feeder"                                                                      uiorder:7
 	optional  text                Plot_No                                         "Plot Number"                                                                 uiorder:8
+	optional  text                Type_Of_Load                                    "Type Of Load"                                                                uiorder:9
 	"3.Specifications.2.Electrical.1.General"
 	optional  int32               Phases                                          "Number of Phases"                                                            uiorder:9
 	optional  text                Phase_Connection                                "Phase Connection Type"                                                       uiorder:10
@@ -6572,18 +6585,20 @@ CREATE TABLE "ElectricityLoads" ElectricityLoads : ElectricityBase
 	"3.Specifications.2.Electrical.2.Voltage"
 	optional  text                Voltage_Category                                "Voltage Category"                                                            uiorder:14
 	optional  double              Nominal_Voltage                                 "Nominal Voltage"								unit:V                          uiorder:15
+	optional  double              Nominal_Voltage_pu                              "Nominal Per-unit Voltage"					                                uiorder:16
 	"3.Specifications.2.Electrical.3.Power&Energy"
 	optional  double              AADC_Scenario1                                  "AADC - Scenario 1"							unit:kWh                        uiorder:16
 	optional  double              AADC_Scenario2                                  "AADC - Scenario 2"							unit:kWh                        uiorder:17
 	optional  double              AADC_Scenario3                                  "AADC - Scenario 3"							unit:kWh                        uiorder:18
 	optional  double              AADC_Scenario4                                  "AADC - Scenario 4"							unit:kWh                        uiorder:19
 	optional  double              AADC_Scenario5                                  "AADC - Scenario 5"							unit:kWh                        uiorder:20
-	optional  double              ADMD_Scenario1                                  "ADMD - Scenario 1"							unit:kVA                        uiorder:21
-	optional  double              ADMD_Scenario2                                  "ADMD - Scenario 2"							unit:kVA                        uiorder:22
-	optional  double              ADMD_Scenario3                                  "ADMD - Scenario 3"							unit:kVA                        uiorder:23
-	optional  double              ADMD_Scenario4                                  "ADMD - Scenario 4"							unit:kVA                        uiorder:24
-	optional  double              ADMD_Scenario5                                  "ADMD - Scenario 5"							unit:kVA                        uiorder:25
-	optional  double              PF                                              "Power Factor"                                                                uiorder:26
+	optional  double              MD_Scenario1                                    "MD - Scenario 1"								unit:kVA                        uiorder:21
+	optional  double              MD_Scenario2                                    "MD - Scenario 2"								unit:kVA                        uiorder:22
+	optional  double              MD_Scenario3                                    "MD - Scenario 3"								unit:kVA                        uiorder:23
+	optional  double              MD_Scenario4                                    "MD - Scenario 4"								unit:kVA                        uiorder:24
+	optional  double              MD_Scenario5                                    "MD - Scenario 5"								unit:kVA                        uiorder:25
+	optional  double              MD_Growth                                       "MD - Growth"	                                                                uiorder:26
+	optional  double              PF                                              "Power Factor"                                                                uiorder:27
 	"3.Specifications.2.Electrical.4.Diversity"
 	optional  double              HB_Alpha                                        "Herman Beta - Alpha Value"                                                   uiorder:27
 	optional  double              HB_Beta                                         "Herman Beta - Beta Value"                                                    uiorder:28
@@ -6645,6 +6660,8 @@ CREATE TABLE "ElectricityLoadsMemo" ElectricityLoadsMemo : ElectricityBase
 	optional	text              Region                                          "Region"																		uiorder:47
 	optional	text              Network                                         ""																			uiorder:48
 	optional	text              Future_Network                                  "Future Network"                                                              uiorder:49
+	optional	text              Suburb                                          ""                                                                            uiorder:50
+	optional	text              Ward                                            ""                                                                            uiorder:51
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:50
 	optional  text                MP_Item_No                                      "Master Plan Number"                                                          uiorder:51
@@ -6660,7 +6677,7 @@ CREATE TABLE "ElectricityLoadsMemo" ElectricityLoadsMemo : ElectricityBase
 	optional  text                AM_Utilization_Integrity                        "Asset Utilization Integrity"                                                 uiorder:60
 	optional  text                AM_Base_Year                                    "Asset Installation Year"                                                     uiorder:61
 	optional  double              AM_Replace_Value                                "Asset Replace Value"                                                         uiorder:62
-	optional  text                Year                               			  "Year"                                                                        uiorder:63
+	optional  int32               Year                               			  "Year"                                                                        uiorder:63
 	"7.Integrity"
 	optional  text                ADMD_Integrity                           		  "ADMD Integrity"                                                              uiorder:64
 	optional  text                Phase_Connection_Integrity                   	  "Phase Connection Integrity"	                                                uiorder:65
@@ -6668,24 +6685,47 @@ CREATE TABLE "ElectricityLoadsMemo" ElectricityLoadsMemo : ElectricityBase
 	optional  text                Year_Integrity                     			  "Year Integrity"                                                              uiorder:67
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:68
 	"Internal"
-	optional  text 				  Treasury_Fix									  "Treasury_Fix"
-	optional  text 				  Future_Development							  "Future_Development"
-	optional  text 				  Informal_Development							  "Informal_Development"
-	optional  text 				  Development_Weight							  "Development_Weight"
+	optional  text 				  Treasury_Fix									  "Treasury Fix"
+	optional  text 				  Future_Development							  "Future Development"
+	optional  text 				  Future_Demand_Zones							  ""
+	optional  text 				  Informal_Development							  "Informal Development"
+	optional  double			  Development_Weight							  "Development Weight"
+	optional  text 				  Development_Priority							  "Development Priority"
 	optional  text 				  Densification									  "Densification"
-	optional  text 				  Swift_Link									  "Swift_Link"
-	optional  text 				  Swift_Spread									  "Swift_Spread"
-	optional  text 				  Area_Weight									  "Area_Weight"
-	optional  text 				  Node_Weight									  "Node_Weight"
+	optional  text 				  Swift_Link									  "Swift Link"
+	optional  text 				  Swift_Spread									  "Swift Spread"
+	optional  double			  Area_Weight									  "Area Weight"
+	optional  double			  Node_Weight									  "Node Weight"
 	optional  text                MP_Cost_Detail                                  "Master Plan Cost Detail"						unit:ZAR
-	optional  int32               MP_Cost_Function                                "Master Plan Cost Function"
+	optional  text                MP_Cost_Function                                "Master Plan Cost Function"
 	optional  double              MP_Extra_Cost_Factor                            "Master Plan Extra Cost Factor"
 	optional  text                Cost_Function                                   "Cost Function"
+	optional  double              Adjust_Factor                                   "Adjust Factor"
+	optional  text                Demand_Integrity                                ""
+	optional  text                Demand_Zones                                    ""
+	optional  int32               Duration                                        ""
+	optional  double              Estimated_Current_Peak_Day_Energy               ""
+	optional  bool                Exists                                          ""
+	optional  text                Growth_Curve                                    ""
+	optional  text                Land_Use_Category                               ""
+	optional  double              Load_Factor                                     ""
+	optional  text                Load_Factor_Category                            ""
+	optional  text                Load_Profile                                    ""
+	optional  bin                 Load_Profile_Data                               ""
+	optional  bin                 Load_Profile_Data_1                             ""
+	optional  bin                 Load_Profile_Data_2                             ""
+	optional  bin                 Load_Profile_Data_3                             ""
+	optional  bin                 Load_Profile_Data_4                             ""
+	optional  bin                 Load_Profile_Data_5                             ""
+	optional  bool                Non_Scalable                                    ""
+	optional  double              Steepness                                       ""
 };
 
 CREATE TABLE "ElectricityLoadsResults" ElectricityLoadsResults : ElectricityBase
 {
 	"7.Results.1.Voltages"
+	optional  double              Voltage                                         "Voltage"                                     unit:V                          uiorder:67
+	optional  double              Voltage_pu                                      "Per-unit Voltage"                                                            uiorder:68
 	optional  double              Voltage_R_pu                                    "(A) Phase Per-unit Voltage"                                                  uiorder:69
 	optional  double              Voltage_W_pu                                    "(B) Phase Per-unit Voltage"                                                  uiorder:70
 	optional  double              Voltage_B_pu                                    "(C) Phase Per-unit Voltage"                                                  uiorder:71
@@ -6696,6 +6736,7 @@ CREATE TABLE "ElectricityLoadsResults" ElectricityLoadsResults : ElectricityBase
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:76
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:77
 	"7.Results.2.Currents"
+	optional  double              Current                                         "Current"										unit:A                          uiorder:77
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:78
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:79
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:80
@@ -6747,14 +6788,17 @@ CREATE TABLE "ElectricityNodes" ElectricityNodes : ElectricityBase
 	"1.Specifications.1.Physical"
 	optional  text                Node_Type                                       "Node Type"                                                                   uiorder:1
 	optional  text                Node_Code                                       "Node Code"                                                                   uiorder:2
-	optional  text                Transformer_Zone                                "Transformer_Zone"                                                            uiorder:3
+	optional  text                Load_Zone                                       "Load Zone"                                                                   uiorder:3
 	optional  text                Distribution_Zone                               "Distribution Zone"                                                           uiorder:4
 	optional  text                Feeder                               			  "Feeder"                                                                      uiorder:5
+	optional  text                Live                               			  ""                                                                            uiorder:6
+	optional  text                Switching_Station_Name               			  ""                                                                            uiorder:7
 	"1.Specifications.2.Electrical.1.General"
 	optional  int32               Phases                                          "Number of Phases"                                                            uiorder:6
 	optional  text                Tech                                      	  "Connection Typology"                                                         uiorder:7
 	"1.Specifications.2.Electrical.2.Voltage"
 	optional  double              Nominal_Voltage                                 "Nominal Voltage"								unit:V                          uiorder:15
+	optional  double              Nominal_Voltage_pu                              "Per-unit Nominal Voltage"					                                uiorder:16
 
 	hasone Memo     ID            ElectricityNodesMemo.ID
     hasone Results  ID            ElectricityNodesResult.ID
@@ -6776,6 +6820,9 @@ CREATE TABLE "ElectricityNodesMemo" ElectricityNodesMemo : ElectricityBase
 	optional  text                Region                                          "Region"																		uiorder:16
 	optional  text                Network                                         ""																			uiorder:17
 	optional  text                Future_Network                                  "Future Network"                                                              uiorder:18
+	optional  bool                Exists                                          ""                                                                            uiorder:19
+	optional  text                Suburb                                          ""                                                                            uiorder:20
+	optional  text                Ward                                            ""                                                                            uiorder:21
 	"3.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:19
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:20
@@ -6788,9 +6835,10 @@ CREATE TABLE "ElectricityNodesMemo" ElectricityNodesMemo : ElectricityBase
 	optional  text                AM_Type                                         "Asset Type"                                                                  uiorder:26
 	optional  text                AM_ID_No                                        "Asset ID Number"                                                             uiorder:27
 	optional  text                AM_Utilization                                  "Asset Utilization"                                                           uiorder:28
-	optional  text                AM_Base_Year                                    "Asset Cost Calculation Year"                                                 uiorder:29
-	optional  double              AM_Replace_Value                                "Asset Replace Value"                                                         uiorder:30
-	optional  text                Year                               			  "Year"                                                                        uiorder:31
+	optional  text                AM_Utilization_Integrity                        "Asset Utilization Integrity"                                                 uiorder:29
+	optional  text                AM_Base_Year                                    "Asset Cost Calculation Year"                                                 uiorder:30
+	optional  double              AM_Replace_Value                                "Asset Replace Value"                                                         uiorder:31
+	optional  int32               Year                               			  "Year"                                                                        uiorder:32
 	"5.Integrity"
 	optional  text                Type_Integrity                                  "Type Integrity"                                                              uiorder:32
 	optional  text                Locality_Integrity                              "Locality Integrity"                                                          uiorder:33
@@ -6798,14 +6846,23 @@ CREATE TABLE "ElectricityNodesMemo" ElectricityNodesMemo : ElectricityBase
 	optional  text                Drawing_No                                      "Drawing Number"							tags:dispDocument                   uiorder:35
 	"Internal"
 	optional  text                MP_Cost_Detail                                  "Master Plan Cost Detail"						unit:ZAR
-	optional  int32               MP_Cost_Function                                "Master Plan Cost Function"
+	optional  text                MP_Cost_Function                                "Master Plan Cost Function"
 	optional  double              MP_Extra_Cost_Factor                            "Master Plan Extra Cost Factor"
 	optional  text                Cost_Function                                   "Cost Function"
+	optional  bin                 Load_Profile_Data                               ""
+	optional  double              Metered_Maximum                                 ""
+	optional  bin                 Load_Profile_Data_1                             ""
+	optional  bin                 Load_Profile_Data_2                             ""
+	optional  bin                 Load_Profile_Data_3                             ""
+	optional  bin                 Load_Profile_Data_4                             ""
+	optional  bin                 Load_Profile_Data_5                             ""
 };
 
 CREATE TABLE "ElectricityNodesResult" ElectricityNodesResult : ElectricityBase
 {
 	"6.Results.1.Voltages"
+	optional  double              Voltage                                         "Voltage"                                     unit:V                          uiorder:34
+	optional  double              Voltage_pu                                      "Per-unit Voltage"                                                            uiorder:35
 	optional  double              Voltage_R_pu                                    "(A) Phase Per-unit Voltage"                                                  uiorder:36
 	optional  double              Voltage_W_pu                                    "(B) Phase Per-unit Voltage"                                                  uiorder:37
 	optional  double              Voltage_B_pu                                    "(C) Phase Per-unit Voltage"                                                  uiorder:38
@@ -6816,6 +6873,7 @@ CREATE TABLE "ElectricityNodesResult" ElectricityNodesResult : ElectricityBase
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:43
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:44
 	"6.Results.2.Currents"
+	optional  double              Current                                         "Current"										unit:A                          uiorder:44
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:45
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:46
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:47
@@ -6866,15 +6924,24 @@ CREATE TABLE "ElectricitySource" ElectricitySource : ElectricityBase
 	optional  pointzm             Geometry                                        "Geometry"
 	"1.Connection"
 	optional  text                Node_Code                                       "Node Code"                                                                   uiorder:1
+	optional  text                Distribution_Zone                               ""
+	optional  text                Load_Zone                                       ""
 	"2.Specifications.1.Physical"
-	optional  text                Node_Type                                       "Node Type"                                                                   uiorder:2
+	optional  text                Bus_Type                                        ""
+	optional  int32               Number_Of_Phases                                ""
 	"2.Specifications.2.Electrical.1.General"
 	optional  text                Source                                          "Source Name"                                                                 uiorder:3
 	optional  double              Base_Frequency                                  "Base Frequency"								unit:Hz                         uiorder:4
+	optional  text                Short_Circuit_Method                            ""
+	optional  double              x0r0                                            ""
+	optional  double              x1r1                                            ""
+	optional  double              Mvasc1                                          ""
+	optional  double              Mvasc3                                          ""
 	"2.Specifications.2.Electrical.2.Voltage"
 	optional  double              Base_Voltage                                    "Base Voltage"								unit:V                          uiorder:5
 	optional  double              Vpu                                             "Per Unit Voltage"
 	optional  double              Angle                                           "Angle"
+	optional  double              Nominal_Voltage_pu                              ""
 	"2.Specifications.2.Electrical.3.Fault Ratings"
 	optional  double              3Pfault                                         "3 Phase Fault"								unit:A                          uiorder:6
 	optional  double              3Pfault_angle                                   "3 Phase Fault Angle"							unit:deg                        uiorder:7
@@ -6899,11 +6966,14 @@ CREATE TABLE "ElectricitySourceMemo" ElectricitySourceMemo : ElectricityBase
 	optional	text              Future_System_Type                              "Future System Type"															uiorder:12
 	optional	text              Future_System                                   "Future System"																uiorder:13
 	optional	text              Name                                            "Name"																		uiorder:14
-	optional	text              Sub_Name                                        "Sub Name"																	uiorder:15
-	optional	text              Comment                                         "Comment"																		uiorder:16
-	optional	text              Region                                          "Region"																		uiorder:17
-	optional	text              Network                                         ""																			uiorder:18
+	optional	text              Suburb                                            ""																			uiorder:15
+	optional	text              Ward                                            ""																			uiorder:16
+	optional	text              Sub_Name                                        "Sub Name"																	uiorder:17
+	optional	text              Comment                                         "Comment"																		uiorder:18
+	optional	text              Region                                          "Region"																		uiorder:19
+	optional	text              Network                                         ""																			uiorder:20
 	optional	text              Future_Network                                  "Future Network"
+	optional	bool              Exists                                          ""
 	"4.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:19
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:20
@@ -6916,9 +6986,10 @@ CREATE TABLE "ElectricitySourceMemo" ElectricitySourceMemo : ElectricityBase
 	optional  text                AM_Type                                         "Asset Type"                                                                  uiorder:26
 	optional  text                AM_ID_No                                        "Asset ID Number"                                                             uiorder:27
 	optional  text                AM_Utilization                                  "Asset Utilization"                                                           uiorder:28
+	optional  text                AM_Utilization_Integrity                        ""
 	optional  text                AM_Base_Year                                    "Asset Cost Calculation Year"                                                 uiorder:29
 	optional  double              AM_Replace_Value                                "Asset Replace Value"                                                         uiorder:30
-	optional  text                Year                               			  "Year"                                                                        uiorder:31
+	optional  int32               Year                               			  "Year"                                                                        uiorder:31
 	"6.Integrity"
 	optional  text                Specification_Integrity                  		  "Specification Integrity"                                                     uiorder:32
 	optional  text                Locality_Integrity                              "LocalityIntegrity"                                                           uiorder:33
@@ -6926,7 +6997,7 @@ CREATE TABLE "ElectricitySourceMemo" ElectricitySourceMemo : ElectricityBase
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:35
 	"Internal"
 	optional  text                MP_Cost_Detail                                  "Master Plan Cost Detail"						unit:ZAR
-	optional  int32               MP_Cost_Function                                "Master Plan Cost Function"
+	optional  text                MP_Cost_Function                                "Master Plan Cost Function"
 	optional  double              MP_Extra_Cost_Factor                            "Master Plan Extra Cost Factor"
 	optional  text                Cost_Function                                   "Cost Function"
 };
@@ -6934,6 +7005,8 @@ CREATE TABLE "ElectricitySourceMemo" ElectricitySourceMemo : ElectricityBase
 CREATE TABLE "ElectricitySourceResult" ElectricitySourceResult : ElectricityBase
 {
 	"7.Results.1.Voltages"
+	optional  double              Voltage                                         "Voltage"                                     unit:V                          uiorder:34
+	optional  double              Voltage_pu                                      "Per-unit Voltage"                                                            uiorder:35
 	optional  double              Voltage_R_pu                                    "(A) Phase Per-unit Voltage"                                                  uiorder:36
 	optional  double              Voltage_W_pu                                    "(B) Phase Per-unit Voltage"                                                  uiorder:37
 	optional  double              Voltage_B_pu                                    "(C) Phase Per-unit Voltage"                                                  uiorder:38
@@ -6944,6 +7017,7 @@ CREATE TABLE "ElectricitySourceResult" ElectricitySourceResult : ElectricityBase
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:43
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:44
 	"7.Results.2.Currents"
+	optional  double              Current                                         "Current"										unit:A                          uiorder:44
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:45
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:46
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:47
@@ -7000,11 +7074,14 @@ CREATE TABLE "ElectricitySwitchgear" ElectricitySwitchgear : ElectricityBase
 	optional  text                Node_Code                                       "Node Code"                                                                   uiorder:3
 	"3.Specifications.1.Physical"
 	optional  text                Switchgear_Type                                 "Switchgear Type"                                                             uiorder:4
-	optional  text                Transformer_Zone                                "Transformer_Zone"                                                            uiorder:5
+	optional  text                Load_Zone                                       ""                                                                            uiorder:5
 	optional  text                Distribution_Zone                               "Distribution Zone"                                                           uiorder:6
 	optional  text                Feeder                               			  "Feeder"                                                                      uiorder:7
+	optional  uuid                Link_ID_Connected_To_Bus_A                      ""                                                                            uiorder:8
+	optional  uuid                Link_ID_Connected_To_Bus_B                      ""                                                                            uiorder:9
 	"3.Specification.2.Electrical.1.Voltage"
-	optional  text                Nominal_Voltage                                 "Nominal Voltage"                                                             uiorder:8
+	optional  double              Nominal_Voltage                                 "Nominal Voltage"                                                             uiorder:8
+	optional  double              Nominal_Voltage_pu                              "Per-Unit Nominal Voltage"                                                    uiorder:8
 	optional  text                Voltage_Category                                "Voltage Category"                                                            uiorder:9
 
 	hasone Memo     ID            ElectricitySwitchgearMemo.ID
@@ -7016,6 +7093,7 @@ INDEX(Geometry);
 CREATE TABLE "ElectricitySwitchgearMemo" ElectricitySwitchgearMemo : ElectricityBase
 {
 	"4.Descriptive"
+	optional	bool              Exists                                          ""                                                                            uiorder:9
 	optional	text              System_Type                                     "System Type"																	uiorder:10
 	optional	text              System                                          "System"																		uiorder:11
 	optional	text              Future_System_Type                              "Future System Type"															uiorder:12
@@ -7026,6 +7104,14 @@ CREATE TABLE "ElectricitySwitchgearMemo" ElectricitySwitchgearMemo : Electricity
 	optional	text              Region                                          "Region"																		uiorder:17
 	optional	text              Network                                         ""																			uiorder:18
 	optional	text              Future_Network                                  "Future Network"                                                              uiorder:19
+	optional	text              Suburb                                          ""                                                                            uiorder:20
+	optional	text              Ward                                            ""                                                                            uiorder:21
+	optional	double            Metered_Maximum                                 ""                                                                            uiorder:22
+	optional	bin               Load_Profile_Data_1                             ""                                                                            uiorder:23
+	optional	bin               Load_Profile_Data_2                             ""                                                                            uiorder:24
+	optional	bin               Load_Profile_Data_3                             ""                                                                            uiorder:25
+	optional	bin               Load_Profile_Data_4                             ""                                                                            uiorder:26
+	optional	bin               Load_Profile_Data_5                             ""                                                                            uiorder:27
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:20
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:21
@@ -7058,6 +7144,8 @@ CREATE TABLE "ElectricitySwitchgearMemo" ElectricitySwitchgearMemo : Electricity
 CREATE TABLE "ElectricitySwitchgearResult" ElectricitySwitchgearResult : ElectricityBase
 {
 	"8.Results.1.Voltages"
+	optional  double              Voltage                                         "Voltage"                                     unit:V                          uiorder:34
+	optional  double              Voltage_pu                                      "Per-unit Voltage"                                                            uiorder:35
 	optional  double              Voltage_R_pu                                    "(A) Phase Per-unit Voltage"                                                  uiorder:39
 	optional  double              Voltage_W_pu                                    "(B) Phase Per-unit Voltage"                                                  uiorder:40
 	optional  double              Voltage_B_pu                                    "(C) Phase Per-unit Voltage"                                                  uiorder:41
@@ -7068,6 +7156,7 @@ CREATE TABLE "ElectricitySwitchgearResult" ElectricitySwitchgearResult : Electri
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:46
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:47
 	"8.Results.2.Currents"
+	optional  double              Current                                         "Current"										unit:A                          uiorder:44
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:48
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:49
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:50
@@ -7124,10 +7213,10 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  text                From_Code                                       "From Code"                                                                   uiorder:4
 	optional  text                To_Code                                         "To Code"                                                                     uiorder:5
 	optional  text                Link_Code                                       "Link Code"                                                                   uiorder:6
-	optional  text                Transformer_Zone                                "Transformer Zone"                                                            uiorder:7
+	optional  text                Load_Zone                                       "Load Zone"                                                                   uiorder:7
 	optional  text                Distribution_Zone                               "Distribution Zone"                                                           uiorder:8
 	optional  text                Feeder                               			  "Feeder"                                                                      uiorder:9
-	optional  text                Upstream_Transformer_Zone                       "Upstream Transformer Zone"                                                   uiorder:10
+	optional  text                Substation_Name                                 ""                                                                            uiorder:10
 	"3.Specifications.1.Physical"
 	optional  text                Transformer_Type                                "Transformer Type"                                                            uiorder:11
 	optional  text                Transformer_Name                                "Transformer Name"                                                            uiorder:12
@@ -7137,6 +7226,7 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  double              Base_Frequency                                  "Base Frequency"								unit:Hz                         uiorder:15
 	optional  double              Fault_Rate                                      "Failure Rate of Transformer"                                                 uiorder:16
 	"3.Specifications.2.Electrical.2.Voltage&Current"
+	optional  double              Nominal_Voltage_pu                              "Nominal Per-Unit Voltage"                                                    uiorder:16
 	optional  double              Prim_Voltage                                    "Primary Coil Voltage"						unit:V                          uiorder:17
 	optional  double              Sec_Voltage                                     "Secondary Coil Voltage"						unit:V                          uiorder:18
 	optional  double              Percent_Magnetising_Current                     "Percent Magnetising Current"					unit:%                          uiorder:19
@@ -7206,6 +7296,16 @@ CREATE TABLE "ElectricityTrfrsMemo" ElectricityTrfrsMemo : ElectricityBase
 	optional	text              Region                                          "Region"																		uiorder:61
 	optional	text              Network                                         ""																			uiorder:62
 	optional	text              Future_Network                                  "Future Network"                                                              uiorder:63
+	optional	bin               Load_Profile_Data                               ""                                                                            uiorder:64
+	optional	double            Metered_Maximum                                 ""                                                                            uiorder:65
+	optional	text              Suburb                                          ""                                                                            uiorder:66
+	optional	text              Ward                                            ""                                                                            uiorder:67
+	optional	bin               Load_Profile_Data_1                             ""                                                                            uiorder:68
+	optional	bin               Load_Profile_Data_2                             ""                                                                            uiorder:69
+	optional	bin               Load_Profile_Data_3                             ""                                                                            uiorder:70
+	optional	bin               Load_Profile_Data_4                             ""                                                                            uiorder:71
+	optional	bin               Load_Profile_Data_5                             ""                                                                            uiorder:72
+	optional	bool              Exists                                          ""                                                                            uiorder:73
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:64
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:65
@@ -7230,14 +7330,18 @@ CREATE TABLE "ElectricityTrfrsMemo" ElectricityTrfrsMemo : ElectricityBase
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:82
 	"Internal"
 	optional  text                MP_Cost_Detail                                  "Master Plan Cost Detail"						unit:ZAR
-	optional  int32               MP_Cost_Function                                "Master Plan Cost Function"
+	optional  text                MP_Cost_Function                                "Master Plan Cost Function"
 	optional  double              MP_Extra_Cost_Factor                            "Master Plan Cost Factor"
+	optional  double              MP_New_kVA                                      "Master Plan New kVA"
 	optional  text                Cost_Function                                   "Cost Function"
 };
 
 CREATE TABLE "ElectricityTrfrsResult" ElectricityTrfrsResult : ElectricityBase
 {
 	"8.Primary Side Results.1.Voltages"
+	optional  double              Prim_Voltage                                    "Voltage"                                     unit:V                          uiorder:34
+	optional  double              Prim_Voltage_pu                                 "Per-unit Voltage"                                                            uiorder:35
+	optional  double              Prim_Voltage_Result                             "Voltage Result"                              unit:V                          uiorder:36
 	optional  double              Prim_Voltage_R_pu                               "(A) Phase Per-unit Voltage"                                                  uiorder:83
 	optional  double              Prim_Voltage_W_pu                               "(B) Phase Per-unit Voltage"                                                  uiorder:84
 	optional  double              Prim_Voltage_B_pu                               "(C) Phase Per-unit Voltage"                                                  uiorder:85
@@ -7248,6 +7352,7 @@ CREATE TABLE "ElectricityTrfrsResult" ElectricityTrfrsResult : ElectricityBase
 	optional  double              Prim_Voltage_W_Angle                            "(B) Phase Voltage Angle"						unit:deg                        uiorder:90
 	optional  double              Prim_Voltage_B_Angle                            "(C) Phase Voltage Angle"						unit:deg                        uiorder:91
 	"8.Primary Side Results.2.Currents"
+	optional  double              Prim_Current                                    "Current"										unit:A                          uiorder:44
 	optional  double              Prim_Current_R                                  "(A) Phase Current"							unit:A                          uiorder:92
 	optional  double              Prim_Current_W                                  "(B) Phase Current"							unit:A                          uiorder:93
 	optional  double              Prim_Current_B                                  "(C) Phase Current"							unit:A                          uiorder:94
@@ -7267,6 +7372,8 @@ CREATE TABLE "ElectricityTrfrsResult" ElectricityTrfrsResult : ElectricityBase
 	optional  double              Prim_Phase_to_Phase_Fault_Angle                 "Phase to Phase Fault Angle"					unit:deg                        uiorder:107
 	optional  double              Prim_Two_Phases_to_Ground_Fault_Angle           "Two Phases to Ground Fault Angle"			unit:deg                        uiorder:108
 	"9.Secondary Side Results.1.Voltages"
+	optional  double              Sec_Voltage_pu                                  "Per-unit Voltage"                                                            uiorder:107
+	optional  double              Sec_Voltage_Result                              "Voltage Result"                              unit:V                          uiorder:108
 	optional  double              Sec_Voltage_R_pu                                "(A) Phase Per-unit Voltage"                                                  uiorder:109
 	optional  double              Sec_Voltage_W_pu                                "(B) Phase Per-unit Voltage"                                                  uiorder:110
 	optional  double              Sec_Voltage_B_pu                                "(C) Phase Per-unit Voltage"                                                  uiorder:111
@@ -7277,6 +7384,7 @@ CREATE TABLE "ElectricityTrfrsResult" ElectricityTrfrsResult : ElectricityBase
 	optional  double              Sec_Voltage_W_Angle                             "(B) Phase Voltage Angle"						unit:deg                        uiorder:116
 	optional  double              Sec_Voltage_B_Angle                             "(C) Phase Voltage Angle"						unit:deg                        uiorder:117
 	"9.Secondary Side Results.2.Currents"
+	optional  double              Sec_Current                                     "Current"         							unit:A                          uiorder:117
 	optional  double              Sec_Current_R                                   "(A) Phase Current"							unit:A                          uiorder:118
 	optional  double              Sec_Current_W                                   "(B) Phase Current"							unit:A                          uiorder:119
 	optional  double              Sec_Current_B                                   "(C) Phase Current"							unit:A                          uiorder:110
@@ -7333,13 +7441,13 @@ CREATE TABLE "ElectricityGenerators" ElectricityGenerators : ElectricityBase
 	optional  pointzm             Geometry                                        "Geometry"
 	"1.Status"
 	optional  text                Live                                            "Live Status"                                                                 uiorder:1
-	optional  text                Status                                          ""                                                                            uiorder:2
 	"2.Connection"
 	optional  text                Node_Code                                       "Node Code"                                                                   uiorder:3
 	"3.Specifications.1.Physical"
-	optional  text 				  Description 									  "Description"																	uiorder:4
-	optional  text                Generator_Type                                  "Generator Type"                                                              uiorder:5
-	optional  text                Transformer_Zone                                "Transformer_Zone"                                                            uiorder:6
+	optional  text 				  Description 									  "Description"																	uiorder:3
+	optional  text                Generator_Type                                  "Generator Type"                                                              uiorder:4
+	optional  text                Load_Zone                                       "Load Zone"                                                                   uiorder:5
+	optional  text                Transformer_Zone                                "Transformer Zone"                                                            uiorder:6
 	optional  text                Distribution_Zone                               "Distribution Zone"                                                           uiorder:7
 	optional  text                Feeder                               			  "Feeder"                                                                      uiorder:8
 	optional  int32				  No_Parallel_Machines							  "No Parallel Machines"														uiorder:9
@@ -7348,11 +7456,17 @@ CREATE TABLE "ElectricityGenerators" ElectricityGenerators : ElectricityBase
 	optional  text                Phase_Connection                                "Phase Connection Type"                                                       uiorder:11
 	optional  text                Connection                                      "Connection Typology"                                                         uiorder:12
 	optional  double              Base_Frequency                                  "Base Frequency"								unit:Hz                         uiorder:13
+	optional  double              Active_Power_Dispatch                           ""
+	optional  double              Apparent_Power_Dispatch                         ""
+	optional  double              Reactive_Power_Dispatch                         ""
+	optional  bool                Use_Dispatch_Values                             ""
+	optional  text                Generator_Profile                               ""
 	"3.Specifications.2.Electrical.2.Voltage"
 	optional  text                Voltage_Category                                "Voltage Category"                                                            uiorder:14
 	optional  double              Nominal_Voltage                                 "Nominal Voltage"								unit:V                          uiorder:15
+	optional  double              Nominal_Voltage_pu                              "Nominal Per-Unit Voltage"					                                uiorder:16
 	"3.Specifications.2.Electrical.3.Generator Details"
-	optional  int32				  Local_Controller							  	  "Local Controller"															uiorder:16
+	optional  text				  Local_Controller							  	  "Local Controller"															uiorder:16
 	"3.Specifications.2.Electrical.4.Power&Energy"
 	optional  double              Apparent_Power                                  "Apparent Power"								unit:kVA                        uiorder:17
 	optional  double              Active_Power                                    "Active Power"								unit:kW                         uiorder:18
@@ -7393,7 +7507,16 @@ CREATE TABLE "ElectricityGeneratorsMemo" ElectricityGeneratorsMemo : Electricity
 	optional	text              Comment                                         "Comment"																		uiorder:38
 	optional	text              Region                                          "Region"																		uiorder:39
 	optional	text              Network                                         ""																			uiorder:40
-	optional	text              Future_Network                                  "Future Network"                                                              uiorder:41
+	optional	text              Suburb                                          ""                                                                            uiorder:41 
+	optional	text              Ward                                            ""                                                                            uiorder:42 
+	optional	text              Future_Network                                  "Future Network"                                                              uiorder:43
+	optional	bool              Exists                                          ""                                                                            uiorder:44
+	optional	bin               Profile_Data                                    ""
+	optional	bin               Load_Profile_Data_1                             ""
+	optional	bin               Load_Profile_Data_2                             ""
+	optional	bin               Load_Profile_Data_3                             ""
+	optional	bin               Load_Profile_Data_4                             ""
+	optional	bin               Load_Profile_Data_5                             ""
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:42
 	optional  text                MP_Item_No                                      "Master Plan Number"                                                          uiorder:43
@@ -7409,24 +7532,18 @@ CREATE TABLE "ElectricityGeneratorsMemo" ElectricityGeneratorsMemo : Electricity
 	optional  text                AM_Utilization_Integrity                        "Asset Utilization Integrity"                                                 uiorder:52
 	optional  text                AM_Base_Year                                    "Asset Installation Year"                                                     uiorder:53
 	optional  double              AM_Replace_Value                                "Asset Replace Value"                                                         uiorder:54
-	optional  text                Year                               			  "Year"                                                                        uiorder:55
+	optional  int32               Year                               			  "Year"                                                                        uiorder:55
 	"7.Integrity"
 	optional  text                Specification_Integrity                         "Specification_Integrity"                                                     uiorder:56
 	optional  text                Locality_Integrity                              "Locality Integrity"                                                          uiorder:57
 	optional  text                Year_Integrity                     			  "Year Integrity"                                                              uiorder:58
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:59
 	"Internal"
-	optional  text 				  Treasury_Fix									  "Treasury_Fix"
 	optional  text 				  Future_Development							  "Future_Development"
 	optional  text 				  Informal_Development							  "Informal_Development"
-	optional  text 				  Development_Weight							  "Development_Weight"
-	optional  text 				  Densification									  "Densification"
-	optional  text 				  Swift_Link									  "Swift_Link"
-	optional  text 				  Swift_Spread									  "Swift_Spread"
-	optional  text 				  Area_Weight									  "Area_Weight"
-	optional  text 				  Node_Weight									  "Node_Weight"
+	optional  int32				  Development_Priority							  ""
 	optional  text                MP_Cost_Detail                                  "Master Plan Cost Detail"						unit:ZAR
-	optional  int32               MP_Cost_Function                                "Master Plan Cost Function"
+	optional  text                MP_Cost_Function                                "Master Plan Cost Function"
 	optional  double              MP_Extra_Cost_Factor                            "Master Plan Extra Cost Factor"
 	optional  text                Cost_Function                                   "Cost Function"
 };
@@ -7434,6 +7551,8 @@ CREATE TABLE "ElectricityGeneratorsMemo" ElectricityGeneratorsMemo : Electricity
 CREATE TABLE "ElectricityGeneratorsResult" ElectricityGeneratorsResult : ElectricityBase
 {
 	"7.Results.1.Voltages"
+	optional  double              Voltage                                         "Voltage"                                     unit:V                          uiorder:58
+	optional  double              Voltage_pu                                      "Per-unit Voltage"                                                            uiorder:59
 	optional  double              Voltage_R_pu                                    "(A) Phase Per-unit Voltage"                                                  uiorder:60
 	optional  double              Voltage_W_pu                                    "(B) Phase Per-unit Voltage"                                                  uiorder:61
 	optional  double              Voltage_B_pu                                    "(C) Phase Per-unit Voltage"                                                  uiorder:62
@@ -7444,6 +7563,7 @@ CREATE TABLE "ElectricityGeneratorsResult" ElectricityGeneratorsResult : Electri
 	optional  double              Voltage_W_Angle                                 "(B) Phase Voltage Angle"						unit:deg                        uiorder:67
 	optional  double              Voltage_B_Angle                                 "(C) Phase Voltage Angle"						unit:deg                        uiorder:68
 	"7.Results.2.Currents"
+	optional  double              Current                                         ""                                            unit:A                          uiorder:68
 	optional  double              Current_R                                       "(A) Phase Current"							unit:A                          uiorder:69
 	optional  double              Current_W                                       "(B) Phase Current"							unit:A                          uiorder:70
 	optional  double              Current_B                                       "(C) Phase Current"							unit:A                          uiorder:71
@@ -7472,6 +7592,7 @@ CREATE TABLE "ElectricityGeneratorsResult" ElectricityGeneratorsResult : Electri
 	optional  double              Total_Reactive_Load                             "Total Reactive Load (Q)"						unit:Var                        uiorder:91
 	optional  double              Total_Load                                      "Total Apparent Load (S)"						unit:VA                         uiorder:92
 	optional  double              Total_Energy                                    "Total Energy"								unit:kWh                        uiorder:93
+	optional  double              Total_Domestic_Connections                      ""                                                                            uiorder:94
 	"Internal"
 	optional  double			  Voltage_R_Expected							  "Expected (A) Phase Voltage"					unit:V
 	optional  double			  Voltage_W_Expected							  "Expected (B) Phase Voltage"					unit:V
@@ -7489,16 +7610,13 @@ CREATE TABLE "ElectricityGeneratorsUser" ElectricityGeneratorsUser : Electricity
 
 CREATE SUFFIX TABLES
 {
-    ElectricityCables,              ElectricityCablesMemo,      ElectricityCablesResults,
-    ElectricityCablesUser,          ElectricityLoads,           ElectricityLoadsMemo,
-    ElectricityLoadsResults,        ElectricityLoadsUser,       ElectricityNodes,
-    ElectricityNodesMemo,           ElectricityNodesResult,     ElectricityNodesUser,
-    ElectricitySource,              ElectricitySourceMemo,      ElectricitySourceResult,
-    ElectricitySourceUser,          ElectricitySwitchgear,      ElectricitySwitchgearMemo,
-    ElectricitySwitchgearResult,    ElectricitySwitchgearUser,  ElectricityTrfrs,
-    ElectricityTrfrsMemo,           ElectricityTrfrsResult,     ElectricityTrfrsUser,
-    ElectricityGenerators,          ElectricityGeneratorsMemo,  ElectricityGeneratorsResult,
-    ElectricityGeneratorsUser;
+    ElectricityCables,       ElectricityCablesMemo,       ElectricityCablesResults,       ElectricityCablesUser,
+    ElectricityLoads,        ElectricityLoadsMemo,        ElectricityLoadsResults,        ElectricityLoadsUser,
+    ElectricityNodes,        ElectricityNodesMemo,        ElectricityNodesResult,         ElectricityNodesUser,
+    ElectricitySource,       ElectricitySourceMemo,       ElectricitySourceResult,        ElectricitySourceUser,
+    ElectricitySwitchgear,   ElectricitySwitchgearMemo,   ElectricitySwitchgearResult,    ElectricitySwitchgearUser,
+    ElectricityTrfrs,        ElectricityTrfrsMemo,        ElectricityTrfrsResult,         ElectricityTrfrsUser,
+    ElectricityGenerators,   ElectricityGeneratorsMemo,   ElectricityGeneratorsResult,    ElectricityGeneratorsUser;
     01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
