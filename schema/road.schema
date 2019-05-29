@@ -742,6 +742,20 @@ CREATE TABLE "lane" lane
 PRIMARY KEY (_id)
 INDEX(road_id);
 
+CREATE TABLE "railway_lines" railway_lines
+{
+	"Internal"
+	required	int64		_id							""
+	optional	geometry	geometry					""
+	optional	text		locality					""
+	optional	text		data_provider				""
+	"Properties"
+	optional	text		line_type					"Line Type"
+	optional	double		length						"Length"
+}
+PRIMARY KEY (_id)
+INDEX(geometry);
+
 CREATE TABLE "road_sign" road_sign
 {
 	"Internal"
