@@ -10,7 +10,17 @@ case ARGV[0]
 		FileUtils.mkdir_p(out_db + "/migrations")
 		FileUtils.cp_r("schema/.", out_db)
 		FileUtils.cp_r("migrations/.", out_db + "/migrations")
-		Dir.glob(out_db + "/*-prev.schema").each { |f| File.delete(f)}
+
+		# Replace schemas with there -prev.schema versions as they allready
+		# contain the subschemas. Schemas without a -prev.schema probably does
+		# not have subschemas
+		Dir.glob(out_db + "/*-prev.schema").each do |f|
+			base = f
+			base.sub! '-prev', ''
+			File.delete(base)
+			FileUtils.mv(f, base)
+		end
+
 		# These three files were excludes from imqsbin\db when this repo was created
 		# at 2018-03-07, so we omit them here too for consistency.
 		File.delete(out_db + "/generic.schema")
@@ -19,4 +29,3 @@ case ARGV[0]
 	when "test_unit" then
 	when "test_integration" then
 end
-

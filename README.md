@@ -50,7 +50,7 @@ To test a migration of `main` db:
 
 You should see a message informing you that your migration has run. Every migration is run inside a transaction, so it either completes entirely, or not at all. There is no migration reversal mechanism, so if you're testing a tricky migration, then it's up to you to figure out how to backup and restore your database, so that you can iterate on your SQL code.
 
-Once the migration generator has generated an .sql script, it will ask you if you are happy with the output. If you choose Yes, then the generator will copy `dbname.schema -> dbname-prev.schema`. If you choose No, then it will leave your .sql script in the output directory, and exit.
+Once the migration generator has generated an .sql script, it will ask you if you are happy with the output. If you choose Yes, then the generator will copy an appended version of `dbname.schema` and `dbname-subschemas.schema` over `dbname-prev.schema`. If you choose No, then it will leave your .sql script in the output directory, and exit.
 
 Once you commit this repository with the updated .sql script, CI servers will start to pick it up and run it.
 

@@ -805,3 +805,16 @@ PRIMARY KEY (_id)
 INDEX(photo_1_id)
 INDEX(photo_2_id)
 INDEX(geometry);
+
+
+CREATE SCHEMA lookup;
+
+CREATE TABLE "lookup.treatment" lookup.treatment
+{
+	"Internal"
+	required	int64		_id				""
+	required	text		code			""
+	required	text		description		""
+}
+PRIMARY KEY (_id)
+INDEX(code);
