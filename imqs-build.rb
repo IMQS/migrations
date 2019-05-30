@@ -15,7 +15,7 @@ case ARGV[0]
 		# contain the subschemas. Schemas without a -prev.schema probably does
 		# not have subschemas
 		Dir.glob(out_db + "/*-prev.schema").each do |f|
-			base = f
+			base = f.dup
 			base.sub! '-prev', ''
 			File.delete(base)
 			FileUtils.mv(f, base)
