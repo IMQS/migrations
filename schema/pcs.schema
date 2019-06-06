@@ -594,7 +594,6 @@ CREATE TABLE "project" project
 	optional  double              physicalprogressactualpercentage        					        ""
 	optional  double              physicalprogressplannedpercentage       					        ""
 	optional  double              financialprogressactualspercentage      					        ""
-	optional  double              financialprogressactualsvalue           					        ""
 	optional  double              financialprogresscommittedvalue         					        ""
 	optional  double              financialprogressplannedvalue           					        ""
 	optional  double              totalplannedbudget                      					        ""
