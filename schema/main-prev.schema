@@ -6371,12 +6371,10 @@ CREATE SUFFIX TABLES
 
 ##########################################################################################################################################
 # 2019-05-29
-# We're creating a new, unified, "replacement" schema here, with the idea that we can use this across all asset types,
+# We're creating a new, unified, "replacement priority" schema here, with the idea that we can use this across all asset types,
 # at least, across the ones that GLS manages (Water, Sewer, Storm, Electricity).
 # For now, we're just leaving the Water and Sewer tables as they were, to ease the effort in deploying this rather urgent
-# deliverable for CoU. However, this change does impact the Water and Sewer schemas, because we're making
-# the LinkNr index unique. The idea is that this will make it much easier to move data from the existing Sewer/Water tables
-# into the new tables.
+# deliverable for CoU.
 ##########################################################################################################################################
 
 CREATE TABLE "" RPBaseNoID
@@ -7742,8 +7740,8 @@ CREATE TABLE "ElectricityGeneratorsMemo" ElectricityGeneratorsMemo : Electricity
 	optional	text              Comment                                         "Comment"																		uiorder:38
 	optional	text              Region                                          "Region"																		uiorder:39
 	optional	text              Network                                         ""																			uiorder:40
-	optional	text              Suburb                                          ""                                                                            uiorder:41 
-	optional	text              Ward                                            ""                                                                            uiorder:42 
+	optional	text              Suburb                                          ""                                                                            uiorder:41
+	optional	text              Ward                                            ""                                                                            uiorder:42
 	optional	text              Future_Network                                  "Future Network"                                                              uiorder:43
 	optional	bool              Exists                                          ""                                                                            uiorder:44
 	optional	bin               Profile_Data                                    ""
@@ -8840,12 +8838,21 @@ INDEX(ActivityCode);
 CREATE TABLE "Building" Building
 {
 	"Internal"
-	required 	int64				rowid				""
-	optional 	text 				Locality 			""
-	optional 	polygon				Geometry 			""
+	required 	int64				rowid										""
+	optional 	text 				Locality 									""
+	optional 	polygon				Geometry 									""
+	optional	uuid				ID											""
 	"General"
-	optional 	text 				Name 				""
-	optional 	int32 				MetaID				""  	tags:dispMeta,hideInGrid
+	optional 	text 				Name 										""
+	optional 	int32 				MetaID										""  	tags:dispMeta,hideInGrid
+	optional	text				Source										""
+	optional	text				Building									"Building"
+	optional	text				Facility_Type								"Facility Type"
+	optional	double				Area										""					unit:m^2
+	optional	int32				Floors										""
+	optional	bool				Streetview									"Has Streetview"
+	optional	int32				Facility_Number								""
+	optional	text				MapFeatID									"Map Feature Id"
 }
 PRIMARY KEY(rowid)
 INDEX(Geometry);
