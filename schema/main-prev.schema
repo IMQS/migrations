@@ -312,11 +312,11 @@ CREATE TABLE "" WaterPipe : WaterBaseLink
 	optional	text                From_Code                                       "From Node Code"																uiorder:3
 	optional	text                To_Code                                         "To Node Code"																	uiorder:4
 	"2.Hydraulic"
-	optional	double              Diameter                                        ""							unit:mm												uiorder:1
-	optional	double              Length                                          "Length"					unit:m												uiorder:2
-	optional	double              Friction_Coefficient                            "Friction Coefficient"															uiorder:3
-	optional	double              Minor_Loss_Coefficient                          "Minor Loss Coefficient"														uiorder:4
-	optional	text                Pipe_Status                                     "Pipe Status"																	uiorder:5
+	optional	double              Diameter                                        ""							unit:mm												uiorder:1 
+	optional	double              Length                                          "Length"					unit:m												uiorder:2 
+	optional	double              Friction_Coefficient                            "Friction Coefficient"															uiorder:3 
+	optional	double              Minor_Loss_Coefficient                          "Minor Loss Coefficient"														uiorder:4 
+	optional	text                Pipe_Status                                     "Pipe Status"																	uiorder:5 
 	"7.Asset Information"
 	optional	int32               Cost_Function                                   "Cost Function Index"															uiorder:5
 	"Internal"
@@ -4088,6 +4088,7 @@ CREATE TABLE "WaterDemandConsLUexcLargeSubCatExistPivot" WaterDemandConsLUexcLar
 {
 	"Internal"
 	optional  text                Suburb_Category                          	""
+	flags runtime_schema
 };
 
 CREATE TABLE "WaterDemandConsLUexcLargeSubCatTheorPivot" WaterDemandConsLUexcLargeSubCatTheorPivot : WaterDemandConsLUPivot
@@ -4095,6 +4096,7 @@ CREATE TABLE "WaterDemandConsLUexcLargeSubCatTheorPivot" WaterDemandConsLUexcLar
 	"Internal"
 	optional  text                Suburb_Category                          	""
 	optional  text                Scenario		                          	""
+	flags runtime_schema
 };
 
 CREATE TABLE "WaterDemandConsLUincLargeDMAExistPivot" WaterDemandConsLUincLargeDMAExistPivot : WaterDemandConsLUPivot
@@ -4106,6 +4108,7 @@ CREATE TABLE "WaterDemandConsLUincLargeDMAExistPivot" WaterDemandConsLUincLargeD
 	optional  int64               LOSSES_Actual								""
 	optional  int64               SYSTEM_INPUT								""
 	optional  int64               LOSSES_Actual_Perc_Input					""
+	flags runtime_schema
 };
 
 CREATE TABLE "WaterDemandConsLUincLargeDMATheorPivot" WaterDemandConsLUincLargeDMATheorPivot : WaterDemandConsLUPivot
@@ -4115,6 +4118,7 @@ CREATE TABLE "WaterDemandConsLUincLargeDMATheorPivot" WaterDemandConsLUincLargeD
 	optional  text                Scenario		                          	""
 	optional  double              LARGE                       				""
 	optional  int64               LOSSES_Theoretical_Perc_Input			""
+	flags runtime_schema
 };
 
 CREATE TABLE "WaterDemandConsLUincLargeSubCatExistPivot" WaterDemandConsLUincLargeSubCatExistPivot : WaterDemandConsLUPivot
@@ -4122,6 +4126,7 @@ CREATE TABLE "WaterDemandConsLUincLargeSubCatExistPivot" WaterDemandConsLUincLar
 	"Internal"
 	optional  text                Suburb_Category             				""
 	optional  double              LARGE                       				""
+	flags runtime_schema
 };
 
 CREATE TABLE "WaterDemandConsLUincLargeSubCatTheorPivot" WaterDemandConsLUincLargeSubCatTheorPivot : WaterDemandConsLUPivot
@@ -4130,6 +4135,7 @@ CREATE TABLE "WaterDemandConsLUincLargeSubCatTheorPivot" WaterDemandConsLUincLar
 	optional  text                Suburb_Category             				""
 	optional  text                Scenario		                          	""
 	optional  double              LARGE                       				""
+	flags runtime_schema
 };
 
 CREATE TABLE "WaterDemandWaterBalanceDMAPivot" WaterDemandWaterBalanceDMAPivot : WaterDemandBaseNoID
@@ -4669,6 +4675,10 @@ CREATE TABLE "" StormWaterConduitMemo : StormWaterBaseID
 	optional	int32				Year					"Year"
 	optional	text				Nominal_Diameter		"Nominal Diameter"				unit:m
 	optional	text				Conduit_Description		"Conduit Description"
+	optional	double				Diameter				"Diameter/Width"
+	optional	double				Top						"Top"
+	optional	double				Bottom					"Bottom"
+	optional 	double				Depth					"Depth"
 	"5.Descriptive"
 	optional	text				System_Type				"System Type"
 	optional	text				System					"System"
@@ -4697,6 +4707,8 @@ CREATE TABLE "" StormWaterConduitMemo : StormWaterBaseID
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"									unit:year
 	optional	double				AM_Replace_Value		"Replacement Value"							unit:ZAR
+	optional	int32				Quantity				"Quantity"
+	optional	int32				Condition				"Condition"
 	"8.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
@@ -5317,6 +5329,16 @@ CREATE TABLE "" StormwaterJunctionMemo : StormWaterBaseID
 	"3.Physical"
 	optional	text				Material			"Material"
 	optional	int32				Year				"Year"
+	optional	double				Height				"Height"
+	optional	double				Inlet_Width			"Inlet Width"
+	optional	double				Inlet_Height		"Inlet Height"
+	optional	double				Inlet_Quantity		"Inlet Quantity"
+	optional	double				GridInletWidth		"Grid Inlet Width"
+	optional	double				GridInletLength		"Grid Inlet Length"
+	optional	int32				GridInletAmount		"Grid Inlet Amount"
+	optional	text				Accessible			"Accessible"
+	optional	text				Structural			"Structural"
+	optional	text				Functional			"Functional"
 	"4.Descriptive"
 	optional	text				System_Type			"System Type"
 	optional	text				System				"System"
@@ -5345,6 +5367,11 @@ CREATE TABLE "" StormwaterJunctionMemo : StormWaterBaseID
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"								unit:year
 	optional	double				AM_Replace_Value		"Replacement Value"						unit:ZAR
+	optional	text				Inspection_Date			"Inspection Date"
+	optional	text				Assessor				"Assessed By"
+	optional	text				Photo_Notes				"Photo Notes"
+	optional	text				General					"General"
+	optional	text				Condition				"Condition"
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
