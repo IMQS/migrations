@@ -4631,7 +4631,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	double				Inlet_Offset			"Inlet_Offset"					unit:m
 	optional	double				Outlet_Offset			"Outlet_Offset"					unit:m
 	optional	double				Initial_Flow			"Initial_Flow"
-	optional	double				Maximum_Flow			"Maximum_Flow"
+	optional	double				Maximum_Flow			"Max Flow"
 	optional	double				Entry_Loss_Coeff		"Entry Loss_Coefficient"
 	optional	double				Exit_Loss_Coeff			"Exit Loss Coefficient"
 	optional	double				Avg_Loss_Coeff			"Avg Loss Coefficient"
