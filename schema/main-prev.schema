@@ -4615,14 +4615,14 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	text				Code				"Code"
 	optional	text				From_Code			"From Code"
 	optional	text				To_Code				"To Code"
-	optional	text				Exists				"Exists"
+	optional	bool				Exists				"Exists"
 	"2.Hydraulic"
 	optional	text				Shape					"Shape"
 	optional	int32				Barrels					"Barrels"
-	optional	double				Geom_1					"Geometry 1"					unit:m
-	optional	double				Geom_2					"Geometry 2"					unit:m
-	optional	double				Geom_3					"Geometry 3"					unit:m
-	optional	double				Geom_4					"Geometry 4"					unit:m
+	optional	double				Geom_1					"Diameter / Max Depth"					unit:m
+	optional	double				Geom_2					"Bottom Width"					unit:m
+	optional	double				Geom_3					"Left Slope"					unit:m
+	optional	double				Geom_4					"Right Slope"					unit:m
 	optional	double				Max_Flow_Area			"Max Flow Area"					unit:m^2
 	optional	double				Length					"Length"						unit:m
 	optional	double				Calc_Slope				"Calculated Slope"
@@ -4752,7 +4752,7 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	double				Area					"Area"									unit:ha
 	optional	double				Width					"Width"									unit:m
 	optional	double				SubSlope				"Sub Slope"								unit:%
-	optional	double				OverlandFlowLen			"Over land Flow Length"
+	optional	double				OverlandFlowLen			"Over land Flow Length"					unit:m
 	optional	double				AverageSlope			"Average Slope"
 	optional	double				AverageCatchmentSlope	"Average Catchment Slope"
 	optional	double				ImperviousPct			"Impervious Percentage"					unit:%
@@ -4761,11 +4761,11 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	double				PervMannings			"Pervious Mannings"						unit:n
 	optional	double				DepStorePervious		"Depression Storage Pervious"			unit:mm
 	optional	double				DepStoreImperv			"Depression Storage Impervious"			unit:mm
-	optional	double				Suction_Head			"Suction_Head"
+	optional	double				Suction_Head			"Suction Head"
 	optional	double				Conductivity			"Conductivity"
 	optional	double				Initial_Deficit			"Initial Deficit"
 	optional	double				ZeroImpervPct			"Zero Percentage Impervious"			unit:%
-	optional	double				RoutedPct				"Percentage Routed"
+	optional	double				RoutedPct				"Percentage Routed"						unit:%
 	optional	text				SubAreaRoute			"Subarea Routing"
 	optional	double				Curblen					"Curblen"
 
@@ -5201,7 +5201,7 @@ CREATE TABLE "" StormwaterStorage : StormWaterBaseID
 	optional	double				Initial_Depth		"Initial Depth"					unit:m
 	optional	double				Surchage_Depth		"Surcharge Depth"				unit:m
 	optional	double				Evaporation_Factor	"Evaporation Factor"
-	optional	double				Suction_Head		"Suctione Head"
+	optional	double				Suction_Head		"Suction Head"
 	optional	double				Conductivity		"Conductivity"
 	optional	double				Initial_Deficit		"Initial Deficit"
 	optional	text				Storage_Curve		"Storage Curve"
@@ -5292,7 +5292,7 @@ CREATE TABLE "" StormwaterJunction : StormWaterBaseID
 	optional	text				Type				"Junction Type"
 	optional	text				Code				"Code"
 	optional	text				DrainTo				"Drain To"
-	optional	text				Exists				"Exists"
+	optional	bool				Exists				"Exists"
 	optional	text				Description			"Description"
 	optional	text				Tag					"Tag"
 	"2.Hydraulic"
