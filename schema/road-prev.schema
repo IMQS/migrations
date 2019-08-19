@@ -690,7 +690,7 @@ CREATE TABLE "rutting_point" rutting_point
 	optional	double		long						"Long"
 	optional	text		street_name					"Street Name"
 	optional	float		rut_measur					""
-	optional	text		photo_of_r					""
+	optional	text		photo_of_r					""						tags:longLivedID
 	optional	text		photo_of_1					""
 	optional	text		photo_of_2					""
 	optional	int16		degree						"Degree"
