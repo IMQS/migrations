@@ -312,11 +312,11 @@ CREATE TABLE "" WaterPipe : WaterBaseLink
 	optional	text                From_Code                                       "From Node Code"																uiorder:3
 	optional	text                To_Code                                         "To Node Code"																	uiorder:4
 	"2.Hydraulic"
-	optional	double              Diameter                                        ""							unit:mm												uiorder:1 
-	optional	double              Length                                          "Length"					unit:m												uiorder:2 
-	optional	double              Friction_Coefficient                            "Friction Coefficient"															uiorder:3 
-	optional	double              Minor_Loss_Coefficient                          "Minor Loss Coefficient"														uiorder:4 
-	optional	text                Pipe_Status                                     "Pipe Status"																	uiorder:5 
+	optional	double              Diameter                                        ""							unit:mm												uiorder:1
+	optional	double              Length                                          "Length"					unit:m												uiorder:2
+	optional	double              Friction_Coefficient                            "Friction Coefficient"															uiorder:3
+	optional	double              Minor_Loss_Coefficient                          "Minor Loss Coefficient"														uiorder:4
+	optional	text                Pipe_Status                                     "Pipe Status"																	uiorder:5
 	"7.Asset Information"
 	optional	int32               Cost_Function                                   "Cost Function Index"															uiorder:5
 	"Internal"
@@ -1475,7 +1475,7 @@ CREATE TABLE "" WaterDistributionSubZone : WaterAuxBaseZone
 CREATE SUFFIX TABLES
 {
 	WaterAuxAppurtenance, WaterAuxHouseConnection, WaterAuxHouseConnectionUser;
-	AsBuilt, Existing;
+	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
 CREATE SUFFIX TABLES
@@ -4619,7 +4619,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	"2.Hydraulic"
 	optional	text				Shape					"Shape"
 	optional	int32				Barrels					"Barrels"
-	optional	double				Geom_1					"Diameter / Max Depth"					unit:m
+	optional	double				Geom_1					"Diameter / Max Depth"			unit:m
 	optional	double				Geom_2					"Bottom Width"					unit:m
 	optional	double				Geom_3					"Left Slope"					unit:m
 	optional	double				Geom_4					"Right Slope"					unit:m
@@ -4631,7 +4631,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	double				Inlet_Offset			"Inlet_Offset"					unit:m
 	optional	double				Outlet_Offset			"Outlet_Offset"					unit:m
 	optional	double				Initial_Flow			"Initial_Flow"
-	optional	double				Maximum_Flow			"Maximum_Flow"
+	optional	double				Maximum_Flow			"Max Flow"
 	optional	double				Entry_Loss_Coeff		"Entry Loss_Coefficient"
 	optional	double				Exit_Loss_Coeff			"Exit Loss Coefficient"
 	optional	double				Avg_Loss_Coeff			"Avg Loss Coefficient"
