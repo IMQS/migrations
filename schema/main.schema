@@ -312,11 +312,11 @@ CREATE TABLE "" WaterPipe : WaterBaseLink
 	optional	text                From_Code                                       "From Node Code"																uiorder:3
 	optional	text                To_Code                                         "To Node Code"																	uiorder:4
 	"2.Hydraulic"
-	optional	double              Diameter                                        ""							unit:mm												uiorder:1 
-	optional	double              Length                                          "Length"					unit:m												uiorder:2 
-	optional	double              Friction_Coefficient                            "Friction Coefficient"															uiorder:3 
-	optional	double              Minor_Loss_Coefficient                          "Minor Loss Coefficient"														uiorder:4 
-	optional	text                Pipe_Status                                     "Pipe Status"																	uiorder:5 
+	optional	double              Diameter                                        ""							unit:mm												uiorder:1
+	optional	double              Length                                          "Length"					unit:m												uiorder:2
+	optional	double              Friction_Coefficient                            "Friction Coefficient"															uiorder:3
+	optional	double              Minor_Loss_Coefficient                          "Minor Loss Coefficient"														uiorder:4
+	optional	text                Pipe_Status                                     "Pipe Status"																	uiorder:5
 	"7.Asset Information"
 	optional	int32               Cost_Function                                   "Cost Function Index"															uiorder:5
 	"Internal"
@@ -4612,7 +4612,7 @@ CREATE TABLE "" StormWaterConduit : StormWaterBaseID
 	optional	uuid				To_ID					"To_ID"
 	"1.Network Topology"
 	optional	text				Type				"Conduit Type"
-	optional	text				Code				"Code"
+	optional	text				Code				"Code"								tags:longLivedID
 	optional	text				From_Code			"From Code"
 	optional	text				To_Code				"To Code"
 	optional	bool				Exists				"Exists"
@@ -5290,7 +5290,7 @@ CREATE TABLE "" StormwaterJunction : StormWaterBaseID
 	optional	point				Geometry				"Geometry"
 	"1.Topology"
 	optional	text				Type				"Junction Type"
-	optional	text				Code				"Code"
+	optional	text				Code				"Code"							tags:longLivedID
 	optional	text				DrainTo				"Drain To"
 	optional	bool				Exists				"Exists"
 	optional	text				Description			"Description"
