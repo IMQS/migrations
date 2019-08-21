@@ -4290,7 +4290,7 @@ CREATE TABLE "RoadWalkways" RoadWalkways : RoadBaseNoID
 	"Internal"
 	optional	polyline			Geometry										""
 	"General"
-	optional	int64				Walkway_ID										"Walkway ID"									uiorder:1
+	optional	int64				Walkway_ID										"Walkway ID"				tags:longLivedID	uiorder:1
 	optional	int64				Surface_ID										"Surface ID"									uiorder:2
 	optional	int64				SubSurface										"Sub Surface"									uiorder:3
 	optional	int64				Kerb_ID											"Kerb ID"										uiorder:4
