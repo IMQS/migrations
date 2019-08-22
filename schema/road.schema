@@ -682,8 +682,8 @@ CREATE TABLE "rutting_point" rutting_point
 	optional	text		created_by					"Measured By"						uiorder:5
 	optional	datetime	created_date				"Measurement Date"					uiorder:6
 	optional	text		measurent_id				"Measurement ID"					uiorder:7
-	optional	text		fulcrum_id					"Fulcrum ID"						uiorder:8
-	optional	text		photo_of_r					"Photo"								uiorder:9
+	optional	text		fulcrum_id					"Fulcrum ID"						uiorder:8			tags:humanID
+	optional	text		photo_of_r					"Photo"								uiorder:9			tags:longLivedID
 }
 PRIMARY KEY (_id)
 INDEX(road_id)
