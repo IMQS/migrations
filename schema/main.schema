@@ -5405,7 +5405,7 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	point				Geometry				"Geometry"
 	"1.Topology"
 	optional	text				Type					"Divider Type"
-	optional	text				Code					"Code"
+	optional	text				Code					"Code"						tags:longLivedID
 	optional	text				DrainTo					"Drain To"
 	optional	bool				Exists					"Exists"
 	optional	text				Description				"Description"
@@ -5511,7 +5511,7 @@ CREATE TABLE "" StormwaterOutfall : StormWaterBaseID
 	optional	point				Geometry			"Geometry"
 	"1.Network Topology"
 	optional	text				Type				"Outfall Type"
-	optional	text				Code				"Code"
+	optional	text				Code				"Code"						tags:longLivedID
 	optional	text				DrainTo				"Drain To"
 	optional	bool				Exists				"Exists"
 	optional	text				Description			"Description"
@@ -5610,7 +5610,7 @@ CREATE TABLE "" StormwaterRainfall : StormWaterBaseID
 	"Internal"
 	optional	point			Geometry			"Geometry"
 	"1.Descriptive"
-	optional	text			Code				"Code"
+	optional	text			Code				"Code"												tags:longLivedID
 	optional	text			Description			"Description"
 	optional	text			Tag					"Tag"
 	"2.Hydraulic"
