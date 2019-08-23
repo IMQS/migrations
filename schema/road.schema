@@ -672,28 +672,18 @@ CREATE TABLE "rutting_point" rutting_point
 	"Internal"
 	required	int64		_id							""
 	optional	geometry	geometry					""
-	required	int64		road_id						""
 	optional	text		locality					""
+	required	int64		road_id						""
 	"Rutting Point"
-	optional	text		fulcrum_id					""						tags:humanID
-	optional	datetime	created_date				"Created Date"
-	optional	text		created_by					"Created By"
-	optional	datetime	updated_date				"Updated Date"
-	optional	text		updated_by					"Updated By"
-	optional	datetime	system_created_date			"System Created Date"
-	optional	datetime	system_updated_date			"System Updated Date"
-	optional	float		version						"Version"
-	optional	int16		status						"Status"
-	optional	text		project						"Project"
-	optional	text		assigned_to					"Assigned To"
-	optional	double		lat							"Lat"
-	optional	double		long						"Long"
-	optional	text		street_name					"Street Name"
-	optional	float		rut_measur					""
-	optional	text		photo_of_r					""						tags:longLivedID
-	optional	text		photo_of_1					""
-	optional	text		photo_of_2					""
-	optional	int16		degree						"Degree"
+	optional	text		street_name					"Street Name"						uiorder:1
+	optional	float		rut_measur					"Rut Measurement (mm)"				uiorder:2
+	optional	int16		degree						"Degree"							uiorder:3
+	optional	text		roadlink_id					"Roadlink"							uiorder:4
+	optional	text		created_by					"Measured By"						uiorder:5
+	optional	datetime	created_date				"Measurement Date"					uiorder:6
+	optional	text		measurent_id				"Measurement ID"					uiorder:7
+	optional	text		fulcrum_id					"Fulcrum ID"						uiorder:8			tags:humanID
+	optional	text		photo_of_r					"Photo"								uiorder:9			tags:longLivedID
 }
 PRIMARY KEY (_id)
 INDEX(road_id)
