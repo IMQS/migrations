@@ -216,7 +216,6 @@ CREATE TABLE "AssetComponent" AssetComponent : Asset_Base
     optional    bool            InsuranceClaimed        "Insurance Claimed"                     unit:ZAR        uiorder:258
     optional    text            InsurancePolicyNr       "Insurance Policy Number"                               uiorder:259
     optional    datetime        LastMaintenanceDate     "Last Maintenance Date"                 unit:MSE        uiorder:260
-    optional    int32           MapFeatureType          "Map Feature Type"                                      uiorder:261
     optional    text            ReplacedComponents      "Replaced Components"                                   uiorder:262
     optional    int32           RevaluationAccuracy     "Revaluation Accuracy"                                  uiorder:263
     optional    datetime        RevaluationLastDate     "Revaluation Last Date"                 unit:MSE        uiorder:264
