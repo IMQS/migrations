@@ -1320,8 +1320,8 @@ CREATE TABLE "" WaterAuxAppurtenance : WaterAuxBaseAppurtHouseConn
 	optional  uuid                 	Link_ID                                         ""
 	optional  text		           	Rotation_Options                                ""
 	"01.Topology"
-	optional  text	            	Type                                           "Type"                                                      uiorder:1
-	optional  text	            	SubType                                        "Sub Type"                                                  uiorder:2
+	optional  text	            	SymbolType                                    "Symbol Type"                                                      uiorder:1
+	optional  text	            	SymbolSubType                                 "Symbol Sub Type"                                                  uiorder:2
 	"02.Physical"
 	optional  text		           	PressureRating                                 "Pressure Rating"							unit:kPa        uiorder:1
 	optional  double              	Size		                                   "Size"										unit:mm         uiorder:2
