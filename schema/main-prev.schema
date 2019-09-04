@@ -6743,6 +6743,7 @@ CREATE TABLE "ElectricityCablesMemo" ElectricityCablesMemo : ElectricityBase
 	optional    text              Suburb                                          ""                                                                            uiorder:11
 	optional    text              Ward                                            ""                                                                            uiorder:12
 	optional    bool              Exists                                          ""                                                                            uiorder:13
+	optional    date              Installation_Date                               "Installation Date"
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:41
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:42
@@ -7387,6 +7388,7 @@ CREATE TABLE "ElectricitySwitchgearMemo" ElectricitySwitchgearMemo : Electricity
 	optional	bin               Load_Profile_Data_3                             ""                                                                            uiorder:25
 	optional	bin               Load_Profile_Data_4                             ""                                                                            uiorder:26
 	optional	bin               Load_Profile_Data_5                             ""                                                                            uiorder:27
+	optional	date              Installation_Date                               "Installation Date"
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:20
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:21
@@ -7581,6 +7583,7 @@ CREATE TABLE "ElectricityTrfrsMemo" ElectricityTrfrsMemo : ElectricityBase
 	optional	bin               Load_Profile_Data_4                             ""                                                                            uiorder:71
 	optional	bin               Load_Profile_Data_5                             ""                                                                            uiorder:72
 	optional	bool              Exists                                          ""                                                                            uiorder:73
+	optional    date              Installation_Date                               "Installation Date"
 	"5.Planning"
 	optional  text                MP_Item_Type                                    "Master Plan Item Type"                                                       uiorder:64
 	optional  text                MP_Item_No                                      "Master Plan Item Number"                                                     uiorder:65
