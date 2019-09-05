@@ -199,6 +199,35 @@ CREATE TABLE "AssetComponent" AssetComponent : Asset_Base
     optional    text            Room_Barcode_Nr         "Room Barcode No."                      uiorder:244
     optional    text            Serial_Number           "Serial/Registration No."               uiorder:245
     optional    text            Fleet_Number            "Fleet No."                             uiorder:246
+    optional    text            Room_Name               "Room Name"                                             uiorder:243
+    optional    text            Building_Name           "Building_Name"                                         uiorder:244
+    optional    int32           Fleet_Reg_Year          "FleetRegYear"                                          uiorder:245
+    optional    text            Floor                   "Floor"                                                 uiorder:246
+    optional    text            AdditionsNature         "Additions Nature"                                      uiorder:247
+    optional    text            CaseNumber              "Case Number"                                           uiorder:248
+    optional    text            CashGenerating          "Cash Generating"                                       uiorder:249
+    optional    datetime        DateCreated             "Date Created"                          unit:MSE        uiorder:250
+    optional    datetime        DateLastFinMonth        "Last Financial Month"                  unit:MSE        uiorder:251
+    optional    datetime        DateLastRenewed         "Date Last Renewed"                     unit:MSE        uiorder:252
+    optional    text            DepreciationBudgetNr_Credit   "Depreciation Budget Number (Cr)"                 uiorder:253
+    optional    text            DepreciationBudgetNr_Debit    "Depreciation Budget Number (Dr)"                 uiorder:254
+    optional    text            FuncLocPath             "Functional Location Path"                              uiorder:256
+    optional    datetime        Impairment_Review_Date  "Impairment Review Date"                unit:MSE        uiorder:257
+    optional    bool            InsuranceClaimed        "Insurance Claimed"                     unit:ZAR        uiorder:258
+    optional    text            InsurancePolicyNr       "Insurance Policy Number"                               uiorder:259
+    optional    datetime        LastMaintenanceDate     "Last Maintenance Date"                 unit:MSE        uiorder:260
+    optional    text            ReplacedComponents      "Replaced Components"                                   uiorder:262
+    optional    int32           RevaluationAccuracy     "Revaluation Accuracy"                                  uiorder:263
+    optional    datetime        RevaluationLastDate     "Revaluation Last Date"                 unit:MSE        uiorder:264
+    optional    text            RevaluationMethod       "Revaluation Method"                                    uiorder:265
+    optional    datetime        RevaluationNextDate     "Revaluation Next Date"                 unit:MSE        uiorder:266
+    optional    text            RevaluedBy              "Revalued By"                                           uiorder:267
+    optional    text            SoldTo                  "Sold To"                                               uiorder:268
+    optional    datetime        UpgradeDate             "Upgrade Date"                          unit:MSE        uiorder:269
+    optional    datetime        VerificationLastDate    "Verification Last Date"                unit:MSE        uiorder:270
+    optional    datetime        VerificationNextDate    "Verification Next Date"                unit:MSE        uiorder:271
+    optional    int32           YearConstruct_CG        "Year Construct CG"                                     uiorder:272
+    optional    int32           YearRenewed_CG          "Year Renewed CG"                                       uiorder:273
     "4.Financial"
     optional    datetime        TakeOnDate              "Take-On Date"                          unit:MSE        uiorder:300
     optional    double          CostOpening             "Cost price - Opening"                  unit:ZAR        uiorder:301
@@ -234,6 +263,23 @@ CREATE TABLE "AssetComponent" AssetComponent : Asset_Base
     optional    double          TransferCost            "Transfer Cost"                         unit:ZAR        uiorder:124
     optional    double          TransferDepr            "Transfer Acc. Depreciation"            unit:ZAR        uiorder:125
     optional    double          ImpairmentTransfer      "Impairment Transfer"                   unit:ZAR        uiorder:126
+    optional    double          AdditionsClosing        "Additions Closing"                     unit:ZAR        uiorder:127
+    optional    double          AdditionsOpening        "Additions Opening"                     unit:ZAR        uiorder:128
+    optional    double          DisposalProfitLoss      "Disposal Profit/Loss"                  unit:ZAR        uiorder:129
+    optional    double          DRC                     "DRC"                                   unit:ZAR        uiorder:130
+    optional    double          EUL_Adjusted            "EUL Adjusted"                          unit:ZAR        uiorder:131
+    optional    double          FairValueLessCostSell   "Fair Value Less Cost Sell"             unit:ZAR        uiorder:132
+    optional    double          InsuranceAmount         "Insurance Amount"                      unit:ZAR        uiorder:133
+    optional    double          InsuranceCover          "Insurance Cover"                       unit:ZAR        uiorder:134
+    optional    double          RevaluationReserveClosing   "Revaluation Reserve Closing"       unit:ZAR        uiorder:135
+    optional    double          RevaluationReserveFinYTD    "Revaluation Reserve Fin YTD"       unit:ZAR        uiorder:136
+    optional    double          RevaluationReserveFinYTDDepr    "Revaluation Reserve Fin YTD Depr"  unit:ZAR    uiorder:137
+    optional    double          RevaluationReserveFinYTDImp "Revaluation Reserve Fin YTD Imp"   unit:ZAR        uiorder:138
+    optional    double          RevaluationReserveOpening   "Revaluation Reserve Opening"       unit:ZAR        uiorder:139
+    optional    int32           RevaluationRUL          "Revaluation RUL"                                       uiorder:140
+    optional    double          RevImpairmentAll        "Rev Impairment All"                    unit:ZAR        uiorder:141
+    optional    double          RevImpairmentClose      "Rev Impairment Close"                  unit:ZAR        uiorder:142
+    optional    double          ValueInUse              "Value In Use"                          unit:ZAR        uiorder:143
     "5.Lifecycle Indicators"
     optional    int32           CriticalityGrade        "Criticality Grade"                     uiorder:500
     optional    int32           ConditionGrade          "Condition Grade"                       uiorder:501
