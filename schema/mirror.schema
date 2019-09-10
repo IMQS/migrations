@@ -228,6 +228,7 @@ CREATE TABLE "AssetComponent" AssetComponent : Asset_Base
     optional    datetime        VerificationNextDate    "Verification Next Date"                unit:MSE        uiorder:271
     optional    int32           YearConstruct_CG        "Year Construct CG"                                     uiorder:272
     optional    int32           YearRenewed_CG          "Year Renewed CG"                                       uiorder:273
+    optional    text            PreviousComponentID     "Previous Component ID (prior to reclassification)"     uiorder:274
     "4.Financial"
     optional    datetime        TakeOnDate              "Take-On Date"                          unit:MSE        uiorder:300
     optional    double          CostOpening             "Cost price - Opening"                  unit:ZAR        uiorder:301
