@@ -3897,6 +3897,7 @@ CREATE TABLE "WaterDemandZone" WaterDemandZone : WaterDemandBaseNoID
 	optional  double              Cost_AL                                         "Cost AL"
 
 	hasmany    Monthly_Data         Zone_ID 				WaterDemandZoneMonthly.Zone_ID
+	flags runtime_schema
 }
 UNIQUE INDEX(Zone_ID)
 INDEX(Geometry);
