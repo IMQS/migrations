@@ -199,18 +199,19 @@ CREATE TABLE "AssetComponent" AssetComponent : Asset_Base
     optional    text            Room_Barcode_Nr         "Room Barcode No."                      uiorder:244
     optional    text            Serial_Number           "Serial/Registration No."               uiorder:245
     optional    text            Fleet_Number            "Fleet No."                             uiorder:246
-    optional    text            Room_Name               "Room Name"                                             uiorder:243
-    optional    text            Building_Name           "Building_Name"                                         uiorder:244
-    optional    int32           Fleet_Reg_Year          "FleetRegYear"                                          uiorder:245
-    optional    text            Floor                   "Floor"                                                 uiorder:246
-    optional    text            AdditionsNature         "Additions Nature"                                      uiorder:247
-    optional    text            CaseNumber              "Case Number"                                           uiorder:248
-    optional    text            CashGenerating          "Cash Generating"                                       uiorder:249
-    optional    datetime        DateCreated             "Date Created"                          unit:MSE        uiorder:250
-    optional    datetime        DateLastFinMonth        "Last Financial Month"                  unit:MSE        uiorder:251
-    optional    datetime        DateLastRenewed         "Date Last Renewed"                     unit:MSE        uiorder:252
-    optional    text            DepreciationBudgetNr_Credit   "Depreciation Budget Number (Cr)"                 uiorder:253
-    optional    text            DepreciationBudgetNr_Debit    "Depreciation Budget Number (Dr)"                 uiorder:254
+	optional    text            Room_Number             "Room Number"                                           uiorder:243
+    optional    text            Room_Name               "Room Name"                                             uiorder:244
+    optional    text            Building_Name           "Building_Name"                                         uiorder:245
+    optional    int32           Fleet_Reg_Year          "FleetRegYear"                                          uiorder:246
+    optional    text            Floor                   "Floor"                                                 uiorder:247
+    optional    text            AdditionsNature         "Additions Nature"                                      uiorder:248
+    optional    text            CaseNumber              "Case Number"                                           uiorder:249
+    optional    text            CashGenerating          "Cash Generating"                                       uiorder:250
+    optional    datetime        DateCreated             "Date Created"                          unit:MSE        uiorder:251
+    optional    datetime        DateLastFinMonth        "Last Financial Month"                  unit:MSE        uiorder:252
+    optional    datetime        DateLastRenewed         "Date Last Renewed"                     unit:MSE        uiorder:253
+    optional    text            DepreciationBudgetNr_Credit   "Depreciation Budget Number (Cr)"                 uiorder:254
+    optional    text            DepreciationBudgetNr_Debit    "Depreciation Budget Number (Dr)"                 uiorder:255
     optional    text            FuncLocPath             "Functional Location Path"                              uiorder:256
     optional    datetime        Impairment_Review_Date  "Impairment Review Date"                unit:MSE        uiorder:257
     optional    bool            InsuranceClaimed        "Insurance Claimed"                     unit:ZAR        uiorder:258
