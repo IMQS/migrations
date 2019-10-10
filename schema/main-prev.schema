@@ -636,7 +636,7 @@ CREATE TABLE "" WaterPipeMemo : WaterBase
 	optional	text                AM_Make                                         "Make"																			uiorder:1
 	optional	text                AM_Type                                         "Type"																			uiorder:2
 	optional	text                AM_Base_Year                                    "Base Year"					unit:year											uiorder:3
-	optional	double              AM_Replace_Value                                "Replacement Value"			unit:ZAR											uiorder:4
+	optional	double              AM_Replace_Value                                "Construction Value"		unit:ZAR											uiorder:4
 	"8.Integrity"
 	optional	text                Locality_Integrity                              "Locality Integrity"															uiorder:1
 	optional	text                Diameter_Integrity                              "Diameter Integrity"															uiorder:2
@@ -692,7 +692,7 @@ CREATE TABLE "" WaterPumpMemo : WaterBase
 	optional	text                AM_Make                                         "Make"																			uiorder:1
 	optional	text                AM_Type                                         "Type"																			uiorder:2
 	optional	text                AM_Base_Year                                    "Base Year"							unit:year									uiorder:3
-	optional	double              AM_Replace_Value                                "Replacement Value"					unit:ZAR									uiorder:4
+	optional	double              AM_Replace_Value                                "Construction Value"					unit:ZAR								uiorder:4
 	"9.Integrity"
 	optional	text                Pump_Integrity                                  "Pump Integrity"																uiorder:1
 	optional	text                Flow_Integrity                                  "Flow Integrity"																uiorder:2
@@ -738,7 +738,7 @@ CREATE TABLE "" WaterValveMemo : WaterBase
 	optional	text                AM_Make                                         "Make"																			uiorder:1
 	optional	text                AM_Type                                         "Type"																			uiorder:2
 	optional	text                AM_Base_Year                                    "Base Year"																		uiorder:3
-	optional	double              AM_Replace_Value                                "Replacement Value"					unit:ZAR									uiorder:4
+	optional	double              AM_Replace_Value                                "Construction Value"					unit:ZAR								uiorder:4
 	"8.Integrity"
 	optional	text                Locality_Integrity                              "Locality Integrity"															uiorder:1
 	optional	text                Diameter_Integrity                              "Diameter Integrity"															uiorder:2
@@ -834,7 +834,7 @@ CREATE TABLE "" WaterTankMemo : WaterBase
 	optional	text                AM_Make                                         "Make"																			uiorder:1
 	optional	text                AM_Type                                         "Type"																			uiorder:2
 	optional	text                AM_Base_Year                                    "Base Year"					unit:year											uiorder:3
-	optional	double              AM_Replace_Value                                "Replacement Value"			unit:ZAR											uiorder:4
+	optional	double              AM_Replace_Value                                "Construction Value"		unit:ZAR											uiorder:4
 	"8.Integrity"
 	optional	text                Locality_Integrity                              "Locality Integrity"															uiorder:1
 	optional	text                Volume_Integrity                                "Volume Integrity"																uiorder:2
@@ -1467,7 +1467,7 @@ CREATE TABLE "" WaterAuxBaseZone : WaterBaseNoID
 	optional  double 				PresentAADD										"Sc_2 - Actual AADD incl. theor. losses"					unit:kL/d		uiorder:2
 	optional  double 				TheoreticalAADD									"Sc_3 - Theor. AADD (Land Use) incl. losses"				unit:kL/d		uiorder:3
 	optional  double 				OccupiedAADD									"Sc_4 - Theor. AADD (Land Use) incl. losses & vacant"		unit:kL/d		uiorder:4
-	optional  double 				FutureAADD										"Sc_5 - Theor. AADD (Zoning) incl. losses & vacant & FDAa"	unit:kL/d		uiorder:5
+	optional  double 				FutureAADD										"Sc_5 - Theor. AADD (Zoning) incl. losses & vacant & FDAs"	unit:kL/d		uiorder:5
 	optional  double 				FutureIncrease									"Increase from Sc_2 to Sc_5"								unit:kL/d		uiorder:6
 	optional  double 				PresentAADDperArea								"Scenario 2 UWD"											unit:kL/ha/d	uiorder:7
 	optional  double 				FutureAADDperArea								"Scenario 5 UWD"											unit:kL/ha/d	uiorder:8
@@ -1749,7 +1749,7 @@ CREATE TABLE "" SewerGravityMemo : SewerBase
 	optional  text                AM_Make                                          "Make"																			uiorder:1
 	optional  text                AM_Type                                          "Type"																			uiorder:2
 	optional  int32               AM_Base_Year                                     "Base Year"								unit:year								uiorder:3
-	optional  double              AM_Replace_Value                                 "Replacement Value"						unit:ZAR								uiorder:4
+	optional  double              AM_Replace_Value                                 "Construction Value"						unit:ZAR								uiorder:4
 	"09.Integrity"
 	optional  text                Locality_Integrity                               "Locality Integrity"																uiorder:1
 	optional  text                Material_Integrity                               "Material Integrity"																uiorder:2
@@ -1927,7 +1927,7 @@ CREATE TABLE "" SewerPumpMemo : SewerBase
 	optional  double              Power                                           "Power"									unit:kW									uiorder:3
 	optional  double              Pump_Flow                                       "Pump Flow"								unit:L/s								uiorder:4
 	optional  double              Pump_Head                                       "Pump Head"								unit:m									uiorder:5
-	optional  text                PS_Oper_Standby                                 "Pump Operational/Standby"														uiorder:6
+	optional  text                PS_Oper_Standby                                 "Pump Duty Status"																uiorder:6
 	optional  int32               Year                                            "Year"									unit:year								uiorder:7
 	"5.Descriptive"
 	optional  text                System_Type                                     "System Type"																		uiorder:1
@@ -1935,7 +1935,7 @@ CREATE TABLE "" SewerPumpMemo : SewerBase
 	optional  text                Future_System_Type                              "Future System Type"																uiorder:3
 	optional  text                Future_System                                   "Future System"																	uiorder:4
 	optional  text                Name                                            "Name"																			uiorder:5
-	optional  text                Sub_Name                                        "Sub Name"																		uiorder:6
+	optional  text                Sub_Name                                        "Sub Name"								tags:humanID							uiorder:6
 	optional  text                Comment                                         "Comment"																			uiorder:7
 	optional  text                Region                                          "Region"																			uiorder:8
 	optional  text                Existing_Drainage_Area                          "Existing Drainage Area"															uiorder:9
@@ -1953,7 +1953,7 @@ CREATE TABLE "" SewerPumpMemo : SewerBase
 	optional  text                AM_Make                                         "Make"																			uiorder:1
 	optional  text                AM_Type                                         "Type"																			uiorder:2
 	optional  int32               AM_Base_Year                                    "Base_Year"								unit:year								uiorder:3
-	optional  double              AM_Replace_Value                                "Replacement Value"		unit:ZAR												uiorder:4
+	optional  double              AM_Replace_Value                                "Construction Value"		unit:ZAR												uiorder:4
 	"10.Integrity"
 	optional  text                Pump_Integrity                                  "Pump Integrity"																	uiorder:1
 	optional  text                Flow_Integrity                                  "Flow Integrity"																	uiorder:2
@@ -2065,7 +2065,7 @@ CREATE TABLE "" SewerRisingMemo : SewerBase
 	optional  text                AM_Make                                         "Make"																			uiorder:1
 	optional  text                AM_Type                                         "Type"																			uiorder:2
 	optional  int32               AM_Base_Year                                    "Base Year"								unit:year								uiorder:3
-	optional  double              AM_Replace_Value                                "Replacement Value"						unit:ZAR								uiorder:4
+	optional  double              AM_Replace_Value                                "Construction Value"						unit:ZAR								uiorder:4
 	"10.Integrity"
 	optional  text                Locality_Integrity                              "Locality Integrity"																uiorder:1
 	optional  text                Material_Integrity                              "Material Integrity"																uiorder:2
@@ -2195,14 +2195,14 @@ CREATE TABLE "" SewerStructure : SewerBaseNode
 	"Internal"
 	optional  double              Symbol_Rotation                                 "Symbol Rotation"
 
-	hasone    Scenario1    ID	SewerScenario1.ID
-	hasone    Scenario2    ID	SewerScenario2.ID
-	hasone    Scenario3    ID	SewerScenario3.ID
-	hasone    Memo         ID	SewerStructureMemo.ID
-	hasone    User 	       ID   SewerStructureUser.ID
-	hasone    Results      ID	SewerStructureResults.ID
-	hasone    Pumps        ID	SewerPump.From_ID																													order:5
-	hasone    Diversion    ID	SewerDiversion.From_ID																												order:6
+	hasone     Scenario1    ID	SewerScenario1.ID
+	hasone     Scenario2    ID	SewerScenario2.ID
+	hasone     Scenario3    ID	SewerScenario3.ID
+	hasone     Memo         ID	SewerStructureMemo.ID
+	hasone     User 	    ID  SewerStructureUser.ID
+	hasone     Results      ID	SewerStructureResults.ID
+	hasmany    Pumps        ID	SewerPump.From_ID																													order:5
+	hasmany    Diversion    ID	SewerDiversion.From_ID																												order:6
 }
 INDEX(Geometry);
 
@@ -2243,7 +2243,7 @@ CREATE TABLE "" SewerStructureMemo : SewerBase
 	optional  text                AM_Make                                         "Make"																			uiorder:1
 	optional  text                AM_Type                                         "Type"																			uiorder:2
 	optional  int32               AM_Base_Year                                    "Base Year"								unit:year								uiorder:3
-	optional  double              AM_Replace_Value                                "Replacement Value"		unit:ZAR												uiorder:4
+	optional  double              AM_Replace_Value                                "Construction Value"		unit:ZAR												uiorder:4
 	"10.Integrity"
 	optional  text                Locality_Integrity                              "Locality Integrity"																uiorder:1
 	optional  text                Material_Integrity                              "Material Integrity"																uiorder:2
@@ -2294,15 +2294,15 @@ CREATE TABLE "" SewerStructureResults : SewerBase
 {
 	"7.Results.1.Upstream Contribution"
 	optional  double              Total_US_AADD                                   "Upstream AADD"							unit:kL/d								uiorder:1
-	optional  double              Total_US_Flow_Volume                            "Total Upstream Flow Volume"				unit:kL									uiorder:2
-	optional  double              Local_US_Flow_Volume                            "Local Upstream Flow Volume"				unit:kL									uiorder:3
+	optional  double              Total_US_Flow_Volume                            "Total Upstream Flow Volume"				unit:kL/d								uiorder:2
+	optional  double              Local_US_Flow_Volume                            "Local Upstream Flow Volume"				unit:kL/d								uiorder:3
 	optional  double              Total_Flow_Percent_AADD                         "Flow Percentage AADD"					unit:%									uiorder:4
 	"7.Results.2.Upstream Flow"
 	optional  double              Min_US_Flow                                     "Minimum Upstream Flow"					unit:L/s								uiorder:1
 	optional  double              Max_US_Flow                                     "Maximum Upstream Flow"					unit:L/s								uiorder:2
 	optional  double              US_Cont_Pump_Flow                               "Peak Upstream Continuous Flow"			unit:L/s								uiorder:3
 	"7.Results.3.Infiltration"
-	optional  double              Infiltration_Volume                             "Infiltration Volume"						unit:kL									uiorder:1
+	optional  double              Infiltration_Volume                             "Infiltration Volume"						unit:kL/d								uiorder:1
 	optional  double              Infiltration_Percent_Volume                     "Infiltration Percentage Volume"			unit:%									uiorder:2
 	"7.Results.3.Upstream System"
 	optional  double              US_Cont_Pumps                                   "Upstream Continuous Pumps"														uiorder:1
@@ -2424,7 +2424,7 @@ CREATE TABLE "" SewerAuxDrainageArea : SewerBaseNoID
 	optional  int32               F_INCR                                          "PDDWF Increase from Actual to Future"				unit:kL/d		uiorder:4
 	"2.Demand & Flows.5.Unit Demand"
 	optional  int32               AREA                                            "Area"												unit:ha			uiorder:1
-	optional  double              P_PDDWF_H                                       "Theor. Present Unit PDDWF"							unit:kL/ha/d	uiorder:2
+	optional  double              P_PDDWF_H                                       "Present Unit PDDWF"									unit:kL/ha/d	uiorder:2
 	optional  double              F_PDDWF_H                                       "Future Unit PDDWF"									unit:kL/ha/d	uiorder:3
 	"Internal"
 	optional  bool                PartOfMP                                        "Part of Master Plan"
@@ -3817,7 +3817,7 @@ CREATE TABLE "WaterDemandZone" WaterDemandZone : WaterDemandBaseNoID
 	optional  double              Billed_unMetered                                "Billed (Unmetered)"							unit:kL/yr								uiorder:4
 	optional  double              Sold_AADD                                       "Billed (AADD)"								unit:kL/d								uiorder:5
 	optional  double              Free_Metered                                    "Free Basic Water (Metered)"					unit:kL/yr								uiorder:6
-	optional  double              Free_unMetered                                  "Free Basic Water (unMetered)"				unit:kL/yr								uiorder:7
+	optional  double              Free_unMetered                                  "Free Basic Water (Unmetered)"				unit:kL/yr								uiorder:7
 	"2.Water Balance.3.Non Revenue"
 	optional  double              NonRevenue                                      "Non Revenue"									unit:kL/yr								uiorder:1
 	optional  double              NonRevenue_Percent                              "Non Revenue Percent"							unit:%									uiorder:2
@@ -3831,7 +3831,7 @@ CREATE TABLE "WaterDemandZone" WaterDemandZone : WaterDemandBaseNoID
 	optional  double              ILI                                             ""																					uiorder:2
 	optional  double			  UARL_Connection								  "UARL Per Connection"							unit:L/conn/d							uiorder:3
 	optional  double 			  CARL_Connection								  "CARL Per Connection"							unit:L/conn/d							uiorder:4
-	optional  double 			  CARL_Mains									  "CARL Per Lenth of Mains"						unit:kL/km/d							uiorder:5
+	optional  double 			  CARL_Mains									  "CARL Per Length of Mains"						unit:kL/km/d							uiorder:5
 	optional  double              LossPerLength                                   "Loss Per Length"								unit:kL/km/d							uiorder:6
 	optional  double              LossPerConnection                               "Loss Per Connection"							unit:L/conn/month						uiorder:7
 	optional  double 			  Loss_Capita									  "Loss Per Capita"								unit:L/c/d								uiorder:8
@@ -4719,10 +4719,10 @@ CREATE TABLE "" StormWaterConduitMemo : StormWaterBaseID
 	optional	text				AM_Type					"Type"
 	optional	text				AM_ID_No				"Asset Management ID number"
 	optional	text				AM_Utilization			"Asset Management Utilization"
-	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
+	optional	text				AM_Utilization_Integ	"Asset Management Utilization Integrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"									unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"							unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"							unit:ZAR
 	optional	int32				Quantity				"Quantity"
 	optional	int32				Condition				"Condition"
 	"8.Integrity"
@@ -4764,7 +4764,7 @@ CREATE TABLE "" StormwaterCatchment : StormWaterBaseID
 	optional	text				Description				"Description"
 	optional	text				Tag						"Tag"
 	"2.Hydraulic"
-	optional	text				Raingage				"Raingage"
+	optional	text				Raingage				"Rain Gauge"
 	optional	double				Area					"Area"									unit:ha
 	optional	double				Width					"Width"									unit:m
 	optional	double				SubSlope				"Sub Slope"								unit:%
@@ -4903,8 +4903,8 @@ CREATE TABLE "" StormwaterPumpsMemo : StormWaterBaseID
 	optional	text				MP_Project_No			"Project Number"
 	optional	text				MP_Project_Descr		"Project Description"
 	optional	double				MP_Design_Flow			"Masterplan Design Flow"			unit:L/s
-	optional	double				MP_PS_Total_Flow		"Masterplan Pumpstation Flow"
-	optional	double				MP_PS_Total_Head		"Masterplan Pumpstation Head"
+	optional	double				MP_PS_Total_Flow		"Masterplan Pump Station Flow"
+	optional	double				MP_PS_Total_Head		"Masterplan Pump Station Head"
 	optional	double				MP_Pump_Flow			"Masterplan Pump Flow"
 	optional	double				MP_Pump_Head			"Masterplan Pump Head"
 	"7.Asset Information"
@@ -4914,7 +4914,7 @@ CREATE TABLE "" StormwaterPumpsMemo : StormWaterBaseID
 	optional	text				AM_Utilization			"Asset Management Utilization"
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
 	optional	int32				AM_Base_Year			"Base Year"									unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"							unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"						unit:ZAR
 	"8.Integrity"
 	optional	text				Pump_Integrity			"Pump Integrity"
 	optional	text				Flow_Integrity			"Flow_Integrity"
@@ -5004,7 +5004,7 @@ CREATE TABLE "" StormwaterOrificeMemo : StormWaterBaseID
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"										unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"								unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"								unit:ZAR
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
@@ -5096,7 +5096,7 @@ CREATE TABLE "" StormwaterWeirMemo : StormWaterBaseID
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"									unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"							unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"						unit:ZAR
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
@@ -5179,7 +5179,7 @@ CREATE TABLE "" StormwaterOutletMemo : StormWaterBaseID
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"								unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"						unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"						unit:ZAR
 };
 
 
@@ -5275,8 +5275,8 @@ CREATE TABLE "" StormwaterStorageMemo : StormWaterBaseID
 	optional	text				AM_Utilization			"Asset Management Utilization"
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
-	optional	int32				AM_Base_Year			"Base Year"					unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"				unit:ZAR
+	optional	int32				AM_Base_Year			"Base Year"							unit:year
+	optional	double				AM_Replace_Value		"Construction Value"				unit:ZAR
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
@@ -5382,7 +5382,7 @@ CREATE TABLE "" StormwaterJunctionMemo : StormWaterBaseID
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Intergrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"								unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"						unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"					unit:ZAR
 	optional	text				Inspection_Date			"Inspection Date"
 	optional	text				Assessor				"Assessed By"
 	optional	text				Photo_Notes				"Photo Notes"
@@ -5444,7 +5444,7 @@ CREATE TABLE "" StormwaterDivider : StormWaterBaseID
 	optional	double				Divider_Coefficient		"Divider Coefficient"
 	optional	double				Ground_Level			"Ground Level"					unit:m.asl
 	optional	double				Cover_Level				"Cover Level"					unit:m.asl
-	optional	double				Invert_Level			"Invert Level"				unit:m.asl
+	optional	double				Invert_Level			"Invert Level"					unit:m.asl
 	optional	double				Max_Depth				"Maximum Depth"					unit:m
 	optional	double				User_Depth				"User Depth"					unit:m
 
@@ -5493,7 +5493,7 @@ CREATE TABLE "" StormwaterDividerMemo : StormWaterBaseID
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Integrity"
 	optional	int32				AM_Cost_FN				"Asset Management Cost Function"
 	optional	int32				AM_Base_Year			"Base Year"										unit:year
-	optional	double				AM_Replace_Value		"Replacement Value"								unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"							unit:ZAR
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
@@ -5594,7 +5594,7 @@ CREATE TABLE "" StormwaterOutfallMemo : StormWaterBaseID
 	optional	text				AM_Utilization_Integ	"Asset Management Utilization Integrity"
 	optional	int32				AM_Base_Year			"Base Year"										unit:year
 	optional	double				AM_Cost_FN				"Asset Management Cost"								unit:ZAR
-	optional	double				AM_Replace_Value		"Replacement Value"								unit:ZAR
+	optional	double				AM_Replace_Value		"Construction Value"								unit:ZAR
 	"7.Integrity"
 	optional	text				Locality_Integrity		"Locality Integrity"
 	optional	text				Material_Integrity		"Material Integrity"
@@ -6713,7 +6713,7 @@ CREATE TABLE "ElectricityCables" ElectricityCables : ElectricityBase
 	optional  double              Normal_Ampacity                                 "Normal Ampacity"								unit:A                          uiorder:5
 	optional  double              Emergency_Ampacity                              "Emergency Ampacity"							unit:A                          uiorder:6
 	"3.Specifications.2.Electrical.3.Conductivity"
-	optional  double              Positive_Seq_Resistance                         "Positive Sequence Resistace"					unit:ohm                        uiorder:25
+	optional  double              Positive_Seq_Resistance                         "Positive Sequence Resistance"					unit:ohm                        uiorder:25
 	optional  double              Positive_Seq_Reactance                          "Positive Sequence Reactance"					unit:ohm                        uiorder:26
 	optional  double              Zero_Seq_Resistance                             "Zero Sequence Resistance"					unit:ohm                        uiorder:27
 	optional  double              Zero_Seq_Reactance                              "Zero Sequence Reactance"						unit:ohm                        uiorder:28
@@ -7269,7 +7269,7 @@ CREATE TABLE "ElectricitySourceMemo" ElectricitySourceMemo : ElectricityBase
 	optional  int32               Year                               			  "Year"                                                                        uiorder:31
 	"6.Integrity"
 	optional  text                Specification_Integrity                  		  "Specification Integrity"                                                     uiorder:32
-	optional  text                Locality_Integrity                              "LocalityIntegrity"                                                           uiorder:33
+	optional  text                Locality_Integrity                              "Locality Integrity"                                                           uiorder:33
 	optional  text                Year_Integrity                     			  "Year Integrity"                                                              uiorder:34
 	optional  text                Drawing_No                                      "Drawing Number"								tags:dispDocument               uiorder:35
 	"Internal"
@@ -7525,7 +7525,7 @@ CREATE TABLE "ElectricityTrfrs" ElectricityTrfrs : ElectricityBase
 	optional  double              Prim_Tap                                        "Primary Tap Per-unit"                                                        uiorder:31
 	optional  double              Sec_Tap                                         "Secondary Tap Per-unit"                                                      uiorder:32
 	optional  double              Tap_Step                                        "Tap Step Size"                                                               uiorder:33
-	optional  double              No_of_Taps                                      "Nunber of Taps"                                                              uiorder:34
+	optional  double              No_of_Taps                                      "Number of Taps"                                                              uiorder:34
 	optional  double              Tap_Vmax_pu                                     "Tap Vmax Per-unit"                                                           uiorder:35
 	optional  double              Tap_Vmin_pu                                     "Tap Vmin Per-unit"                                                           uiorder:36
 	"3.Specifications.2.Electrical.6.Conductivity"
@@ -8246,7 +8246,7 @@ CREATE TABLE "SewerSchematicDrainAreasCurrent" SewerSchematicDrainAreasCurrent :
 	"Internal"
 	optional	point               Geometry                                        ""
 	"1.Description"
-	optional	text                Name                                            "Dranage Area Name"
+	optional	text                Name                                            "Drainage Area Name"
 	optional	text                Type                                            "Drainage Area Type"
 	optional	text                District                                        "Drainage Area"
 	optional	text                Code                                            "Drainage Area Code"
