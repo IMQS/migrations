@@ -1343,9 +1343,16 @@ CREATE TABLE "" WaterAuxAppurtenance : WaterAuxBaseAppurtHouseConn
 	"06.External Links"
 	optional  text		           	URL                                             "URL"							tags:hideInGrid				uiorder:1
 
+	hasone User     ID              WaterAuxAppurtenanceUser.ID
 	flags orm_server
 }
 INDEX(Geometry);
+
+CREATE TABLE "WaterAuxAppurtenanceUser" WaterAuxAppurtenanceUser : WaterBase
+{
+	flags runtime_schema
+};
+
 
 CREATE TABLE "" WaterAuxHouseConnection : WaterAuxBaseAppurtHouseConn
 {
@@ -1489,7 +1496,7 @@ CREATE TABLE "" WaterDistributionSubZone : WaterAuxBaseZone
 
 CREATE SUFFIX TABLES
 {
-	WaterAuxAppurtenance, WaterAuxHouseConnection, WaterAuxHouseConnectionUser;
+	WaterAuxAppurtenance, WaterAuxAppurtenanceUser, WaterAuxHouseConnection, WaterAuxHouseConnectionUser;
 	01, 02, 03, 04, 05, 06, 07, 08, 09, 10;
 };
 
@@ -1651,10 +1658,11 @@ CREATE TABLE "" SewerBaseNode : SewerBase
 CREATE TABLE "" SewerBaseLink : SewerBase
 {
 	"Internal"
+	netlink   "Sewer"   From_ID   To_ID
+
+	"01.Topology"
 	optional  uuid                From_ID                                     	""
 	optional  uuid                To_ID                                       	""
-
-	netlink   "Sewer"   From_ID   To_ID
 };
 
 CREATE TABLE "" SewerGravity : SewerBaseLink
