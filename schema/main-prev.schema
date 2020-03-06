@@ -1658,11 +1658,11 @@ CREATE TABLE "" SewerBaseNode : SewerBase
 CREATE TABLE "" SewerBaseLink : SewerBase
 {
 	"Internal"
-	netlink   "Sewer"   From_ID   To_ID
-
-	"01.Topology"
 	optional  uuid                From_ID                                     	""
 	optional  uuid                To_ID                                       	""
+
+	netlink   "Sewer"   From_ID   To_ID
+
 };
 
 CREATE TABLE "" SewerGravity : SewerBaseLink
