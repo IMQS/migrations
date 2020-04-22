@@ -7946,7 +7946,6 @@ CREATE TABLE "Contour2m" Contour2m
 	required 	int64				rowid 			""
 	optional	double				Height 			""
 	optional	polyline 			Geometry 		""
-	flags		orm_noclient
 }
 PRIMARY KEY (rowid);
 
@@ -7956,7 +7955,6 @@ CREATE TABLE "Contour5m" Contour5m
 	required 	int64				rowid 			""
 	optional	double				Height 			""
 	optional	polyline 			Geometry 		""
-	flags		orm_noclient
 }
 PRIMARY KEY (rowid);
 
@@ -7966,7 +7964,6 @@ CREATE TABLE "Contour10m" Contour10m
 	required 	int64				rowid 			""
 	optional	double				Height 			""
 	optional	polyline 			Geometry 		""
-	flags		orm_noclient
 }
 PRIMARY KEY (rowid);
 
@@ -7976,7 +7973,6 @@ CREATE TABLE "Contour50m" Contour50m
 	required 	int64				rowid 			""
 	optional	double				Height 			""
 	optional	polyline 			Geometry 		""
-	flags		orm_noclient
 }
 PRIMARY KEY (rowid);
 
