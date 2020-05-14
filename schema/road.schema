@@ -544,6 +544,7 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	int64		rehab_index						"Rehabilitation Index"							unit:%
 	optional	int64		rehab_category					"Rehabilitation Category"
 	optional	text		rehab_text						"Rehabilitation"
+	optional	int64		maintenance_index				"Maintenance Index"
 	optional	int64		maintenance_category			"Maintenance Category"
 	optional	int64		min_maintenance_type			"Minimum Maintenance Type"
 	optional	int64		rec_maintenance_type			"Recommended Maintenance Type"
@@ -558,6 +559,7 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	text		rec_rehab_te					"Recommended Rehabilitation Treatment"
 	optional	int64		min_rehab_cost					"Minimum Rehabilitation Cost"					unit:ZAR
 	optional	int64		rec_rehab_cost					"Recommended Rehabilitation Cost (ZAR)"			unit:ZAR
+	optional	int64		regravel_count					""
 	optional	text		rebuild_text					"Rebuild"
 	optional	text		reseal_text						"Reseal"
 	optional	text		rec_surf_text					"Recommended Surface Treatment"
@@ -593,6 +595,7 @@ CREATE TABLE "recommended_maintenance" recommended_maintenance
 	optional	double		pavement_drc					"Pavement Depreciated Replacement Cost"			unit:ZAR
 	optional	double		structural_crc					"Structural Current Replacement Cost"			unit:ZAR
 	optional	double		structural_drc					"Structural Depreciated Replacement Cost"		unit:ZAR
+	optional	double		paving_cost						"Paving Cost"									unit:ZAR
 }
 UNIQUE INDEX(road_id);
 
@@ -826,3 +829,46 @@ PRIMARY KEY (_id)
 INDEX(photo_1_id)
 INDEX(photo_2_id)
 INDEX(geometry);
+
+CREATE TABLE "remedial_type" remedial_type
+{
+	"Internal"
+	optional	text		locality					""
+	optional	text		data_provider				""
+	required	int64		id							""
+	optional	int64		rem_act_nr					""
+	optional	text		pavement_code				""
+	optional	int64		model_nr					""
+	optional	text		rem_act_namea				""
+	optional	text		rem_act_namee				""
+	optional	int64		surf_life_years_min			""
+	optional	int64		surf_life_years_max			""
+	optional	int64		surf_life_years_ave			""
+	optional	text		descriptiona				""
+	optional	text		descriptione				""
+	optional	int64		seal_type_id				""
+	optional	bool		is_preffered_seal_type		""
+}
+PRIMARY KEY (id);
+
+CREATE TABLE "remedial_cost" remedial_cost
+{
+	"Internal"
+	optional	text		locality					""
+	optional	text		data_provider				""
+	required	int64		id							""
+	optional	int64		remedial_type_id			""
+	optional	int64		survey_year					""
+	optional	int64		client_nr					""
+	optional	double		unit_cost					""
+	optional	double		pct_pretreatment			""
+	optional	double		pct_material_test			""
+	optional	double		pct_establishment			""
+	optional	double		pct_traffic_accom			""
+	optional	double		pct_profess_fees			""
+	optional	double		pct_supervision				""
+	optional	double		pct_escalation				""
+	optional	double		pct_vat						""
+	optional	int64		area_id						""
+}
+PRIMARY KEY (id);
