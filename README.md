@@ -5,6 +5,7 @@ This repository holds .sql scripts that migrate certain databases:
 * main
 * generic
 * mirror
+* reports
 * road
 * temp
 

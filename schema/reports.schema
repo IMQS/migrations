@@ -1,0 +1,116 @@
+VERSION 0
+
+################################################################################
+# Assets
+################################################################################
+
+CREATE SCHEMA assets;
+
+CREATE TABLE "" CoreBase
+{
+	"Internal"
+	required	uuid		asset_id				""
+	optional	geometry	geom					""
+	"0.General"
+	optional	text		name					""		uiorder:1	tags:humanID
+}
+PRIMARY KEY (asset_id)
+INDEX(geom);
+
+CREATE TABLE "" CoreFinBase : CoreBase
+{
+	"1.Financial Values"
+	optional	double		CostOpening				""		uiorder:2
+	optional	double		CostClosing				""		uiorder:3
+	optional	double		CarryingValueOpening	""		uiorder:4
+	optional	double		CarryingValueClosing	""		uiorder:5
+	optional	double		FairValue				""		uiorder:6
+	optional	double		ResidualValue			""		uiorder:7
+	optional	double		ResidualPct				""		uiorder:8
+	optional	double		AdditionsFinYTD			""		uiorder:9
+	optional	double		ValueChangeFinYTD		""		uiorder:10
+	optional	double		DepreciationOpening		""		uiorder:12
+	optional	double		DepreciationFinYTD		""		uiorder:13
+	optional	double		DepreciationClosing		""		uiorder:14
+};
+
+CREATE TABLE "assets.CoreEnvelope" assets.CoreEnvelope : CoreFinBase
+{
+	"Internal"
+	optional	text		chief_directorate_code	""
+	"0.General"
+	optional	text		address					""		uiorder:2
+	"3.Other"
+	optional	text		Municipality			""
+	optional	text		Town					""
+	optional	text		Suburb					""
+	optional	text		District				""
+	optional	text		Region					""
+	optional	text		Ward					""
+	optional	text		department				""
+	optional	text		Classification			""
+
+	hasmany		LandParcels		asset_id		assets.CoreLandparcel.envelope_asset_id		order:2
+}
+INDEX(chief_directorate_code);
+
+CREATE TABLE "assets.CoreLandparcel" assets.CoreLandparcel : CoreFinBase
+{
+	"Internal"
+	required	uuid		envelope_asset_id		""
+	optional	text		chief_directorate_code	""
+	"1.Financial Values"
+	optional	date		TakeOnDate				""		uiorder:1
+	optional	text		DepreciationMethodID	""		uiorder:11
+	"3.Other"
+	optional	text		Classification			""
+	optional	text		ClientAssetID			""
+}
+INDEX(envelope_asset_id)
+INDEX(chief_directorate_code);
+
+################################################################################
+# Leasing
+################################################################################
+
+CREATE SCHEMA leasing;
+
+CREATE TABLE "" LeasingBase
+{
+	"Internal"
+	required	int64		_id						""
+	optional	geometry	geom					""
+	optional	text		Orientation				""
+	"0.General"
+	optional	text		Description				""
+	optional	text		Department				""
+	optional	text		Regional_Manager		""
+	optional	text		File_No					""
+	optional	text		Source_Document_No		""
+	optional	text		Category_Notes			""
+	optional	date		Start_Date				""
+	optional	date		Expiry_Date				""
+}
+PRIMARY KEY (_id)
+INDEX(Orientation)
+INDEX(geom);
+
+CREATE TABLE "leasing.LeasedOutPropertiesTheme" leasing.LeasedOutPropertiesTheme : LeasingBase
+{
+	"0.General"
+	optional	text		Tenant					""
+	optional	text		Lease_Nature			""
+	optional	text		Notice_Period			""
+	optional	bool		Handed_Over				""
+};
+
+CREATE TABLE "leasing.LeasedPropertiesTheme" leasing.LeasedPropertiesTheme : LeasingBase
+{
+	"0.General"
+	optional	text		Owner					""
+	optional	text		Tenant					""
+	optional	text		Lease_Nature			""
+	optional	text		Landlord				""
+	optional	bool		Handed_Over				""
+	optional	bool		Payment_Suspended		""
+};
