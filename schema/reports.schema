@@ -11,8 +11,6 @@ CREATE TABLE "" CoreBase
 	"Internal"
 	required	uuid		asset_id				""
 	optional	geometry	geom					""
-	"0.General"
-	optional	text		name					""		uiorder:1	tags:humanID
 }
 PRIMARY KEY (asset_id)
 INDEX(geom);
@@ -39,6 +37,7 @@ CREATE TABLE "assets.CoreEnvelope" assets.CoreEnvelope : CoreFinBase
 	"Internal"
 	optional	text		chief_directorate_code	""
 	"0.General"
+	optional	text		name					""		uiorder:1
 	optional	text		address					""		uiorder:2
 	"3.Other"
 	optional	text		Municipality			""
@@ -59,9 +58,11 @@ CREATE TABLE "assets.CoreLandparcel" assets.CoreLandparcel : CoreFinBase
 	"Internal"
 	required	uuid		envelope_asset_id		""
 	optional	text		chief_directorate_code	""
+	"0.General"
+	optional	text		name					"LPI Code"		uiorder:1	tags:humanID
 	"1.Financial Values"
-	optional	date		TakeOnDate				""		uiorder:1
-	optional	text		DepreciationMethodID	""		uiorder:11
+	optional	date		TakeOnDate				""				uiorder:1
+	optional	text		DepreciationMethodID	""				uiorder:11
 	"3.Other"
 	optional	text		Classification			""
 	optional	text		ClientAssetID			""
