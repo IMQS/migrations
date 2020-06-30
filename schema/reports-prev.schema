@@ -15,24 +15,7 @@ CREATE TABLE "" CoreBase
 PRIMARY KEY (asset_id)
 INDEX(geom);
 
-CREATE TABLE "" CoreFinBase : CoreBase
-{
-	"1.Financial Values"
-	optional	double		CostOpening				""		uiorder:2
-	optional	double		CostClosing				""		uiorder:3
-	optional	double		CarryingValueOpening	""		uiorder:4
-	optional	double		CarryingValueClosing	""		uiorder:5
-	optional	double		FairValue				""		uiorder:6
-	optional	double		ResidualValue			""		uiorder:7
-	optional	double		ResidualPct				""		uiorder:8
-	optional	double		AdditionsFinYTD			""		uiorder:9
-	optional	double		ValueChangeFinYTD		""		uiorder:10
-	optional	double		DepreciationOpening		""		uiorder:12
-	optional	double		DepreciationFinYTD		""		uiorder:13
-	optional	double		DepreciationClosing		""		uiorder:14
-};
-
-CREATE TABLE "assets.CoreEnvelope" assets.CoreEnvelope : CoreFinBase
+CREATE TABLE ""	CoreEnvelopeBase : CoreBase
 {
 	"Internal"
 	optional	text		chief_directorate_code	""
@@ -48,12 +31,29 @@ CREATE TABLE "assets.CoreEnvelope" assets.CoreEnvelope : CoreFinBase
 	optional	text		Ward					""
 	optional	text		department				""
 	optional	text		Classification			""
-
-	hasmany		LandParcels		asset_id		assets.CoreLandparcel.envelope_asset_id		order:2
 }
 INDEX(chief_directorate_code);
 
-CREATE TABLE "assets.CoreLandparcel" assets.CoreLandparcel : CoreFinBase
+CREATE TABLE "assets.EnvelopeFin" assets.EnvelopeFin : CoreEnvelopeBase
+{
+	"1.Financial Values"
+	optional	double		CostOpening				""		uiorder:2
+	optional	double		CostClosing				""		uiorder:3
+	optional	double		CarryingValueOpening	""		uiorder:4
+	optional	double		CarryingValueClosing	""		uiorder:5
+	optional	double		FairValue				""		uiorder:6
+	optional	double		ResidualValue			""		uiorder:7
+	optional	double		ResidualPct				""		uiorder:8
+	optional	double		AdditionsFinYTD			""		uiorder:9
+	optional	double		ValueChangeFinYTD		""		uiorder:10
+	optional	double		DepreciationOpening		""		uiorder:12
+	optional	double		DepreciationFinYTD		""		uiorder:13
+	optional	double		DepreciationClosing		""		uiorder:14
+
+	hasmany		LandParcels		asset_id		assets.LandparcelFin.envelope_asset_id		order:2
+};
+
+CREATE TABLE "assets.LandparcelFin" assets.LandparcelFin : CoreBase
 {
 	"Internal"
 	required	uuid		envelope_asset_id		""
@@ -61,6 +61,18 @@ CREATE TABLE "assets.CoreLandparcel" assets.CoreLandparcel : CoreFinBase
 	"0.General"
 	optional	text		name					"LPI Code"		uiorder:1	tags:humanID
 	"1.Financial Values"
+	optional	double		CostOpening				""				uiorder:2
+	optional	double		CostClosing				""				uiorder:3
+	optional	double		CarryingValueOpening	""				uiorder:4
+	optional	double		CarryingValueClosing	""				uiorder:5
+	optional	double		FairValue				""				uiorder:6
+	optional	double		ResidualValue			""				uiorder:7
+	optional	double		ResidualPct				""				uiorder:8
+	optional	double		AdditionsFinYTD			""				uiorder:9
+	optional	double		ValueChangeFinYTD		""				uiorder:10
+	optional	double		DepreciationOpening		""				uiorder:12
+	optional	double		DepreciationFinYTD		""				uiorder:13
+	optional	double		DepreciationClosing		""				uiorder:14
 	optional	date		TakeOnDate				""				uiorder:1
 	optional	text		DepreciationMethodID	""				uiorder:11
 	"3.Other"
@@ -69,6 +81,20 @@ CREATE TABLE "assets.CoreLandparcel" assets.CoreLandparcel : CoreFinBase
 }
 INDEX(envelope_asset_id)
 INDEX(chief_directorate_code);
+
+CREATE TABLE "assets.EnvelopeCondition" assets.EnvelopeCondition : CoreEnvelopeBase
+{
+	hasmany		Facilities		asset_id		assets.FacilityCondition.envelope_asset_id		order:2
+};
+
+CREATE TABLE "assets.FacilityCondition" assets.FacilityCondition : CoreBase
+{
+	"Internal"
+	required	uuid		envelope_asset_id		""
+	"0.General"
+	optional	text		name					""		uiorder:1		tags:humanID
+	optional	text		type					""
+};
 
 ################################################################################
 # Leasing
