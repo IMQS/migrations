@@ -20,17 +20,17 @@ CREATE TABLE ""	CoreEnvelopeBase : CoreBase
 	"Internal"
 	optional	text		chief_directorate_code	""
 	"0.General"
-	optional	text		name					""		uiorder:1
-	optional	text		address					""		uiorder:2
-	"3.Other"
+	optional	text		name					""						uiorder:1
+	optional	text		Classification			"Chief Directorate"		uiorder:2
+	optional	text		address					""						uiorder:3
+	optional	text		Suburb					""						uiorder:4
+	optional	text		Town					""						uiorder:5
+	optional	text		Region					""						uiorder:6
+	"99.Other"
+	optional	text		department				"User Department"
 	optional	text		Municipality			""
-	optional	text		Town					""
-	optional	text		Suburb					""
 	optional	text		District				""
-	optional	text		Region					""
 	optional	text		Ward					""
-	optional	text		department				""
-	optional	text		Classification			""
 }
 INDEX(chief_directorate_code);
 
@@ -59,24 +59,24 @@ CREATE TABLE "assets.LandparcelFin" assets.LandparcelFin : CoreBase
 	required	uuid		envelope_asset_id		""
 	optional	text		chief_directorate_code	""
 	"0.General"
-	optional	text		name					"LPI Code"		uiorder:1	tags:humanID
+	optional	text		name					"LPI Code"				uiorder:1	tags:humanID
 	"1.Financial Values"
-	optional	double		CostOpening				""				uiorder:2
-	optional	double		CostClosing				""				uiorder:3
-	optional	double		CarryingValueOpening	""				uiorder:4
-	optional	double		CarryingValueClosing	""				uiorder:5
-	optional	double		FairValue				""				uiorder:6
-	optional	double		ResidualValue			""				uiorder:7
-	optional	double		ResidualPct				""				uiorder:8
-	optional	double		AdditionsFinYTD			""				uiorder:9
-	optional	double		ValueChangeFinYTD		""				uiorder:10
-	optional	double		DepreciationOpening		""				uiorder:12
-	optional	double		DepreciationFinYTD		""				uiorder:13
-	optional	double		DepreciationClosing		""				uiorder:14
-	optional	date		TakeOnDate				""				uiorder:1
-	optional	text		DepreciationMethodID	""				uiorder:11
+	optional	double		CostOpening				""						uiorder:2
+	optional	double		CostClosing				""						uiorder:3
+	optional	double		CarryingValueOpening	""						uiorder:4
+	optional	double		CarryingValueClosing	""						uiorder:5
+	optional	double		FairValue				""						uiorder:6
+	optional	double		ResidualValue			""						uiorder:7
+	optional	double		ResidualPct				""						uiorder:8
+	optional	double		AdditionsFinYTD			""						uiorder:9
+	optional	double		ValueChangeFinYTD		""						uiorder:10
+	optional	double		DepreciationOpening		""						uiorder:12
+	optional	double		DepreciationFinYTD		""						uiorder:13
+	optional	double		DepreciationClosing		""						uiorder:14
+	optional	date		TakeOnDate				""						uiorder:1
+	optional	text		DepreciationMethodID	""						uiorder:11
 	"3.Other"
-	optional	text		Classification			""
+	optional	text		Classification			"Chief Directorate"
 	optional	text		ClientAssetID			""
 }
 INDEX(envelope_asset_id)
@@ -91,9 +91,33 @@ CREATE TABLE "assets.FacilityCondition" assets.FacilityCondition : CoreBase
 {
 	"Internal"
 	required	uuid		envelope_asset_id		""
+	optional	text		chief_directorate_code	""
+	optional	text		facility_type_code		""
+	"0.General"
+	optional	text		name					""						uiorder:1		tags:humanID
+	optional	text		Classification			"Chief Directorate"		uiorder:2
+	optional	text		facility_type			""						uiorder:3
+	optional	text		address					""						uiorder:4
+	optional	text		Suburb					""						uiorder:5
+	optional	text		Town					""						uiorder:6
+	optional	text		Region					""						uiorder:7
+	"3.Other"
+	optional	text		Municipality			""
+	optional	text		District				""
+	optional	text		Ward					""
+	optional	text		department				"User Department"
+
+	hasmany		Buildings		asset_id		assets.BuildingCondition.facility_asset_id		order:2
+}
+INDEX(chief_directorate_code)
+INDEX(facility_type_code);
+
+CREATE TABLE "assets.BuildingCondition" assets.BuildingCondition : CoreBase
+{
+	"Internal"
+	required	uuid		facility_asset_id		""
 	"0.General"
 	optional	text		name					""		uiorder:1		tags:humanID
-	optional	text		type					""
 };
 
 ################################################################################
