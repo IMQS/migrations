@@ -4289,10 +4289,12 @@ CREATE TABLE "RoadSigns" RoadSigns : RoadBaseNoID
 	"Internal"
 	optional	point				Geometry										""
 	"General"
-	optional	int64				GISID											"GIS ID"				tags:longLivedID
+	optional	int64				GISID											"GIS ID"
 	optional	text				Component_										"Component"
+	optional	text				Asset_ID										"Asset ID"	tags:longLivedID
 	optional	text				Asset_Name										"Asset Name"
-	optional	text				Facility_N										"Facility"
+	optional	text				Facility_I										"Facility_ID"
+	optional	text				Facility_N										"Facility Name"
 	optional	text				Area_Name										"Area"
 	optional	text				Class											""
 	optional	text				Sign_Condi										"Sign Condition"

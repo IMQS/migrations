@@ -1,0 +1,2 @@
+ALTER TABLE "RoadSigns" ADD COLUMN "Asset_ID" VARCHAR;
+ALTER TABLE "RoadSigns" ADD COLUMN "Facility_I" VARCHAR;
