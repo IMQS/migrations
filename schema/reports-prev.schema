@@ -46,9 +46,6 @@ CREATE TABLE "assets.EnvelopeFin" assets.EnvelopeFin : CoreEnvelopeBase
 	optional	double		ResidualPct				""		uiorder:8
 	optional	double		AdditionsFinYTD			""		uiorder:9
 	optional	double		ValueChangeFinYTD		""		uiorder:10
-	optional	double		DepreciationOpening		""		uiorder:12
-	optional	double		DepreciationFinYTD		""		uiorder:13
-	optional	double		DepreciationClosing		""		uiorder:14
 
 	hasmany		LandParcels		asset_id		assets.LandparcelFin.envelope_asset_id		order:2
 };
@@ -70,11 +67,7 @@ CREATE TABLE "assets.LandparcelFin" assets.LandparcelFin : CoreBase
 	optional	double		ResidualPct				""						uiorder:8
 	optional	double		AdditionsFinYTD			""						uiorder:9
 	optional	double		ValueChangeFinYTD		""						uiorder:10
-	optional	double		DepreciationOpening		""						uiorder:12
-	optional	double		DepreciationFinYTD		""						uiorder:13
-	optional	double		DepreciationClosing		""						uiorder:14
 	optional	date		TakeOnDate				""						uiorder:1
-	optional	text		DepreciationMethodID	""						uiorder:11
 	"3.Other"
 	optional	text		Classification			"Chief Directorate"
 	optional	text		ClientAssetID			""
