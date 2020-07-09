@@ -1,6 +1,6 @@
-CREATE SCHEMA "assets";
+CREATE SCHEMA IF NOT EXISTS "assets";
 
-CREATE SCHEMA "leasing";
+CREATE SCHEMA IF NOT EXISTS "leasing";
 
 CREATE TABLE "assets"."CoreEnvelope" (
  "asset_id" UUID,
@@ -61,7 +61,7 @@ CREATE INDEX ON "assets"."CoreLandparcel" ("envelope_asset_id");
 CREATE INDEX ON "assets"."CoreLandparcel" ("chief_directorate_code");
 CREATE INDEX ON "assets"."CoreLandparcel" USING GIST ("geom");
 
-CREATE TABLE "leasing"."LeasedOutPropertiesTheme" (
+CREATE TABLE IF NOT EXISTS "leasing"."LeasedOutPropertiesTheme" (
  "_id" BIGSERIAL,
  "geom" geometry(GeometryZ, 4326),
  "Orientation" VARCHAR,
@@ -82,7 +82,7 @@ CREATE TABLE "leasing"."LeasedOutPropertiesTheme" (
 CREATE INDEX ON "leasing"."LeasedOutPropertiesTheme" ("Orientation");
 CREATE INDEX ON "leasing"."LeasedOutPropertiesTheme" USING GIST ("geom");
 
-CREATE TABLE "leasing"."LeasedPropertiesTheme" (
+CREATE TABLE IF NOT EXISTS "leasing"."LeasedPropertiesTheme" (
  "_id" BIGSERIAL,
  "geom" geometry(GeometryZ, 4326),
  "Orientation" VARCHAR,
