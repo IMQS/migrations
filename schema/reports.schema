@@ -146,6 +146,7 @@ CREATE TABLE "leasing.LeasedOutPropertiesTheme" leasing.LeasedOutPropertiesTheme
 	optional	text		Lease_Nature			""
 	optional	text		Notice_Period			""
 	optional	bool		Handed_Over				""
+	optional	date		Notice_Date				""
 };
 
 CREATE TABLE "leasing.LeasedPropertiesTheme" leasing.LeasedPropertiesTheme : LeasingBase
