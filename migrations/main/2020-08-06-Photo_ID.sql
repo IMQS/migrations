@@ -1,0 +1,21 @@
+
+ALTER TABLE "StormWaterConduit_01" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_02" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_03" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_04" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_05" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_06" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_07" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_08" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_09" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormWaterConduit_10" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_01" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_02" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_03" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_04" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_05" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_06" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_07" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_08" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_09" ADD COLUMN "Photo_ID" VARCHAR;
+ALTER TABLE "StormwaterJunction_10" ADD COLUMN "Photo_ID" VARCHAR;
