@@ -105,6 +105,35 @@ CREATE TABLE "assets.FacilityCondition" assets.FacilityCondition : CoreBase
 INDEX(chief_directorate_code)
 INDEX(facility_type_code);
 
+CREATE TABLE "assets.FacilityUtilization" assets.FacilityUtilization : CoreBase
+{
+	"Internal"
+	optional	text		chief_directorate_code	""
+	optional	text		facility_type_code		""
+	"0.General"
+	optional	text		name					""						uiorder:1		tags:humanID
+	optional	text		Classification			"Chief Directorate"		uiorder:2
+	optional	text		address					""						uiorder:3
+	optional	text		Suburb					""						uiorder:4
+	optional	text		Town					""						uiorder:5
+	optional	text		Region					""						uiorder:6
+	"1.Ownership"
+	optional	text		owner					"Owner"					uiorder:7
+	"1.Allocation"
+	optional	text		department				"User Department"		uiorder:8
+	"2.Usage"
+	optional	text		facility_type			"Facility Type"			uiorder:9
+	optional	text		vacancy					"Vacancy"				uiorder:10
+	"3.Other"
+	optional	text		Municipality			""						uiorder:11
+	optional	text		District				""						uiorder:12
+	optional	text		Ward					""						uiorder:13
+
+	hasmany		Buildings		asset_id		assets.BuildingCondition.facility_asset_id		order:2
+}
+INDEX(chief_directorate_code)
+INDEX(facility_type_code);
+
 CREATE TABLE "assets.BuildingCondition" assets.BuildingCondition : CoreBase
 {
 	"Internal"
