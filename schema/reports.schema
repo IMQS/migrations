@@ -134,6 +134,14 @@ CREATE TABLE "assets.FacilityUtilization" assets.FacilityUtilization : CoreBase
 INDEX(chief_directorate_code)
 INDEX(facility_type_code);
 
+CREATE TABLE "assets.FacilityOwnership" assets.FacilityOwnership : assets.FacilityUtilization
+{
+	"2.Usage"
+	optional	text		leasing	"Leasing"
+
+	hasmany		Buildings		asset_id		assets.BuildingCondition.facility_asset_id		order:2
+};
+
 CREATE TABLE "assets.BuildingCondition" assets.BuildingCondition : CoreBase
 {
 	"Internal"
