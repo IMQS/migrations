@@ -58,7 +58,7 @@ drop trigger if exists update_modtrack_leasedoutproperties on leasing."LeasedOut
 	for each statement
 	execute procedure update_modtrack_table();
 
-drop trigger if exists update_modtrack_leasedoutproperties on leasing."LeasedPropertiesTheme";
+drop trigger if exists update_modtrack_leasedproperties on leasing."LeasedPropertiesTheme";
 	create trigger update_modtrack_leasedoutproperties
 	after truncate on leasing."LeasedPropertiesTheme"
 	for each statement
