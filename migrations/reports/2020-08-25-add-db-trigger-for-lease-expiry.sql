@@ -53,13 +53,13 @@ end;
 $$;
 
 drop trigger if exists update_modtrack_leasedoutproperties on leasing."LeasedOutPropertiesTheme";
-	create trigger update_modtrack_leasedoutproperties
+	create trigger update_modtrack
 	after truncate on leasing."LeasedOutPropertiesTheme"
 	for each statement
 	execute procedure update_modtrack_table();
 
 drop trigger if exists update_modtrack_leasedproperties on leasing."LeasedPropertiesTheme";
-	create trigger update_modtrack_leasedoutproperties
+	create trigger update_modtrack
 	after truncate on leasing."LeasedPropertiesTheme"
 	for each statement
 	execute procedure update_modtrack_table();
