@@ -195,4 +195,5 @@ CREATE TABLE "leasing.LeasedPropertiesTheme" leasing.LeasedPropertiesTheme : Lea
 	optional	text		Landlord				""
 	optional	bool		Handed_Over				""
 	optional	bool		Payment_Suspended		""
+	optional	date		Notice_Date				""
 };
