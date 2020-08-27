@@ -197,3 +197,14 @@ CREATE TABLE "leasing.LeasedPropertiesTheme" leasing.LeasedPropertiesTheme : Lea
 	optional	bool		Payment_Suspended		""
 	optional	date		Notice_Date				""
 };
+
+CREATE TABLE "leasing.LeasedInPropertiesTheme" leasing.LeasedInPropertiesTheme : LeasingBase
+{
+	"0.General"
+	optional	text		Owner					""
+	optional	text		Tenant					""
+	optional	text		Landlord				""
+	optional	bool		Handed_Over				""
+	optional	bool		Payment_Suspended		""
+	optional	date		Notice_Date				""
+};
