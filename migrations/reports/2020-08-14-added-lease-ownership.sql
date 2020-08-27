@@ -1,6 +1,6 @@
 CREATE TABLE "assets"."FacilityOwnership" (
  "asset_id" UUID,
- "geom" geometry(Geometry, 4326),
+ "geom" geometry(GeometryZ, 4326),
  "chief_directorate_code" VARCHAR,
  "facility_type_code" VARCHAR,
  "name" VARCHAR,
@@ -22,4 +22,3 @@ CREATE TABLE "assets"."FacilityOwnership" (
 CREATE INDEX ON "assets"."FacilityOwnership" ("chief_directorate_code");
 CREATE INDEX ON "assets"."FacilityOwnership" ("facility_type_code");
 CREATE INDEX ON "assets"."FacilityOwnership" USING GIST ("geom");
-

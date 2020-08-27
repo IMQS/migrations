@@ -1,6 +1,6 @@
 CREATE TABLE "leasing"."LeasedInPropertiesTheme" (
  "_id" BIGSERIAL,
- "geom" geometry(Geometry, 4326),
+ "geom" geometry(GeometryZ, 4326),
  "Orientation" VARCHAR,
  "Description" VARCHAR,
  "Department" VARCHAR,
