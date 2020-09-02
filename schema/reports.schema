@@ -163,14 +163,27 @@ CREATE TABLE "" LeasingBase
 	optional	geometry	geom					""
 	optional	text		Orientation				""
 	"0.General"
-	optional	text		Description				""
-	optional	text		Department				""
-	optional	text		Regional_Manager		""
-	optional	text		File_No					""
-	optional	text		Source_Document_No		""
-	optional	text		Category_Notes			""
-	optional	date		Start_Date				""
-	optional	date		Expiry_Date				""
+	optional	text		name					""						uiorder:1		tags:humanID
+	optional	text		Classification			"Chief Directorate"		uiorder:2
+	optional	text		address					""						uiorder:3
+	optional	text		Suburb					""						uiorder:4
+	optional	text		Town					""						uiorder:5
+	optional	text		Region					""						uiorder:6
+	optional	text		Regional_Manager		""						uiorder:7
+	"2.Allocation"
+	optional	text		Department				"User Department"
+	"3.Lease Agreement"
+	optional	date		Expiry_Date				""						uiorder:1
+	optional	text		Status					""						uiorder:3
+	optional	date		Start_Date				""						uiorder:4
+	optional	text		Description				""						uiorder:5
+	optional	text		File_No					""						uiorder:6
+	optional	text		Source_Document_No		""						uiorder:7
+	optional	text		Category_Notes			""						uiorder:8
+	"4.Other"
+	optional	text		District				""
+	optional	text		Municipality			""
+	optional	text		Ward					""
 }
 PRIMARY KEY (_id)
 INDEX(Orientation)
@@ -178,33 +191,36 @@ INDEX(geom);
 
 CREATE TABLE "leasing.LeasedOutPropertiesTheme" leasing.LeasedOutPropertiesTheme : LeasingBase
 {
-	"0.General"
-	optional	text		Tenant					""
-	optional	text		Lease_Nature			""
-	optional	text		Notice_Period			""
-	optional	bool		Handed_Over				""
-	optional	date		Notice_Date				""
+	"1.Ownership"
+	optional	text		Tenant					""						uiorder:11
+	"3.Lease Agreement"
+	optional	text		Notice_Period			""						uiorder:2
+	optional	text		Lease_Nature			""						uiorder:21
+	optional	bool		Handed_Over				""						uiorder:22
+	optional	date		Notice_Date				""						uiorder:23
 };
 
 CREATE TABLE "leasing.LeasedPropertiesTheme" leasing.LeasedPropertiesTheme : LeasingBase
 {
-	"0.General"
-	optional	text		Owner					""
-	optional	text		Tenant					""
-	optional	text		Lease_Nature			""
-	optional	text		Landlord				""
-	optional	bool		Handed_Over				""
-	optional	bool		Payment_Suspended		""
-	optional	date		Notice_Date				""
+	"1.Ownership"
+	optional	text		Owner					""						uiorder:1
+	optional	text		Landlord				""						uiorder:2
+	optional	text		Tenant					""						uiorder:3
+	"3.Lease Agreement"
+	optional	date		Notice_Date				""						uiorder:21
+	optional	text		Lease_Nature			""						uiorder:22
+	optional	bool		Handed_Over				""						uiorder:23
+	optional	bool		Payment_Suspended		""						uiorder:24
 };
 
 CREATE TABLE "leasing.LeasedInPropertiesTheme" leasing.LeasedInPropertiesTheme : LeasingBase
 {
-	"0.General"
-	optional	text		Owner					""
-	optional	text		Tenant					""
-	optional	text		Landlord				""
-	optional	bool		Handed_Over				""
-	optional	bool		Payment_Suspended		""
-	optional	date		Notice_Date				""
+	"1.Ownership"
+	optional	text		Owner					""						uiorder:1
+	optional	text		Landlord				""						uiorder:2
+	optional	text		Tenant					""						uiorder:3
+	"3.Lease Agreement"
+	optional	date		Notice_Date				""						uiorder:21
+	optional	bool		Handed_Over				""						uiorder:22
+	optional	bool		Payment_Suspended		""						uiorder:23
 };

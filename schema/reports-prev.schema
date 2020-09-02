@@ -163,14 +163,27 @@ CREATE TABLE "" LeasingBase
 	optional	geometry	geom					""
 	optional	text		Orientation				""
 	"0.General"
-	optional	text		Description				""
-	optional	text		Department				""
+	optional	text		name					""						uiorder:1		tags:humanID
+	optional	text		Classification			"Chief Directorate"		uiorder:2
+	optional	text		address					""						uiorder:3
+	optional	text		Suburb					""						uiorder:4
+	optional	text		Town					""						uiorder:5
+	optional	text		Region					""						uiorder:6
 	optional	text		Regional_Manager		""
+	"2.Allocation"
+	optional	text		Department				"User Department"
+	"3.Lease Agreement"
+	optional	date		Expiry_Date				""						uiorder:1
+	optional	text		Status					""						uiorder:3
+	optional	date		Start_Date				""
+	optional	text		Description				""
 	optional	text		File_No					""
 	optional	text		Source_Document_No		""
 	optional	text		Category_Notes			""
-	optional	date		Start_Date				""
-	optional	date		Expiry_Date				""
+	"4.Other"
+	optional	text		Municipality			""
+	optional	text		District				""
+	optional	text		Ward					""
 }
 PRIMARY KEY (_id)
 INDEX(Orientation)
@@ -178,33 +191,36 @@ INDEX(geom);
 
 CREATE TABLE "leasing.LeasedOutPropertiesTheme" leasing.LeasedOutPropertiesTheme : LeasingBase
 {
-	"0.General"
+	"1.Ownership"
 	optional	text		Tenant					""
+	"3.Lease Agreement"
+	optional	text		Notice_Period			""						uiorder:2
 	optional	text		Lease_Nature			""
-	optional	text		Notice_Period			""
 	optional	bool		Handed_Over				""
 	optional	date		Notice_Date				""
 };
 
 CREATE TABLE "leasing.LeasedPropertiesTheme" leasing.LeasedPropertiesTheme : LeasingBase
 {
-	"0.General"
+	"1.Ownership"
 	optional	text		Owner					""
-	optional	text		Tenant					""
-	optional	text		Lease_Nature			""
 	optional	text		Landlord				""
+	optional	text		Tenant					""
+	"3.Lease Agreement"
+	optional	date		Notice_Date				""
+	optional	text		Lease_Nature			""
 	optional	bool		Handed_Over				""
 	optional	bool		Payment_Suspended		""
-	optional	date		Notice_Date				""
 };
 
 CREATE TABLE "leasing.LeasedInPropertiesTheme" leasing.LeasedInPropertiesTheme : LeasingBase
 {
-	"0.General"
+	"1.Ownership"
 	optional	text		Owner					""
-	optional	text		Tenant					""
 	optional	text		Landlord				""
+	optional	text		Tenant					""
+	"3.Lease Agreement"
+	optional	date		Notice_Date				""
 	optional	bool		Handed_Over				""
 	optional	bool		Payment_Suspended		""
-	optional	date		Notice_Date				""
 };
