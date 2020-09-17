@@ -1,25 +1,18 @@
-
-VERSION 4
-
-CREATE TABLE "Version" Version
-{
-	"Internal"
-	required	int64		rowid			""
-	required	text		identity		""
-	required	int64		modified		""
-}
-PRIMARY KEY(rowid)
-UNIQUE INDEX(identity);
+VERSION 0
 
 CREATE TABLE "Theme" Theme
 {
 	"Internal"
-	required	int64		rowid			""
-	required	text		identity		""
+	required	uuid		id				""
+	required	text		name			""
+	required	text		owner			""
+	optional	text		modules			""
 	required	text		data			""
+	optional	bin			hash			""
+	optional	uuid		hierarchy		""
+	optional	jsonb		metadata		""
 }
-PRIMARY KEY(rowid)
-UNIQUE INDEX(identity);
+PRIMARY KEY(id);
 
 CREATE TABLE "LayerGroup" LayerGroup
 {
@@ -34,12 +27,14 @@ UNIQUE INDEX(identity);
 CREATE TABLE "Data" Data
 {
 	"Internal"
-	required	int64		rowid			""
-	required	text		identity		""
+	required	uuid		id				""
+	required	text		name			""
 	required	text		data			""
+	optional	bin			hash			""
+	optional	uuid		hierarchy		""
+	optional	jsonb		metadata		""
 }
-PRIMARY KEY(rowid)
-UNIQUE INDEX(identity);
+PRIMARY KEY(id);
 
 CREATE TABLE "Style" Style
 {
@@ -47,6 +42,18 @@ CREATE TABLE "Style" Style
 	required	int64		rowid			""
 	required	text		identity		""
 	required	text		data			""
+	optional	bin			hash			""
 }
 PRIMARY KEY(rowid)
 UNIQUE INDEX(identity);
+
+CREATE TABLE "ElementHierarchy" ElementHierarchy
+{
+	"Internal"
+	required	uuid	id					""
+	optional	uuid	parent				""
+	required	text	type				""
+	required	text	name				""
+	optional	jsonb	metadata			""
+}
+PRIMARY KEY(id);
