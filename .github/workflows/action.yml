@@ -1,0 +1,23 @@
+name: Build Migrations Service
+on: [push]
+
+jobs:
+  build:
+    name: Build Migrations
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Checkout LFS objects
+        run: git lfs checkout
+      - name: build-push
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DEPLOY_DOCKER_USERNAME }}
+          password: ${{ secrets.DEPLOY_DOCKER_PASSWORD }}
+          repository: imqs/migrations
+          tag_with_ref: true
+          build_args: MigratorBranch=latest
+          cache_froms: node:12.13.0, golang:1.14, imqs/ubuntu-base

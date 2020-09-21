@@ -1,4 +1,4 @@
-# docker build -t imqs/migrations:master . --build-arg MigratorBranch=master
+#  docker build -t imqs/migrations:latest . --build-arg MigratorBranch=latest
 
 ARG MigratorBranch
 FROM imqs/migrator:${MigratorBranch}
