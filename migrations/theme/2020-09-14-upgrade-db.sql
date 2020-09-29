@@ -29,7 +29,7 @@ ALTER TABLE "Theme" ADD COLUMN "id" UUID;
 UPDATE "Theme" SET "id" = gen_random_uuid();
 ALTER TABLE "Theme" ADD PRIMARY KEY ("id");
 ALTER TABLE "Theme" ADD COLUMN "owner" VARCHAR;
-ALTER TABLE "Theme" ADD COLUMN "modules" VARCHAR;
+ALTER TABLE "Theme" ADD COLUMN "modules" JSONB;
 ALTER TABLE "Theme" ADD COLUMN "hash" BYTEA;
 ALTER TABLE "Theme" ADD COLUMN "hierarchy" UUID;
 ALTER TABLE "Theme" ADD COLUMN "metadata" JSONB;

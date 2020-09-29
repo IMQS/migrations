@@ -6,7 +6,7 @@ CREATE TABLE "Theme" Theme
 	required	uuid		id				""
 	required	text		name			""
 	required	text		owner			""
-	optional	text		modules			""
+	optional	jsonb		modules			""
 	required	text		data			""
 	optional	bin			hash			""
 	optional	uuid		hierarchy		""

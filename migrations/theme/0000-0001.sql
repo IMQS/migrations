@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS "Data" (
  "data" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX IF NOT EXISTS ON "Data" ("identity");
+CREATE UNIQUE INDEX IF NOT EXISTS "idx_Data_identity"
+ON "Data" ("identity");
 
 CREATE TABLE IF NOT EXISTS "LayerGroup" (
  "rowid" BIGSERIAL,
@@ -12,7 +13,8 @@ CREATE TABLE IF NOT EXISTS "LayerGroup" (
  "data" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX IF NOT EXISTS ON "LayerGroup" ("identity");
+CREATE UNIQUE INDEX IF NOT EXISTS "idx_LayerGroup_identity"
+ON "LayerGroup" ("identity");
 
 CREATE TABLE IF NOT EXISTS "Style" (
  "rowid" BIGSERIAL,
@@ -20,7 +22,8 @@ CREATE TABLE IF NOT EXISTS "Style" (
  "data" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX IF NOT EXISTS ON "Style" ("identity");
+CREATE UNIQUE INDEX IF NOT EXISTS "idx_Style_identity"
+ON "Style" ("identity");
 
 CREATE TABLE IF NOT EXISTS "Theme" (
  "rowid" BIGSERIAL,
@@ -28,4 +31,5 @@ CREATE TABLE IF NOT EXISTS "Theme" (
  "data" VARCHAR,
  PRIMARY KEY("rowid")
 );
-CREATE UNIQUE INDEX IF NOT EXISTS ON "Theme" ("identity");
+CREATE UNIQUE INDEX IF NOT EXISTS "idx_Theme_identity"
+ON "Theme" ("identity");
