@@ -5773,6 +5773,7 @@ CREATE TABLE "CadastralDetailUser" CadastralDetailUser : LandBase
 CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 {
 	"Internal"
+	optional	text				SG_ID_PREFIX		""
 	optional	polygon				Geometry			""
 	"General"
 	optional	text				GIS_CODE			"GIS Code"		tags:longLivedID		uiorder:1
@@ -5786,7 +5787,8 @@ CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 	optional	text				REGION				"Region"								uiorder:9
 	optional	text				URL					"Url"	tags:hideInPropertiesIfNull		uiorder:10
 }
-INDEX(Geometry);
+INDEX(Geometry)
+INDEX(SG_ID_PREFIX);
 
 CREATE TABLE "Province" Province : LandBaseNoID
 {
