@@ -3438,6 +3438,7 @@ CREATE TABLE "WaterDemandStand" WaterDemandStand : WaterDemandBaseNoID
 {
 	"Internal"
 	optional	polygon					Geometry									""
+	optional	text					Stand_ID_Prefix								""
 	"1.Cadastral"
 	optional	text					Stand_ID				 					"Stand ID"							tags:longLivedID		uiorder:0
 	optional	text					GIS_Code				 					"GIS Code"													uiorder:1
@@ -3507,7 +3508,8 @@ CREATE TABLE "WaterDemandStand" WaterDemandStand : WaterDemandBaseNoID
 	flags orm_server
 }
 INDEX(Geometry)
-INDEX(Stand_ID);
+INDEX(Stand_ID)
+INDEX(Stand_ID_Prefix);
 
 CREATE TABLE "WaterDemandAccountRate" WaterDemandAccountRate : WaterDemandBaseNoID
 {
