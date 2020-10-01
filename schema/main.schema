@@ -3438,6 +3438,7 @@ CREATE TABLE "WaterDemandStand" WaterDemandStand : WaterDemandBaseNoID
 {
 	"Internal"
 	optional	polygon					Geometry									""
+	optional	text					Stand_ID_Prefix								""
 	"1.Cadastral"
 	optional	text					Stand_ID				 					"Stand ID"							tags:longLivedID		uiorder:0
 	optional	text					GIS_Code				 					"GIS Code"													uiorder:1
@@ -3507,7 +3508,8 @@ CREATE TABLE "WaterDemandStand" WaterDemandStand : WaterDemandBaseNoID
 	flags orm_server
 }
 INDEX(Geometry)
-INDEX(Stand_ID);
+INDEX(Stand_ID)
+INDEX(Stand_ID_Prefix);
 
 CREATE TABLE "WaterDemandAccountRate" WaterDemandAccountRate : WaterDemandBaseNoID
 {
@@ -5773,6 +5775,7 @@ CREATE TABLE "CadastralDetailUser" CadastralDetailUser : LandBase
 CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 {
 	"Internal"
+	optional	text				SG_ID_PREFIX		""
 	optional	polygon				Geometry			""
 	"General"
 	optional	text				GIS_CODE			"GIS Code"		tags:longLivedID		uiorder:1
@@ -5786,7 +5789,8 @@ CREATE TABLE "LandCadastral" LandCadastral : LandBaseNoID
 	optional	text				REGION				"Region"								uiorder:9
 	optional	text				URL					"Url"	tags:hideInPropertiesIfNull		uiorder:10
 }
-INDEX(Geometry);
+INDEX(Geometry)
+INDEX(SG_ID_PREFIX);
 
 CREATE TABLE "Province" Province : LandBaseNoID
 {
