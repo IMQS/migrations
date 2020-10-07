@@ -150,6 +150,37 @@ CREATE TABLE "assets.BuildingCondition" assets.BuildingCondition : CoreBase
 	optional	text		name					""		uiorder:1		tags:humanID
 };
 
+CREATE TABLE "assets.PropertyRisk" assets.PropertyRisk
+{
+	"Internal"
+	required	int64		id						""
+	required	uuid		asset_id				""
+	optional	geometry	geom					""
+	optional	text		chief_directorate_code	""
+	optional	text		facility_type_code		""
+	"0.General"
+	optional	text		name					""						uiorder:1		tags:humanID
+	optional	text		Classification			"Chief Directorate"		uiorder:2
+	optional	text		address					""						uiorder:3
+	optional	text		Suburb					""						uiorder:4
+	optional	text		Town					""						uiorder:5
+	optional	text		Region					""						uiorder:6
+	"1.Ownership"
+	optional	text		owner					"Owner"					uiorder:7
+	"1.Allocation"
+	optional	text		department				"User Department"		uiorder:8
+	"2.Usage/Risk"
+	optional	text		facility_type			"Facility Type"			uiorder:8
+	optional	text		risk_probability		"Risk Probablilty"		uiorder:9
+	optional	text		condition				"Condition"				uiorder:10
+	"99.Other"
+	optional	text		Municipality			""						uiorder:11
+	optional	text		District				""						uiorder:12
+	optional	text		Ward					""						uiorder:13
+}
+PRIMARY KEY (id);
+
+
 ################################################################################
 # Leasing
 ################################################################################
