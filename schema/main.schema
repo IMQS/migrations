@@ -9069,9 +9069,11 @@ CREATE TABLE "LinkingMainAndMirror" LinkingMainAndMirror
 "Internal"
 	required	int64		recid							""
 	optional	geometryz	geometry						""
-	optional	text		main_table_name					""
+	optional	text		left_table_name					""
+	optional	text		left_dbname						""
+	optional	text		left_id_column					""
 "1.As_built Data"
-	optional	uuid		main_id							"ID In Engineering Table"			tags:allPropFromMainTable
+	optional	text		left_id							"ID In Engineering Table"			tags:allPropFromMainTable
 "2.Asset Map Feature"
 	optional	text		assetmapfeature_id				"Asset Map Feature ID"				tags:allPropFromAssetMapFeature
 "3.Asset Component"
@@ -9087,5 +9089,6 @@ CREATE TABLE "LinkingMainAndMirrorTrackTable" LinkingMainAndMirrorTrackTable
 	optional	text		tablename			""
 	optional	int64		createcount			""
 	optional	int64		stamp				""
+	optional	text		left_dbname						""
 }
 PRIMARY KEY(recid);
