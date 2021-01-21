@@ -5,11 +5,10 @@ ALTER TABLE "LinkingMainAndMirror" ADD COLUMN "left_id" VARCHAR;
 
 UPDATE "LinkingMainAndMirror" SET "left_id" = "main_id";
 
+DROP VIEW IF EXISTS "sewer-gravity";
+DROP VIEW IF EXISTS "sewer-rising";
+DROP VIEW IF EXISTS "water-pipe";
 
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_id";
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_table_name";
 ALTER TABLE "LinkingMainAndMirrorTrackTable" ADD COLUMN "left_dbname" VARCHAR;
-
-DROP VIEW IF EXISTS "sewer-gravity";
-DROP VIEW IF EXISTS "sewer-rising";
-DROP VIEW IF EXISTS "water-pipe";
