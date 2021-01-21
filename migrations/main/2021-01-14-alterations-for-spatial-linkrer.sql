@@ -10,6 +10,6 @@ ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_id";
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_table_name";
 ALTER TABLE "LinkingMainAndMirrorTrackTable" ADD COLUMN "left_dbname" VARCHAR;
 
-DROP VIEW "sewer-gravity";
-DROP VIEW "sewer-rising";
-DROP VIEW "water-pipe";
+DROP VIEW IF EXISTS "sewer-gravity";
+DROP VIEW IF EXISTS "sewer-rising";
+DROP VIEW IF EXISTS "water-pipe";
