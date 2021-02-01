@@ -4,6 +4,7 @@ ALTER TABLE "LinkingMainAndMirror" ADD COLUMN "left_id_column" VARCHAR;
 ALTER TABLE "LinkingMainAndMirror" ADD COLUMN "left_id" VARCHAR;
 
 UPDATE "LinkingMainAndMirror" SET "left_id" = "main_id";
+UPDATE "LinkingMainAndMirror" SET "left_table_name" = "main_table_name";
 
 DROP VIEW IF EXISTS "sewer-gravity";
 DROP VIEW IF EXISTS "sewer-rising";
