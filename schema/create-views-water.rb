@@ -20,18 +20,18 @@ water_pipe = {
 		From_Code
 		To_Code
 		Diameter
-		User_defined_Length
-		Frictional_Coefficient
-		Minor_Loss
+		User_Defined_Length
+		Friction_Coefficient
+		Minor_Loss_Coefficient
 		Pipe_Status
 		Multimedia
 		Optimization_Group
 		Cost_Function
-		Bulk_Reaction_Coefficient
-		Wall_Reaction_Coefficient
-		Initial_Simulation_Status
-		FromID
-		ToID
+		Tsim_Bulk_Rx_Coefficient
+		Tsim_Wall_Rx_Coefficient
+		Tsim_Initial_Status
+		From_ID
+		To_ID
 		Geometry
 		MetaID
 	),
@@ -89,7 +89,7 @@ water_pipe = {
 		To_Static_EGL
 		From_Static_Head
 		To_Static_Head
-		Average_Resulting_Quality
+		Average_Quality
 		Average_Elevation
 		Average_EGL
 		Average_Head
@@ -106,29 +106,29 @@ water_pump = {
 		Link_Code
 		From_Code
 		To_Code
-		Pump_Flow1
-		Pump_Head1
-		Pump_Flow2
-		Pump_Head2
-		Pump_Flow3
-		Pump_Head3
-		Pump_Curve_No
-		Relative_Pump_Speed
+		Flow_Point1
+		Head_Point1
+		Flow_Point2
+		Head_Point2
+		Flow_Point3
+		Head_Point3
+		Curve_No
+		Relative_Speed
 		Multimedia
-		Efficiency
-		Percentage_Time_Running1
-		Percentage_Time_Running2
-		Percentage_Time_Running3
-		Percentage_Time_Running4
-		Percentage_Time_Running5
-		Initial_Simulation_Speed
-		Schedule_Pattern_No
-		Efficiency_Curve_No
-		Energy_Price
-		Price_Pattern_No
+		Opt_Efficiency
+		Opt_Runtime_Percent_Case1
+		Opt_Runtime_Percent_Case2
+		Opt_Runtime_Percent_Case3
+		Opt_Runtime_Percent_Case4
+		Opt_Runtime_Percent_Case5
+		Tsim_Initial_Speed
+		Tsim_Schedule_Pattern_No
+		Tsim_Efficiency_Curve_No
+		Tsim_Energy_Price
+		Tsim_Energy_Price_Pattern_No
 		ID
-		FromID
-		ToID
+		From_ID
+		To_ID
 		Geometry
 		MetaID
   	),
@@ -180,21 +180,19 @@ water_pump = {
 		Balanced_Status
 		Flow
 		Head
-		Resulting_Power
 		From_Elevation
 		To_Elevation
 		From_EGL
 		To_EGL
 		From_Head
 		To_Head
-		Pump_Curve_a_param
-		Pump_Curve_b_param
-		Pump_Curve_c_param
+		Pump_Parabola_a
+		Pump_Parabola_b
+		Pump_Parabola_c
 		From_Static_EGL
 		To_Static_EGL
 		From_Static_Head
 		To_Static_Head
-		Average_Resulting_Quality
 		Average_Elevation
 		Average_EGL
 		Average_Head
@@ -210,15 +208,15 @@ water_valve = {
 		Link_Code
 		From_Code
 		To_Code
-		Setting
+		Valve_Setting
 		Diameter
-		Minor_Loss
+		Minor_Loss_Coefficient
 		Valve_Status
 		Multimedia
-		Initial_Simulation_Status
+		Tsim_Initial_Setting
 		ID
-		FromID
-		ToID
+		From_ID
+		To_ID
 		Geometry
 		MetaID
 	),
@@ -275,7 +273,7 @@ water_valve = {
 		To_Static_EGL
 		From_Static_Head
 		To_Static_Head
-		Average_Resulting_Quality
+		Average_Quality
 		Average_Elevation
 		Average_EGL
 		Average_Head
@@ -284,171 +282,7 @@ water_valve = {
   	)
 }
 
-water_junction = {
-	:WaterJunction => %w(
-		Locality
-		ID
-		Node_Type
-		Node_Code
-		Elevation
-		Output
-		Emitter_Coefficient
-		Static_EGL
-		Static_Head
-		SC1_AADD
-		SC2_AADD_UAW
-		SC3_Theor_AADD
-		SC4_Theor_AADD_Vac
-		SC5_Theor_AADD_Zoning
-		Demand_Zone
-		Multimedia
-		Demand_for_Case1
-		Minimum_Head_for_Case1
-		Demand_for_Case2
-		Minimum_Head_for_Case2
-		Demand_for_Case3
-		Minimum_Head_for_Case3
-		Demand_for_Case4
-		Minimum_Head_for_Case4
-		Demand_for_Case5
-		Minimum_Head_for_Case5
-		Demand_Category_1
-		Percentage_Of_Output1
-		Demand_Category_2
-		Percentage_Of_Output2
-		Demand_Category_3
-		Percentage_Of_Output3
-		Demand_Category_4
-		Percentage_Of_Output4
-		Demand_Category_5
-		Percentage_Of_Output5
-		Initial_Quality
-		Geometry
-		MetaID
-	),
-	:WaterJunctionMemo => %w(
-		Peak_Factor
-		PF_Category
-		Adjust_Factor
-		Year
-		Year_Integrity
-		Special
-		System_Type
-		System
-		Name
-		Sub_Name
-		Comment
-		Region
-		Future_Zone
-		Future_System_Type
-		Future_System
-		Future_Static_EGL
-		Future_Static_Head
-		Future_Develop
-		Informal_Develop
-		Develop_Weight
-		AM_Make
-		AM_Type
-		AM_ID_No
-		AM_Utilization
-		AM_Utilization_Integ
-		AM_Base_Year
-		AM_Replace_Value
-		Node_Integrity
-		Drawing_No
-	),
-	:WaterJunctionResult => %w(
-		Demand_Scenario
-		Emitter_Flow
-		EGL
-		Head
-		Pressure
-		Resulting_Quality
-	)
-}
-
-water_source = {
-	:WaterSource => %w(
-		Locality
-		Node_Type
-		Node_Code
-		Ground_Elevation
-		Water_Level
-		Static_EGL
-		Static_Head
-		Multimedia
-		Average_Level
-		Emergency_Volume
-		Existing_Volume
-		Cost_Function
-		Bottom_Elevation
-		Minimum_Level
-		Maximum_Level
-		Initial_Level
-		Surface_Area
-		Minimum_Volume
-		Curve_Time_Pattern_No
-		Mixing_Model
-		Mixing_Fraction
-		Bulk_Reaction_Coefficient
-		Initial_Quality
-		ID
-		Geometry
-		MetaID
-	),
-	:WaterSourceMemo => %w(
-		Material
-		Volume
-		TWL
-		BWL
-		Year
-		Year_Integrity
-		Inlet_Type
-		System_Type
-		System
-		Name
-		Sub_Name
-		Comment
-		Region
-		Yield
-		Planning_Alloc
-		Zone_AADD
-		Future_Zone_AADD
-		MP_Item_Type
-		MP_Item_No
-		MP_Project_No
-		MP_Project_Descr
-		MP_Year
-		MP_Comment
-		MP_Cost_Detail
-		MP_Cost_FN
-		MP_Extra_Cost_Fact
-		Future_System_Type
-		Future_System
-		AM_Make
-		AM_Type
-		AM_ID_No
-		AM_Utilization
-		AM_Utilization_Integ
-		AM_Base_Year
-		AM_Replace_Value
-		Locality_Integrity
-		Material_Integrity
-		Volume_Integrity
-		Drawing_No
-	),
-	:WaterSourceResult => %w(
-		EGL
-		Head
-		Pressure
-		In_Flow
-		Resulting_Quality
-	)
-}
-
 options = {:has_geometry => true, :only_drop_views => (ARGV[0] == "-d")}
 print(ViewBuilder.build_view_statement("WaterPipeCombined", water_pipe, scenarios, options))
 print(ViewBuilder.build_view_statement("WaterPumpCombined", water_pump, scenarios, options))
 print(ViewBuilder.build_view_statement("WaterValveCombined", water_valve, scenarios, options))
-print(ViewBuilder.build_view_statement("WaterJunctionCombined", water_junction, scenarios, options))
-print(ViewBuilder.build_view_statement("WaterSourceCombined", water_source, scenarios, options))
