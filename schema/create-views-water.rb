@@ -20,18 +20,18 @@ water_pipe = {
 		From_Code
 		To_Code
 		Diameter
-		User_defined_Length
-		Frictional_Coefficient
-		Minor_Loss
+		User_Defined_Length
+		Friction_Coefficient
+		Minor_Loss_Coefficient
 		Pipe_Status
 		Multimedia
 		Optimization_Group
 		Cost_Function
-		Bulk_Reaction_Coefficient
-		Wall_Reaction_Coefficient
-		Initial_Simulation_Status
-		FromID
-		ToID
+		Tsim_Bulk_Rx_Coefficient
+		Tsim_Wall_Rx_Coefficient
+		Tsim_Initial_Status
+		From_ID
+		To_ID
 		Geometry
 		MetaID
 	),
@@ -89,7 +89,7 @@ water_pipe = {
 		To_Static_EGL
 		From_Static_Head
 		To_Static_Head
-		Average_Resulting_Quality
+		Average_Quality
 		Average_Elevation
 		Average_EGL
 		Average_Head
@@ -106,29 +106,29 @@ water_pump = {
 		Link_Code
 		From_Code
 		To_Code
-		Pump_Flow1
-		Pump_Head1
-		Pump_Flow2
-		Pump_Head2
-		Pump_Flow3
-		Pump_Head3
-		Pump_Curve_No
-		Relative_Pump_Speed
+		Flow_Point1
+		Head_Point1
+		Flow_Point2
+		Head_Point2
+		Flow_Point3
+		Head_Point3
+		Curve_No
+		Relative_Speed
 		Multimedia
-		Efficiency
-		Percentage_Time_Running1
-		Percentage_Time_Running2
-		Percentage_Time_Running3
-		Percentage_Time_Running4
-		Percentage_Time_Running5
-		Initial_Simulation_Speed
-		Schedule_Pattern_No
-		Efficiency_Curve_No
-		Energy_Price
-		Price_Pattern_No
+		Opt_Efficiency
+		Opt_Runtime_Percent_Case1
+		Opt_Runtime_Percent_Case2
+		Opt_Runtime_Percent_Case3
+		Opt_Runtime_Percent_Case4
+		Opt_Runtime_Percent_Case5
+		Tsim_Initial_Speed
+		Tsim_Schedule_Pattern_No
+		Tsim_Efficiency_Curve_No
+		Tsim_Energy_Price
+		Tsim_Energy_Price_Pattern_No
 		ID
-		FromID
-		ToID
+		From_ID
+		To_ID
 		Geometry
 		MetaID
   	),
@@ -180,21 +180,19 @@ water_pump = {
 		Balanced_Status
 		Flow
 		Head
-		Resulting_Power
 		From_Elevation
 		To_Elevation
 		From_EGL
 		To_EGL
 		From_Head
 		To_Head
-		Pump_Curve_a_param
-		Pump_Curve_b_param
-		Pump_Curve_c_param
+		Pump_Parabola_a
+		Pump_Parabola_b
+		Pump_Parabola_c
 		From_Static_EGL
 		To_Static_EGL
 		From_Static_Head
 		To_Static_Head
-		Average_Resulting_Quality
 		Average_Elevation
 		Average_EGL
 		Average_Head
@@ -210,15 +208,15 @@ water_valve = {
 		Link_Code
 		From_Code
 		To_Code
-		Setting
+		Valve_Setting
 		Diameter
-		Minor_Loss
+		Minor_Loss_Coefficient
 		Valve_Status
 		Multimedia
 		Initial_Simulation_Status
 		ID
-		FromID
-		ToID
+		From_ID
+		To_ID
 		Geometry
 		MetaID
 	),
@@ -275,7 +273,7 @@ water_valve = {
 		To_Static_EGL
 		From_Static_Head
 		To_Static_Head
-		Average_Resulting_Quality
+		Average_Quality
 		Average_Elevation
 		Average_EGL
 		Average_Head

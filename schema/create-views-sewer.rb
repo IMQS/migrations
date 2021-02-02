@@ -8,12 +8,11 @@ sewer_gravity = {
 	:SewerGravity => %w(
 		Locality
 		ID
-		FromID
-		ToID
-		Type
-		From_Code
-		To_Code
-		Code
+		From_ID
+		To_ID
+		Link_Type
+		From_Structure_Code
+		To_Structure_Code
 		Exists
 		From_Ground_Level
 		To_Ground_Level
@@ -23,24 +22,20 @@ sewer_gravity = {
 		To_Invert_Level
 		Diameter
 		Original_Diameter
-		Geom1
-		Geom2
-		Geom3
-		Geom4
-		Profile_Type
+		SWMM_Geometry_1
+		SWMM_Geometry_2
+		SWMM_Geometry_3
+		SWMM_Geometry_4
 		SWMM_Model
-		Roughness
 		Design_Group
 		Planning_Item
-		Calculated_Length
-		User_Length
+		User_Defined_Length
 		Length_Type
 		Calculated_Slope
-		User_Slope
 		Slope_Type
-		Infiltration
-		Additional_Length
-		Storm_Index
+		Infiltration_Rate
+		Additional_Pipe_Length
+		Storm
 		Cost_Function
 		Design_Spare_Capacity
 		User_Flag
@@ -64,7 +59,7 @@ sewer_gravity = {
 		MP_Item_Type
 		MP_Item_No
 		MP_Project_No
-		MP_Project_Description
+		MP_Project_Descr
 		MP_New_Diam
 		MP_Par_Diam
 		MP_Design_Flow
@@ -80,7 +75,7 @@ sewer_gravity = {
 		AM_Type
 		AM_ID_No
 		AM_Utilization
-		AM_Utilization_Integrity
+		AM_Utilization_Integ
 		AM_Base_Year
 		AM_Replace_Value
 		Locality_Integrity
@@ -95,7 +90,7 @@ sewer_gravity = {
 		Sur_US_IL
 		Sur_DS_IL
 		Sur_Slope
-		Sur_Integrity
+		Sur_Integ
 		Cctv_Diam
 		Cctv_Material
 		Existing_Drainage_Area
@@ -106,40 +101,40 @@ sewer_gravity = {
 		Full_Velocity
 		Max_Flow
 		Min_Flow
-		Velocity_At_Max_Flow
-		Depth_At_Max_Flow
-		Velocity_At_Min_Flow
-		Depth_At_Min_Flow
-		Overflow
+		Max_Flow_Velocity
+		Max_Flow_Depth
+		Min_Flow_Velocity
+		Min_Flow_Depth
+		Max_Overflow_Rate
 		Hydraulic_Spare_Capacity
 		Absolute_Spare_Capacity
 		Relative_Spare_Capacity
 		Design_Flow
-		Upstream_Continuous_Pump
-		Time_0
-		Time_1
-		Time_2
-		Time_3
-		Time_4
-		Time_5
-		Time_6
-		Time_7
-		Time_8
-		Time_9
-		Time_10
-		Time_11
-		Time_12
-		Time_13
-		Time_14
-		Time_15
-		Time_16
-		Time_17
-		Time_18
-		Time_19
-		Time_20
-		Time_21
-		Time_22
-		Time_23
+		US_Cont_Pump_Flow
+		Timestep_0
+		Timestep_1
+		Timestep_2
+		Timestep_3
+		Timestep_4
+		Timestep_5
+		Timestep_6
+		Timestep_7
+		Timestep_8
+		Timestep_9
+		Timestep_10
+		Timestep_11
+		Timestep_12
+		Timestep_13
+		Timestep_14
+		Timestep_15
+		Timestep_16
+		Timestep_17
+		Timestep_18
+		Timestep_19
+		Timestep_20
+		Timestep_21
+		Timestep_22
+		Timestep_23
 	)
 }
 
@@ -147,13 +142,9 @@ sewer_pump = {
 	:SewerPump => %w(
 		Locality
 		ID
-		FromID
-		Code
+		From_ID
 		Exists
-		Index
-		LCV
-		Capacity
-		Original_Capacity
+		Pump_Index
 		Pump_Type
 		Cost_Function
 		Initial_Status
@@ -161,26 +152,26 @@ sewer_pump = {
 		Off_Level
 		Design_Spare_Capacity
 		Design_Down_Size
-		x1
-		y1
-		x2
-		y2
-		x3
-		y3
-		x4
-		y4
-		x5
-		y5
-		x6
-		y6
-		x7
-		y7
-		x8
-		y8
-		x9
-		y9
-		x10
-		y10
+		SWMM_X1
+		SWMM_Y1
+		SWMM_X2
+		SWMM_Y2
+		SWMM_X3
+		SWMM_Y3
+		SWMM_X4
+		SWMM_Y4
+		SWMM_X5
+		SWMM_Y5
+		SWMM_X6
+		SWMM_Y6
+		SWMM_X7
+		SWMM_Y7
+		SWMM_X8
+		SWMM_Y8
+		SWMM_X9
+		SWMM_Y9
+		SWMM_X10
+		SWMM_Y10
 		MetaID
 	),
 	:SewerPumpMemo => %w(
@@ -202,7 +193,7 @@ sewer_pump = {
 		MP_Item_Type
 		MP_Item_No
 		MP_Project_No
-		MP_Project_Description
+		MP_Project_Descr
 		MP_Pump_Flow
 		MP_Pump_Head
 		MP_Design_Flow
@@ -218,7 +209,7 @@ sewer_pump = {
 		AM_Type
 		AM_ID_No
 		AM_Utilization
-		AM_Utilization_Integrity
+		AM_Utilization_Integ
 		AM_Base_Year
 		AM_Replace_Value
 		Pump_Integrity
@@ -241,38 +232,29 @@ sewer_rising = {
 	:SewerRising => %w(
 		Locality
 		ID
-		FromID
-		ToID
-		Code
-		Type
-		From_Code
-		To_Code
+		From_ID
+		To_ID
+		Link_Code
+		Link_Type
+		From_Structure_Code
+		To_Structure_Code
 		Exists
 		From_Cover_Level
 		To_Cover_Level
 		From_Invert_Level
 		To_Invert_Level
-		Percentage_Flow
+		Percent_Of_Flow
 		Diameter
 		Original_Diameter
-		Roughness
 		Design_Group
 		Planning_Item
 		Calculated_Length
-		User_Length
 		Length_Type
-		Calculated_Slope
-		User_Slope
-		Slope_Type
-		Infiltration
-		Additional_Length
-		Storm
 		Cost_Function
-		Design_Spare_Capacity
 		User_Flag
 		Geometry
 		Design_Min_Velocity
-		Design_Max_Velocity
+		Design_Maximum_Velocity
 		MetaID
   	),
 	:SewerRisingMemo => %w(
@@ -292,9 +274,9 @@ sewer_rising = {
 		MP_Item_Type
 		MP_Item_No
 		MP_Project_No
-		MP_Project_Description
-		MP_New_Diameter
-		MP_Par_Diameter
+		MP_Project_Descr
+		MP_New_Diam
+		MP_Par_Diam
 		MP_Design_Flow
 		MP_Design_Type
 		MP_Year
@@ -308,7 +290,7 @@ sewer_rising = {
 		AM_Type
 		AM_ID_No
 		AM_Utilization
-		AM_Utilization_Integrity
+		AM_Utilization_Integ
 		AM_Base_Year
 		AM_Replace_Value
 		Locality_Integrity
@@ -327,33 +309,33 @@ sewer_rising = {
 		Max_Inflow
 		Max_Flow
 		Min_Flow
-		Overflow
+		Max_Overflow_Rate
 		Min_Velocity
 		Max_Velocity
-		Time_0
-		Time_1
-		Time_2
-		Time_3
-		Time_4
-		Time_5
-		Time_6
-		Time_7
-		Time_8
-		Time_9
-		Time_10
-		Time_11
-		Time_12
-		Time_13
-		Time_14
-		Time_15
-		Time_16
-		Time_17
-		Time_18
-		Time_19
-		Time_20
-		Time_21
-		Time_22
-		Time_23
+		Timestep_0
+		Timestep_1
+		Timestep_2
+		Timestep_3
+		Timestep_4
+		Timestep_5
+		Timestep_6
+		Timestep_7
+		Timestep_8
+		Timestep_9
+		Timestep_10
+		Timestep_11
+		Timestep_12
+		Timestep_13
+		Timestep_14
+		Timestep_15
+		Timestep_16
+		Timestep_17
+		Timestep_18
+		Timestep_19
+		Timestep_20
+		Timestep_21
+		Timestep_22
+		Timestep_23
   	)
 }
 
@@ -361,8 +343,8 @@ sewer_structures = {
 	:SewerStructure => %w(
 		Locality
 		ID
-		Code
-		Type
+		Structure_Code
+		Structure_Type
 		Ground_Level
 		Cover_Level
 		User_Depth
@@ -389,13 +371,13 @@ sewer_structures = {
 		WSDP_Capacity
 		WSDP_Fut_Capacity
 		Catchment_PDDWF
-		Future_Catchment_PDDWF
+		Fut_Catchment_PDDWF
 		Sump_Volume
 		Future_Sump_Volume
 		MP_Item_Type
 		MP_Item_No
 		MP_Project_No
-		MP_Project_Description
+		MP_Project_Descr
 		MP_PS_Flow
 		MP_PS_Head
 		MP_Design_Flow
@@ -409,7 +391,6 @@ sewer_structures = {
 		Future_System
 		Future_Develop
 		Informal_Develop
-		Develop_Weight
 		AM_Make
 		AM_Type
 		AM_ID_No
@@ -426,44 +407,42 @@ sewer_structures = {
 		Min_US_Flow
 		Max_US_Flow
 		Peak_US_Cont_Pump
-		Average_US_Cont_Pump
 		Total_US_Flow_Volume
 		Local_US_Flow_Volume
-		Overflow
-		Sim_Inflow_Volume
-		Infil_Volume
-		US_AADD
-		Flow_Perc_AADD
-		US_Continuous_Pumps
+		Max_Overflow_Ratw
+		Simulated_US_Flow_Volume
+		Infiltration_Volume
+		Total_US_AADD
+		Total_Flow_Percent_AADD
+		US_Cont_Pumps
 		US_Variable_Pumps
 		US_Sump_Pumps
 		US_Diversions
 		US_Gravity_Length
 		US_Rising_Length
 		US_Additional_Length
-		US_UH_1
-		US_UH_2
-		US_UH_3
-		US_UH_4
-		US_UH_5
-		US_UH_6
-		US_UH_7
-		US_UH_8
-		US_UH_9
-		US_UH_10
-		US_UH_11
-		US_UH_12
-		US_UH_13
-		US_UH_14
-		US_UH_15
-		US_UH_16
-		US_UH_17
-		US_UH_18
-		US_UH_19
-		US_UH_20
-		US_UserH
-		Infil_Perc_Volume
-		Ave_C_Pump_Perc_Volume
+		US_No_UH_1
+		US_No_UH_2
+		US_No_UH_3
+		US_No_UH_4
+		US_No_UH_5
+		US_No_UH_6
+		US_No_UH_7
+		US_No_UH_8
+		US_No_UH_9
+		US_No_UH_10
+		US_No_UH_11
+		US_No_UH_12
+		US_No_UH_13
+		US_No_UH_14
+		US_No_UH_15
+		US_No_UH_16
+		US_No_UH_17
+		US_No_UH_18
+		US_No_UH_19
+		US_No_UH_20
+		US_No_User_Hydrograph
+		Infiltration_Percent_Volume
 	)
 }
 
