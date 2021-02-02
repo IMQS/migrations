@@ -248,7 +248,6 @@ sewer_rising = {
 		Original_Diameter
 		Design_Group
 		Planning_Item
-		Calculated_Length
 		Length_Type
 		Cost_Function
 		User_Flag
@@ -395,7 +394,7 @@ sewer_structures = {
 		AM_Type
 		AM_ID_No
 		AM_Utilization
-		AM_Utilization_Integrity
+		AM_Utilization_Integ
 		AM_Base_Year
 		AM_Replace_Value
 		Locality_Integrity
@@ -406,15 +405,14 @@ sewer_structures = {
 	:SewerStructureResults => %w(
 		Min_US_Flow
 		Max_US_Flow
-		Peak_US_Cont_Pump
+		US_Cont_Pumps
 		Total_US_Flow_Volume
 		Local_US_Flow_Volume
-		Max_Overflow_Ratw
+		Max_Overflow_Rate
 		Simulated_US_Flow_Volume
 		Infiltration_Volume
 		Total_US_AADD
 		Total_Flow_Percent_AADD
-		US_Cont_Pumps
 		US_Variable_Pumps
 		US_Sump_Pumps
 		US_Diversions
@@ -448,6 +446,7 @@ sewer_structures = {
 
 options = {:has_geometry => true, :only_drop_views => (ARGV[0] == "-d")}
 print(ViewBuilder.build_view_statement("SewerGravityCombined", sewer_gravity, scenarios, options))
-print(ViewBuilder.build_view_statement("SewerPumpCombined", sewer_pump, scenarios, options))
 print(ViewBuilder.build_view_statement("SewerRisingCombined", sewer_rising, scenarios, options))
 print(ViewBuilder.build_view_statement("SewerStructureCombined", sewer_structures, scenarios, options))
+options = {:has_geometry => false, :only_drop_views => (ARGV[0] == "-d")}
+print(ViewBuilder.build_view_statement("SewerPumpCombined", sewer_pump, scenarios, options))
