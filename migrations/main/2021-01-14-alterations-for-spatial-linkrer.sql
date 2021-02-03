@@ -10,15 +10,7 @@ DROP VIEW IF EXISTS "sewer-gravity";
 DROP VIEW IF EXISTS "sewer-rising";
 DROP VIEW IF EXISTS "water-pipe";
 DROP VIEW IF EXISTS "sewer-pipe";
-
-CREATE OR REPLACE VIEW reports.mismatch_assets_to_asbuilt
- AS
- SELECT "LinkingMainAndMirror".left_table_name,
-        "LinkingMainAndMirror".left_id,
-        "LinkingMainAndMirror".assetmapfeature_id,
-        "LinkingMainAndMirror".assetcomponent_id
-FROM    "LinkingMainAndMirror"
-WHERE   "LinkingMainAndMirror".left_id IS NOT NULL AND "LinkingMainAndMirror".assetcomponent_id IS NOT NULL;
+DROP VIEW IF EXISTS "reports.mismatch_assets_to_asbuilt"
 
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_id";
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_table_name";
