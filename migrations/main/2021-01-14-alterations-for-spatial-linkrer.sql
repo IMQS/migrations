@@ -10,6 +10,7 @@ DROP VIEW IF EXISTS "sewer-gravity";
 DROP VIEW IF EXISTS "sewer-rising";
 DROP VIEW IF EXISTS "water-pipe";
 
+DROP RULE  IF EXISTS "_RETURN ON reports.mismatch_assets_to_asbuilt" ON "LinkingMainAndMirror"
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_id";
 ALTER TABLE "LinkingMainAndMirror" DROP COLUMN "main_table_name";
 ALTER TABLE "LinkingMainAndMirrorTrackTable" ADD COLUMN "left_dbname" VARCHAR;
